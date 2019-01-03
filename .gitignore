@@ -1,0 +1,17 @@
+# Log files
+*.log
+
+# DS_Store
+*.DS_Store
+
+# virtual machine crash logs
+hs_err_pid*
+
+# node_modules
+**/node_modules
+
+# Package Lock
+package-lock.json
+
+# remove .idea files
+**/.idea

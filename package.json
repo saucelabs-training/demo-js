@@ -1,0 +1,19 @@
+{
+  "name": "demo-js-mocha",
+  "version": "0.0.1",
+  "description": "Test Examples using Mocha",
+  "main": "",
+  "scripts": {
+    "test": "mocha"
+  },
+  "private": true,
+  "dependencies": {
+    "debug": "^4.1.1",
+    "http-errors": "^1.7.1",
+    "selenium-webdriver": "3.6.0",
+    "mocha": "^5.2.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
