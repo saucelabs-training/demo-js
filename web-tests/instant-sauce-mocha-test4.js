@@ -21,6 +21,9 @@ describe('Instant Sauce Test Module 4', function() {
             'username': username,
             'accessKey': accessKey,
             'name': testName.toString(),
+            /* As a best practice, set important test metadata and execution options
+            such as build info, tags for reporting, and timeout durations.
+             */
             'build': 'instant-sauce-mocha-tests',
             'maxDuration': 3600,
             'idleTimeout': 1000,

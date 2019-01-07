@@ -10,6 +10,9 @@ var webdriver = require('selenium-webdriver'),
 
 describe('Instant Sauce Test Module 3', function() {
     this.timeout(40000);
+    /* Now we will add a beforeEach method using the Mocha framework in order to
+    set prerequiste tasks for each test case, in this case we're setting the driver capabilities.
+     */
     beforeEach(function (done) {
         var testName = this.currentTest.title;
         driver = new webdriver.Builder().withCapabilities({
@@ -28,6 +31,7 @@ describe('Instant Sauce Test Module 3', function() {
         done();
     });
 
+    /* Here we add any post-requisite tasks, such as sending the test results to Sauce Labs.com*/
     afterEach(function (done) {
         driver.executeScript("sauce:job-result=" + (true ? "passed" : "failed"));
         driver.quit();

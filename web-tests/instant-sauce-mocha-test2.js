@@ -1,4 +1,8 @@
 var webdriver = require('selenium-webdriver'),
+    /* Use a run configuration and/or a bash profile to set your environment variables,
+    for more information on how to do this, please visit:
+    https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials
+     */
     username = process.env.SAUCE_USERNAME,
     accessKey = process.env.SAUCE_ACCESS_KEY,
 
