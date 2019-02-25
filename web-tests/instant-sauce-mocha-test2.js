@@ -19,7 +19,8 @@ describe('Instant Sauce Test Module 1', function() {
             'version': '11.1',
             'username': username,
             'accessKey': accessKey,
-            'name': this.test.title,
+            'build': 'Onboarding Sample App - NodeJS',
+            'name': '2-user-site',
         }).usingServer("http://" + username + ":" + accessKey +
             "@ondemand.saucelabs.com:80/wd/hub").build();
 

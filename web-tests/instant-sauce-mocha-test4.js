@@ -20,11 +20,11 @@ describe('Instant Sauce Test Module 4', function() {
             'version': '59.0',
             'username': username,
             'accessKey': accessKey,
-            'name': testName.toString(),
+            'build': 'Onboarding Sample App - NodeJS',
+            'name': '4-best-practices',
             /* As a best practice, set important test metadata and execution options
             such as build info, tags for reporting, and timeout durations.
              */
-            'build': 'instant-sauce-mocha-tests',
             'maxDuration': 3600,
             'idleTimeout': 1000,
             'tags': tags,

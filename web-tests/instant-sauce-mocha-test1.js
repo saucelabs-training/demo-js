@@ -20,7 +20,8 @@ describe('Instant Sauce Test Module 1', function() {
             /* Pass Sauce User Name and Access Key */
             'username': username,
             'accessKey': accessKey,
-            'name': this.test.title,
+            'build': 'Onboarding Sample App - NodeJS',
+            'name': '1-first-test',
         }).usingServer("http://" + username + ":" + accessKey +
             "@ondemand.saucelabs.com:80/wd/hub").build();
         /* The driver navigates to the target application, stored in this variable baseUrl*/
