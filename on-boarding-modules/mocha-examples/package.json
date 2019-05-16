@@ -1,0 +1,19 @@
+{
+  "name": "on-boarding-mocha-examples",
+  "version": "0.0.1",
+  "description": "On-boarding Modules using Mocha Test Framework",
+  "main": "",
+  "scripts": {
+    "test": "mocha"
+  },
+  "private": true,
+  "dependencies": {
+    "debug": "^4.1.1",
+    "http-errors": "^1.7.2",
+    "selenium-webdriver": "3.6.0",
+    "mocha": "^5.2.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}

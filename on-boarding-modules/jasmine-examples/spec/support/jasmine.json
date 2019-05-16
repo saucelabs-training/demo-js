@@ -1,0 +1,13 @@
+{
+  "spec_dir": "spec",
+  "spec_files": [
+    "**/module2-jasmine-spec.js",
+    "**/module3-jasmine-spec.js",
+    "**/module4-jasmine-spec.js"
+  ],
+  "helpers": [
+    "helpers/reporter.js"
+  ],
+  "stopSpecOnExpectationFailure": false,
+  "random": true
+}

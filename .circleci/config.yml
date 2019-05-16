@@ -1,0 +1,80 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:dubnium  # primary container for the build job
+    steps:
+      - checkout
+      - run:
+          name: "Update NPM"
+          command: |
+            sudo npm install -g npm@latest
+      - restore_cache: # special step to restore the dependency cache
+          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: "Resolve Dependencies"
+          command: |
+            npm install
+      - run:
+          name: "Install Mocha"
+          command: |
+            cd on-boarding-modules/mocha-examples
+            npm install
+      - run:
+          name: "Install Jasmine"
+          command: |
+            cd on-boarding-modules/jasmine-examples
+            npm install
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: "Install Sauce Connect Client"
+          command: |
+            sudo apt-get install lsof
+            curl https://saucelabs.com/downloads/sc-4.4.12-linux.tar.gz -o saucelabs.tar.gz
+            tar -xzf saucelabs.tar.gz
+      - run:
+          name: "Launch Tunnel 1"
+          background: true
+          command: |
+            cd sc-*
+            bin/sc --pidfile /tmp/sc.pid1 -u ${SAUCE_USERNAME} -k ${SAUCE_ACCESS_KEY} -i demo-js-tunnel --no-remove-colliding-tunnels --se-port 4445
+      - run:
+          name: "Launch Tunnel 2"
+          background: true
+          command: |
+            cd sc-*
+            bin/sc --pidfile /tmp/sc.pid2 -u ${SAUCE_USERNAME} -k ${SAUCE_ACCESS_KEY} -i demo-js-tunnel --no-remove-colliding-tunnels --se-port 4446
+      - run:
+          name: "Launch Tunnel 3"
+          background: true
+          command: |
+            cd sc-*
+            bin/sc --pidfile /tmp/sc.pid3 -u ${SAUCE_USERNAME} -k ${SAUCE_ACCESS_KEY} -i demo-js-tunnel --no-remove-colliding-tunnels --se-port 4447
+      - run:
+          name: "Run Node Tests"
+          command: |
+            while ! lsof -i:4445 -t; do sleep 3; done
+            while ! lsof -i:4446 -t; do sleep 3; done
+            while ! lsof -i:4447 -t; do sleep 3; done
+            npm test
+      - run:
+          name: "Run Mocha Tests"
+          command: |
+            cd on-boarding-modules/mocha-examples
+            npm test
+      - run:
+          name: "Run Jasmine Tests"
+          command: |
+            cd on-boarding-modules/jasmine-examples
+            npm test
+      - run:
+          name: "Shut Down Sauce Connect Tunnel"
+          command: |
+            kill -9 `cat /tmp/sc.pid1`
+            kill -9 `cat /tmp/sc.pid2`
+            kill -9 `cat /tmp/sc.pid3`
