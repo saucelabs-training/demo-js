@@ -16,8 +16,7 @@ let webdriver = require('selenium-webdriver'),
         'username': username,
         'accessKey': accessKey,
         'build': 'Onboarding Sample App - NodeJS',
-        'name': '2-user-site',
-        'tunnelIdentifier': 'demo-js-tunnel'
+        'name': '2-user-site'
     }).usingServer("https://@ondemand.saucelabs.com/wd/hub").build();
 driver.get(baseUrl);
 

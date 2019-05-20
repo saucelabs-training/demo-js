@@ -13,8 +13,7 @@ let webdriver = require('selenium-webdriver'),
         'username': username,
         'accessKey': accessKey,
         'build': 'Onboarding Sample App - NodeJS',
-        'name': '1-first-test',
-        'tunnelIdentifier': 'demo-js-tunnel'
+        'name': '1-first-test'
     }).usingServer("https://@ondemand.saucelabs.com/wd/hub").build();
 
 /* The driver navigates to the target application, stored in this variable baseUrl*/

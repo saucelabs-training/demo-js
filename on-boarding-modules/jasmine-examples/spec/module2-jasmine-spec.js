@@ -22,8 +22,7 @@ describe('Instant Sauce Test Module 2', function() {
             'username': username,
             'accessKey': accessKey,
             'build': 'Onboarding Sample App - NodeJS + Jasmine',
-            'name': '2-user-site',
-            'tunnelIdentifier': 'demo-js-tunnel'
+            'name': '2-user-site'
         }).usingServer("https://ondemand.saucelabs.com/wd/hub").build();
 
         driver.get(baseUrl);

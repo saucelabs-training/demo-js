@@ -18,13 +18,12 @@ describe('Instant Sauce Test Module 4', function() {
             'accessKey': accessKey,
             'build': 'Onboarding Sample App - NodeJS + Mocha',
             'name': '4-best-practices',
-            'tunnelIdentifier': 'demo-js-tunnel',
             /* As a best practice, set important test metadata and execution options
             such as build info, tags for reporting, and timeout durations.
              */
             'maxDuration': 3600,
             'idleTimeout': 1000,
-            'tags': tags,
+            'tags': tags
         }).usingServer("https://ondemand.saucelabs.com/wd/hub").build();
 
         driver.getSession().then(function (sessionid) {

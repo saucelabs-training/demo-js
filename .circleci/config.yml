@@ -38,29 +38,15 @@ jobs:
             curl https://saucelabs.com/downloads/sc-4.4.12-linux.tar.gz -o saucelabs.tar.gz
             tar -xzf saucelabs.tar.gz
       - run:
-          name: "Launch Tunnel 1"
+          name: "Launch Tunnel"
           background: true
           command: |
             cd sc-*
             bin/sc --pidfile /tmp/sc.pid1 -u ${SAUCE_USERNAME} -k ${SAUCE_ACCESS_KEY} -i demo-js-tunnel --no-remove-colliding-tunnels --se-port 4445
       - run:
-          name: "Launch Tunnel 2"
-          background: true
-          command: |
-            cd sc-*
-            bin/sc --pidfile /tmp/sc.pid2 -u ${SAUCE_USERNAME} -k ${SAUCE_ACCESS_KEY} -i demo-js-tunnel --no-remove-colliding-tunnels --se-port 4446
-      - run:
-          name: "Launch Tunnel 3"
-          background: true
-          command: |
-            cd sc-*
-            bin/sc --pidfile /tmp/sc.pid3 -u ${SAUCE_USERNAME} -k ${SAUCE_ACCESS_KEY} -i demo-js-tunnel --no-remove-colliding-tunnels --se-port 4447
-      - run:
           name: "Run Node Tests"
           command: |
             while ! lsof -i:4445 -t; do sleep 3; done
-            while ! lsof -i:4446 -t; do sleep 3; done
-            while ! lsof -i:4447 -t; do sleep 3; done
             npm test
       - run:
           name: "Run Mocha Tests"
@@ -76,5 +62,3 @@ jobs:
           name: "Shut Down Sauce Connect Tunnel"
           command: |
             kill -9 `cat /tmp/sc.pid1`
-            kill -9 `cat /tmp/sc.pid2`
-            kill -9 `cat /tmp/sc.pid3`
