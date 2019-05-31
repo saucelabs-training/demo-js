@@ -6,7 +6,7 @@
     "**/module4-jasmine-spec.js"
   ],
   "helpers": [
-    "helpers/reporter.js"
+    "helpers/custom-sauce-reporter.js"
   ],
   "stopSpecOnExpectationFailure": false,
   "random": true

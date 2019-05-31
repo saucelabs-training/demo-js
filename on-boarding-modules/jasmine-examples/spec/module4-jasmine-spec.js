@@ -6,24 +6,27 @@ let webdriver = require('selenium-webdriver'),
     tags = ["sauceDemo", "module4", "node", "jasmine"],
     driver;
 
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
-
 describe('Instant Sauce Test Module 4', function() {
-    beforeEach(function (done) {
+
+    beforeEach('beforeMethod', done => {
+        jasmine.DEFAULT_TIMEOUT = 10000;
         driver = new webdriver.Builder().withCapabilities({
             'browserName': 'chrome',
-            'platform': 'Windows 10',
-            'version': 'latest',
-            'username': username,
-            'accessKey': accessKey,
-            'build': 'Onboarding Sample App - NodeJS + Mocha',
-            'name': '4-best-practices',
-            /* As a best practice, set important test metadata and execution options
-            such as build info, tags for reporting, and timeout durations.
-             */
-            'maxDuration': 3600,
-            'idleTimeout': 1000,
-            'tags': tags
+            'platformName': 'Windows 10',
+            'browserVersion': 'latest',
+            'goog:chromeOptions' : { 'w3c' : true },
+            'sauce:options': {
+                'username': username,
+                'accessKey': accessKey,
+                'build': 'Onboarding Sample App - NodeJS + Jasmine',
+                'name': '4-best-practices',
+                /* As a best practice, set important test metadata and execution options
+                such as build info, tags for reporting, and timeout durations.
+                */
+                'maxDuration': 3600,
+                'idleTimeout': 1000,
+                'tags': tags
+            }
         }).usingServer("https://ondemand.saucelabs.com/wd/hub").build();
 
         driver.getSession().then(function (sessionid) {
@@ -32,16 +35,16 @@ describe('Instant Sauce Test Module 4', function() {
         done();
     });
 
-    it('should-open-chrome', function (done) {
-        driver.get(baseUrl);
-        driver.getTitle().then(function (title) {
-            expect(title).toBe('Swag Labs');
-            done();
-        });
-    });
-
     afterEach(function () {
         driver.executeScript("sauce:job-result=" + (true ? "passed" : "failed"));
-        driver.quit();
+        return driver.quit();
+    });
+
+    it('should-open-chrome', done => {
+        driver.get(baseUrl);
+        driver.getTitle().then(function (title) {
+            expect(title.toString()).toBe('Swag Labs');
+            done();
+        });
     });
 });

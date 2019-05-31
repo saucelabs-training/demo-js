@@ -1,7 +1,7 @@
 {
   "name": "on-boarding-mocha-examples",
   "version": "0.0.1",
-  "description": "On-boarding Modules using Mocha Test Framework",
+  "description": "Mocha + Chai Framework Tests",
   "main": "",
   "scripts": {
     "test": "mocha"
