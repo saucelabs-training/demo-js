@@ -7,14 +7,16 @@ let webdriver = require('selenium-webdriver'),
     /* driver instantiates via callback */
     driver = new webdriver.Builder().withCapabilities({
         'browserName': 'safari',
-        'platform': 'macOS 10.13',
-        'version': '11.1',
+        'platformName': 'macOS 10.13',
+        'browserVersion': '11.1',
         /* Pass Sauce User Name and Access Key */
-        'username': username,
-        'accessKey': accessKey,
-        'build': 'Onboarding Sample App - NodeJS',
-        'name': '1-first-test'
-    }).usingServer("https://@ondemand.saucelabs.com/wd/hub").build();
+        'sauce:options': {
+            'username': username,
+            'accessKey': accessKey,
+            'build': 'Onboarding Sample App - NodeJS',
+            'name': '1-first-test'
+        }
+    }).usingServer("https://@ondemand.saucelabs.com:443/wd/hub").build();
 
 /* The driver navigates to the target application, stored in this variable baseUrl*/
 driver.get(baseUrl);

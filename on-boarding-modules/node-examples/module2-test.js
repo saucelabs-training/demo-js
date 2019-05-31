@@ -10,14 +10,16 @@ let webdriver = require('selenium-webdriver'),
     baseUrl = "https://www.saucedemo.com",
     driver = new webdriver.Builder().withCapabilities({
         'browserName': 'safari',
-        'platform': 'macOS 10.13',
-        'version': '11.1',
+        'platformName': 'macOS 10.13',
+        'browserVersion': '11.1',
         /* Pass Sauce User Name and Access Key */
-        'username': username,
-        'accessKey': accessKey,
-        'build': 'Onboarding Sample App - NodeJS',
-        'name': '2-user-site'
-    }).usingServer("https://@ondemand.saucelabs.com/wd/hub").build();
+        'sauce:options': {
+            'username': username,
+            'accessKey': accessKey,
+            'build': 'Onboarding Sample App - NodeJS',
+            'name': '2-user-site'
+        }
+    }).usingServer("https://ondemand.saucelabs.com:443/wd/hub").build();
 driver.get(baseUrl);
 
 driver.getTitle().then(function (title) {

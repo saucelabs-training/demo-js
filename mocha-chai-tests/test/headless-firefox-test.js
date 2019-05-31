@@ -12,19 +12,19 @@ let username = process.env.SAUCE_USERNAME,
     tags = ["sauceDemo", "async", "node", "webdriverjs", "headless" ],
     driver;
 
-describe ('headless chrome tests', function() {
-    this.timeout(40000);
+describe ('headless firefox test', function() {
+    this.timeout(50000);
     beforeEach(async function () {
         driver = await new webdriver.Builder().withCapabilities({
-            'browserName': 'chrome',
+            'browserName': 'firefox',
             'platformName': 'linux',
             'browserVersion': 'latest',
-            'goog:chromeOptions' : { 'w3c' : true },
             'sauce:options': {
                 'username': username,
                 'accessKey': accessKey,
+                'seleniumVersion': '3.141.59',
                 'build': 'Sample Headless Tests',
-                'name': 'headless-chrome-test-js',
+                'name': 'headless-firefox-test-js',
                 'maxDuration': 3600,
                 'idleTimeout': 1000,
                 'tags': tags

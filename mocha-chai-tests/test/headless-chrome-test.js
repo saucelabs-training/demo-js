@@ -1,17 +1,18 @@
-const {By, promise} = require('selenium-webdriver');
+const promise = require('selenium-webdriver');
 let expect = require('chai').expect;
 let webdriver = require('selenium-webdriver');
 
+/* promise manager for selenium-webdriver is going to be deprecated */
+/* you must use async/await as an alternative */
 promise.USE_PROMISE_MANAGER = false;
 
 let username = process.env.SAUCE_USERNAME,
     accessKey = process.env.SAUCE_ACCESS_KEY,
-    /* Change the baseURL to your application URL */
-    baseUrl = "https://www.saucedemo.com",
+    appURL = "https://www.saucedemo.com",
     tags = ["sauceDemo", "async", "node", "webdriverjs", "headless" ],
     driver;
 
-describe ('async/await tests', function() {
+describe ('headless chrome test', function() {
     this.timeout(40000);
     beforeEach(async function () {
         driver = await new webdriver.Builder().withCapabilities({
@@ -22,8 +23,9 @@ describe ('async/await tests', function() {
             'sauce:options': {
                 'username': username,
                 'accessKey': accessKey,
+                'seleniumVersion': '3.141.59',
                 'build': 'Sample Headless Tests',
-                'name': 'headless-chrome-test-JS: ' + this.currentTest.title,
+                'name': 'headless-chrome-test-js',
                 'maxDuration': 3600,
                 'idleTimeout': 1000,
                 'tags': tags
@@ -40,19 +42,9 @@ describe ('async/await tests', function() {
     });
 
     it('get-title-test', async function() {
-        await driver.get(baseUrl);
+        await driver.get(appURL);
         const title = await driver.getTitle();
         console.log('Page Title is: ' + title);
         expect(title).equals('Swag Labs');
-    });
-
-    it('login-test', async function() {
-        await driver.get(baseUrl);
-        await driver.findElement(By.id('user-name')).sendKeys('standard_user');
-        await driver.findElement(By.id('password')).sendKeys('secret_sauce');
-        await driver.findElement(By.className('btn_action')).click();
-        const currentURL = await driver.getCurrentUrl();
-        console.log('URL is:  ' + currentURL);
-        expect(currentURL).equals('https://www.saucedemo.com/inventory.html');
     });
 });

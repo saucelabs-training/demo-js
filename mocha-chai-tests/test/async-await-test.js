@@ -1,4 +1,4 @@
-const {By, promise, until} = require('selenium-webdriver');
+const {By, promise} = require('selenium-webdriver');
 let expect = require('chai').expect;
 let webdriver = require('selenium-webdriver');
 
@@ -22,6 +22,7 @@ describe ('async/await tests', function() {
             'sauce:options': {
                 'username': username,
                 'accessKey': accessKey,
+                'seleniumVersion': '3.141.59',
                 'build': 'JS-Async/Await-Tests',
                 'name': 'js-async/await: ' + this.currentTest.title,
                 'maxDuration': 3600,
