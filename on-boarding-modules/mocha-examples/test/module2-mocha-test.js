@@ -3,10 +3,10 @@ let expect = require('chai').expect;
 let webdriver = require('selenium-webdriver');
 
 promise.USE_PROMISE_MANAGER = false;
-    /* Use a run configuration and/or a bash profile to set your environment variables,
-    for more information on how to do this, please visit:
-    https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials
-     */
+/* Use a run configuration and/or a bash profile to set your environment variables, */
+/* for more information on how to do this, please visit:
+https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials
+*/
 let username = process.env.SAUCE_USERNAME,
     accessKey = process.env.SAUCE_ACCESS_KEY,
     /* Change the baseURL to your application URL */

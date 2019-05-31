@@ -12,6 +12,7 @@
     "http-errors": "^1.7.2",
     "jasmine": "3.4.0",
     "jasmine-reporters": "^2.3.2",
+    "chai": "^4.2.0",
     "selenium-webdriver": "^4.0.0-alpha.1"
   },
   "devDependencies": {

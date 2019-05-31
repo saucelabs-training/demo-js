@@ -1,16 +1,19 @@
-let webdriver = require('selenium-webdriver'),
-    username = process.env.SAUCE_USERNAME,
+const promise = require('selenium-webdriver');
+let expect = require('chai').expect;
+let webdriver = require('selenium-webdriver');
+
+promise.USE_PROMISE_MANAGER = false;
+
+let username = process.env.SAUCE_USERNAME,
     accessKey = process.env.SAUCE_ACCESS_KEY,
     /* Change the baseURL to your application URL */
     baseUrl = "https://www.saucedemo.com",
-    tags = ["sauceDemo", "module4", "node", "jasmine"],
+    tags = ["sauceDemo", "on-boarding", "node", "mocha" ],
     driver;
 
 describe('Instant Sauce Test Module 4', function() {
-
-    beforeEach('beforeMethod', done => {
-        jasmine.DEFAULT_TIMEOUT = 10000;
-        driver = new webdriver.Builder().withCapabilities({
+    beforeEach(async function () {
+        driver = await new webdriver.Builder().withCapabilities({
             'browserName': 'chrome',
             'platformName': 'Windows 10',
             'browserVersion': 'latest',
@@ -29,22 +32,21 @@ describe('Instant Sauce Test Module 4', function() {
             }
         }).usingServer("https://ondemand.saucelabs.com/wd/hub").build();
 
-        driver.getSession().then(function (sessionid) {
+        await driver.getSession().then(function (sessionid) {
             driver.sessionID = sessionid.id_;
         });
-        done();
     });
 
-    afterEach(function () {
-        driver.executeScript("sauce:job-result=" + (true ? "passed" : "failed"));
-        return driver.quit();
+    afterEach(async function() {
+        await driver.executeScript("sauce:job-result=" + (true ? "passed" : "failed"));
+        await driver.quit();
     });
 
-    it('should-open-chrome', done => {
-        driver.get(baseUrl);
-        driver.getTitle().then(function (title) {
-            expect(title.toString()).toBe('Swag Labs');
-            done();
-        });
+    it('should open chrome ', async function() {
+        await driver.get(baseUrl);
+        const title = await driver.getTitle();
+        //console.log('Page Title is: ' + title);
+        expect(title).equals('Swag Labs');
     });
 });
+
