@@ -1,4 +1,5 @@
-var webdriver = require('selenium-webdriver'),
+let webdriver = require('selenium-webdriver'),
+    assert = require('assert'),
     /* Use a run configuration and/or a bash profile to set your environment variables,
     for more information on how to do this, please visit:
     https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Environment+Variables+for+Authentication+Credentials
@@ -10,7 +11,7 @@ var webdriver = require('selenium-webdriver'),
     baseUrl = "https://www.saucedemo.com",
     driver;
 
-describe('Instant Sauce Test Module 1', function() {
+describe('Instant Sauce Test Module 2', function() {
     this.timeout(40000);
     it('should-open-safari', function (done) {
         driver = new webdriver.Builder().withCapabilities({
@@ -19,16 +20,20 @@ describe('Instant Sauce Test Module 1', function() {
             'version': '11.1',
             'username': username,
             'accessKey': accessKey,
-            'build': 'Onboarding Sample App - NodeJS',
-            'name': '2-user-site',
-        }).usingServer("http://" + username + ":" + accessKey +
-            "@ondemand.saucelabs.com:80/wd/hub").build();
+            'build': 'Onboarding Sample App - NodeJS + Mocha',
+            'name': '2-user-site'
+        }).usingServer("https://ondemand.saucelabs.com/wd/hub").build();
 
         driver.get(baseUrl);
         driver.getTitle().then(function (title) {
-            console.log("title is: " + title);
+            /* console.log("title is: " + title); */
+            assert.equal(title, 'Swag Labs');
+            done();
         });
+    });
+
+    afterEach(function () {
+        driver.executeScript("sauce:job-result=" + (this.currentTest.state));
         driver.quit();
-        done();
     });
 });

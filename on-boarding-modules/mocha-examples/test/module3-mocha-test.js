@@ -1,5 +1,4 @@
-
-var webdriver = require('selenium-webdriver'),
+let webdriver = require('selenium-webdriver'),
     assert = require('assert'),
     username = process.env.SAUCE_USERNAME,
     accessKey = process.env.SAUCE_ACCESS_KEY,
@@ -14,17 +13,15 @@ describe('Instant Sauce Test Module 3', function() {
     set prerequiste tasks for each test case, in this case we're setting the driver capabilities.
      */
     beforeEach(function (done) {
-        var testName = this.currentTest.title;
         driver = new webdriver.Builder().withCapabilities({
             'browserName': 'chrome',
             'platform': 'Windows 10',
-            'version': '59.0',
+            'version': 'latest',
             'username': username,
             'accessKey': accessKey,
-            'build': 'Onboarding Sample App - NodeJS',
-            'name': '3-cross-browser',
-        }).usingServer("http://" + username + ":" + accessKey +
-            "@ondemand.saucelabs.com:80/wd/hub").build();
+            'build': 'Onboarding Sample App - NodeJS + Mocha',
+            'name': '3-cross-browser'
+        }).usingServer("https://@ondemand.saucelabs.com/wd/hub").build();
 
         driver.getSession().then(function (sessionid) {
             driver.sessionID = sessionid.id_;
@@ -32,19 +29,18 @@ describe('Instant Sauce Test Module 3', function() {
         done();
     });
 
-    /* Here we add any post-requisite tasks, such as sending the test results to Sauce Labs.com*/
-    afterEach(function (done) {
-        driver.executeScript("sauce:job-result=" + (true ? "passed" : "failed"));
-        driver.quit();
-        done();
-    });
-
     it('should-open-chrome ', function (done) {
         driver.get(baseUrl);
         driver.getTitle().then(function (title) {
-            console.log("title is: " + title);
-            assert(true);
+            /* console.log("title is: " + title); */
+            assert.equal(title, 'Swag Labs');
             done();
         });
+    });
+
+    /* Here we add any post-requisite tasks, such as sending the test results to Sauce Labs.com*/
+    afterEach(function () {
+        driver.executeScript("sauce:job-result=" + (this.currentTest.state));
+        driver.quit();
     });
 });
