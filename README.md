@@ -30,15 +30,15 @@ In order to run these scripts you must complete the following prerequisite steps
     git clone https://github.com/saucelabs-training/demo-js.git
     ```
 
-2. Resolve Dependencies (via `package.json`)
+2. Navigate to the desired directory (e.g.):
+    ```
+    cd mocha-chai-tests
+    ```
+3. Resolve Dependencies (via `package.json`)
     
     ```
     npm install
     ```
-3. If you're testing from behind a private network you must use a secure tunnel such as Sauce Connect Proxy. Otherwise comment out the following line in each test script:
-    ```
-    
-    ``` 
 4. Run the Test
     
     ```
