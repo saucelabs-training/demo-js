@@ -17,16 +17,6 @@ jobs:
           name: "Resolve Dependencies"
           command: |
             npm install
-      - run:
-          name: "Install Mocha"
-          command: |
-            cd on-boarding-modules/mocha-examples
-            npm install
-      - run:
-          name: "Install Jasmine"
-          command: |
-            cd on-boarding-modules/jasmine-examples
-            npm install
       - save_cache: # special step to save the dependency cache
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
@@ -52,11 +42,19 @@ jobs:
           name: "Run Mocha Tests"
           command: |
             cd on-boarding-modules/mocha-examples
+            npm install
             npm test
       - run:
           name: "Run Jasmine Tests"
           command: |
             cd on-boarding-modules/jasmine-examples
+            npm install
+            npm test
+      - run:
+          name: "Run Protractor Tests"
+          command: |
+            cd protractor-jasmine-tests
+            npm install
             npm test
       - run:
           name: "Shut Down Sauce Connect Tunnel"

@@ -1,13 +1,9 @@
 describe('Protractor Demo', function() {
-    it('should greet the named user', async function() {
+    it('should confirm page title', async () => {
         await browser.executeScript("sauce:context=Going to 'saucedemo.com'");
-        await browser.get(baseUrl);
-
-        await browser.executeScript("sauce:context=Checking Page Title");
-        const title = await browser.getTitle();
-        console.log('Page Title is: ' + title);
-
+        await browser.get('https://www.saucedemo.com');
         await browser.executeScript("sauce:context=Asserting 'Swag Labs' title is present");
+        let title = await browser.getTitle();
         expect(title).toEqual('Swag Labs');
     });
 });
