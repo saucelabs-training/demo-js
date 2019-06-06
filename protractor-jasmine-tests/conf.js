@@ -1,12 +1,13 @@
 const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 exports.config = {
-    sauceUser: process.env.SAUCE_USERNAME,
-    sauceKey: process.env.SAUCE_ACCESS_KEY,
+    //sauceUser: process.env.SAUCE_USERNAME,
+    //sauceKey: process.env.SAUCE_ACCESS_KEY,
     sauceRegion: 'us',
     seleniumAddress: 'https://ondemand.saucelabs.com/wd/hub',
     specs: ['specs/*spec.js'],
 
     onPrepare: async () => {
+        await browser.waitForAngularEnabled(false);
         const caps = await browser.getCapabilities();
         jasmine.getEnv().addReporter(new SpecReporter({
             spec: {
@@ -19,8 +20,10 @@ exports.config = {
             browserName: 'chrome',
             browserVersion: 'latest',
             platformName: 'Windows 10',
-            chromeOptions : { 'w3c' : true },
+            'goog:chromeOptions' : { 'w3c' : true },
             'sauce:options': {
+                username: process.env.SAUCE_USERNAME,
+                accessKey: process.env.SAUCE_ACCESS_KEY,
                 seleniumVersion: '3.141.59',
                 name: 'chrome-protractor-test',
                 build: 'Sample Protractor Tests'
@@ -32,16 +35,16 @@ exports.config = {
             browserVersion: 'latest',
             platformName: 'Windows 10',
             'sauce:options': {
+                username: process.env.SAUCE_USERNAME,
+                accessKey: process.env.SAUCE_ACCESS_KEY,
                 seleniumVersion: '3.141.59',
-                name: 'chrome-protractor-test',
+                name: 'firefox-protractor-test',
                 build: 'Sample Protractor Tests'
             },
             shardTestFiles: true,
             maxInstances: 25
     }],
-
     baseUrl: 'https://www.saucedemo.com',
-
     SELENIUM_PROMISE_MANAGER: false,
 
     onComplete: async () => {
