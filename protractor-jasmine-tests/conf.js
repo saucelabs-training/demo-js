@@ -34,8 +34,6 @@ exports.config = {
 			browserVersion: 'latest',
 			platformName: 'Windows 10',
 			'sauce:options': {
-				username: process.env.SAUCE_USERNAME,
-				accessKey: process.env.SAUCE_ACCESS_KEY,
 				seleniumVersion: '3.141.59',
 				name: 'firefox-protractor-test',
 				build: 'Sample Protractor Tests'
