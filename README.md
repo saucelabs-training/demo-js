@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/saucelabs-training/demo-js.svg?style=svg)](https://circleci.com/gh/saucelabs-training/demo-js)
 
-This directory contains example scripts for running automated Selenium tests on Sauce Labs using **NodeJS**. You can use these scripts to test your Sauce Labs authentication credentials, setup of your automated testing environment, and try out Sauce Labs features.
+The demo scripts in [this repository](https://github.com/saucelabs-training/demo-js) allow you to run simple automated tests in order to validate your JavaScript Selenium environment and your [saucelabs.com](https://app.saucelabs.com/login) account credentials.
 > ##### For Demonstration Purposes Only
 
 > The code in these scripts is provided on an "AS-IS" basis without warranty of any kind, either express or implied, including without limitation any implied warranties of condition, uninterrupted use, merchantability, fitness for a particular purpose, or non-infringement. These scripts are provided for educational and demonstration purposes only, and should not be used in production. Issues regarding these scripts should be submitted through GitHub. These scripts are maintained by the Technical Services team at Sauce Labs.
