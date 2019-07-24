@@ -11,7 +11,7 @@ let username = process.env.SAUCE_USERNAME,
     tags = ["sauceDemo", "async", "node", "webdriverjs" ],
     driver;
 
-describe ('async/await tests', function() {
+    describe ('async/await tests', function() {
     this.timeout(40000);
     beforeEach(async function () {
         driver = await new webdriver.Builder().withCapabilities({
@@ -27,8 +27,7 @@ describe ('async/await tests', function() {
                 'name': 'js-async/await: ' + this.currentTest.title,
                 'maxDuration': 3600,
                 'idleTimeout': 1000,
-                'tags': tags,
-                'public': 'public'
+                'tags': tags
             }}).usingServer("https://ondemand.saucelabs.com/wd/hub")
             .build();
         await driver.getSession().then(function (sessionid) {

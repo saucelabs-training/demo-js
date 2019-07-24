@@ -24,8 +24,7 @@ exports.config = {
 			'sauce:options': {
 				seleniumVersion: '3.141.59',
 				name: 'chrome-protractor-test',
-				build: 'Sample Protractor Tests',
-				public: 'public'
+				build: 'Sample Protractor Tests'
 			},
 			shardTestFiles: true,
 			maxInstances: 25

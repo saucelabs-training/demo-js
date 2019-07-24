@@ -29,8 +29,7 @@ describe('Instant Sauce Test Module 3', function() {
                 'username': username,
                 'accessKey': accessKey,
                 'build': 'Onboarding Sample App - NodeJS + Jasmine',
-                'name': '3-cross-browser',
-                'public': 'public'
+                'name': '3-cross-browser'
             }
         }).usingServer("https://ondemand.saucelabs.com/wd/hub").build();
 
