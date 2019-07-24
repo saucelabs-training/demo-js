@@ -27,7 +27,8 @@ describe ('headless firefox test', function() {
                 'name': 'headless-firefox-test-js',
                 'maxDuration': 3600,
                 'idleTimeout': 1000,
-                'tags': tags
+                'tags': tags,
+                'public': 'public'
             }}).usingServer("https://ondemand.us-east-1.saucelabs.com/wd/hub")
             .build();
         await driver.getSession().then(function (sessionid) {
