@@ -27,7 +27,8 @@ describe ('async/await tests', function() {
                 'name': 'js-async/await: ' + this.currentTest.title,
                 'maxDuration': 3600,
                 'idleTimeout': 1000,
-                'tags': tags
+                'tags': tags,
+                'public': 'public'
             }}).usingServer("https://ondemand.saucelabs.com/wd/hub")
             .build();
         await driver.getSession().then(function (sessionid) {

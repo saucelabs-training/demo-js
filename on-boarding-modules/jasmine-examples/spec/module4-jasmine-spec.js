@@ -28,7 +28,8 @@ describe('Instant Sauce Test Module 4', function() {
                 */
                 'maxDuration': 3600,
                 'idleTimeout': 1000,
-                'tags': tags
+                'tags': tags,
+                'public': 'public'
             }
         }).usingServer("https://ondemand.saucelabs.com/wd/hub").build();
 
