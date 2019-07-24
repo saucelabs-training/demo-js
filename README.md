@@ -1,6 +1,6 @@
 # JavaScript Selenium Examples
 
-[![CircleCI](https://circleci.com/gh/saucelabs-training/demo-js.svg?style=svg)](https://circleci.com/gh/saucelabs-training/demo-js)
+[![CircleCI](https://circleci.com/gh/saucelabs-training/demo-js.svg?style=svg)](https://circleci.com/gh/saucelabs-training/demo-js) [![Sauce Test Status](https://saucelabs.com/buildstatus/jtack4970)](https://app.saucelabs.com/u/jtack4970)
 
 The demo scripts in [this repository](https://github.com/saucelabs-training/demo-js) allow you to run simple automated tests in order to validate your JavaScript Selenium environment and your [saucelabs.com](https://app.saucelabs.com/login) account credentials.
 > ##### For Demonstration Purposes Only
