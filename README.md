@@ -14,10 +14,10 @@ The demo scripts in [this repository](https://github.com/saucelabs-training/demo
 
 In order to run these scripts you must complete the following prerequisite steps:
 
-* Install [Git](~/prerequisites.md#install-git)
-* Install [NPM/Node](~/prerequisites.md#install-npm-and-nodejs)
-* Install [a Framework](~/prerequisites.md#install-a-test-framework)
-* (Optional) Install an [IDE](~/prerequisites.md#install-an-ide)
+* Install [Git](prerequisites.md#install-git)
+* Install [NPM/Node](prerequisites.md#install-npm-and-nodejs)
+* Install [a Framework](prerequisites.md#install-a-test-framework)
+* (Optional) Install an [IDE](prerequisites.md#install-an-ide)
 
 <br />
 
