@@ -33,11 +33,11 @@ jobs:
           command: |
             cd sc-*
             bin/sc --pidfile /tmp/sc.pid1 -u ${SAUCE_USERNAME} -k ${SAUCE_ACCESS_KEY} -i demo-js-tunnel --no-remove-colliding-tunnels --se-port 4445
-      - run:
-          name: "Run Node Tests"
-          command: |
-            while ! lsof -i:4445 -t; do sleep 3; done
-            npm test
+#      - run:
+#          name: "Run Node Tests"
+#          command: |
+#            while ! lsof -i:4445 -t; do sleep 3; done
+#            npm test
       - run:
           name: "Run Mocha Tests"
           command: |
@@ -54,6 +54,12 @@ jobs:
           name: "Run Protractor Tests"
           command: |
             cd protractor-jasmine-tests
+            npm install
+            npm test
+      - run:
+          name: "Run Appium Tests"
+          command: |
+            cd appium-examples
             npm install
             npm test
       - run:
