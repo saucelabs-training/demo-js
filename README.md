@@ -50,7 +50,7 @@ In order to run these scripts you must complete the following prerequisite steps
     export SAUCE_USERNAME=********
     export SAUCE_ACCESS_KEY=*******
     ```
-
+   
 2. Navigate to the desired directory (e.g.):
     ```
     cd mocha-chai-tests
