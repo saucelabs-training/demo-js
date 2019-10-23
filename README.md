@@ -43,12 +43,14 @@ In order to run these scripts you must complete the following prerequisite steps
 ### Run A Sample Test
 
 
-1. Clone the Repository:
-
+1. Clone the Repository and set your [Sauce Labs Credentials](https://app.saucelabs.com/user-settings):
+    
     ```
     git clone https://github.com/saucelabs-training/demo-js.git
+    export SAUCE_USERNAME=********
+    export SAUCE_ACCESS_KEY=*******
     ```
-
+   
 2. Navigate to the desired directory (e.g.):
     ```
     cd mocha-chai-tests
