@@ -44,7 +44,7 @@ In order to run these scripts you must complete the following prerequisite steps
 
 
 1. Clone the Repository and set your [Sauce Labs Credentials](https://app.saucelabs.com/user-settings):
-    
+
     ```
     git clone https://github.com/saucelabs-training/demo-js.git
     export SAUCE_USERNAME=********
