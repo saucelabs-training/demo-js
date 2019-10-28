@@ -1,0 +1,22 @@
+{
+  "name": "webdriverio-tests",
+  "version": "0.0.1",
+  "description": "webdriverio-tests",
+  "main": "",
+  "scripts": {
+    "test": "wdio wdio.conf.js"
+  },
+  "private": true,
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@wdio/cli": "^5.15.4"
+  },
+  "devDependencies": {
+    "@wdio/local-runner": "^5.15.4",
+    "@wdio/mocha-framework": "^5.15.1",
+    "@wdio/sauce-service": "^5.14.0",
+    "@wdio/spec-reporter": "^5.15.2",
+    "@wdio/sync": "^5.15.1"
+  }
+}
