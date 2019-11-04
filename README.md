@@ -22,7 +22,7 @@ In order to run these scripts you must complete the following prerequisite steps
 >   #### Try Demo in Gitpod
 >   Select the button below to try this demo in [Gitpod](https://www.gitpod.io/)
 >
->  [![Open in Gitpod](https://github.com/saucelabs-training/demo-java/blob/master/assets/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/saucelabs-training/demo-js)
+>  [![Open in Gitpod](https://github.com/saucelabs-training/demo-js/blob/master/open-in-gitpod.png)](https://gitpod.io/#https://github.com/saucelabs-training/demo-js)
 >
 >   After the gitpod session launches, navigate to the terminal and run the following commands to save your [Sauce Labs Credentials](https://app.saucelabs.com/user-settings) to gitpod as environment variables:
 >   ```
