@@ -1,12 +1,12 @@
 {
-  "name": "mocha-webdriverio",
+  "name": "mocha-wdio4",
   "version": "1.0.0",
   "license": "MIT",
-  "description": "Parallel tests with Mocha and Webdriverio",
+  "description": "Parallel tests with Mocha and WebdriverIO",
   "main": "",
   "repository": {
     "type": "git",
-    "url": "git@github.com:saucelabs-sample-test-frameworks/JS-Mocha-WebdriverIO.git"
+    "url": "git@github.com:saucelabs-training/demo-js/tree/master/appium-examples/wdio4-mocha"
   },
   "scripts": {
     "test": "./node_modules/.bin/wdio wdio.conf.js"
