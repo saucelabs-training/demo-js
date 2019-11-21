@@ -1,20 +1,27 @@
 /**
  * Created by titusfortner on 11/23/16.
- * Modified by jamestacker on 11/14/19.
  */
-import Page from './page'
+var Page = require('./page');
 
-class HomePage extends Page {
-    /* Define Element */
-    get graphicsTab () { return $('Graphics'); }
-    /* Define Page methods */
-    open() {
-        super.open('Graphics');
+var HomePage = Object.create(Page, {
+    graphicsTab: {
+        get: function () {
+            return browser.$(`~Graphics`);
+        }
+    },
+
+    click: {
+        value: function (tabName) {
+            if (tabName === "Graphics") {
+                this.graphicsTab.click();
+
+            } else {
+                throwError("Not implemented");
+            }
+
+        }
     }
 
-    submit() {
-        this.graphicsTab.click();
-    }
-}
+});
 
-export default new HomePage();
+module.exports = HomePage;

@@ -1,9 +1,11 @@
 /**
  * Created by titusfortner on 11/23/16.
- * Modified by jamestacker on 11/14/19.
  */
-export default class Page {
-    open(path) {
-        browser.url('/' + path)
-    }
+function Page () {
 }
+
+Page.prototype.open = function (path) {
+    browser.url('/' + path)
+};
+
+module.exports = new Page();
