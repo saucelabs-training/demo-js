@@ -57,9 +57,15 @@ jobs:
             npm install
             npm test
       - run:
-          name: "Run Appium Tests"
+          name: "Run WDIO4 Mocha Tests"
           command: |
-            cd appium-examples
+            cd appium-examples/wdio4/mocha-framework
+            npm install
+            npm test
+      - run:
+          name: "Run WDIO5 Mocha Tests"
+          command: |
+            cd appium-examples/wdio5/mocha-framework
             npm install
             npm test
       - run:
