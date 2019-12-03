@@ -1,0 +1,17 @@
+{
+  "name": "headless-examples-using-sauce-labs",
+  "version": "0.0.1",
+  "description": "Mocha + Chai Framework Tests with Sauce Labs Headless",
+  "main": "",
+  "scripts": {
+    "test": "mocha"
+  },
+  "private": true,
+  "dependencies": {
+    "debug": "^4.1.1",
+    "http-errors": "^1.7.1",
+    "mocha": "^5.2.0",
+    "chai": "^4.2.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}

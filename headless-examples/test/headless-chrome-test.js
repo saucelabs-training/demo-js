@@ -1,3 +1,4 @@
+/* This code sample uses the headless feature of Sauce Labs, this feature is for invoiced customers only */
 const promise = require('selenium-webdriver');
 let expect = require('chai').expect;
 let webdriver = require('selenium-webdriver');
@@ -12,19 +13,20 @@ let username = process.env.SAUCE_USERNAME,
     tags = ["sauceDemo", "async", "node", "webdriverjs", "headless" ],
     driver;
 
-describe ('headless firefox test', function() {
-    this.timeout(50000);
+describe ('headless chrome test', function() {
+    this.timeout(40000);
     beforeEach(async function () {
         driver = await new webdriver.Builder().withCapabilities({
-            'browserName': 'firefox',
+            'browserName': 'chrome',
             'platformName': 'linux',
             'browserVersion': 'latest',
+            'goog:chromeOptions' : { 'w3c' : true },
             'sauce:options': {
                 'username': username,
                 'accessKey': accessKey,
                 'seleniumVersion': '3.141.59',
                 'build': 'Sample Headless Tests',
-                'name': 'headless-firefox-test-js',
+                'name': 'headless-chrome-test-js',
                 'maxDuration': 3600,
                 'idleTimeout': 1000,
                 'tags': tags

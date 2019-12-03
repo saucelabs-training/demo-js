@@ -1,7 +1,9 @@
 let webdriver = require('selenium-webdriver'),
-    /* Change the username and accessKey to your Saucelabs.com credentials */
-    username = "SAUCE_USERNAME",
-    accessKey = "SAUCE_ACCESS_KEY",
+    /* Change the username and accessKey to your Saucelabs.com credentials
+     username = "SAUCE_USERNAME",
+     accessKey = "SAUCE_ACCESS_KEY",*/
+    username = process.env.SAUCE_USERNAME,
+    accessKey = process.env.SAUCE_ACCESS_KEY,
     /* Base URL sets the target test application */
     baseUrl = "https://www.saucedemo.com",
     /* driver instantiates via callback */
