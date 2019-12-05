@@ -1,9 +1,11 @@
 let webdriver = require('selenium-webdriver'),
     chai = require('chai'),
     assert = chai.assert,
-    /* Change the username and accessKey to your Saucelabs.com credentials */
+    /* Change the username and accessKey to your Saucelabs.com credentials
     username = "SAUCE_USERNAME",
-    accessKey = "SAUCE_ACCESS_KEY",
+    accessKey = "SAUCE_ACCESS_KEY",*/
+    username = process.env.SAUCE_USERNAME,
+    accessKey = process.env.SAUCE_ACCESS_KEY,
     /* Base URL sets the target test application */
     baseUrl = "https://www.saucedemo.com",
     /* driver instantiates via callback */

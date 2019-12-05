@@ -69,6 +69,18 @@ jobs:
             npm install
             npm test
       - run:
+          name: "Run Headless Tests"
+          command: |
+            cd headless-examples
+            npm install
+            npm test
+      - run:
+          name: "Run W3C Examples"
+          command: |
+            cd w3c-example
+            npm install
+            npm test
+      - run:
           name: "Shut Down Sauce Connect Tunnel"
           command: |
             kill -9 `cat /tmp/sc.pid1`
