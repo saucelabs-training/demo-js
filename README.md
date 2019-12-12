@@ -13,7 +13,7 @@ The demo scripts in [this repository](https://github.com/saucelabs-training/demo
 
 ## Solution Outline
 * [Tests that can help you quickly and easily get started with Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/on-boarding-modules)
-* [W3C examples using Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/w3c-example/test/async-await.js)
+* [W3C examples using Sauce Labs](https://github.com/saucelabs-training/demo-js/tree/master/w3c-example)
 * [Tests that use the Headless feature of Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/headless-examples) (not included with basic tier or free trial customers)
 * [Mobile Examples using Appium on Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/appium-examples)
 
