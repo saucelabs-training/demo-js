@@ -60,7 +60,7 @@ In order to run these scripts you must complete the following prerequisite steps
    
 2. Navigate to the desired directory (e.g.):
     ```
-    cd mocha-chai-tests
+    cd protractor-jasmine-tests
     ```
 3. Resolve Dependencies (via `package.json`)
     
