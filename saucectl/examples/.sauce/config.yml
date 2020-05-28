@@ -1,0 +1,14 @@
+
+apiVersion: v1
+metadata:
+  name: Feature XYZ
+  tags:
+    - e2e
+    - release team
+    - other tag
+  build: Release $CI_COMMIT_SHORT_SHA
+files:
+  - ./tests/example.test.js
+image:
+  base: saucelabs/sauce-puppeteer
+  version: 3.0.4
