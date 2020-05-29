@@ -1,0 +1,21 @@
+{
+  "name": "jest-puppeteer-examples",
+  "version": "1.0.0",
+  "description": "This folder contains a simple set up for Jest and Puppeteer.",
+  "main": "index.js",
+  "jest": {
+    "preset": "jest-puppeteer"
+  },
+  "scripts": {
+    "test.local": "jest --runInBand --verbose",
+    "test.local.headfull": "HEADLESS=false jest --runInBand --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.0.1",
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^3.0.4"
+  }
+}

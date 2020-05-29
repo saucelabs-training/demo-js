@@ -14,6 +14,8 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
 - [TestCafe](./testcafe)
 - [NightWatch](./nightwatch)
 - [Protractor](./protractor)
+- [Jest-Puppeteer](./jest-puppeteer)
+- [Playwright with Jest](./jest-playwright)
 - more to follow
 
 The above mentioned frameworks include some best practices.
