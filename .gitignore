@@ -27,3 +27,4 @@ package-lock.json
 # Extra folders
 .tmp/
 tests_output/
+**/apps

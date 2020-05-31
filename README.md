@@ -25,6 +25,7 @@ The above mentioned frameworks include some best practices.
 * [W3C examples using Sauce Labs](https://github.com/saucelabs-training/demo-js/tree/master/w3c-example)
 * [Tests that use the Headless feature of Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/headless-examples) (not included with basic tier or free trial customers)
 * [Mobile Examples using Appium on Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/appium-examples)
+* [Using Biometric login on Sauce Labs](./biometric-login)
 
 ## Prerequisites
 In order to run these scripts you must complete the following prerequisite steps:
