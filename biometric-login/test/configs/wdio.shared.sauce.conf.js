@@ -3,7 +3,7 @@ const {config} = require('./wdio.shared.conf');
 // ========
 // Services
 // ========
-config.services = config.services.concat([['sauce'],]);
+config.services = config.services.concat([['sauce']]);
 
 // =================
 // Service Providers

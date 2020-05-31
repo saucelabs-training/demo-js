@@ -19,6 +19,12 @@ class LoginScreen extends Base {
     }
 
     get iosRetryBiometry() {
+        // Sauce Labs (Legacy) RDC mocks iOS in a different then the normal iOS mocking,
+        // so it also needs to be treated differently
+        if (process.env.RDC) {
+            return $('~Cancel');
+        }
+
         return $('~Try Again');
     }
 
@@ -48,11 +54,14 @@ class LoginScreen extends Base {
     /**
      * Verify that the biometric login failed
      *
-     * return {boolean}
+     * return {Promise<boolean>}
      */
     isBiometryAlertShown() {
         if (driver.isIOS) {
-            return this.iosRetryBiometry.waitForDisplayed();
+            return this.iosRetryBiometry.waitForDisplayed({
+                // On RDC the alert will not be shown again, so we need to sue the reverse here
+                reverse: process.env.RDC
+            });
         }
 
         return this.androidBiometryAlert.waitForDisplayed();
@@ -64,20 +73,22 @@ class LoginScreen extends Base {
      * @param {boolean} successful
      */
     submitIosBiometricLogin(successful) {
-        // Check if biometric usage is  allowed
-        if (!driver.config.services.includes('sauce')) {
-            this.allowIosBiometricUsage();
-
-            return driver.execute(
-                'mobile:sendBiometricMatch',
-                {
-                    type: this.isFaceId() ? 'faceId' : 'touchId',
-                    match: successful,
-                },
-            );
+        // Sauce Labs (Legacy) RDC mocks iOS in a different then the normal iOS mocking,
+        // so it also needs to be treated differently
+        if (process.env.RDC) {
+            return driver.touchId(successful);
         }
 
-        return driver.touchId(successful);
+        this.allowIosBiometricUsage();
+
+        return driver.execute(
+            'mobile:sendBiometricMatch',
+            {
+                type: this.isFaceId() ? 'faceId' : 'touchId',
+                match: successful,
+            },
+        );
+
     }
 
     /**
