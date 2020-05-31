@@ -1,4 +1,5 @@
 import Base from './Base';
+import {DEFAULT_PIN, INCORRECT_PIN} from '../configs/constants';
 
 class LoginScreen extends Base {
     constructor() {
@@ -22,7 +23,7 @@ class LoginScreen extends Base {
     }
 
     get androidBiometryAlert() {
-        return $('*//*[@resource-id="com.swaglabsmobileapp:id/fingerprint_icon"]');
+        return $('android=new UiSelector().textContains("Please sign in")');
     }
 
     get faceRecognition() {
@@ -32,7 +33,7 @@ class LoginScreen extends Base {
     /**
      * Submit biometric login
      *
-     * @param {boolean|number} successful
+     * @param {boolean} successful
      */
     submitBiometricLogin(successful) {
         // Touch / Face ID needs to be triggered differently on iOS
@@ -41,7 +42,7 @@ class LoginScreen extends Base {
             return this.submitIosBiometricLogin(successful);
         }
 
-        return this.submitAndroidBiometricLogin(successful ? 1234 : 4321);
+        return this.submitAndroidBiometricLogin(successful ? DEFAULT_PIN : INCORRECT_PIN);
     }
 
     /**
@@ -53,9 +54,6 @@ class LoginScreen extends Base {
         if (driver.isIOS) {
             return this.iosRetryBiometry.waitForDisplayed();
         }
-
-        // We need to pause here to make sure the biometric log in has been executed
-        driver.pause(1000);
 
         return this.androidBiometryAlert.waitForDisplayed();
     }

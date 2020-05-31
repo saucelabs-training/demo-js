@@ -6,6 +6,9 @@
   "scripts": {
     "test.local.android.emulator": "wdio test/configs/wdio.android.local.emu.conf.js",
     "test.local.ios.simulator": "wdio test/configs/wdio.ios.local.sim.conf.js",
+    "test.sauce.android.emulator.us": "wdio test/configs/wdio.android.sauce.emu.conf.js",
+    "test.sauce.android.emulator.eu": "REGION=eu wdio test/configs/wdio.android.sauce.emu.conf.js",
+    "test.sauce.ios.simulator.us": "wdio test/configs/wdio.ios.sauce.sim.conf.js",
     "test.sauce.ios.simulator.eu": "REGION=eu wdio test/configs/wdio.ios.sauce.sim.conf.js"
   },
   "keywords": [],

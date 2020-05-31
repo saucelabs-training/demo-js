@@ -1,4 +1,5 @@
-const {config} = require('./wdio.shared.sauce.conf');
+const {join} = require('path');
+const {config} = require('./wdio.shared.local.appium.conf');
 
 // ============
 // Capabilities
@@ -8,16 +9,18 @@ const {config} = require('./wdio.shared.sauce.conf');
 config.capabilities = [
     {
         // The defaults you need to have in your config
-        deviceName: 'iPhone 11 Simulator',
-        platformName: 'iOS',
-        platformVersion: '13.2',
+        automationName: 'UiAutomator2',
+        deviceName: 'Pixel_3_10.0',
+        platformName: 'Android',
+        platformVersion: '10.0',
         orientation: 'PORTRAIT',
-        // The path to the app
-        app: 'sauce-storage:sample-app-ios-sim.zip',
+        app: join(process.cwd(), './apps/Android.SauceLabs.Mobile.Sample.app.2.3.0.apk'),
+        appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
         noReset: true,
         newCommandTimeout: 240,
+        maxInstances: 1,
         // Always default the language to a language you prefer so you know the app language is always as expected
         language: 'en',
         locale: 'en',
