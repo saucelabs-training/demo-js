@@ -8,7 +8,9 @@
     "test.legacy.rdc.ios.eu": "REGION=eu RDC=true wdio test/configs/wdio.ios.legacy.rdc.conf.js",
     "test.legacy.rdc.android.us": "RDC=true wdio test/configs/wdio.android.legacy.rdc.conf.js",
     "test.legacy.rdc.android.eu": "REGION=eu RDC=true wdio test/configs/wdio.android.legacy.rdc.conf.js",
-    "test.sauce.rdc.ios.us": "RDC=true wdio test/configs/wdio.ios.sauce.real.conf.js",
+    "test.sauce.rdc.android.us": "wdio test/configs/wdio.android.sauce.real.conf.js",
+    "test.sauce.rdc.android.eu": "REGION=eu RDC=true wdio test/configs/wdio.android.sauce.real.conf.js",
+    "test.sauce.rdc.ios.us": "wdio test/configs/wdio.ios.sauce.real.conf.js",
     "test.sauce.rdc.ios.eu": "REGION=eu RDC=true wdio test/configs/wdio.ios.sauce.real.conf.js"
   },
   "keywords": [],

@@ -12,9 +12,9 @@ config.user = process.env.SAUCE_USERNAME;
 config.key = process.env.SAUCE_ACCESS_KEY;
 config.region = process.env.REGION || 'us';
 
-// ====
-// Hack
-// ====
+// ==========
+// Workaround
+// ==========
 config.transformResponse = (Response) => {
     /**
      * Currently the response that is given back by RDC is not a valid W3C response, it needs to return

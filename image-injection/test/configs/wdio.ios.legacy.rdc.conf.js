@@ -64,7 +64,7 @@ config.capabilities = [
     },
     // iOS 11
     {
-        // Give a phone with iOS 12
+        // Give a phone with iOS 11
         platformName: 'iOS',
         platformVersion: '11',
         phoneOnly: true,

@@ -1,5 +1,5 @@
 const {config} = require('./wdio.shared.sauce.conf');
-const testName = `iOS Biometric login real device Sauce UI: ${new Date().getTime()}`;
+const testName = `Android image injection real device Sauce UI: ${new Date().getTime()}`;
 
 // ============
 // Capabilities
@@ -8,12 +8,13 @@ const testName = `iOS Biometric login real device Sauce UI: ${new Date().getTime
 // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
 config.capabilities = [
     {
-        // Just give an iPhone with FaceID
-        deviceName: 'iPhone XS',
-        platformName: 'iOS',
+        deviceName: 'Samsung Galaxy S10',
+        platformName: 'Android',
         orientation: 'PORTRAIT',
+        automationName: 'UiAutomator2',
         // The path to the app
-        app: 'sauce-storage:sample-app-ios-real.ipa',
+        app: 'sauce-storage:sample-app-android.apk',
+        appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
         noReset: true,
@@ -23,8 +24,8 @@ config.capabilities = [
         locale: 'en',
         // Add a name to the test
         name: testName,
-        // Enable touchID on RDC
-        allowTouchIdEnroll: true,
+        // Enable image-injection on RDC
+        sauceLabsImageInjectionEnabled: true,
     },
 ];
 
