@@ -1,10 +1,12 @@
-# Using image injection on Sauce Labs
-This folder contains examples for using Biometric login for:
+# Using image injection on Sauce Labs Real Devices
+This folder contains examples for using image injection on real devices for:
 
 - [Android real devices on the new Sauce Labs UI](#run-tests-on-sauce-labs-android-real-devices-in-the-new-sauce-labs-ui)
 - [Android real devices on the Legacy RDC cloud](#run-tests-on-sauce-labs-android-real-devices-in-the-legacy-rdc)
 - [iOS real devices on the new Sauce Labs UI](#run-tests-on-sauce-labs-ios-real-devices-in-the-new-sauce-labs-ui)
 - [iOS real devices on the Legacy RDC cloud](#run-tests-on-sauce-labs-ios-real-devices-in-the-legacy-rdc)
+
+> NOTE: this feature is **NOT** supported for emulators and simulators!!
 
 ## Install dependencies
 You can install all dependencies by running the following command
