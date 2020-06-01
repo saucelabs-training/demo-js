@@ -26,6 +26,7 @@ The above mentioned frameworks include some best practices.
 * [Tests that use the Headless feature of Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/headless-examples) (not included with basic tier or free trial customers)
 * [Mobile Examples using Appium on Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/appium-examples)
 * [Using Biometric login on Sauce Labs](./biometric-login)
+* [Using Image Injection on Sauce Labs Real Devices](./image-injection)
 
 ## Prerequisites
 In order to run these scripts you must complete the following prerequisite steps:

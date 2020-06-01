@@ -3,8 +3,8 @@ This folder contains examples for using Biometric login for:
 
 - [iOS local simulators](#local-ios-simulator)
 - [iOS simulators on the Sauce Labs Simulator Cloud](#sauce-labs-ios-simulator)
-- [iOS real devices on the Legacy RDC cloud](#run-tests-on-sauce-labs-ios-real-devices-in-the-legacy-rdc)
 - [iOS real devices on the new Sauce Labs UI](#run-tests-on-sauce-labs-ios-real-devices-in-the-new-sauce-labs-ui)
+- [iOS real devices on the Legacy RDC cloud](#run-tests-on-sauce-labs-ios-real-devices-in-the-legacy-rdc)
 - [Android local emulators](#local-android-emulator)
 - [Android emulators on the Sauce Labs Emulator Cloud](#sauce-labs-android-emulator)
 
@@ -126,6 +126,19 @@ The tests will be executed on:
 
 See this [config](./test/configs/wdio.android.sauce.emu.conf.js)-file for more information.
 
+## Run tests on Sauce Labs iOS real devices in the New Sauce Labs UI
+If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs UI** then you can run the iOS test with
+
+    // If using the US DC
+    npm run test.sauce.rdc.ios.us
+    
+    // If using the EU DC
+    npm run test.sauce.rdc.ios.eu
+    
+The tests will be executed for FaceID.
+
+See this [config](./test/configs/wdio.ios.sauce.real.conf.js)-file for more information.
+
 ## Run tests on Sauce Labs iOS real devices in the Legacy RDC
 If you want to run the tests on Sauce Labs real devices in the **Legacy RDC** then you can run the iOS test with
 
@@ -138,16 +151,3 @@ If you want to run the tests on Sauce Labs real devices in the **Legacy RDC** th
 The tests will be executed for **AND** TouchID **AND** FaceID.
 
 See this [config](./test/configs/wdio.ios.legacy.rdc.conf.js)-file for more information.
-
-## Run tests on Sauce Labs iOS real devices in the New Sauce Labs UI
-If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs UI** then you can run the iOS test with
-
-    // If using the US DC
-    npm run test.legacy.rdc.ios.us
-    
-    // If using the EU DC
-    npm run test.legacy.rdc.ios.eu
-    
-The tests will be executed for **AND** TouchID **AND** FaceID.
-
-See this [config](./test/configs/wdio.ios.sauce.real.conf.js)-file for more information.
