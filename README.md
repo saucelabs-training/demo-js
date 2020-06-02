@@ -62,4 +62,4 @@ In order to run these scripts you must complete the following prerequisite steps
     export SAUCE_ACCESS_KEY=*******
     ```
    
-2. Please check all README.md files in all folder to see what you need to do to get the tests running
+2. Please check all README.md files in each framework example to see what you need to do to get the tests running.
