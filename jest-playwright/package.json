@@ -1,0 +1,33 @@
+{
+  "name": "jest-playwright-examples",
+  "version": "1.0.0",
+  "description": "This folder contains a simple set up for Jest and Playwright.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test.local": "jest --verbose",
+    "test.local.headfull": "HEADLESS=false jest --verbose"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest-playwright": "^0.1.1",
+    "eslint-plugin-prettier": "^3.1.3",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "jest-playwright-preset": "^0.2.2",
+    "playwright": "^1.0.2",
+    "playwright-chromium": "^1.0.2",
+    "prettier": "^2.0.5"
+  }
+}

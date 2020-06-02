@@ -1,4 +1,8 @@
 # Log files
+logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 *.log
 
 # DS_Store
@@ -13,8 +17,14 @@ hs_err_pid*
 # Package Lock
 package-lock.json
 
-# remove .idea files
+# Optional npm cache directory
+**/.npm
+
+# files
+**/.DS_Store
 **/.idea
 
-# folders
+# Extra folders
+.tmp/
+tests_output/
 **/apps

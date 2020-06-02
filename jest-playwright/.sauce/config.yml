@@ -1,0 +1,17 @@
+
+apiVersion: v1
+metadata:
+  name: Playwright and Jest Sauce Labs
+  tags:
+    - e2e
+    - release team
+    - other tag
+  build: Release $CI_COMMIT_SHORT_SHA
+files:
+  - ./test/specs/*.js
+  - ./test/page-objects/*.js
+  - ./test/helpers/*.js
+  - ./test/e2eConstants.js
+image:
+  base: saucelabs/sauce-playwright
+  version: 1.0.0

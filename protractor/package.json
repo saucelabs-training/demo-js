@@ -1,0 +1,30 @@
+{
+  "name": "protractor-saucedemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint tests/*",
+    "pretest.local": "npm run webdriver-update",
+    "test.local": "protractor tests/configs/protractor.local.chrome.conf.js",
+    "test.saucelabs.eu": "env DATE=\"$(date)\" REGION=eu protractor tests/configs/protractor.saucelabs.conf.js",
+    "test.saucelabs.us": "env DATE=\"$(date)\" protractor tests/configs/protractor.saucelabs.conf.js",
+    "webdriver-update": "webdriver-manager update --standalone=false --gecko=false"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-private-methods": "^7.8.3",
+    "@babel/register": "^7.9.0",
+    "babel-eslint": "^11.0.0-beta.2",
+    "eslint": "^6.8.0",
+    "jasmine": "^3.5.0",
+    "jasmine-spec-reporter": "^5.0.1",
+    "protractor": "^5.4.4"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.9.5"
+  }
+}

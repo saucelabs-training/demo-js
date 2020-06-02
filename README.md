@@ -2,14 +2,23 @@
 
 [![CircleCI](https://circleci.com/gh/saucelabs-training/demo-js.svg?style=svg)](https://circleci.com/gh/saucelabs-training/demo-js)
 
-The demo scripts in [this repository](https://github.com/saucelabs-training/demo-js) allow you to run simple automated tests in order to validate your JavaScript test environment and your [saucelabs.com](https://app.saucelabs.com/login) account credentials.
-> ###### Disclaimer
->
-> The code in these scripts is provided on an "AS-IS" basis without warranty of any kind, either express or implied, including without limitation any implied warranties of condition, uninterrupted use, merchantability, fitness for a particular purpose, or non-infringement. These scripts are provided for educational and demonstration purposes only, and should not be used in production. Issues regarding these scripts should be submitted through GitHub. These scripts are maintained by the Technical Services team at Sauce Labs.
->
->Some examples in this repository, such as `appium-examples` and `headless-examples`, may require a different account tier beyond free trial. Please contact the [Sauce Labs Sales Team](https://saucelabs.com/contact) for support and information.
+This repository will hold multiple NodeJS based automation frameworks and examples which will help you run tests with NodeJS based automation frameworks locally and or in Sauce Labs.
 
-<br />
+> **DISCLAIMER**\
+> The code in these scripts is provided on an "AS-IS" basis without warranty of any kind, either express or implied, including without limitation any implied warranties of condition, uninterrupted use, merchantability, fitness for a particular purpose, or non-infringement.
+> These scripts are provided for educational and demonstration purposes only, and should not be used in production. Issues regarding these scripts should be submitted through GitHub. These scripts are maintained by the Technical Services team at Sauce Labs.\
+> Some examples in this repository, such as `appium-examples` and `headless-examples`, may require a different account tier beyond free trial. Please contact the [Sauce Labs Sales Team](https://saucelabs.com/contact) for support and information.
+
+## Framework examples
+- [WebdriverIO V6 with Jasmine](./webdriverio-v6)
+- [TestCafe](./testcafe)
+- [NightWatch](./nightwatch)
+- [Protractor](./protractor)
+- [Jest-Puppeteer](./jest-puppeteer)
+- [Playwright with Jest](./jest-playwright)
+- more to follow
+
+The above mentioned frameworks include some best practices.
 
 ## Solution Outline
 * [Tests that can help you quickly and easily get started with Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/on-boarding-modules)
@@ -17,16 +26,14 @@ The demo scripts in [this repository](https://github.com/saucelabs-training/demo
 * [Tests that use the Headless feature of Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/headless-examples) (not included with basic tier or free trial customers)
 * [Mobile Examples using Appium on Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/appium-examples)
 * [Using Biometric login on Sauce Labs](./biometric-login)
-* [Using image injection on Sauce Labs Real Devices](./image-injection)
+* [Using Image Injection on Sauce Labs Real Devices](./image-injection)
 
 ## Prerequisites
-
 In order to run these scripts you must complete the following prerequisite steps:
 
-* Install [Git](prerequisites.md#install-git)
-* Install [NPM/Node](prerequisites.md#install-npm-and-nodejs)
-* Install [a Framework](prerequisites.md#install-a-test-framework)
-* (Optional) Install an [IDE](prerequisites.md#install-an-ide)
+* Install [Git](./prerequisites.md#install-git)
+* Install [Node/NPM](./prerequisites.md#install-and-nodejs-and-npm)
+* (Optional) Install an [IDE](./prerequisites.md#install-an-ide)
 
 >   #### Try Demo in Gitpod
 >   Select the button below to try this demo in [Gitpod](https://www.gitpod.io/)
@@ -46,12 +53,7 @@ In order to run these scripts you must complete the following prerequisite steps
 >  
 >   For more information consult the [gitpod documentation](https://www.gitpod.io/docs/47_environment_variables/)
 
-
-<br />
-
 ### Run A Sample Test
-
-
 1. Clone the Repository and set your [Sauce Labs Credentials](https://app.saucelabs.com/user-settings):
 
     ```
@@ -60,30 +62,4 @@ In order to run these scripts you must complete the following prerequisite steps
     export SAUCE_ACCESS_KEY=*******
     ```
    
-2. Navigate to the desired directory (e.g.):
-    ```
-    cd protractor-jasmine-tests
-    ```
-3. Resolve Dependencies (via `package.json`)
-    
-    ```
-    npm install
-    ```
-4. Run the Test
-    
-    ```
-    npm test
-    ```
-    You should see the following output in the console:
-    ```
-    > demo-js@0.0.1 test /path/to/demo-js
-    > node on-boarding-modules/node-examples/module2-test.js
-    
-    Test Passed!
-
-    ```
-5. Visit the [saucelabs.com automated build page](https://app.saucelabs.com/dashboard/builds) and select the build `Onboarding Sample App - NodeJS` to see the following test case:
-    
-    ![2-user-site](2-user-site.png)
-    
-<br />
+2. Please check all README.md files in all folder to see what you need to do to get the tests running

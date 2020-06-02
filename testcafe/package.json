@@ -1,0 +1,25 @@
+{
+  "name": "testcafe-saucedemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test.local": "node tests/configs/local.chrome.config.js",
+    "test.saucelabs": "env SAUCE_BUILD='Sauce Labs Build' SAUCE_SCREEN_RESOLUTION='1920x1080' SAUCE_API_HOST=eu-central-1.saucelabs.com testcafe 'saucelabs:Chrome@latest:Windows 10' tests/specs/checkout.complete.spec.js",
+    "test.saucelabs.us": "env SAUCE_BUILD=\"Sauce Labs Build - $(date)\" SAUCE_SCREEN_RESOLUTION='1920x1080' node tests/configs/saucelabs.config.js",
+    "test.saucelabs.eu": "env SAUCE_BUILD=\"Sauce Labs Build - $(date)\" SAUCE_SCREEN_RESOLUTION='1920x1080' SAUCE_API_HOST=eu-central-1.saucelabs.com node tests/configs/saucelabs.config.js",
+    "test.saucelabs.get.browsers": "testcafe -b saucelabs",
+    "lint": "eslint . --ext .js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-testcafe": "^0.2.1",
+    "testcafe": "^1.8.4",
+    "testcafe-browser-provider-saucelabs": "^1.8.0"
+  }
+}
