@@ -8,7 +8,7 @@ You can install all dependencies by running the following command
     
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `jest-playwright` when you execute this command
+> NOTE: Make sure you are in the folder `playwright` when you execute this command
 
 ## Run tests locally
 You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this command
@@ -20,7 +20,7 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
 
 ```log
 ➜  jest-playwright git:(feat/jest-playwright) ✗ npm run test.local
-> jest-playwright-examples@1.0.0 test.local /Users/wimselles/Sauce/Git/js-sauce-integrations/jest-playwright
+> jest-playwright-examples@1.0.0 test.local /jest-playwright
 > jest --verbose
 
  PASS   browser: chromium  test/specs/login.spec.js

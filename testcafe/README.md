@@ -20,7 +20,7 @@ It will run all tests in your local Chrome browser in headless mode. The logs wi
 ```log
 ➜  testcafe git:(master) ✗ npm run test.local
 
-> testcafe-saucedemo@1.0.0 test.local /Users/wimselles/Sauce/Git/js-sauce-integrations/testcafe
+> testcafe-saucedemo@1.0.0 test.local /testcafe
 > node tests/configs/local.chrome.config.js
 
  Running tests in:

@@ -30,7 +30,7 @@ It will run all tests in your local Chrome browser in headless mode. The logs wi
 ```log
 ➜  nightwatch git:(feat/add-nightwatch) ✗ npm run test.local
 
-> nightwatch-saucedemo@1.0.0 test.local /Users/wimselles/Sauce/Git/js-sauce-integrations/nightwatch
+> nightwatch-saucedemo@1.0.0 test.local /nightwatch
 > nightwatch --config tests/configs/nightwatch.conf.js --env localChrome
 
  specs/login.spec.js   

@@ -37,19 +37,19 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
 ```log
 ➜  protractor git:(feat/add-protractor) ✗ npm run test.local
 
-> protractor-saucedemo@1.0.0 pretest.local /Users/wimselles/Sauce/Git/js-sauce-integrations/protractor
+> protractor-saucedemo@1.0.0 pretest.local /protractor
 > npm run webdriver-update
 
 
-> protractor-saucedemo@1.0.0 webdriver-update /Users/wimselles/Sauce/Git/js-sauce-integrations/protractor
+> protractor-saucedemo@1.0.0 webdriver-update /protractor
 > webdriver-manager update --standalone=false --gecko=false
 
-[17:30:06] I/update - chromedriver: file exists /Users/wimselles/Sauce/Git/js-sauce-integrations/protractor/node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_81.0.4044.69.zip
+[17:30:06] I/update - chromedriver: file exists /protractor/node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_81.0.4044.69.zip
 [17:30:06] I/update - chromedriver: unzipping chromedriver_81.0.4044.69.zip
-[17:30:07] I/update - chromedriver: setting permissions to 0755 for /Users/wimselles/Sauce/Git/js-sauce-integrations/protractor/node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_81.0.4044.69
+[17:30:07] I/update - chromedriver: setting permissions to 0755 for /protractor/node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_81.0.4044.69
 [17:30:07] I/update - chromedriver: chromedriver_81.0.4044.69 up to date
 
-> protractor-saucedemo@1.0.0 test.local /Users/wimselles/Sauce/Git/js-sauce-integrations/protractor
+> protractor-saucedemo@1.0.0 test.local /protractor
 > protractor tests/configs/protractor.local.chrome.conf.js
 
 [17:30:07] I/launcher - Running 8 instances of WebDriver
@@ -57,7 +57,7 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
 ------------------------------------
 
 [17:30:11] I/testLogger - [chrome #01-1] PID: 75700
-[chrome #01-1] Specs: /Users/wimselles/Sauce/Git/js-sauce-integrations/protractor/tests/specs/checkout.complete.spec.js
+[chrome #01-1] Specs: /protractor/tests/specs/checkout.complete.spec.js
 [chrome #01-1] 
 [chrome #01-1] [17:30:07] W/driverProviders - Using driver provider directConnect, but also found extra driver provider parameter(s): seleniumAddress
 [chrome #01-1] [17:30:07] I/direct - Using ChromeDriver directly...
@@ -75,7 +75,7 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
 ------------------------------------
 
 [17:30:13] I/testLogger - [chrome #01-3] PID: 75702
-[chrome #01-3] Specs: /Users/wimselles/Sauce/Git/js-sauce-integrations/protractor/tests/specs/checkout.summary.spec.js
+[chrome #01-3] Specs: /protractor/tests/specs/checkout.summary.spec.js
 [chrome #01-3] 
 [chrome #01-3] [17:30:07] W/driverProviders - Using driver provider directConnect, but also found extra driver provider parameter(s): seleniumAddress
 [chrome #01-3] [17:30:07] I/direct - Using ChromeDriver directly...
@@ -95,7 +95,7 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
 ------------------------------------
 
 [17:30:13] I/testLogger - [chrome #01-4] PID: 75703
-[chrome #01-4] Specs: /Users/wimselles/Sauce/Git/js-sauce-integrations/protractor/tests/specs/login.spec.js
+[chrome #01-4] Specs: /protractor/tests/specs/login.spec.js
 [chrome #01-4] 
 [chrome #01-4] [17:30:07] W/driverProviders - Using driver provider directConnect, but also found extra driver provider parameter(s): seleniumAddress
 [chrome #01-4] [17:30:07] I/direct - Using ChromeDriver directly...
@@ -115,7 +115,7 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
 ------------------------------------
 
 [17:30:13] I/testLogger - [chrome #01-2] PID: 75701
-[chrome #01-2] Specs: /Users/wimselles/Sauce/Git/js-sauce-integrations/protractor/tests/specs/checkout.personal.info.spec.js
+[chrome #01-2] Specs: /protractor/tests/specs/checkout.personal.info.spec.js
 [chrome #01-2] 
 [chrome #01-2] [17:30:07] W/driverProviders - Using driver provider directConnect, but also found extra driver provider parameter(s): seleniumAddress
 [chrome #01-2] [17:30:07] I/direct - Using ChromeDriver directly...
@@ -135,7 +135,7 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
 ------------------------------------
 
 [17:30:14] I/testLogger - [chrome #01-0] PID: 75699
-[chrome #01-0] Specs: /Users/wimselles/Sauce/Git/js-sauce-integrations/protractor/tests/specs/cart.summary.spec.js
+[chrome #01-0] Specs: /protractor/tests/specs/cart.summary.spec.js
 [chrome #01-0] 
 [chrome #01-0] [17:30:07] W/driverProviders - Using driver provider directConnect, but also found extra driver provider parameter(s): seleniumAddress
 [chrome #01-0] [17:30:07] I/direct - Using ChromeDriver directly...
@@ -155,7 +155,7 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
 ------------------------------------
 
 [17:30:14] I/testLogger - [chrome #01-6] PID: 75705
-[chrome #01-6] Specs: /Users/wimselles/Sauce/Git/js-sauce-integrations/protractor/tests/specs/swag.item.details.spec.js
+[chrome #01-6] Specs: /protractor/tests/specs/swag.item.details.spec.js
 [chrome #01-6] 
 [chrome #01-6] [17:30:08] W/driverProviders - Using driver provider directConnect, but also found extra driver provider parameter(s): seleniumAddress
 [chrome #01-6] [17:30:08] I/direct - Using ChromeDriver directly...
@@ -175,7 +175,7 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
 ------------------------------------
 
 [17:30:16] I/testLogger - [chrome #01-7] PID: 75706
-[chrome #01-7] Specs: /Users/wimselles/Sauce/Git/js-sauce-integrations/protractor/tests/specs/swag.items.list.spec.js
+[chrome #01-7] Specs: /protractor/tests/specs/swag.items.list.spec.js
 [chrome #01-7] 
 [chrome #01-7] [17:30:07] W/driverProviders - Using driver provider directConnect, but also found extra driver provider parameter(s): seleniumAddress
 [chrome #01-7] [17:30:07] I/direct - Using ChromeDriver directly...
@@ -197,7 +197,7 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
 ------------------------------------
 
 [17:30:21] I/testLogger - [chrome #01-5] PID: 75704
-[chrome #01-5] Specs: /Users/wimselles/Sauce/Git/js-sauce-integrations/protractor/tests/specs/menu.spec.js
+[chrome #01-5] Specs: /protractor/tests/specs/menu.spec.js
 [chrome #01-5] 
 [chrome #01-5] [17:30:08] W/driverProviders - Using driver provider directConnect, but also found extra driver provider parameter(s): seleniumAddress
 [chrome #01-5] [17:30:08] I/direct - Using ChromeDriver directly...
