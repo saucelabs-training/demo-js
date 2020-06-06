@@ -20,8 +20,9 @@ describe('Sauce Labs Android real device file management', () => {
         $('android=new UiSelector().textContains("No pictures")').waitForDisplayed();
 
         // Verify that there is no image
-        expect($$('android=new UiSelector().resourceId("com.sec.android.gallery3d:id/recycler_view_item")').length)
-            .toEqual(0);
+        expect(
+            $$('android=new UiSelector().resourceId("com.sec.android.gallery3d:id/recycler_view_item")').length
+        ).toEqual(0);
 
         // The file we want to upload
         const codingBot = readFileSync(join(process.cwd(), 'assets/sauce-bot-coding.png'), 'base64');
@@ -47,7 +48,8 @@ describe('Sauce Labs Android real device file management', () => {
         driver.waitUntil(
             () => $$('android=new UiSelector().resourceId("com.sec.android.gallery3d:id/recycler_view_item")').length === 0
         );
-        expect($$('android=new UiSelector().resourceId("com.sec.android.gallery3d:id/recycler_view_item")').length)
-            .toEqual(0);
+        expect(
+            $$('android=new UiSelector().resourceId("com.sec.android.gallery3d:id/recycler_view_item")').length
+        ).toEqual(0);
     });
 });
