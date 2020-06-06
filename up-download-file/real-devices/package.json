@@ -21,6 +21,7 @@
     "@wdio/local-runner": "^6.1.16",
     "@wdio/sauce-service": "^6.1.16",
     "@wdio/spec-reporter": "^6.1.14",
-    "@wdio/sync": "^6.1.14"
+    "@wdio/sync": "^6.1.14",
+    "fs-extra": "^9.0.1"
   }
 }

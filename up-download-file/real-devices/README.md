@@ -14,13 +14,15 @@ This will install all needed dependencies that are listed in the `package.json`-
 > NOTE: Make sure you are in the folder `up-download-file/real-devices` when you execute this command
 
 ## Important information
-### Uploading files to Android real devices
+### Up/downloading files to and or from Android real devices
 The market of Android is being controlled by a lot of different vendors, this also means a lot of different file structures 
-for where to upload your file to. This makes it a challenge to determine which folder on the device you 
-need to upload the file to. 
+for where to upload your file to or download the file from. This makes it a challenge to determine which folder on the device you 
+need to have.
+You can check the location if you are using the Virtual USB offering of Sauce Labs for Private devices, 
+see also [this video](https://youtu.be/hUaVj6WmqRA).
 
 The advice is that you use a dedicated device, so you always know the file structure and don't need to over complicate 
-the uploading script.
+the up/downloading script.
 
 ### Environment variables for Sauce Labs
 The examples in this repository that can run on Sauce Labs use environment variables, make sure you've added the following
