@@ -4,8 +4,6 @@ This folder contains examples for using up / download files from:
 - [Android real devices on the new Sauce Labs UI](#run-tests-on-sauce-labs-android-real-devices-in-the-new-sauce-labs-ui)
 - [Android real devices on the Legacy RDC cloud](#run-tests-on-sauce-labs-android-real-devices-in-the-legacy-rdc)
 
-> NOTE: this feature is **NOT** supported for emulators and simulators!!
-
 ## Install dependencies
 You can install all dependencies by running the following command
 
@@ -16,6 +14,14 @@ This will install all needed dependencies that are listed in the `package.json`-
 > NOTE: Make sure you are in the folder `up-download-file/real-devices` when you execute this command
 
 ## Important information
+### Uploading files to Android real devices
+The market of Android is being controlled by a lot of different vendors, this also means a lot of different file structures 
+for where to upload your file to. This makes it a challenge to determine which folder on the device you 
+need to upload the file to. 
+
+The advice is that you use a dedicated device, so you always know the file structure and don't need to over complicate 
+the uploading script.
+
 ### Environment variables for Sauce Labs
 The examples in this repository that can run on Sauce Labs use environment variables, make sure you've added the following
 
@@ -26,20 +32,14 @@ The examples in this repository that can run on Sauce Labs use environment varia
     # For the Legacy RDC
     export SAUCE_RDC_EU_ACCESS_KEY_ANDROID=********
 
-### Upload apps to Sauce Storage
-If you want to use Android emulators, iOS simulators or iOS real devices in the New Sauce Labs UI you need to upload the apps to the Sauce Storage.
-You can find a script to upload them to, or the US, or EU DC in [this](./scripts)-folder. You can push the files to the 
-storage by doing the following from the root of this folder:
+## Uploading files
+### Android Real devices
+The script on how to use this can be found [here](./test/specs/upload.image.android.real.spec.js) and the execution 
+will look like this
 
-    cd scripts
-    ./push_apps_to_storage.sh
-    
-When you've done that you will see for example the following logs
+![Upload Android real device](./assets/upload-real-device.gif)
 
-    ➜  scripts git:(master) ✗ ./push_apps_to_storage.sh 
-    {"username":"wim.selles","filename":"sample-app-android.apk","size":24874172,"md5":"e46219548268d3e89ada443e1ed6e351","etag":"8b037c2ad1dc2b241e605ed97569d6dd"}
-    {"username":"wim.selles","filename":"sample-app-ios-real.ipa","size":4597084,"md5":"33f82765909e4ac7fc9dd5e925b6d2ae","etag":"86e63c580c15530db573833371830323"}
- 
+
 ## Run tests on Sauce Labs Android real devices in the New Sauce Labs UI
 If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs UI** then you can run the Android test with
 
@@ -65,30 +65,3 @@ If you want to run the tests on Sauce Labs real devices in the **Legacy RDC** th
 The tests will be executed and Android 7, 8, 9 and 10.    
 
 See this [config](./test/configs/wdio.android.legacy.rdc.conf.js)-file for more information.
- 
-
-## Run tests on Sauce Labs iOS real devices in the New Sauce Labs UI
-If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs UI** then you can run the iOS test with
-
-    // If using the US DC
-    npm run test.sauce.rdc.ios.us
-    
-    // If using the EU DC
-    npm run test.sauce.rdc.ios.eu
-    
-The tests will be executed on a iPhone XS.
-
-See this [config](./test/configs/wdio.ios.sauce.real.conf.js)-file for more information.
-
-## Run tests on Sauce Labs iOS real devices in the Legacy RDC
-If you want to run the tests on Sauce Labs real devices in the **Legacy RDC** then you can run the iOS test with
-
-    // If using the US DC
-    npm run test.legacy.rdc.ios.us
-    
-    // If using the EU DC
-    npm run test.legacy.rdc.ios.eu
-    
-The tests will be executed on iOS 11, 12 and 13.
-
-See this [config](./test/configs/wdio.ios.legacy.rdc.conf.js)-file for more information.
