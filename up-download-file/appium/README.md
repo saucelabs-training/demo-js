@@ -4,6 +4,9 @@ This folder contains examples for using up / download files from:
 - [Android real devices on the new Sauce Labs UI](#run-tests-on-sauce-labs-android-real-devices-in-the-new-sauce-labs-ui)
 - [Android real devices on the Legacy RDC cloud](#run-tests-on-sauce-labs-android-real-devices-in-the-legacy-rdc)
 
+> **NOTE:**\
+> Up/downloading files to iOS real devices is not supported by Appium!
+
 ## Install dependencies
 You can install all dependencies by running the following command
 
@@ -11,7 +14,8 @@ You can install all dependencies by running the following command
 
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `up-download-file/real-devices` when you execute this command
+> **NOTE:**\
+> Make sure you are in the folder `up-download-file/appium` when you execute this command
 
 ## Important information
 ### Up/downloading files to and or from Android real devices
