@@ -1,5 +1,12 @@
 const {config} = require('./wdio.shared.sauce.conf');
-const testName = `Add image to device: ${new Date().getTime()}`;
+const testName = `Up/download image on/from real device: ${new Date().getTime()}`;
+
+// ==================
+// Specify Test Files
+// ==================
+config.specs= [
+    './test/specs/real-devices/*.js'
+];
 
 // =================
 // Service Providers
@@ -25,6 +32,9 @@ config.capabilities = [
         testobject_api_key: process.env.SAUCE_RDC_EU_ACCESS_KEY_ANDROID,
         // The name of the test for in the cloud
         testobject_test_name: testName,
+        // Only allow 1 instance of this device running in the cloud, this is because we only have private device
+        // with this capability available
+        maxInstances: 1,
         // Keep the device connected between tests so we don't need to wait for the cleaning process
         cacheId: new Date().getTime(),
         // Some default settings

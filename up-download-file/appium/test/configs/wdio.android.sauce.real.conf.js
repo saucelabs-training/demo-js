@@ -1,5 +1,12 @@
 const {config} = require('./wdio.shared.sauce.conf');
-const testName = `Add image to device: ${new Date().getTime()}`;
+const testName = `Up/download image on/from real device: ${new Date().getTime()}`;
+
+// ==================
+// Specify Test Files
+// ==================
+config.specs= [
+    './test/specs/real-devices/*.js'
+];
 
 // ============
 // Capabilities
@@ -15,6 +22,9 @@ config.capabilities = [
         browserName: 'chrome',
         autoLaunch: false,
         automationName: 'UiAutomator2',
+        // Only allow 1 instance of this device running in the cloud, this is because we only have private device
+        // with this capability available
+        maxInstances: 1,
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
         noReset: true,
