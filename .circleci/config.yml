@@ -50,12 +50,12 @@ jobs:
             cd appium-examples/wdio5/mocha-framework
             npm install
             npm test
-      - run:
-          name: "Run Headless Tests"
-          command: |
-            cd headless-examples
-            npm install
-            npm test
+#      - run:
+#          name: "Run Headless Tests"
+#          command: |
+#            cd headless-examples
+#            npm install
+#            npm test
       - run:
           name: "Run W3C Examples"
           command: |
