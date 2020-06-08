@@ -8,7 +8,7 @@ You can install all dependencies by running the following command
     
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `jest-puppeteer` when you execute this command
+> NOTE: Make sure you are in the folder `puppeteer` when you execute this command
 
 ## Run tests locally
 You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this command
@@ -21,7 +21,7 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
 ```log
 ➜  jest-puppeteer git:(feat/jest-puppeteer) ✗ npm run test.local
 
-> jest-puppeteer-examples@1.0.0 test.local /Users/wimselles/Sauce/Git/js-sauce-integrations/jest-puppeteer
+> jest-puppeteer-examples@1.0.0 test.local /jest-puppeteer
 > jest --runInBand --verbose
 
  PASS  test/specs/menu.spec.js

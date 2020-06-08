@@ -10,12 +10,12 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
 > Some examples in this repository, such as `appium-examples` and `headless-examples`, may require a different account tier beyond free trial. Please contact the [Sauce Labs Sales Team](https://saucelabs.com/contact) for support and information.
 
 ## Framework examples
-- [WebdriverIO V6 with Jasmine](./webdriverio-v6)
+- [WebdriverIO V6 with Jasmine](./webdriverio)
 - [TestCafe](./testcafe)
 - [NightWatch](./nightwatch)
-- [Protractor](./protractor)
-- [Jest-Puppeteer](./jest-puppeteer)
-- [Playwright with Jest](./jest-playwright)
+- [Protractor with Jasmine](./protractor)
+- [Puppeteer with Jest](./puppeteer)
+- [Playwright with Jest](./playwright)
 - more to follow
 
 The above mentioned frameworks include some best practices.

@@ -1,4 +1,4 @@
-# WebdriverIO V6
+# WebdriverIO
 This folder contains a simple set up for WebdriverIO V6.
 
 ## Install dependencies
@@ -8,7 +8,7 @@ You can install all dependencies by running the following command
     
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `webdriverio-v6` when you execute this command
+> NOTE: Make sure you are in the folder `webdriverio` when you execute this command
 
 ## Run tests locally
 You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this command
@@ -19,9 +19,9 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
 
 
 ```log
-➜  webdriverio-v6 git:(master) ✗ npm run test.local
+➜  webdriverio git:(master) ✗ npm run test.local
 
-> webdriverio-v6@1.0.0 test.local /Users/wimselles/Sauce/Git/js-sauce-integrations/webdriverio-v6
+> webdriverio@1.0.0 test.local /sauce-training/demo-js/webdriverio
 > wdio test/configs/wdio.local.chrome.conf.js
 
 
@@ -46,7 +46,7 @@ Execution of 8 spec files started at 2020-04-17T09:58:32.551Z
 
  "spec" Reporter:
 ------------------------------------------------------------------
-[Chrome Headless 19.4.0 darwin #0-1] Spec: /Users/wimselles/Sauce/Git/js-sauce-integrations/webdriverio-v6/test/specs/checkout.complete.spec.js
+[Chrome Headless 19.4.0 darwin #0-1] Spec: /sauce-training/demo-js/webdriverio/test/specs/checkout.complete.spec.js
 [Chrome Headless 19.4.0 darwin #0-1] Running: Chrome Headless (v19.4.0) on darwin
 [Chrome Headless 19.4.0 darwin #0-1] Session ID: 23f7b4cf-ebbc-433f-98b3-a054ae8be378
 [Chrome Headless 19.4.0 darwin #0-1]
@@ -55,7 +55,7 @@ Execution of 8 spec files started at 2020-04-17T09:58:32.551Z
 [Chrome Headless 19.4.0 darwin #0-1]
 [Chrome Headless 19.4.0 darwin #0-1] 1 passing (970ms)
 ------------------------------------------------------------------
-[Chrome Headless 19.4.0 darwin #0-4] Spec: /Users/wimselles/Sauce/Git/js-sauce-integrations/webdriverio-v6/test/specs/login.spec.js
+[Chrome Headless 19.4.0 darwin #0-4] Spec: /sauce-training/demo-js/webdriverio/test/specs/login.spec.js
 [Chrome Headless 19.4.0 darwin #0-4] Running: Chrome Headless (v19.4.0) on darwin
 [Chrome Headless 19.4.0 darwin #0-4] Session ID: 130ba2b3-d736-48e0-8ae2-1d938b192206
 [Chrome Headless 19.4.0 darwin #0-4]
@@ -66,7 +66,7 @@ Execution of 8 spec files started at 2020-04-17T09:58:32.551Z
 [Chrome Headless 19.4.0 darwin #0-4]
 [Chrome Headless 19.4.0 darwin #0-4] 3 passing (2.5s)
 ------------------------------------------------------------------
-[Chrome Headless 19.4.0 darwin #0-2] Spec: /Users/wimselles/Sauce/Git/js-sauce-integrations/webdriverio-v6/test/specs/checkout.personal.info.spec.js
+[Chrome Headless 19.4.0 darwin #0-2] Spec: /sauce-training/demo-js/webdriverio/test/specs/checkout.personal.info.spec.js
 [Chrome Headless 19.4.0 darwin #0-2] Running: Chrome Headless (v19.4.0) on darwin
 [Chrome Headless 19.4.0 darwin #0-2] Session ID: 08fab342-d796-439a-bd1d-df877035c8a1
 [Chrome Headless 19.4.0 darwin #0-2]
@@ -77,7 +77,7 @@ Execution of 8 spec files started at 2020-04-17T09:58:32.551Z
 [Chrome Headless 19.4.0 darwin #0-2]
 [Chrome Headless 19.4.0 darwin #0-2] 3 passing (2.7s)
 ------------------------------------------------------------------
-[Chrome Headless 19.4.0 darwin #0-3] Spec: /Users/wimselles/Sauce/Git/js-sauce-integrations/webdriverio-v6/test/specs/checkout.summary.spec.js
+[Chrome Headless 19.4.0 darwin #0-3] Spec: /sauce-training/demo-js/webdriverio/test/specs/checkout.summary.spec.js
 [Chrome Headless 19.4.0 darwin #0-3] Running: Chrome Headless (v19.4.0) on darwin
 [Chrome Headless 19.4.0 darwin #0-3] Session ID: b0a110c1-27af-4abe-91f3-12bd55c1b4e5
 [Chrome Headless 19.4.0 darwin #0-3]
@@ -88,7 +88,7 @@ Execution of 8 spec files started at 2020-04-17T09:58:32.551Z
 [Chrome Headless 19.4.0 darwin #0-3]
 [Chrome Headless 19.4.0 darwin #0-3] 3 passing (2.7s)
 ------------------------------------------------------------------
-[Chrome Headless 19.4.0 darwin #0-0] Spec: /Users/wimselles/Sauce/Git/js-sauce-integrations/webdriverio-v6/test/specs/cart.summary.spec.js
+[Chrome Headless 19.4.0 darwin #0-0] Spec: /sauce-training/demo-js/webdriverio/test/specs/cart.summary.spec.js
 [Chrome Headless 19.4.0 darwin #0-0] Running: Chrome Headless (v19.4.0) on darwin
 [Chrome Headless 19.4.0 darwin #0-0] Session ID: 838e694a-02ff-4e03-8cef-719052ff6c68
 [Chrome Headless 19.4.0 darwin #0-0]
@@ -99,7 +99,7 @@ Execution of 8 spec files started at 2020-04-17T09:58:32.551Z
 [Chrome Headless 19.4.0 darwin #0-0]
 [Chrome Headless 19.4.0 darwin #0-0] 3 passing (3.5s)
 ------------------------------------------------------------------
-[Chrome Headless 19.4.0 darwin #0-7] Spec: /Users/wimselles/Sauce/Git/js-sauce-integrations/webdriverio-v6/test/specs/swag.items.list.spec.js
+[Chrome Headless 19.4.0 darwin #0-7] Spec: /sauce-training/demo-js/webdriverio/test/specs/swag.items.list.spec.js
 [Chrome Headless 19.4.0 darwin #0-7] Running: Chrome Headless (v19.4.0) on darwin
 [Chrome Headless 19.4.0 darwin #0-7] Session ID: 397f937a-1952-4f28-9933-2ba33857f357
 [Chrome Headless 19.4.0 darwin #0-7]
@@ -112,7 +112,7 @@ Execution of 8 spec files started at 2020-04-17T09:58:32.551Z
 [Chrome Headless 19.4.0 darwin #0-7]
 [Chrome Headless 19.4.0 darwin #0-7] 5 passing (5.1s)
 ------------------------------------------------------------------
-[Chrome Headless 19.4.0 darwin #0-6] Spec: /Users/wimselles/Sauce/Git/js-sauce-integrations/webdriverio-v6/test/specs/swag.item.details.spec.js
+[Chrome Headless 19.4.0 darwin #0-6] Spec: /sauce-training/demo-js/webdriverio/test/specs/swag.item.details.spec.js
 [Chrome Headless 19.4.0 darwin #0-6] Running: Chrome Headless (v19.4.0) on darwin
 [Chrome Headless 19.4.0 darwin #0-6] Session ID: 371721a2-3d5d-4e05-af69-d8d7713e77ad
 [Chrome Headless 19.4.0 darwin #0-6]
@@ -123,7 +123,7 @@ Execution of 8 spec files started at 2020-04-17T09:58:32.551Z
 [Chrome Headless 19.4.0 darwin #0-6]
 [Chrome Headless 19.4.0 darwin #0-6] 3 passing (4.7s)
 ------------------------------------------------------------------
-[Chrome Headless 19.4.0 darwin #0-5] Spec: /Users/wimselles/Sauce/Git/js-sauce-integrations/webdriverio-v6/test/specs/menu.spec.js
+[Chrome Headless 19.4.0 darwin #0-5] Spec: /sauce-training/demo-js/webdriverio/test/specs/menu.spec.js
 [Chrome Headless 19.4.0 darwin #0-5] Running: Chrome Headless (v19.4.0) on darwin
 [Chrome Headless 19.4.0 darwin #0-5] Session ID: cc51a94a-e6c4-4838-aa83-22bd660c1b6e
 [Chrome Headless 19.4.0 darwin #0-5]
