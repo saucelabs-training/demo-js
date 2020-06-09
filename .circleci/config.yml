@@ -21,18 +21,6 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-      - run:
-          name: "Install Sauce Connect Client"
-          command: |
-            sudo apt-get install lsof
-            curl https://saucelabs.com/downloads/sc-4.4.12-linux.tar.gz -o saucelabs.tar.gz
-            tar -xzf saucelabs.tar.gz
-      - run:
-          name: "Launch Tunnel"
-          background: true
-          command: |
-            cd sc-*
-            bin/sc --pidfile /tmp/sc.pid1 -u ${SAUCE_USERNAME} -k ${SAUCE_ACCESS_KEY} -i demo-js-tunnel --no-remove-colliding-tunnels --se-port 4445
 #      - run:
 #          name: "Run Node Tests"
 #          command: |
@@ -51,12 +39,6 @@ jobs:
             npm install
             npm test
       - run:
-          name: "Run Protractor Tests"
-          command: |
-            cd protractor-jasmine-tests
-            npm install
-            npm test
-      - run:
           name: "Run WDIO4 Mocha Tests"
           command: |
             cd appium-examples/wdio4/mocha-framework
@@ -68,12 +50,12 @@ jobs:
             cd appium-examples/wdio5/mocha-framework
             npm install
             npm test
-      - run:
-          name: "Run Headless Tests"
-          command: |
-            cd headless-examples
-            npm install
-            npm test
+#      - run:
+#          name: "Run Headless Tests"
+#          command: |
+#            cd headless-examples
+#            npm install
+#            npm test
       - run:
           name: "Run W3C Examples"
           command: |
@@ -81,6 +63,26 @@ jobs:
             npm install
             npm test
       - run:
-          name: "Shut Down Sauce Connect Tunnel"
+          name: "Run WebdriverIO V6"
           command: |
-            kill -9 `cat /tmp/sc.pid1`
+            cd webdriverio
+            npm install
+            npm run test.saucelabs.us
+      - run:
+          name: "Run TestCafe"
+          command: |
+            cd testcafe
+            npm install
+            npm run test.saucelabs.us
+      - run:
+          name: "Run Protractor"
+          command: |
+            cd testcafe
+            npm install
+            npm run test.saucelabs.us
+      - run:
+          name: "Run Nightwatch"
+          command: |
+            cd nightwatch
+            npm install
+            npm run test.saucelabs.us
