@@ -8,7 +8,7 @@ metadata:
     - other tag
   build: Release $CI_COMMIT_SHORT_SHA
 files:
-  - ./tests/example.test.js
+  - ./tests/login.test.js
 image:
   base: saucelabs/sauce-puppeteer
   version: 3.0.4
