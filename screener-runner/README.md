@@ -5,8 +5,10 @@ This repository contains examples of how to use [Screener Runner](https://github
 
 1. Get your Screener account [here](https://screener.io/)
 
-2. Navigate to `screener-runner/examples` directory
+2. `export SCREENER_API_KEY=your api key here`
 
-3. `npm run screener-hide` to run a test that hides an element
+3. Navigate to `screener-runner/examples` directory
+
+4. `npm run screener-hide` to run a test that hides an element
 
 Other examples can be found in `package.json`
