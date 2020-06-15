@@ -1,0 +1,17 @@
+{
+  "name": "screener-runner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "screener-hide": "screener-runner --conf test/configs/hide-elements.config.js",
+    "screener-dynamic-load": "screener-runner --conf test/configs/page-preload-dynamic-elements.config.js",
+    "screener-jo-malone": "screener-runner --conf test/configs/jo-malone.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "screener-runner": "^0.11.3"
+  }
+}
