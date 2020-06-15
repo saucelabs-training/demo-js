@@ -65,7 +65,7 @@ jobs:
       - run:
           name: "Run WebdriverIO V6"
           command: |
-            cd webdriverio
+            cd webdriverio/web/framework
             npm install
             npm run test.saucelabs.us
       - run:
