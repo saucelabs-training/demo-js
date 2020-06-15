@@ -1,4 +1,3 @@
-var Steps = require('screener-runner/src/steps');
 module.exports = {
     // full repository name for your project:
     projectRepo: 'sample-app-web',
