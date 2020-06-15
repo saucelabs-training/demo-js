@@ -1,10 +1,7 @@
 var Steps = require('screener-runner/src/steps');
 module.exports = {
     // full repository name for your project:
-    projectRepo: 'sample-app-web',
-    //ignore: '.btn_action',
-    //This will hide your element from the screenshot
-    hide: '.btn_action',
+    projectRepo: 'ultimate-qa',
 
     // this example assumes Environment Variables listed below exist on your system:
     apiKey: process.env.SCREENER_API_KEY,
@@ -14,9 +11,21 @@ module.exports = {
     // each state consists of a url and a name.
     states: [
         {
-            url: 'https://www.saucedemo.com',
-            name: 'Hide element example',
+            //This page has dynamic elements that only appear when they are scrolled into view
+            url: 'https://ultimateqa.com/',
+            name: 'Before dynamic scrolling'
         },
+        {
+          //This page has dynamic elements that only appear when they are scrolled into view
+          //so we run a script to preload those elements
+          url: 'https://ultimateqa.com/',
+          name: 'Preload the page to handle dynamic loading',
+          steps: new Steps()
+          .executeScript('window.scrollTo(0,document.body.scrollHeight)')
+          .wait(4000)
+          .snapshot('Loaded')
+          .end()
+        }
     ],
     //What are all of the browsers that we want to test against
     browsers: [
