@@ -3,7 +3,6 @@ describe('SauceDemo login page', () => {
 		const page = await browser.newPage();
 		await page.goto('https://www.saucedemo.com/');
 		expect(await page.title()).toBe('Swag Labs');
-		await browser.close();
 	});
 	test('should login', async () => {
 		const page = await browser.newPage();
@@ -12,6 +11,5 @@ describe('SauceDemo login page', () => {
 		await page.type('#password', 'secret_sauce');
 		await page.click('.btn_action');
 		expect(await page.title()).toBe('Swag Labs');
-		await browser.close();
 	});
 });
