@@ -16,6 +16,7 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
 - [Protractor with Jasmine](./protractor)
 - [Puppeteer with Jest](./puppeteer)
 - [Playwright with Jest](./playwright)
+- [Screener Runner](./screener-runner)
 - more to follow
 
 The above mentioned frameworks include some best practices.
