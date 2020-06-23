@@ -80,6 +80,6 @@ You can run your tests on Sauce Labs EU DC with this command
 
     npm run test.saucelabs.eu
 
-It will spin up multiple browsers which you can find in the [nightwatch.conf.js](./tests/configs/nightwatch.conf.js) and in the [package.json](./package.json).
+It will spin up multiple browsers which you can find in the [nightwatch.conf.js](tests/configs/nightwatch.conf.js) and in the [package.json](package.json).
 
 

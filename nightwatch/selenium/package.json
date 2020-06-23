@@ -6,9 +6,9 @@
   "scripts": {
     "test.local": "nightwatch --config tests/configs/nightwatch.conf.js --env localChrome",
     "test.saucelabs": "env SAUCE_BUILD='Sauce Labs Build' SAUCE_SCREEN_RESOLUTION='1920x1080' SAUCE_API_HOST=eu-central-1.saucelabs.com testcafe 'saucelabs:Chrome@latest:Windows 10' tests/specs/checkout.complete.spec.js",
-    "test.saucelabs.us": "env DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env sauceChrome,sauceFirefox,sauceIE,sauceEdge",
-    "test.saucelabs.eu": "env REGION=eu DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env sauceChrome,sauceFirefox,sauceIE,sauceEdge",
-    "lint": "eslint . --ext .js"
+    "test.saucelabs.us": "env DATE=\\\"$(date)\\\" nightwatch --config tests/configs/nightwatch.conf.js --env sauceChrome,sauceFirefox,sauceIE,sauceEdge",
+    "test.saucelabs.eu": "env REGION=eu DATE=\\\"$(date)\\\" nightwatch --config tests/configs/nightwatch.conf.js --env sauceChrome,sauceFirefox,sauceIE,sauceEdge",
+    "lint": "eslint .. --ext .js"
   },
   "keywords": [],
   "author": "",
