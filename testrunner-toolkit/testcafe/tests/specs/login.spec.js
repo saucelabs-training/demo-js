@@ -3,7 +3,6 @@ import LoginPage from '../page-objects/LoginPage';
 import SwagListPage from '../page-objects/SwagOverviewPage';
 
 fixture`Test Login`
-    .beforeEach(t=> t.resizeWindow(1366, 768))
     .page(`${ LoginPage.url }`);
 
 test('should be able to test loading of login page', async t => {

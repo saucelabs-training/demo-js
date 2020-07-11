@@ -6,9 +6,6 @@ import AppHeaderPage from '../page-objects/AppHeaderPage';
 import {setTestContext} from '../helpers';
 
 fixture`Test swag items details page`
-    .beforeEach(async t => {
-        await t.resizeWindow(1366, 768);
-    });
 
 test('should validate that we can go back from the details to the inventory page', async t => {
     // @TODO: there is an error with IE11 `ReferenceError: 'URLSearchParams' is undefined`
