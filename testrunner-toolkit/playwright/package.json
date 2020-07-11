@@ -4,7 +4,7 @@
   "description": "This folder contains a simple set up for Jest and Playwright.",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint ",
     "test.local": "jest --verbose",
     "test.local.headfull": "HEADLESS=false jest --verbose"
   },

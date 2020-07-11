@@ -1,16 +1,17 @@
 # Jest with Playwright
-This folder contains a simple set up for Jest and Puppeteer.
+This folder contains a simple set up for Jest and Puppeteer which can be run locally and with the Sauce Labs Testrunner Toolkit
 
-## Install dependencies
+## Local Usage
+### Install dependencies
 You can install all dependencies by running the following command
 
     npm install
     
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `playwright` when you execute this command
+> NOTE: Make sure you are in the folder `testrunner-toolkit/playwright` when you execute this command
 
-## Run tests locally
+### Run tests locally
 You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this command
 
     npm run test.local
@@ -85,6 +86,15 @@ You can also run the test in *headfull*-mode with this command
     
 You will then see Chrome poping up.
 
-## Run tests on Sauce Labs
-Due to 1 issue this set can't run on the [SauceCTL Testrunner Toolkit](https://github.com/saucelabs/testrunner-toolkit) offering yet, see:
-- [File structure is not properly copied](https://github.com/saucelabs/testrunner-toolkit/issues/13)
+## Sauce Labs
+### Install dependencies
+
+Follow instructions from [here](https://github.com/saucelabs/testrunner-toolkit)
+
+> NOTE: Make sure you are in the folder `testrunner-toolkit/playwright` when you execute this command
+
+### Run tests in Sauce
+
+    saucectl run
+
+

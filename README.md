@@ -15,7 +15,7 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
 - [NightWatch](./nightwatch)
 - [Protractor with Jasmine](./protractor)
 - [Puppeteer with Jest](./puppeteer)
-- [Playwright with Jest](./playwright)
+- [Playwright with Jest](testrunner-toolkit/playwright)
 - [Screener Runner](./screener-runner)
 - more to follow
 
