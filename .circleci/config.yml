@@ -80,10 +80,6 @@ jobs:
             cd testcafe
             npm install
             npm run test.saucelabs.us
-      - run:
-          name: "Testrunner Toolkit Cypress examples"
-          command: |
-            saucectl run -c ./testrunner-toolkit/cypress/examples/.sauce/config.yml
 #      - run:
 #          name: "Run Nightwatch"
 #          command: |
