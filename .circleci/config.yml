@@ -81,14 +81,15 @@ jobs:
             npm install
             npm run test.saucelabs.us
       - run:
-          name: "Run Nightwatch"
-          command: |
-            cd nightwatch
-            npm install
-            npm run test.saucelabs.us
-      - run:
           name: "Testrunner Toolkit Cypress examples"
           command: |
             cd testrunner-toolkit/cypress/examples
             npm i -g saucectl
             saucectl run
+#      - run:
+#          name: "Run Nightwatch"
+#          command: |
+#            cd nightwatch
+#            npm install
+#            npm run test.saucelabs.us
+
