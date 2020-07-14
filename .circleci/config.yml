@@ -83,9 +83,7 @@ jobs:
       - run:
           name: "Testrunner Toolkit Cypress examples"
           command: |
-            cd testrunner-toolkit/cypress/examples
-            npm i -g saucectl
-            saucectl run
+            saucectl run -c ./testrunner-toolkit/cypress/examples/.sauce/config.yml
 #      - run:
 #          name: "Run Nightwatch"
 #          command: |
