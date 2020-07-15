@@ -80,9 +80,10 @@ jobs:
             cd testcafe
             npm install
             npm run test.saucelabs.us
-      - run:
-          name: "Run Nightwatch"
-          command: |
-            cd nightwatch
-            npm install
-            npm run test.saucelabs.us
+#      - run:
+#          name: "Run Nightwatch"
+#          command: |
+#            cd nightwatch
+#            npm install
+#            npm run test.saucelabs.us
+
