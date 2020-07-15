@@ -14,9 +14,6 @@ hs_err_pid*
 # node_modules
 **/node_modules
 
-# Package Lock
-package-lock.json
-
 # Optional npm cache directory
 **/.npm
 
