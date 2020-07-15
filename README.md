@@ -17,6 +17,7 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
 - [Puppeteer with Jest](./puppeteer)
 - [Screener Runner](./screener-runner)
 - **SauceCTL Testrunner Toolkit**
+    - [Cypress](./testrunner-toolkit/cypress)
     - [Playwright with Jest](./testrunner-toolkit/playwright)
     - [Puppeteer with Jest](./testrunner-toolkit/puppeteer)
     - [TestCafe](./testrunner-toolkit/testcafe)
