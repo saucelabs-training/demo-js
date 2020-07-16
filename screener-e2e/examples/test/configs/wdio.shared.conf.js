@@ -23,11 +23,7 @@ exports.config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
-    framework: 'jasmine',
     reporters: ['spec'],
-    jasmineNodeOpts: {
-        defaultTimeoutInterval: 60000
-    },
     services: [],
     //Screener Configuration
     hostname: 'staging-hub.screener.io',

@@ -19,8 +19,8 @@ config.capabilities = [
      * Desktop browsers
      */
     {
-        browserName: 'googlechrome',
-        platformName: 'Windows 10',
+        browserName: 'chrome',
+        platformName: 'macOS 10.15',
         browserVersion: 'latest',
         'sauce:options': {
             username: config.user,
