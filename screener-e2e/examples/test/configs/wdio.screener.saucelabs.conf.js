@@ -25,6 +25,4 @@ config.capabilities = [
     }
 ];
 
-config.services = config.services.concat('sauce');
-
 exports.config = config;
