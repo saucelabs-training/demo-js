@@ -19,3 +19,29 @@ You can run the tests on your local machine, the only thing you need to have is 
 You can run your tests on Sauce Labs US DC with this command
 
     npm run test.screener.sauce
+    
+The output will look like this
+
+```log
+`[0-0] 2020-07-17T13:35:47.715Z INFO webdriver: DATA {
+  capabilities: {
+    alwaysMatch: {
+      browserName: 'chrome',
+      platformName: 'macOS 10.15',
+      browserVersion: 'latest',
+      'sauce:options': [Object],
+      'sauce:visual': [Object]
+    },
+    firstMatch: [ {} ]
+  },
+  desiredCapabilities: {
+    browserName: 'chrome',
+    platformName: 'macOS 10.15',
+    browserVersion: 'latest',
+    'sauce:options': { username: 'nikolay-a' },
+    'sauce:visual': {
+      apiKey: '914aec51-7fca-4202-b021-ab9ba3cb0108',
+      projectName: 'demo-js',
+      viewportSize: '1280x1024'
+    }
+  } 
