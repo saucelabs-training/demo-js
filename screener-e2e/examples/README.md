@@ -13,7 +13,7 @@ This will install all needed dependencies that are listed in the `package.json`-
 ## Run tests locally
 You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this command
 
-    npm run test.screener.local
+    npm run test.screener.sauce
 
 ## Run tests on Sauce Labs
 You can run your tests on Sauce Labs US DC with this command
