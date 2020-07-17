@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test.screener.local": "npx wdio test/configs/wdio.screener.local.conf.js",
     "test.screener.sauce": "npx wdio test/configs/wdio.screener.saucelabs.conf.js"
   },
   "keywords": [],
