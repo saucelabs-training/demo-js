@@ -15,8 +15,6 @@ You can run the tests on your local machine, the only thing you need to have is 
 
     npm run test.screener.local
 
-It will run all tests in *headless*-mode, meaning you will not see a browser starting, but the logs will look like this
-
 ## Run tests on Sauce Labs
 You can run your tests on Sauce Labs US DC with this command
 
