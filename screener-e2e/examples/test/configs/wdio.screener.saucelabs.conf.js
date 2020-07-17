@@ -1,8 +1,5 @@
 const {config} = require('./wdio.shared.conf');
 
-// =========================
-// Sauce RDC specific config
-// =========================
 config.user = process.env.SAUCE_USERNAME;
 config.key = process.env.SAUCE_ACCESS_KEY;
 // If you run your tests on Sauce Labs you can specify the region you want to run your tests
@@ -11,13 +8,7 @@ config.key = process.env.SAUCE_ACCESS_KEY;
 // If you don't provide the region, it defaults to `us`.
 config.region = process.env.REGION || 'us';
 
-// ============
-// Capabilities
-// ============
 config.capabilities = [
-    /**
-     * Desktop browsers
-     */
     {
         browserName: 'chrome',
         platformName: 'macOS 10.15',

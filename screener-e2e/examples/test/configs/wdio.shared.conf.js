@@ -1,22 +1,12 @@
 exports.config = {
     // ====================
-    // Runner Configuration
+    // More information about the configuration is found here https://webdriver.io/docs/configurationfile.html
     // ====================
     runner: 'local',
-    // ==================
-    // Specify Test Files
-    // ==================
     specs: [
         './test/specs/**/*.js'
     ],
-    // ============
-    // Capabilities
-    // ============
     maxInstances: 100,
-    // capabilities can be found in the `wdio.local.chrome.conf.js` or `wdio.sauce.conf.js`
-    // ===================
-    // Test Configurations
-    // ===================
     logLevel: 'debug',
     bail: 0,
     baseUrl: 'https://www.saucedemo.com/',
