@@ -17,7 +17,7 @@ export default class BasePage {
                 reverse: !isShown
             });
         } catch (e) {
-            return false;
+            return !isShown;
         }
     }
 
