@@ -17,7 +17,7 @@ exports.config = {
     // ===================
     // Test Configurations
     // ===================
-    logLevel: 'debug',
+    logLevel: 'error',
     bail: 0,
     baseUrl: 'https://www.saucedemo.com/',
     waitforTimeout: 10000,
