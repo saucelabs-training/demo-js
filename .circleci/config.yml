@@ -4,6 +4,7 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: circleci/node:dubnium  # primary container for the build job
+    parallelism: 4
     steps:
       - checkout
       - run:
