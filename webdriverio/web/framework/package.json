@@ -13,16 +13,16 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.10.5",
+    "@babel/core": "^7.11.1",
     "@babel/plugin-proposal-private-methods": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
     "@babel/register": "^7.10.5",
-    "@wdio/cli": "^6.2.0",
-    "@wdio/jasmine-framework": "^6.2.0",
-    "@wdio/local-runner": "^6.2.0",
-    "@wdio/sauce-service": "^6.1.16",
-    "@wdio/spec-reporter": "^6.1.23",
-    "@wdio/sync": "^6.2.0",
+    "@wdio/cli": "^6.4.0",
+    "@wdio/jasmine-framework": "^6.4.0",
+    "@wdio/local-runner": "^6.4.0",
+    "@wdio/sauce-service": "^6.4.0",
+    "@wdio/spec-reporter": "^6.4.0",
+    "@wdio/sync": "^6.4.0",
     "wdio-chromedriver-service": "^6.0.3"
   }
 }
