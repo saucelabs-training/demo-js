@@ -10,7 +10,7 @@ metadata:
 files:
   - ./tests/
 image:
-  base: saucelabs/stt-testcafe-node
-  version: v0.1.2
+  base: saucelabs/sauce-testcafe
+  version: 1.8.5-saucectl0.6.3
 sauce:
   region: eu-central-1

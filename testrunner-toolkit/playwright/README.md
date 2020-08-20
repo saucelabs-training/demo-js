@@ -138,3 +138,11 @@ Ran all test suites.
 Open job details page: https://app.eu-central-1.saucelabs.com/tests/69d115d3f59d44a897581a0557ccd1ed
 
 ```
+
+### Browser support
+We support Chrome by default, but if you want to run on Firefox please add the following to the [config](./.sauce/config.yml)
+
+```yaml
+capabilities:
+  - browserName: firefox
+```

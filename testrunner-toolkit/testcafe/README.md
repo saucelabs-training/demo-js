@@ -74,3 +74,11 @@ upload successful
 
 Open job details page: https://app.eu-central-1.saucelabs.com/tests/427e230fa25046d4aaed3ebd2eb0c637
 ```
+
+### Browser support
+We support Chrome by default, but if you want to run on Firefox please add the following to the [config](./.sauce/config.yml)
+
+```yaml
+capabilities:
+  - browserName: firefox
+```
