@@ -76,3 +76,11 @@ Preparing assets for cypress.spec.js
 
 Open job details page: https://app.saucelabs.com/tests/a88a87a1cdbb40fda22d38f2675bed88
 ```
+
+### Browser support
+We support Chrome by default, but if you want to run on Firefox please add the following to the [config](./.sauce/config.yml)
+
+```yaml
+capabilities:
+  - browserName: firefox
+```
