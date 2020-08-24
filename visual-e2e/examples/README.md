@@ -8,7 +8,7 @@ You can install all dependencies by running the following command
     
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `screener-e2e/examples` when you execute this command
+> NOTE: Make sure you are in the folder `visual-e2e/examples` when you execute this command
 
 ## Run tests on Sauce Labs
 You can run your tests on Sauce Labs US DC with this command
