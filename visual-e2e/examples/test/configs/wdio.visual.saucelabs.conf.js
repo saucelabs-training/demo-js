@@ -1,7 +1,5 @@
 const {config} = require('./wdio.shared.conf');
 
-config.user = process.env.SAUCE_USERNAME;
-config.key = process.env.SAUCE_ACCESS_KEY;
 // If you run your tests on Sauce Labs you can specify the region you want to run your tests
 // in via the `region` property. Available short handles for regions are `us` (default) and `eu`.
 // These regions are used for the Sauce Labs VM cloud and the Sauce Labs Real Device Cloud.
@@ -14,8 +12,8 @@ config.capabilities = [
         platformName: 'macOS 10.15',
         browserVersion: 'latest',
         'sauce:options': {
-            username: config.user,
-            accesskey: config.accessKey
+            username: process.env.SAUCE_USERNAME,
+            accesskey: process.env.SAUCE_ACCESS_KEY
         },
         'sauce:visual': {
             apiKey: process.env.SCREENER_API_KEY,
