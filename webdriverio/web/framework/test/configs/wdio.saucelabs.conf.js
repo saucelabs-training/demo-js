@@ -78,15 +78,16 @@ config.capabilities = [
         version: '11.1',
         ...defaultBrowserSauceOptions,
     },
-    // // @TODO: There are issues with Safari 13
-    // {
-    //     browserName: 'safari',
-    //     platformName: 'macOS 10.13',
-    //     browserVersion: '13.0',
-    //     'sauce:options': {
-    //         ...defaultBrowserSauceOptions,
-    //     },
-    // },
+    // Safari 13
+    {
+        browserName: 'safari',
+        platformName: 'macOS 10.15',
+        browserVersion: 'latest',
+        'sauce:options': {
+            ...defaultBrowserSauceOptions,
+        },
+    },
+    // Safari 12
     {
         browserName: 'safari',
         platformName: 'macOS 10.14',
