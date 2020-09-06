@@ -16,8 +16,8 @@ exports.config = {
     reporters: ['spec'],
     services: [],
     //Screener Configuration
-    hostname: 'staging-hub.screener.io',
-    port: 80,
-    protocol: 'http',
+    hostname: 'hub.screener.io',
+    port: 443,
+    protocol: 'https',
     path: '/wd/hub'
 };

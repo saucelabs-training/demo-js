@@ -8,12 +8,12 @@ You can install all dependencies by running the following command
     
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `screener-e2e/examples` when you execute this command
+> NOTE: Make sure you are in the folder `visual-e2e/examples` when you execute this command
 
 ## Run tests on Sauce Labs
 You can run your tests on Sauce Labs US DC with this command
 
-    npm run test.screener.sauce
+    npm run test.visual.sauce
     
 The output will look like this
 
@@ -35,7 +35,7 @@ The output will look like this
     browserVersion: 'latest',
     'sauce:options': { username: 'nikolay-a' },
     'sauce:visual': {
-      apiKey: '914aec51-7fca-4202-b021-ab9ba3cb0108',
+      apiKey: '{api-key}',
       projectName: 'demo-js',
       viewportSize: '1280x1024'
     }
