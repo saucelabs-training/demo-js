@@ -6,11 +6,11 @@ metadata:
     - e2e
     - release team
     - other tag
-  build: Release $CI_COMMIT_SHORT_SHA
+      build: Release Cypress
 files:
   - ./tests/*.spec.js
 image:
   base: saucelabs/stt-cypress-mocha-node
-  version: v0.1.3
+  version: latest
 sauce:
-  region: us-west-1
+  region: eu-central-1

@@ -6,11 +6,11 @@ metadata:
     - e2e
     - release team
     - other tag
-  build: Release $CI_COMMIT_SHORT_SHA
+  build: Release TestCafe
 files:
   - ./tests/
 image:
-  base: saucelabs/sauce-testcafe
-  version: 1.8.5-saucectl0.6.3
+  base: saucelabs/stt-testcafe-node
+  version: latest
 sauce:
   region: eu-central-1

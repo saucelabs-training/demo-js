@@ -5,11 +5,11 @@ metadata:
     - e2e
     - release team
     - other tag
-  build: Release $CI_COMMIT_SHORT_SHA
+      build: Release Playwright
 files:
   - ./test/
 image:
-  base: saucelabs/sauce-playwright
-  version: 1.0.0-saucectl0.5.0
+  base: saucelabs/stt-playwright-jest-node
+  version: latest
 sauce:
   region: eu-central-1
