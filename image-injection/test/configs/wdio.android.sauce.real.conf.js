@@ -13,7 +13,7 @@ config.capabilities = [
         orientation: 'PORTRAIT',
         automationName: 'UiAutomator2',
         // The path to the app
-        app: 'sauce-storage:sample-app-android.apk',
+        app: 'storage:filename=Android.SauceLabs.Mobile.Sample.app.apk',
         appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/

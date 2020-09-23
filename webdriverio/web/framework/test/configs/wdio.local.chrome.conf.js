@@ -11,7 +11,6 @@ config.capabilities = [
             args: [
                 '--no-sandbox',
                 '--disable-infobars',
-                '--headless',
             ],
         },
 
