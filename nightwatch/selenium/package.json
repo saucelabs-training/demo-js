@@ -14,10 +14,10 @@
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "chromedriver": "^83.0.1",
-    "eslint": "^7.4.0",
-    "eslint-plugin-import": "^2.22.0",
-    "nightwatch": "^1.3.6",
-    "saucelabs": "^4.4.3"
+    "chromedriver": "^85.0.1",
+    "eslint": "^7.10.0",
+    "eslint-plugin-import": "^2.22.1",
+    "nightwatch": "^1.4.3",
+    "saucelabs": "^4.5.0"
   }
 }
