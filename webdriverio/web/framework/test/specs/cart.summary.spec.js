@@ -11,7 +11,11 @@ describe('Cart Summary page', () => {
             user: LOGIN_USERS.STANDARD,
             path: PAGES.CART,
         });
-        CartSummaryPage.waitForIsShown();
+
+        expect(CartSummaryPage.waitForIsShown()).toEqual(
+            true,
+            'Cart summary screen is still not visible'
+        );
 
         // Actual test starts here
         CartSummaryPage.continueShopping();
