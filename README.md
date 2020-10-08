@@ -10,7 +10,9 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
 > Some examples in this repository, such as `appium-examples` and `headless-examples`, may require a different account tier beyond free trial. Please contact the [Sauce Labs Sales Team](https://saucelabs.com/contact) for support and information.
 
 ## Framework examples
-- [WebdriverIO V6 with Jasmine](./webdriverio)
+- [WebdriverIO with Jasmine*](./webdriverio)
+    - [WebdriverIO with Webdriver (desktop browser tests)](./webdriverio/web/framework)
+    - [WebdriverIO with Appium (mobile browser tests)](./webdriverio/web/appium)
 - [TestCafe](./testcafe)
 - [NightWatch](./nightwatch)
 - [Protractor with Jasmine](./protractor)
@@ -26,6 +28,10 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
 - more to follow
 
 The above mentioned frameworks include some best practices.
+
+> \* The connection to Sauce Labs doesn't depend on using Mocha, Jasmine or CucumberJS. Please check the 
+[frameworks](https://webdriver.io/docs/frameworks.html) page of WebdriverIO on how to implement a different framework then 
+the used framework here in this repository.
 
 ## Solution Outline
 * [Tests that can help you quickly and easily get started with Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/on-boarding-modules)
