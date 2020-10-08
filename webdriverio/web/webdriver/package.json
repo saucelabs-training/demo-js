@@ -17,13 +17,13 @@
     "@babel/plugin-proposal-private-methods": "^7.10.4",
     "@babel/preset-env": "^7.11.5",
     "@babel/register": "^7.11.5",
-    "@wdio/cli": "^6.5.0",
-    "@wdio/jasmine-framework": "^6.5.0",
-    "@wdio/local-runner": "^6.5.0",
-    "@wdio/sauce-service": "^6.5.0",
-    "@wdio/spec-reporter": "^6.4.7",
-    "@wdio/sync": "^6.5.0",
-    "chromedriver": "^85.0.1",
+    "@wdio/cli": "^6.6.0",
+    "@wdio/jasmine-framework": "^6.6.0",
+    "@wdio/local-runner": "^6.6.0",
+    "@wdio/sauce-service": "^6.6.0",
+    "@wdio/spec-reporter": "^6.6.0",
+    "@wdio/sync": "^6.6.0",
+    "chromedriver": "^86.0.0",
     "wdio-chromedriver-service": "^6.0.4"
   }
 }
