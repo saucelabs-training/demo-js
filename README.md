@@ -36,6 +36,7 @@ the used framework here in this repository.
 ## Sauce Labs Feature Examples
 
 * [Sauce Connect with WebdriverIO](/webdriverio/web/examples/sc/test/specs/sauce-connect.example.js)
+* [Appium automation on real devices testing web apps framework](/webdriverio/mobile/real-devices/browser/framework)
 
 
 ## Solution Outline
