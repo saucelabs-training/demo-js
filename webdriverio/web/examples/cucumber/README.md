@@ -6,7 +6,6 @@ best practice recommendation!
 
 ## Install dependencies
 Navigate to the `cucumber` directory
-
 ```
 cd cucumber
 ```
@@ -17,6 +16,9 @@ Install all dependencies:
     
 This will install all needed dependencies that are 
 listed in the `package.json`-file
+
+## Update base url
+Update the `baseUrl` property to your application url in the `wdio.shared.conf.js`
 
 ## Run tests on Sauce Labs
 You can run your tests on Sauce Labs US DC with this command
