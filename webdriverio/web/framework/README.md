@@ -1,5 +1,6 @@
 # WebdriverIO
-This folder contains a simple set up for WebdriverIO V6.
+This folder contains WebdriverIO V6 framework
+using industry standard best practices.
 
 ## Install dependencies
 You can install all dependencies by running the following command
@@ -8,8 +9,14 @@ You can install all dependencies by running the following command
     
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `webdriverio` when you execute this command
-
+## Run tests in Sauce Labs
+```
+npm run test.saucelabs.us
+```
+If you want to run in EU Datacenter
+```
+npm run test.saucelabs.eu
+```
 ## Run tests locally
 You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this command
 
