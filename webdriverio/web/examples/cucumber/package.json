@@ -8,8 +8,7 @@
   "main": "test/node_modules/.bin/wdio",
   "scripts": {
     "test:sauce": "wdio test/config/wdio.saucelabs.conf.js",
-    "test-sauce": "test/node_modules/.bin/wdio test/config/wdio.sauce.conf.js",
-    "test-local": "test/node_modules/.bin/wdio test/config/wdio.local.conf.js"
+    "test:local": "wdio test/config/wdio.local.conf.js"
   },
   "keywords": [],
   "devDependencies": {
