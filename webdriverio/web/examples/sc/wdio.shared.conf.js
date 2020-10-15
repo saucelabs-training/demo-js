@@ -13,7 +13,7 @@ exports.config = {
     // Capabilities
     // ============
     maxInstances: 100,
-    // capabilities can be found in the `wdio.local.chrome.conf.js` or `wdio.sauce.conf.js`
+    // capabilities can be found in the `wdio.saucelabs.conf.js`
     // ===================
     // Test Configurations
     // ===================
@@ -27,11 +27,6 @@ exports.config = {
     reporters: ['spec'],
     jasmineNodeOpts: {
         defaultTimeoutInterval: 60000,
-        helpers: [require.resolve('@babel/register')],
     },
-    services: [
-        ['sauce', {
-            sauceConnect: true
-        }]
-    ]
+    services: []
 };

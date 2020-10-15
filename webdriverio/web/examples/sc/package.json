@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio wdio.saucelabs.conf.js"
+    "test.saucelabs.eu": "REGION=eu wdio wdio.saucelabs.conf.js",
+    "test.saucelabs.us": "wdio wdio.saucelabs.conf.js"
   },
   "keywords": [],
   "author": "",
@@ -13,11 +14,9 @@
     "@wdio/cli": "^6.6.4",
     "@wdio/local-runner": "^6.6.4",
     "@wdio/mocha-framework": "^6.6.3",
-    "@wdio/jasmine-framework": "^6.6.0",
+    "@wdio/jasmine-framework": "^6.6.3",
     "@wdio/sauce-service": "^6.6.3",
     "@wdio/spec-reporter": "^6.6.3",
-    "@wdio/sync": "^6.6.4",
-    "chromedriver": "^86.0.0",
-    "wdio-chromedriver-service": "^6.0.4"
+    "@wdio/sync": "^6.6.4"
   }
 }
