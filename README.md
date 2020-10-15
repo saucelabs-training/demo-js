@@ -26,7 +26,7 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
     - [Playwright with Jest](./testrunner-toolkit/playwright)
     - [Puppeteer with Jest](./testrunner-toolkit/puppeteer)
     - [TestCafe](./testrunner-toolkit/testcafe)
-    
+
 - more to follow
 
 The above mentioned frameworks include some best practices.
@@ -34,6 +34,11 @@ The above mentioned frameworks include some best practices.
 > \* The connection to Sauce Labs doesn't depend on using Mocha, Jasmine or CucumberJS. Please check the 
 [frameworks](https://webdriver.io/docs/frameworks.html) page of WebdriverIO on how to implement a different framework then 
 the used framework here in this repository.
+
+## Sauce Labs Feature Examples
+
+* [Sauce Connect with WebdriverIO](/webdriverio/web/examples/sc/test/specs/sauce-connect.example.js)
+
 
 ## Solution Outline
 * [Tests that can help you quickly and easily get started with Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/on-boarding-modules)
