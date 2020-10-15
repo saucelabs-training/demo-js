@@ -4,6 +4,9 @@ demonstrate how to use WebdriverIO with CucumberBDD and Sauce.
 This is just an example to get you started and not a
 best practice recommendation!
 
+These tests run 1 scenario, in parallel across 4
+different platform combinations
+
 ## Install dependencies
 Navigate to the `cucumber` directory
 ```
