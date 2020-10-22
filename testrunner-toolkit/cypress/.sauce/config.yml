@@ -1,16 +1,20 @@
-
-apiVersion: v1
+apiVersion: v1alpha
 metadata:
-  name: Feature XYZ
+  name: Testing Cypress Support
   tags:
     - e2e
     - release team
     - other tag
-      build: Release Cypress
+  build: Release $CI_COMMIT_SHORT_SHA
 files:
-  - ./tests/*.spec.js
+  - ./tests/
+suites:
+  - name: "saucy test"
+    match: ".*.(spec|test).js$"
+    settings:
+      browserName: "chrome"
 image:
   base: saucelabs/stt-cypress-mocha-node
-  version: latest
+  version: v0.1.12
 sauce:
   region: eu-central-1
