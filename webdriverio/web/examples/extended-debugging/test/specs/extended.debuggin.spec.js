@@ -34,12 +34,10 @@ describe('LoginPage and Sauce extendedDebugging API', () => {
     it('should be able get the network logs', () => {
         //
         // Store the network data and execute assertions on it
-        // Seems to be broken at the time
-        // console.log(browser.execute('sauce:network'));
+        const networkLogs = browser.execute('sauce:log', {type: 'sauce:network'});
         //
         // The WebdriverIO Sauce Service equivalent
         // https://webdriver.io/docs/api/saucelabs.html#getpagelogs
-        const networkLogs = browser.getPageLogs('sauce:network');
 
         expect(JSON.stringify(networkLogs)).toContain(
             'https://www.saucedemo.com/css/sample-app-web.css',
