@@ -1,0 +1,21 @@
+{
+  "name": "webdriverio-extendedDebugging",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test.saucelabs.eu": "REGION=eu wdio test/configs/wdio.saucelabs.conf.js",
+    "test.saucelabs.us": "wdio test/configs/wdio.saucelabs.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@wdio/cli": "^6.6.7",
+    "@wdio/jasmine-framework": "^6.6.6",
+    "@wdio/local-runner": "^6.6.7",
+    "@wdio/sauce-service": "^6.6.7",
+    "@wdio/spec-reporter": "^6.6.8",
+    "@wdio/sync": "^6.6.7"
+  }
+}
