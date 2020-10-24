@@ -2,6 +2,9 @@
 This folder contains a simple set up for WebdriverIO and the power of `extendedDebugging`.
 More information about `extendedDebugging` can be found [here](https://wiki.saucelabs.com/pages/viewpage.action?pageId=70072943).
 
+Below you will find an example where the Sauce Demo app images are replaced with images from Friends \
+![Intercept example](./assets/intercept.gif "Intercept example")
+
 ## Install dependencies
 You can install all dependencies by running the following command
 

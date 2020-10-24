@@ -31,6 +31,12 @@ describe('LoginPage and Sauce extendedDebugging API', () => {
         browser.execute('sauce:context=########## End beforeEach ##########');
     });
 
+    afterEach(()=>{
+        //
+        // Adding extra logs to the Sauce Commands Dashboard
+        browser.execute('sauce:context=########## Enf of test ##########');
+    });
+
     it('should be able get the network logs', () => {
         //
         // Store the network data and execute assertions on it
@@ -95,6 +101,35 @@ describe('LoginPage and Sauce extendedDebugging API', () => {
         // 4. Because it is harder to verify this you should check this in Sauce Labs itself
     });
 
+    it('should be able to intercept the image calls and replace them with friends images', () => {
+        //
+        // 1. Tell Chrome to replace the images
+        browser.execute(
+            'sauce:intercept', {
+                'url': '**/SwagLabs_logo.png',
+                'redirect': 'https://upload.wikimedia.org/wikipedia/commons/b/bc/Friends_logo.svg'
+            }
+        );
+        browser.execute(
+            'sauce:intercept', {
+                'url': '**/Login_Bot_graphic.png',
+                'redirect': 'https://media.glamour.com/photos/5de651f455321a0008bced61/16:9/w_2560%2Cc_limit/GettyImages-143479441.jpg'
+            }
+        );
+        //
+        // The WebdriverIO Sauce Service equivalent
+        // https://webdriver.io/docs/api/saucelabs.html#interceptrequest
+        // The WDIO service intercept is not working correctly now, so don't use it for now
+
+        //
+        // 2. Reload the url
+        browser.url('');
+
+        //
+        // 3. This pause is for demo purposes
+        browser.pause(3000);
+    });
+
     it('should be able to intercept the request and redirect it', () => {
         //
         // 1. Tell Chrome to redirect the url
@@ -105,7 +140,7 @@ describe('LoginPage and Sauce extendedDebugging API', () => {
         //
         // The WebdriverIO Sauce Service equivalent
         // https://webdriver.io/docs/api/saucelabs.html#interceptrequest
-        // The WDIO service intercept is not working correctly now, so don't use it
+        // The WDIO service intercept is not working correctly now, so don't use it for now
 
         //
         // 2. Reload the url
