@@ -14,6 +14,8 @@ This folder contains a simple set up for Protractor.
 > that there won't be a big chance that this is going to change.
 > I'm not the only one who thinks about Protractor like this, please take a look at [this great article](https://dev.to/davert/5-reasons-you-should-not-use-protractor-in-2019-3l4b) which might also give you some insights.\
 >
+> Last but not leat, even though Protractor released version 7.0, no **NEW FUNCTIONALITY AND OR BUGFIXES** were released. This was mainly a release to support Node.js 10.
+>
 > **Also be aware of the fact that Protractor DOES NOT SUPPORT W3C!** 
 >
 >![Protractor Support](./docs/protractor-support.jpg) 
