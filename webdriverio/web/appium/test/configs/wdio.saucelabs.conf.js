@@ -31,8 +31,8 @@ config.capabilities = [
         cacheId: '17506a5f122', // See the capabilities url as mentioned above
         // Only run 2 tests files
         specs: [
-            './test/web/specs/demo-site/login.spec.js',
-            './test/web/specs/demo-site/swag.items.list.spec.js',
+            './test/specs/login.spec.js',
+            './test/specs/swag.items.list.spec.js',
         ],
         build
     },
@@ -46,8 +46,8 @@ config.capabilities = [
         cacheId: '58vi9zm82i', // See the capabilities url as mentioned above
         // Only run 2 tests files
         specs: [
-            './test/web/specs/demo-site/login.spec.js',
-            './test/web/specs/demo-site/swag.items.list.spec.js',
+            './test/specs/login.spec.js',
+            './test/specs/swag.items.list.spec.js',
         ],
         build
     },
@@ -63,8 +63,8 @@ config.capabilities = [
         cacheId: 'e7s54tyw5g', // See the capabilities url as mentioned above
         // Only run 2 tests files
         specs: [
-            './test/web/specs/demo-site/login.spec.js',
-            './test/web/specs/demo-site/swag.items.list.spec.js',
+            './test/specs/login.spec.js',
+            './test/specs/swag.items.list.spec.js',
         ],
         build
     },
@@ -77,8 +77,8 @@ config.capabilities = [
         cacheId: 'tl5lps3go1', // See the capabilities url as mentioned above
         // Only run 2 tests files
         specs: [
-            './test/web/specs/demo-site/login.spec.js',
-            './test/web/specs/demo-site/swag.items.list.spec.js',
+            './test/specs/login.spec.js',
+            './test/specs/swag.items.list.spec.js',
         ],
         build
     },
@@ -96,7 +96,7 @@ config.capabilities = [
         // Extra caps
         cacheId: 'vvqb5g7lr3', // See the capabilities url as mentioned above
         // Specs are not mentioned here so it will run all tests
-        // from ./test/web/specs/demo-site/
+        // from ./test/specs/
         build
     },
     {
@@ -107,7 +107,7 @@ config.capabilities = [
         // Extra caps
         cacheId: '4hn1znudgm', // See the capabilities url as mentioned above
         // Specs are not mentioned here so it will run all tests
-        // from ./test/web/specs/demo-site/
+        // from ./test/specs/
         build
     },
     /**
@@ -122,8 +122,8 @@ config.capabilities = [
         cacheId: 'bq9jvoctq7', // See the capabilities url as mentioned above
         // Only run 2 tests files
         specs: [
-            './test/web/specs/demo-site/login.spec.js',
-            './test/web/specs/demo-site/swag.items.list.spec.js',
+            './test/specs/login.spec.js',
+            './test/specs/swag.items.list.spec.js',
         ],
         build
     },
@@ -136,8 +136,8 @@ config.capabilities = [
         cacheId: 'cvtjmvawq8', // See the capabilities url as mentioned above
         // Only run 2 tests files
         specs: [
-            './test/web/specs/demo-site/login.spec.js',
-            './test/web/specs/demo-site/swag.items.list.spec.js',
+            './test/specs/login.spec.js',
+            './test/specs/swag.items.list.spec.js',
         ],
         build
     },
@@ -153,8 +153,8 @@ config.capabilities = [
         cacheId: 'em1pf4ab20', // See the capabilities url as mentioned above
         // Only run 2 tests files
         specs: [
-            './test/web/specs/demo-site/login.spec.js',
-            './test/web/specs/demo-site/swag.items.list.spec.js',
+            './test/specs/login.spec.js',
+            './test/specs/swag.items.list.spec.js',
         ],
         build
     },
@@ -167,8 +167,8 @@ config.capabilities = [
         cacheId: 'cegc4zom7n', // See the capabilities url as mentioned above
         // Only run 2 tests files
         specs: [
-            './test/web/specs/demo-site/login.spec.js',
-            './test/web/specs/demo-site/swag.items.list.spec.js',
+            './test/specs/login.spec.js',
+            './test/specs/swag.items.list.spec.js',
         ],
         build
     },
@@ -184,8 +184,8 @@ config.capabilities = [
         cacheId: 'dn7zr1irmc', // See the capabilities url as mentioned above
         // Only run 2 tests files
         specs: [
-            './test/web/specs/demo-site/login.spec.js',
-            './test/web/specs/demo-site/swag.items.list.spec.js',
+            './test/specs/login.spec.js',
+            './test/specs/swag.items.list.spec.js',
         ],
         build
     },
@@ -198,8 +198,8 @@ config.capabilities = [
         cacheId: 'itfdqgn5mp', // See the capabilities url as mentioned above
         // Only run 2 tests files
         specs: [
-            './test/web/specs/demo-site/login.spec.js',
-            './test/web/specs/demo-site/swag.items.list.spec.js',
+            './test/specs/login.spec.js',
+            './test/specs/swag.items.list.spec.js',
         ],
         build
     },
@@ -215,8 +215,8 @@ config.capabilities = [
         cacheId: 'q96a2zipwp', // See the capabilities url as mentioned above
         // Only run 2 tests files
         specs: [
-            './test/web/specs/demo-site/login.spec.js',
-            './test/web/specs/demo-site/swag.items.list.spec.js',
+            './test/specs/login.spec.js',
+            './test/specs/swag.items.list.spec.js',
         ],
         build
     },
@@ -232,8 +232,8 @@ config.capabilities = [
         cacheId: 'nn7g8kq8m8', // See the capabilities url as mentioned above
         // Only run 2 tests files
         specs: [
-            './test/web/specs/demo-site/login.spec.js',
-            './test/web/specs/demo-site/swag.items.list.spec.js',
+            './test/specs/login.spec.js',
+            './test/specs/swag.items.list.spec.js',
         ],
         build
     },
@@ -249,8 +249,8 @@ config.capabilities = [
         cacheId: 'zr6g2phl4w', // See the capabilities url as mentioned above
         // Only run 2 tests files
         specs: [
-            './test/web/specs/demo-site/login.spec.js',
-            './test/web/specs/demo-site/swag.items.list.spec.js',
+            './test/specs/login.spec.js',
+            './test/specs/swag.items.list.spec.js',
         ],
         build
     },
@@ -263,8 +263,8 @@ config.capabilities = [
         cacheId: 'edvxh39cnd', // See the capabilities url as mentioned above
         // Only run 2 tests files
         specs: [
-            './test/web/specs/demo-site/login.spec.js',
-            './test/web/specs/demo-site/swag.items.list.spec.js',
+            './test/specs/login.spec.js',
+            './test/specs/swag.items.list.spec.js',
         ],
         build
     },
