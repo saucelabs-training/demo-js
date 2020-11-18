@@ -9,6 +9,9 @@ metadata:
   build: Release TestCafe
 files:
   - ./tests/
+suites:
+- name: Tests
+  match: tests/(.*)+\.(spec|test)\.[jt]sx?
 image:
   base: saucelabs/stt-testcafe-node
   version: latest
