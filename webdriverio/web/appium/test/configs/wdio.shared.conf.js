@@ -7,7 +7,8 @@ exports.config = {
     // Specify Test Files
     // ==================
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/login.spec.js',
+        './test/specs/swag.items.list.spec.js',
     ],
     // ============
     // Capabilities

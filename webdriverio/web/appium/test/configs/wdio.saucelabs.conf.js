@@ -29,12 +29,7 @@ config.capabilities = [
         platformName: 'iOS',
         // Extra caps
         cacheId: '17506a5f122', // See the capabilities url as mentioned above
-        // Only run 2 tests files
-        specs: [
-            './test/specs/login.spec.js',
-            './test/specs/swag.items.list.spec.js',
-        ],
-        build
+       build
     },
     {
         name: "Run on deviceID Android",
@@ -44,12 +39,7 @@ config.capabilities = [
         platformName: 'Android',
         // Extra caps
         cacheId: '58vi9zm82i', // See the capabilities url as mentioned above
-        // Only run 2 tests files
-        specs: [
-            './test/specs/login.spec.js',
-            './test/specs/swag.items.list.spec.js',
-        ],
-        build
+       build
     },
     /**
      * Capabilities to run on a specific device based on its name
@@ -61,12 +51,7 @@ config.capabilities = [
         platformName: 'iOS',
         // Extra caps
         cacheId: 'e7s54tyw5g', // See the capabilities url as mentioned above
-        // Only run 2 tests files
-        specs: [
-            './test/specs/login.spec.js',
-            './test/specs/swag.items.list.spec.js',
-        ],
-        build
+       build
     },
     {
         name: "Run on device description for Android",
@@ -75,12 +60,7 @@ config.capabilities = [
         platformName: 'Android',
         // Extra caps
         cacheId: 'tl5lps3go1', // See the capabilities url as mentioned above
-        // Only run 2 tests files
-        specs: [
-            './test/specs/login.spec.js',
-            './test/specs/swag.items.list.spec.js',
-        ],
-        build
+       build
     },
     /**
      * Capabilities to run on a 'random' device based on a regular expression
@@ -120,12 +100,7 @@ config.capabilities = [
         platformVersion: '13',
         // Extra caps
         cacheId: 'bq9jvoctq7', // See the capabilities url as mentioned above
-        // Only run 2 tests files
-        specs: [
-            './test/specs/login.spec.js',
-            './test/specs/swag.items.list.spec.js',
-        ],
-        build
+       build
     },
     {
         name: 'Run on major Android version - 7',
@@ -134,12 +109,7 @@ config.capabilities = [
         platformVersion: '7',
         // Extra caps
         cacheId: 'cvtjmvawq8', // See the capabilities url as mentioned above
-        // Only run 2 tests files
-        specs: [
-            './test/specs/login.spec.js',
-            './test/specs/swag.items.list.spec.js',
-        ],
-        build
+       build
     },
     /**
      * Capabilities to run on a minor version of the OS
@@ -151,12 +121,7 @@ config.capabilities = [
         platformVersion: '12.1',
         // Extra caps
         cacheId: 'em1pf4ab20', // See the capabilities url as mentioned above
-        // Only run 2 tests files
-        specs: [
-            './test/specs/login.spec.js',
-            './test/specs/swag.items.list.spec.js',
-        ],
-        build
+       build
     },
     {
         name: 'Run on minor Android version - 7.1',
@@ -165,12 +130,7 @@ config.capabilities = [
         platformVersion: '7.1',
         // Extra caps
         cacheId: 'cegc4zom7n', // See the capabilities url as mentioned above
-        // Only run 2 tests files
-        specs: [
-            './test/specs/login.spec.js',
-            './test/specs/swag.items.list.spec.js',
-        ],
-        build
+       build
     },
     /**
      * Capabilities to run on a patch version of the OS
@@ -182,12 +142,7 @@ config.capabilities = [
         platformVersion: '12.4.1',
         // Extra caps
         cacheId: 'dn7zr1irmc', // See the capabilities url as mentioned above
-        // Only run 2 tests files
-        specs: [
-            './test/specs/login.spec.js',
-            './test/specs/swag.items.list.spec.js',
-        ],
-        build
+       build
     },
     {
         name: 'Run on patch Android version - 7.1.2',
@@ -196,12 +151,7 @@ config.capabilities = [
         platformVersion: '7.1.2',
         // Extra caps
         cacheId: 'itfdqgn5mp', // See the capabilities url as mentioned above
-        // Only run 2 tests files
-        specs: [
-            './test/specs/login.spec.js',
-            './test/specs/swag.items.list.spec.js',
-        ],
-        build
+       build
     },
     /**
      * Capabilities to run on a phone only (works for iOS and Android the same)
@@ -213,12 +163,7 @@ config.capabilities = [
         phoneOnly: true,
         // Extra caps
         cacheId: 'q96a2zipwp', // See the capabilities url as mentioned above
-        // Only run 2 tests files
-        specs: [
-            './test/specs/login.spec.js',
-            './test/specs/swag.items.list.spec.js',
-        ],
-        build
+       build
     },
     /**
      * Capabilities to run on a tablet only (works for iOS and Android the same)
@@ -230,12 +175,7 @@ config.capabilities = [
         tabletOnly: true,
         // Extra caps
         cacheId: 'nn7g8kq8m8', // See the capabilities url as mentioned above
-        // Only run 2 tests files
-        specs: [
-            './test/specs/login.spec.js',
-            './test/specs/swag.items.list.spec.js',
-        ],
-        build
+       build
     },
     /**
      * Capabilities to run on private devices only
@@ -247,11 +187,6 @@ config.capabilities = [
         privateDevicesOnly: true,
         // Extra caps
         cacheId: 'zr6g2phl4w', // See the capabilities url as mentioned above
-        // Only run 2 tests files
-        specs: [
-            './test/specs/login.spec.js',
-            './test/specs/swag.items.list.spec.js',
-        ],
         build
     },
     {
@@ -261,12 +196,7 @@ config.capabilities = [
         privateDevicesOnly: true,
         // Extra caps
         cacheId: 'edvxh39cnd', // See the capabilities url as mentioned above
-        // Only run 2 tests files
-        specs: [
-            './test/specs/login.spec.js',
-            './test/specs/swag.items.list.spec.js',
-        ],
-        build
+       build
     },
 ];
 
