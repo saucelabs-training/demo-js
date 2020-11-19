@@ -25,6 +25,7 @@ class MenuPage {
      * Open the menu
      */
     open() {
+        // For some reason iOS is not accepting the click properly
         if (browser.isIOS) {
             browser.execute('document.querySelector(\'.bm-burger-button button\').click()');
         } else {
