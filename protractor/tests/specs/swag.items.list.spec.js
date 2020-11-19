@@ -4,7 +4,7 @@ import SwagDetailsPage from '../page-objects/SwagDetailsPage';
 import CartSummaryPage from '../page-objects/CartSummaryPage';
 import {setTestContext} from '../helpers';
 import {LOGIN_USERS, PAGES, PRODUCTS} from '../configs/e2eConstants';
-import {browser} from "protractor";
+import {browser} from 'protractor';
 
 describe('Swag items list', () => {
     it('should validate that all products are present', async () => {

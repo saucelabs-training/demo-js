@@ -3,7 +3,7 @@ import SwagOverviewPage from '../page-objects/SwagOverviewPage';
 import SwagDetailsPage from '../page-objects/SwagDetailsPage';
 import {setTestContext} from '../helpers';
 import {LOGIN_USERS, PAGES, PRODUCTS} from '../configs/e2eConstants';
-import {browser} from "protractor";
+import {browser} from 'protractor';
 
 describe('Swag Item Details', () => {
     // @TODO: there is an error with IE11 `ReferenceError: 'URLSearchParams' is undefined`

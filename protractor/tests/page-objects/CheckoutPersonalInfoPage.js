@@ -58,9 +58,15 @@ class CheckoutPersonalInfoPage extends BasePage {
     async submitPersonalInfo(personalInfo) {
         const {firstName, lastName, zip} = personalInfo;
 
-        await this.#firstName.sendKeys(firstName);
-        await this.#lastName.sendKeys(lastName);
-        await this.#postalCode.sendKeys(zip);
+        if (firstName){
+            await this.#firstName.sendKeys(firstName);
+        }
+        if (lastName){
+            await this.#lastName.sendKeys(lastName);
+        }
+        if (zip){
+            await this.#postalCode.sendKeys(zip);
+        }
         await this.#continueCheckoutButton.click();
     }
 
