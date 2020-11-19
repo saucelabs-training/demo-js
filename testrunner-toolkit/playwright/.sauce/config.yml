@@ -5,9 +5,14 @@ metadata:
     - e2e
     - release team
     - other tag
-      build: Release Playwright
+  build: Release Playwright
 files:
   - ./test/
+suites:
+  - name: "Sauce Playwright test"
+    match: ".*.(spec|test).js$"
+    settings:
+      browserName: "chromium"
 image:
   base: saucelabs/stt-playwright-jest-node
   version: latest
