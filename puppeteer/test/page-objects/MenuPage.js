@@ -11,7 +11,7 @@ class MenuPage {
      */
     async open() {
         await page.click(SELECTORS.menu);
-        await page.waitFor(500);
+        await page.waitForTimeout(500);
     }
 
     /**
