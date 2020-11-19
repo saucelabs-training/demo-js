@@ -13,11 +13,10 @@ config.capabilities = [
         orientation: 'PORTRAIT',
         automationName: 'UiAutomator2',
         // The path to the app
-        app: 'storage:filename=Android.SauceLabs.Mobile.Sample.app.apk',
+        app: 'storage:filename=sample-app-android.apk',
         appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
-        // Read the reset strategies very well, they differ per platform, see
-        // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
-        noReset: true,
+        // Keep the device connected between tests so we don't need to wait for the cleaning process
+        cacheId: 'jsy1v49pn9',
         newCommandTimeout: 240,
         // Always default the language to a language you prefer so you know the app language is always as expected
         language: 'en',

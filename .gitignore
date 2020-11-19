@@ -24,4 +24,4 @@ hs_err_pid*
 # Extra folders
 .tmp/
 tests_output/
-**/apps
+apps
