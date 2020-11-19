@@ -18,6 +18,9 @@ module.exports = {
     },
 
     after: function (browser) {
+      // Only update Sauce whe we are testing for Sauce
+      if(browser.options.access_key) {
         browser.customSauceLabsEnd();
+      }
     },
 };
