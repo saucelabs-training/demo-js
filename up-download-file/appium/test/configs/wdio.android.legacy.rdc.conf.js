@@ -23,7 +23,7 @@ delete config.key;
 config.capabilities = [
     {
         // This is a specific private device so I can control the state of it
-        deviceName: 'Samsung_Galaxy_S10_ws',
+        deviceName: process.env.REGION === 'eu' ? 'Samsung_Galaxy_S10_ws' : 'Google_Pixel_3_XL_ws_us',
         platformName: 'Android',
         // Don't load the default app
         autoLaunch: false,
@@ -36,7 +36,7 @@ config.capabilities = [
         // with this capability available
         maxInstances: 1,
         // Keep the device connected between tests so we don't need to wait for the cleaning process
-        cacheId: new Date().getTime(),
+        cacheId: 'jsy1v49pn0',
         // Some default settings
         // You can find more info in the TO Appium Basic Setup section
         idleTimeout: 180,
