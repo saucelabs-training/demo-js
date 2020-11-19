@@ -18,7 +18,7 @@ config.capabilities = [
         platformVersion: '13.2',
         orientation: 'PORTRAIT',
         // The path to the app
-        app: 'sauce-storage:sample-app-ios-sim.zip',
+        app: 'storage:filename=sample-app-ios.zip',
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
         noReset: true,
@@ -38,7 +38,7 @@ config.capabilities = [
         platformVersion: '12.4',
         orientation: 'PORTRAIT',
         // The path to the app
-        app: 'sauce-storage:sample-app-ios-sim.zip',
+        app: 'storage:filename=sample-app-ios.zip',
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
         noReset: true,
@@ -57,7 +57,7 @@ config.capabilities = [
         platformVersion: '13.2',
         orientation: 'PORTRAIT',
         // The path to the app
-        app: 'sauce-storage:sample-app-ios-sim.zip',
+        app: 'storage:filename=sample-app-ios.zip',
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
         noReset: true,
@@ -77,7 +77,7 @@ config.capabilities = [
         platformVersion: '12.4',
         orientation: 'PORTRAIT',
         // The path to the app
-        app: 'sauce-storage:sample-app-ios-sim.zip',
+        app: 'storage:filename=sample-app-ios.zip',
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
         noReset: true,

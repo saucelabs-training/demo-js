@@ -25,8 +25,8 @@ config.capabilities = [
     // You can find more info in the TO Appium Basic Setup section
     platformName: 'iOS',
     idleTimeout: 180,
-    testobject_cache_device: true,
-    noReset: true,
+    // Keep the device connected between tests so we don't need to wait for the cleaning process
+    cacheId: 'jsy1v49pn10',
     orientation: 'PORTRAIT',
     newCommandTimeout: 180,
     // Always default the language to a language you prefer so you know the app language is always as expected

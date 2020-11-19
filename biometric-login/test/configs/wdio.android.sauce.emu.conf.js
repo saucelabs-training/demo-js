@@ -19,7 +19,7 @@ config.capabilities = [
         orientation: 'PORTRAIT',
         appiumVersion: '1.16.0',
         // The path to the app
-        app: 'sauce-storage:sample-app-android.apk',
+        app: 'storage:filename=sample-app-android.apk',
         appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
@@ -41,7 +41,7 @@ config.capabilities = [
         orientation: 'PORTRAIT',
         appiumVersion: '1.16.0',
         // The path to the app
-        app: 'sauce-storage:sample-app-android.apk',
+        app: 'storage:filename=sample-app-android.apk',
         appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
@@ -63,7 +63,7 @@ config.capabilities = [
         orientation: 'PORTRAIT',
         appiumVersion: '1.16.0',
         // The path to the app
-        app: 'sauce-storage:sample-app-android.apk',
+        app: 'storage:filename=sample-app-android.apk',
         appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
@@ -85,7 +85,7 @@ config.capabilities = [
         orientation: 'PORTRAIT',
         appiumVersion: '1.16.0',
         // The path to the app
-        app: 'sauce-storage:sample-app-android.apk',
+        app: 'storage:filename=sample-app-android.apk',
         appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/

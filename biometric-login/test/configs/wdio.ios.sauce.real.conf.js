@@ -13,10 +13,9 @@ config.capabilities = [
         platformName: 'iOS',
         orientation: 'PORTRAIT',
         // The path to the app
-        app: 'sauce-storage:sample-app-ios-real.ipa',
-        // Read the reset strategies very well, they differ per platform, see
-        // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
-        noReset: true,
+        app: 'storage:filename=sample-app-ios.ipa',
+        // Keep the device connected between tests so we don't need to wait for the cleaning process
+        cacheId: 'jsy1v49pn10',
         newCommandTimeout: 240,
         // Always default the language to a language you prefer so you know the app language is always as expected
         language: 'en',
