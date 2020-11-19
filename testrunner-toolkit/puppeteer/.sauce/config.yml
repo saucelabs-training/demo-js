@@ -16,4 +16,5 @@ suites:
 image:
   base: saucelabs/stt-puppeteer-jest-node
   version: latest
-region: eu-central-1
+sauce:
+  region: eu-central-1
