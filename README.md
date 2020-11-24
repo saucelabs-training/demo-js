@@ -21,7 +21,7 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
 - [NightWatch](./nightwatch)
 - [Protractor with Jasmine](./protractor)
 - [Puppeteer with Jest](./puppeteer)
-- [Screener Runner](./screener-runner)
+- [Screener Runner (DEPRECATED)](./screener-runner)
 - [Visual E2E](./visual-e2e) (*in beta*)
 - **SauceCTL Testrunner Toolkit**
     - [Cypress](./testrunner-toolkit/cypress)
