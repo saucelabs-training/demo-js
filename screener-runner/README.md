@@ -1,5 +1,12 @@
-# Screener Runner
+# Screener Runner (DEPRECATED)
 This repository contains examples of how to use [Screener Runner](https://github.com/screener-io/screener-runner)
+
+```
+Use Screener E2E solution instead!
+```
+* [Docs](https://screener.io/v2/docs/visual-e2e)
+* [Examples](./visual-e2e)
+
 
 ## How to use:
 
