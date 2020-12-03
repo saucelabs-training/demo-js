@@ -15,7 +15,6 @@ config.capabilities = [
         // The defaults you need to have in your config
         deviceName: 'iPhone Simulator',
         platformName: 'iOS',
-        appiumVersion: '1.19.1',
         platformVersion: '13.0',
         orientation: 'PORTRAIT',
         // The path to the app
@@ -29,7 +28,7 @@ config.capabilities = [
         locale: 'en',
         // Group builds by build name
         build: buildName,
-        name: 'iOS 13.0 iPhone Appium 1.19.1 FaceID App',
+        name: 'iOS 13.0 iPhone FaceID App',
     },
 
     // iOS iPhone 13.2 FaceID
@@ -37,7 +36,6 @@ config.capabilities = [
         // The defaults you need to have in your config
         deviceName: 'iPhone Simulator',
         platformName: 'iOS',
-        appiumVersion: '1.19.1',
         platformVersion: '13.2',
         orientation: 'PORTRAIT',
         // The path to the app
@@ -51,7 +49,7 @@ config.capabilities = [
         locale: 'en',
         // Group builds by build name
         build: buildName,
-        name: 'iOS 13.2 iPhone Appium 1.19.1 FaceID App',
+        name: 'iOS 13.2 iPhone FaceID App',
     },
 
     // iOS iPhone 13.4 FaceID
@@ -59,7 +57,6 @@ config.capabilities = [
         // The defaults you need to have in your config
         deviceName: 'iPhone Simulator',
         platformName: 'iOS',
-        appiumVersion: '1.19.1',
         platformVersion: '13.4',
         orientation: 'PORTRAIT',
         // The path to the app
@@ -73,7 +70,7 @@ config.capabilities = [
         locale: 'en',
         // Group builds by build name
         build: buildName,
-        name: 'iOS 13.4 iPhone Appium 1.19.1 FaceID App',
+        name: 'iOS 13.4 iPhone FaceID App',
     },
 
     // iOS iPhone 14.0 FaceID
@@ -81,7 +78,6 @@ config.capabilities = [
         // The defaults you need to have in your config
         deviceName: 'iPhone Simulator',
         platformName: 'iOS',
-        appiumVersion: '1.19.1',
         platformVersion: '14.0',
         orientation: 'PORTRAIT',
         // The path to the app
@@ -95,7 +91,7 @@ config.capabilities = [
         locale: 'en',
         // Group builds by build name
         build: buildName,
-        name: 'iOS 14.0 iPhone Appium 1.19.1 FaceID App',
+        name: 'iOS 14.0 iPhone FaceID App',
     },
 
     // iOS iPad 13.0 FaceID
@@ -103,7 +99,6 @@ config.capabilities = [
         // The defaults you need to have in your config
         deviceName: 'iPad Simulator',
         platformName: 'iOS',
-        appiumVersion: '1.19.1',
         platformVersion: '13.0',
         orientation: 'PORTRAIT',
         // The path to the app
@@ -117,7 +112,7 @@ config.capabilities = [
         locale: 'en',
         // Group builds by build name
         build: buildName,
-        name: 'iOS 13.0 iPad Appium 1.19.1 FaceID App',
+        name: 'iOS 13.0 iPad FaceID App',
     },
 
     // iOS iPad 13.2 FaceID
@@ -125,7 +120,6 @@ config.capabilities = [
         // The defaults you need to have in your config
         deviceName: 'iPad Simulator',
         platformName: 'iOS',
-        appiumVersion: '1.19.1',
         platformVersion: '13.2',
         orientation: 'PORTRAIT',
         // The path to the app
@@ -139,7 +133,7 @@ config.capabilities = [
         locale: 'en',
         // Group builds by build name
         build: buildName,
-        name: 'iOS 13.2 iPad Appium 1.19.1 FaceID App',
+        name: 'iOS 13.2 iPad FaceID App',
     },
 
     // iOS iPad 13.4 FaceID
@@ -147,7 +141,6 @@ config.capabilities = [
         // The defaults you need to have in your config
         deviceName: 'iPad Simulator',
         platformName: 'iOS',
-        appiumVersion: '1.19.1',
         platformVersion: '13.4',
         orientation: 'PORTRAIT',
         // The path to the app
@@ -161,7 +154,7 @@ config.capabilities = [
         locale: 'en',
         // Group builds by build name
         build: buildName,
-        name: 'iOS 13.4 iPad Appium 1.19.1 FaceID App',
+        name: 'iOS 13.4 iPad FaceID App',
     },
 
     // iOS iPad 14.0 FaceID
@@ -169,7 +162,6 @@ config.capabilities = [
         // The defaults you need to have in your config
         deviceName: 'iPad Simulator',
         platformName: 'iOS',
-        appiumVersion: '1.19.1',
         platformVersion: '14.0',
         orientation: 'PORTRAIT',
         // The path to the app
@@ -183,9 +175,17 @@ config.capabilities = [
         locale: 'en',
         // Group builds by build name
         build: buildName,
-        name: 'iOS 14.0 iPad Appium 1.19.1 FaceID App',
+        name: 'iOS 14.0 iPad FaceID App',
     },
 
 ];
+
+const appiumVersion = process.env.npm_config_appium_version
+if (appiumVersion !== undefined) {
+    config.capabilities.forEach(capability => {
+        capability.name += ` - Appium Version ${appiumVersion}`
+        capability.appiumVersion = appiumVersion
+    });
+}
 
 exports.config = config;

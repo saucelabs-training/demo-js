@@ -17,7 +17,6 @@ config.capabilities = [
         platformName: 'Android',
         platformVersion: '11.0',
         orientation: 'PORTRAIT',
-        appiumVersion: '1.16.0',
         // The path to the app
         app: 'storage:filename=sample-app-android.apk',
         appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
@@ -40,7 +39,6 @@ config.capabilities = [
         platformName: 'Android',
         platformVersion: '10.0',
         orientation: 'PORTRAIT',
-        appiumVersion: '1.16.0',
         // The path to the app
         app: 'storage:filename=sample-app-android.apk',
         appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
@@ -63,7 +61,6 @@ config.capabilities = [
         platformName: 'Android',
         platformVersion: '9.0',
         orientation: 'PORTRAIT',
-        appiumVersion: '1.16.0',
         // The path to the app
         app: 'storage:filename=sample-app-android.apk',
         appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
@@ -86,7 +83,6 @@ config.capabilities = [
         platformName: 'Android',
         platformVersion: '8.1',
         orientation: 'PORTRAIT',
-        appiumVersion: '1.16.0',
         // The path to the app
         app: 'storage:filename=sample-app-android.apk',
         appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
@@ -109,7 +105,6 @@ config.capabilities = [
         platformName: 'Android',
         platformVersion: '7.1',
         orientation: 'PORTRAIT',
-        appiumVersion: '1.16.0',
         // The path to the app
         app: 'storage:filename=sample-app-android.apk',
         appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
@@ -125,5 +120,13 @@ config.capabilities = [
         name: 'Android 7.1 Biometric Login',
     },
 ];
+
+const appiumVersion = process.env.npm_config_appium_version
+if (appiumVersion !== undefined) {
+    config.capabilities.forEach(capability => {
+        capability.name += ` - Appium Version ${appiumVersion}`
+        capability.appiumVersion = appiumVersion
+    });
+}
 
 exports.config = config;
