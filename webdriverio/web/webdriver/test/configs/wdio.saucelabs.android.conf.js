@@ -54,6 +54,14 @@ config.capabilities = [
 
 ];
 
+const appiumVersion = process.env.npm_config_appium_version
+if (appiumVersion !== undefined) {
+    config.capabilities.forEach(capability => {
+        capability.name += ` - Appium Version ${appiumVersion}`
+        capability.appiumVersion = appiumVersion
+    });
+}
+
 config.services = config.services.concat('sauce');
 
 exports.config = config;

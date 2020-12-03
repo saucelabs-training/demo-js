@@ -20,78 +20,78 @@ config.capabilities = [
      * iOS Safari
      */
     {
-        name: 'iOS 13.0 iPhone safari - appium 1.19.1',
+        name: 'iOS 13.0 iPhone safari',
         build: build,
         browserName: 'safari',
         platformName: 'iOS',
         platformVersion: '13.0',
         deviceName: 'iPhone Simulator',
-        appiumVersion: '1.19.1',
     },
     {
-        name: 'iOS 13.2 iPhone safari - appium 1.19.1',
+        name: 'iOS 13.2 iPhone safari',
         build: build,
         browserName: 'safari',
         platformName: 'iOS',
         platformVersion: '13.2',
         deviceName: 'iPhone Simulator',
-        appiumVersion: '1.19.1',
     },
     {
-        name: 'iOS 13.4 iPhone safari - appium 1.19.1',
+        name: 'iOS 13.4 iPhone safari',
         build: build,
         browserName: 'safari',
         platformName: 'iOS',
         platformVersion: '13.4',
         deviceName: 'iPhone Simulator',
-        appiumVersion: '1.19.1',
     },
     {
-        name: 'iOS 14.0 iPhone safari - appium 1.19.1',
+        name: 'iOS 14.0 iPhone safari',
         build: build,
         browserName: 'safari',
         platformName: 'iOS',
         platformVersion: '14.0',
         deviceName: 'iPhone Simulator',
-        appiumVersion: '1.19.1',
     },
     {
-        name: 'iOS 13.0 iPad safari - appium 1.19.1',
+        name: 'iOS 13.0 iPad safari',
         build: build,
         browserName: 'safari',
         platformName: 'iOS',
         platformVersion: '13.0',
         deviceName: 'iPad Simulator',
-        appiumVersion: '1.19.1',
     },
     {
-        name: 'iOS 13.2 iPad safari - appium 1.19.1',
+        name: 'iOS 13.2 iPad safari',
         build: build,
         browserName: 'safari',
         platformName: 'iOS',
         platformVersion: '13.2',
         deviceName: 'iPad Simulator',
-        appiumVersion: '1.19.1',
     },
     {
-        name: 'iOS 13.4 iPad safari - appium 1.19.1',
+        name: 'iOS 13.4 iPad safari',
         build: build,
         browserName: 'safari',
         platformName: 'iOS',
         platformVersion: '13.4',
         deviceName: 'iPad Simulator',
-        appiumVersion: '1.19.1',
     },
     {
-        name: 'iOS 14.0 iPad safari - appium 1.19.1',
+        name: 'iOS 14.0 iPad safari',
         build: build,
         browserName: 'safari',
         platformName: 'iOS',
         platformVersion: '14.0',
         deviceName: 'iPad Simulator',
-        appiumVersion: '1.19.1',
     }
 ];
+
+const appiumVersion = process.env.npm_config_appium_version
+if (appiumVersion !== undefined) {
+    config.capabilities.forEach(capability => {
+        capability.name += ` - Appium Version ${appiumVersion}`
+        capability.appiumVersion = appiumVersion
+    });
+}
 
 config.services = config.services.concat('sauce');
 
