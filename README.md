@@ -11,6 +11,7 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
 
 ## Framework examples
 - [WebdriverIO with Jasmine*](./webdriverio)
+    - [WebdriverIO with Appium for Native Apps focussing on Gestures](./webdriverio/mobile-app/examples/gestures)
     - [WebdriverIO with Webdriver (desktop browser tests)](./webdriverio/web/webdriver)
     - [WebdriverIO with Appium (mobile browser tests)](./webdriverio/web/appium)
     - [WebdriverIO examples](./webdriverio/web/examples)
