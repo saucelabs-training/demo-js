@@ -1,6 +1,5 @@
 const {config} = require('./wdio.shared.sauce.conf');
-const buildName = `Android Biometric login: ${new Date().getTime()}`;
-const appiumVersion = process.env.npm_config_appium_version
+const buildName = `Android Biometric login Appium ${config.appiumVersion}: ${new Date().getTime()}`;
 
 // ============
 // Capabilities
@@ -30,7 +29,6 @@ config.capabilities = [
         locale: 'en',
         // Group builds by build name
         build: buildName,
-        name: 'Android 11.0 Biometric Login',
     },
 
     // Android 10
@@ -52,7 +50,6 @@ config.capabilities = [
         locale: 'en',
         // Group builds by build name
         build: buildName,
-        name: 'Android 10.0 Biometric Login',
     },
 
     // Android 9
@@ -74,7 +71,6 @@ config.capabilities = [
         locale: 'en',
         // Group builds by build name
         build: buildName,
-        name: 'Android 9.0 Biometric Login',
     },
 
     // Android 8.1
@@ -96,7 +92,6 @@ config.capabilities = [
         locale: 'en',
         // Group builds by build name
         build: buildName,
-        name: 'Android 8.1 Biometric Login',
     },
 
     // Android 7.1
@@ -118,14 +113,12 @@ config.capabilities = [
         locale: 'en',
         // Group builds by build name
         build: buildName,
-        name: 'Android 7.1 Biometric Login',
     },
 ];
 
-if (appiumVersion !== undefined) {
+if (config.appiumVersion !== undefined && config.appiumVersion !== 'default') {
     config.capabilities.forEach(capability => {
-        capability.name += ` - Appium Version ${appiumVersion}`
-        capability.appiumVersion = appiumVersion
+        capability.appiumVersion = config.appiumVersion;
     });
 }
 

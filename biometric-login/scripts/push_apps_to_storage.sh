@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION='2.7.1'
+VERSION='2.7.0'
 
 ## US
 # Android
