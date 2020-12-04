@@ -1,5 +1,6 @@
 const {config} = require('./wdio.shared.conf');
 const build = `Android Chrome WebdriverIO-V6 build-${new Date().getTime()}`
+const appiumVersion = process.env.npm_config_appium_version
 
 // =========================
 // Sauce Simulator specific config
@@ -54,7 +55,6 @@ config.capabilities = [
 
 ];
 
-const appiumVersion = process.env.npm_config_appium_version
 if (appiumVersion !== undefined) {
     config.capabilities.forEach(capability => {
         capability.name += ` - Appium Version ${appiumVersion}`

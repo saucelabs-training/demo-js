@@ -1,5 +1,6 @@
 const {config} = require('./wdio.shared.sauce.conf');
 const buildName = `iOS Biometric login: ${new Date().getTime()}`;
+const appiumVersion = process.env.npm_config_appium_version
 
 // ============
 // Capabilities
@@ -180,7 +181,7 @@ config.capabilities = [
 
 ];
 
-const appiumVersion = process.env.npm_config_appium_version
+
 if (appiumVersion !== undefined) {
     config.capabilities.forEach(capability => {
         capability.name += ` - Appium Version ${appiumVersion}`
