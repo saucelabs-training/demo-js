@@ -14,7 +14,7 @@ config.capabilities = [
         platformVersion: '13.7',
         orientation: 'PORTRAIT',
         // The path to the app
-        app: join(process.cwd(), './apps/iOS.Simulator.SauceLabs.Mobile.Sample.app.zip'),
+        app: join(process.cwd(), './test-apps/iOS.Simulator.SauceLabs.Mobile.Sample.app.zip'),
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
         noReset: true,

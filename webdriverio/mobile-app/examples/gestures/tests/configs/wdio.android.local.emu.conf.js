@@ -15,7 +15,7 @@ config.capabilities = [
         platformVersion: '10.0',
         orientation: 'PORTRAIT',
         // The path to the app
-        app: join(process.cwd(), './apps/Android.SauceLabs.Mobile.Sample.app.apk'),
+        app: join(process.cwd(), './test-apps/Android.SauceLabs.Mobile.Sample.app.apk'),
         appWaitActivity: 'com.swaglabsmobileapp.MainActivity',
         // Read the reset strategies very well, they differ per platform, see
         // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
