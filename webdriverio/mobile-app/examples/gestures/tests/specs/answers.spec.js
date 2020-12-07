@@ -87,9 +87,10 @@ describe('Appium Gestures Answers', () => {
     const {x, y, width, height} = driver.getElementRect(firstItem.elementId);
 
     // 2. Determine X and Y position
-    //    We use the center of the element as a starting position
-    //    but you can always take every position in the element
-    const centerX = x + width / 2;
+    //    We move our finger on the horizontal axis, this means we need to
+    //    have a starting X position and the Y position will stay the same.
+    //    We need to determine the startX and centerY position
+    const startX = x + width - 100;
     const centerY = y + height / 2;
 
     // 3. Execute the touch action
@@ -104,7 +105,7 @@ describe('Appium Gestures Answers', () => {
         parameters: {pointerType: 'touch'},
         actions: [
           // 3b. Move finger into start position
-          {type: 'pointerMove', duration: 0, x: centerX, y: centerY},
+          {type: 'pointerMove', duration: 0, x: startX, y: centerY},
           // 3c. Finger comes down into contact with screen
           {type: 'pointerDown', button: 0},
           // 3d. Pause for a little bit
@@ -167,10 +168,10 @@ describe('Appium Gestures Answers', () => {
     //    swipe, so we ask the driver here if we are an Android or iOS device
     //    Be aware that you need to have Appium 1.19.0 on your machine!
     if (driver.isAndroid) {
-      // 2a. See http://appium.io/docs/en/writing-running-appium/android/android-mobile-gestures/#mobile-scrollGesture
+      // 2a. See http://appium.io/docs/en/writing-running-appium/android/android-mobile-gestures/#mobile-swipegesture
       //     for more information
       driver.execute(
-        'mobile:scrollGesture',
+        'mobile:swipeGesture',
         {
           elementId: firstItemId,
           // Android seems to interpreted swiping left to right a bit different in
@@ -180,7 +181,7 @@ describe('Appium Gestures Answers', () => {
         }
       );
     } else {
-      // 2b. See http://appium.io/docs/en/writing-running-appium/android/android-mobile-gestures/#mobile-swipeGesture
+      // 2b. See http://appium.io/docs/en/writing-running-appium/ios/ios-xctest-mobile-gestures/#mobile-swipe
       //     for more information
       driver.execute(
         'mobile:swipe',

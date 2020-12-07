@@ -80,9 +80,10 @@ describe('Appium Gestures Exercises', () => {
      * CODE THIS STEP
      */
     // 2. Determine X and Y position
-    //    We use the center of the element as a starting position
-    //    but you can always take every position in the element
-    const centerX = '{DETERMINE-VALUE}';
+    //    We move our finger on the horizontal axis, this means we need to
+    //    have a starting X position and the Y position will stay the same.
+    //    We need to determine the startX and centerY position
+    const startX = '{DETERMINE-VALUE}';
     const centerY = '{DETERMINE-VALUE}';
 
     /**
@@ -142,13 +143,13 @@ describe('Appium Gestures Exercises', () => {
     //    swipe, so we ask the driver here if we are an Android or iOS device
     //    Be aware that you need to have Appium 1.19.0 on your machine!
     if (driver.isAndroid) {
-      // 2a. See http://appium.io/docs/en/writing-running-appium/android/android-mobile-gestures/#mobile-scrollGesture
+      // 2a. See http://appium.io/docs/en/writing-running-appium/android/android-mobile-gestures/#mobile-swipegesture
       //     for more information
       /**
        * CODE THIS STEP
        */
     } else {
-      // 2b. See http://appium.io/docs/en/writing-running-appium/android/android-mobile-gestures/#mobile-swipeGesture
+      // 2b. See http://appium.io/docs/en/writing-running-appium/ios/ios-xctest-mobile-gestures/#mobile-swipe
       //     for more information
       /**
        * CODE THIS STEP
