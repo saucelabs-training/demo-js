@@ -11,13 +11,16 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
 
 ## Framework examples
 - [WebdriverIO with Jasmine*](./webdriverio)
-    - [WebdriverIO with Appium for Native Apps focussing on Gestures](./webdriverio/mobile-app/examples/gestures)
-    - [WebdriverIO with Webdriver (desktop browser tests)](./webdriverio/web/webdriver)
-    - [WebdriverIO with Appium (mobile browser tests)](./webdriverio/web/appium)
-    - [WebdriverIO examples](./webdriverio/web/examples)
-        - [WebdriverIO and Sauce Connect](./webdriverio/web/examples/sc)
-        - [WebdriverIO and extendedDebugging](./webdriverio/web/examples/extended-debugging)
-        - [WebdriverIO and Sauce Labs Front-End Performance](./webdriverio/web/examples/performance)
+    - WebdriverIO with Appium for Mobile Chrome/Safari
+        - [WebdriverIO with Appium (mobile browser tests)](./webdriverio/web/appium)
+    - WebdriverIO with Appium for Native/Hybrid Apps
+        - [WebdriverIO with Appium and Native App Gestures](./webdriverio/mobile-app/examples/gestures)
+    - WebdriverIO with WebDriver
+        - [WebdriverIO with WebDriver (desktop browser tests)](./webdriverio/web/webdriver)
+        - [WebdriverIO examples](./webdriverio/web/examples)
+            - [WebdriverIO and Sauce Connect](./webdriverio/web/examples/sc)
+            - [WebdriverIO and extendedDebugging](./webdriverio/web/examples/extended-debugging)
+            - [WebdriverIO and Sauce Labs Front-End Performance](./webdriverio/web/examples/performance)
 - [TestCafe](./testcafe)
 - [NightWatch](./nightwatch)
 - [Protractor with Jasmine](./protractor)
