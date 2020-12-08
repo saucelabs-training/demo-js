@@ -15,13 +15,18 @@ exports.config = {
     connectionRetryCount: 3,
     reporters: ['spec'],
     services: [],
+
     //Screener Configuration
     hostname: 'hub.screener.io',
     port: 443,
     protocol: 'https',
     path: '/wd/hub',
     region: process.env.REGION || 'us',
-    capabilities: [
+    capabilities: ['1280x1024',
+        '1920x1080',
+        '375x812',
+        '414x736',
+        '360x740'].map(viewportSize => (
         {
             browserName: 'chrome',
             platformName: 'macOS 10.15',
@@ -33,8 +38,8 @@ exports.config = {
             'sauce:visual': {
                 apiKey: process.env.SCREENER_API_KEY,
                 projectName: 'demo-js',
-                viewportSize: '1280x1024'
+                viewportSize: `${viewportSize}`
             }
         }
-    ]
+    ))
 };
