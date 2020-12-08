@@ -100,7 +100,7 @@ function isIosApplicationRunning(bundleId) {
  */
 function androidBrowserOpened() {
     try {
-        driver.waitUntil(() => !driver.getCurrentActivity().includes('.MainActivity'));
+        driver.waitUntil(() => !driver.getCurrentActivity().includes('.MainActivity') && !driver.getCurrentActivity().includes('.GrantPermissionsActivity'));
 
         return true;
     } catch (e) {

@@ -2,9 +2,7 @@
 This folder contains examples for using image injection on real devices for:
 
 - [Android real devices on the new Sauce Labs UI](#run-tests-on-sauce-labs-android-real-devices-in-the-new-sauce-labs-ui)
-- [Android real devices on the Legacy RDC cloud](#run-tests-on-sauce-labs-android-real-devices-in-the-legacy-rdc)
 - [iOS real devices on the new Sauce Labs UI](#run-tests-on-sauce-labs-ios-real-devices-in-the-new-sauce-labs-ui)
-- [iOS real devices on the Legacy RDC cloud](#run-tests-on-sauce-labs-ios-real-devices-in-the-legacy-rdc)
 
 > NOTE: this feature is **NOT** supported for emulators and simulators!!
 
@@ -24,10 +22,6 @@ The examples in this repository that can run on Sauce Labs use environment varia
     # For Sauce Labs Real devices in the New UI
     export SAUCE_USERNAME=********
     export SAUCE_ACCESS_KEY=*******
-    
-    # For the Legacy RDC
-    export SAUCE_RDC_EU_ACCESS_KEY_ANDROID=********
-    export SAUCE_RDC_EU_ACCESS_KEY_IOS=********
 
 ### Demo app(s)
 The demo app that has been used for all these tests can be found [here](https://github.com/saucelabs/sample-app-mobile/releases).
@@ -62,20 +56,6 @@ The tests will be executed on a Samsung Galaxy 10.
 
 See this [config](./test/configs/wdio.android.sauce.real.conf.js)-file for more information.
 
-## Run tests on Sauce Labs Android real devices in the Legacy RDC
-If you want to run the tests on Sauce Labs real devices in the **Legacy RDC** then you can run the Android test with
-
-    // If using the US DC
-    npm run test.legacy.rdc.android.us
-    
-    // If using the EU DC
-    npm run test.legacy.rdc.android.eu
-    
-The tests will be executed and Android 7, 8, 9 and 10.    
-
-See this [config](./test/configs/wdio.android.legacy.rdc.conf.js)-file for more information.
- 
-
 ## Run tests on Sauce Labs iOS real devices in the New Sauce Labs UI
 If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs UI** then you can run the iOS test with
 
@@ -88,16 +68,3 @@ If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs 
 The tests will be executed on a iPhone XS.
 
 See this [config](./test/configs/wdio.ios.sauce.real.conf.js)-file for more information.
-
-## Run tests on Sauce Labs iOS real devices in the Legacy RDC
-If you want to run the tests on Sauce Labs real devices in the **Legacy RDC** then you can run the iOS test with
-
-    // If using the US DC
-    npm run test.legacy.rdc.ios.us
-    
-    // If using the EU DC
-    npm run test.legacy.rdc.ios.eu
-    
-The tests will be executed on iOS 11, 12 and 13.
-
-See this [config](./test/configs/wdio.ios.legacy.rdc.conf.js)-file for more information.
