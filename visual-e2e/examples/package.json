@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test.visual.sauce": "npx wdio test/configs/wdio.visual.saucelabs.conf.js"
+    "test.visual.sauce": "npx wdio test/configs/wdio.visual.saucelabs.conf.js",
+    "test.visual.crossplatform": "npx wdio test/configs/wdio.visual.conf.js"
   },
   "keywords": [],
   "author": "",
