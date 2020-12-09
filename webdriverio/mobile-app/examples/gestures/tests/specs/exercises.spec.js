@@ -93,7 +93,9 @@ describe('Appium Gestures Exercises', () => {
     //    We swipe over the horizontal axis which means the Y position
     //    will always stay the same, but you can change it to create
     //    different gestures for swiping
-    // 3.a Create the event
+    //    See https://github.com/jlipps/simple-wd-spec#perform-actions
+    //    for a clear explanation of all properties
+    // 3a. Create the event
     // 3b. Move finger into start position
     // 3c. Finger comes down into contact with screen
     // 3d. Pause for a little bit

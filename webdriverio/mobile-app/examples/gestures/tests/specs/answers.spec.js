@@ -97,9 +97,11 @@ describe('Appium Gestures Answers', () => {
     //    We swipe over the horizontal axis which means the Y position
     //    will always stay the same, but you can change it to create
     //    different gestures for swiping
+    //    See https://github.com/jlipps/simple-wd-spec#perform-actions
+    //    for a clear explanation of all properties
     driver.performActions([
       {
-        // 3.a Create the event
+        // 3a. Create the event
         type: 'pointer',
         id: 'finger1',
         parameters: {pointerType: 'touch'},
