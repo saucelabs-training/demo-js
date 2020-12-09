@@ -176,7 +176,7 @@ describe('Appium Gestures Answers', () => {
           elementId: firstItemId,
           // Android seems to interpreted swiping left to right a bit different in
           // comparison to iOS
-          direction: 'right',
+          direction: 'left',
           percent: 0.8,
         }
       );
