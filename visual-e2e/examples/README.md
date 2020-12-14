@@ -15,6 +15,10 @@ You can run your tests on Sauce Labs US DC with this command
 
     npm run test.visual.sauce
     
+Run cross-platform, across multiple resolutions using:
+
+`npm run test.visual.crossplatform`
+    
 The output will look like this
 
 ```log
