@@ -17,7 +17,7 @@ This will install all needed dependencies that are listed in the `package.json`-
 Please read the information about [`extendedDebugging`](https://wiki.saucelabs.com/pages/viewpage.action?pageId=70072943) before using it.
 
 - JavaScript Console Logs and HAR Files will only be generated for Chrome and Firefox
-- The test examples as shown [here](./test/specs/extended.debuggin.spec.js) will **only** work with Chrome
+- The test examples as shown [here](./test/specs/extended.debugging.spec.js) will **only** work with Chrome
 
 ## Run tests on Sauce Labs
 You can run your tests on Sauce Labs US DC with this command
