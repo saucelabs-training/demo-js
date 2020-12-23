@@ -29,20 +29,6 @@ describe('Checkout - Personal info', () => {
         );
     });
 
-    it('should validate that we can cancel the first checkout', () => {
-        expect(CartSummaryPage.isDisplayed()).toEqual(
-            false,
-            'Cart screen is already visible'
-        );
-
-        CheckoutPersonalInfoPage.cancelCheckout();
-
-        expect(CartSummaryPage.waitForIsShown()).toEqual(
-            true,
-            'Cart content screen is still not visible'
-        );
-    });
-
     it('should be able to continue the checkout', () => {
         CheckoutPersonalInfoPage.submitPersonalInfo(PERSONAL_INFO.STANDARD);
 
