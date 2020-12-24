@@ -49,5 +49,4 @@ if (config.appiumVersion !== undefined && config.appiumVersion !== 'default') {
     });
 }
 
-
 exports.config = config;
