@@ -49,6 +49,5 @@ if (config.appiumVersion !== undefined && config.appiumVersion !== 'default') {
     });
 }
 
-config.services = config.services.concat('sauce');
 
 exports.config = config;
