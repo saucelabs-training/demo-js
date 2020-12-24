@@ -11,16 +11,18 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
 
 ## Framework examples
 - [WebdriverIO with Jasmine*](./webdriverio)
-    - WebdriverIO with Appium for Mobile Chrome/Safari
-        - [WebdriverIO with Appium (mobile browser tests)](./webdriverio/web/appium)
     - WebdriverIO with Appium for Native/Hybrid Apps
-        - [WebdriverIO with Appium and Native App Gestures](./webdriverio/mobile-app/examples/gestures)
-    - WebdriverIO with WebDriver
-        - [WebdriverIO with WebDriver (desktop browser tests)](./webdriverio/web/webdriver)
-        - [WebdriverIO examples](./webdriverio/web/examples)
-            - [WebdriverIO and Sauce Connect](./webdriverio/web/examples/sc)
-            - [WebdriverIO and extendedDebugging](./webdriverio/web/examples/extended-debugging)
-            - [WebdriverIO and Sauce Labs Front-End Performance](./webdriverio/web/examples/performance)
+        - [Examples](./webdriverio/appium-app/examples)
+            - [WebdriverIO with Appium and Native App Gestures](./webdriverio/mobile-app/examples/gestures)
+    - WebdriverIO with Appium for Mobile Web (Chrome/Safari)
+        - [Examples](./webdriverio/appium-web/examples)
+            - [Real Device Allocation](./webdriverio/appium-web/examples/device-allocation)
+    - WebdriverIO for Desktop Web (Selenium, but officially WebDriver)
+        - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/webdriver/best-practices)
+        - [Examples](webdriverio/webdriver/examples)
+            - [WebdriverIO and extendedDebugging](webdriverio/webdriver/examples/extended-debugging)
+            - [WebdriverIO and Sauce Connect](webdriverio/webdriver/examples/sc)
+            - [WebdriverIO and Sauce Labs Front-End Performance](webdriverio/webdriver/examples/performance)
 - [TestCafe](./testcafe)
 - [NightWatch](./nightwatch)
 - [Protractor with Jasmine](./protractor)
@@ -43,7 +45,7 @@ the used framework here in this repository.
 
 ## Sauce Labs Feature Examples
 
-* [Sauce Connect with WebdriverIO](/webdriverio/web/examples/sc/test/specs/sauce-connect.example.js)
+* [Sauce Connect with WebdriverIO](/webdriverio/webdriver/examples/sc/test/specs/sauce-connect.example.js)
 
 
 ## Solution Outline

@@ -9,7 +9,7 @@ You can install all dependencies by running the following command
     
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `webdriverio/web/ecamples/peformance` when you execute this command
+> NOTE: Make sure you are in the folder `webdriverio/webdriver/examples/peformance` when you execute this command
 ## Important information
 Please read the information about [Sauce Front-End Performance](https://wiki.saucelabs.com/display/DOCS/Sauce+Performance+Basics) before using it.
 

@@ -8,7 +8,7 @@ You can install all dependencies by running the following command
     
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `webdriverio/web/examples/sc` when you execute this command
+> NOTE: Make sure you are in the folder `webdriverio/webdriver/examples/sc` when you execute this command
 
 ## WebdriverIO and Sauce Connect
 There are 2 ways of using WebdriverIO together with Sauce Connect:

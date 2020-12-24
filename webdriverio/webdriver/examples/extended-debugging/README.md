@@ -12,7 +12,7 @@ You can install all dependencies by running the following command
     
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `webdriverio/web/ecamples/extended-debugging` when you execute this command
+> NOTE: Make sure you are in the folder `webdriverio/webdriver/examples/extended-debugging` when you execute this command
 ## Important information
 Please read the information about [`extendedDebugging`](https://wiki.saucelabs.com/pages/viewpage.action?pageId=70072943) before using it.
 

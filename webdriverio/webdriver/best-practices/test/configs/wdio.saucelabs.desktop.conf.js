@@ -1,6 +1,6 @@
 const {config} = require('./wdio.shared.conf');
 const defaultBrowserSauceOptions = {
-    build: `WebdriverIO-V6 build-${new Date().getTime()}`,
+    build: `Best Practices: Sauce Labs Desktop Web build-${new Date().getTime()}`,
     screenResolution: '1600x1200',
     seleniumVersion: '3.141.59',
 };
