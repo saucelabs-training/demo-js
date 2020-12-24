@@ -5,7 +5,7 @@ This folder contains a simple set up for WebdriverIO V6.
 You can install all dependencies by running the following command
 
     npm install
-    
+
 This will install all needed dependencies that are listed in the `package.json`-file
 
 > NOTE: Make sure you are in the folder `webdriverio` when you execute this command
@@ -136,7 +136,7 @@ Execution of 8 spec files started at 2020-04-17T09:58:32.551Z
 [Chrome Headless 19.4.0 darwin #0-5] 4 passing (8s)
 
 
-Spec Files:      8 passed, 8 total (100% completed) in 00:00:24 
+Spec Files:      8 passed, 8 total (100% completed) in 00:00:24
 ```
 
 ## Run tests on Sauce Labs
@@ -149,3 +149,22 @@ You can run your tests on Sauce Labs EU DC with this command
     npm run test.saucelabs.eu
 
 It will spin up multiple browsers which you can find [here](test/configs/wdio.saucelabs.conf.js).
+
+## Run Android and iOS tests on Sauce Labs
+You can run your mobile web tests on Sauce Labs US DC with these commands
+
+    npm run test.saucelabs.ios.us
+    npm run test.saucelabs.android.us
+
+You can run your mobile web tests on Sauce Labs EU DC with these commands
+
+    npm run test.saucelabs.ios.us
+    npm run test.saucelabs.android.us
+
+### You can specify an Appium Version
+The default Appium Version provided by Sauce Labs can be overriden as seen in the following commands
+
+    npm run test.saucelabs.ios.us --appium_version=1.17.1
+    npm run test.saucelabs.android.us --appium_version=1.15.0
+
+It will spin up multiple [emulators](test/configs/wdio.saucelabs.android.conf.js) or [simulators](test/configs/wdio.saucelabs.ios.conf.js).

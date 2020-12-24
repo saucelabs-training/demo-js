@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test.local": "wdio test/configs/wdio.local.chrome.conf.js",
-    "test.saucelabs.eu": "REGION=eu wdio test/configs/wdio.saucelabs.conf.js",
-    "test.saucelabs.us": "wdio test/configs/wdio.saucelabs.conf.js"
+    "test.saucelabs.desktop.eu": "REGION=eu wdio test/configs/wdio.saucelabs.desktop.conf.js",
+    "test.saucelabs.desktop.us": "wdio test/configs/wdio.saucelabs.desktop.conf.js",
+    "test.saucelabs.android.us": "wdio test/configs/wdio.saucelabs.android.conf.js",
+    "test.saucelabs.android.eu": "REGION=eu wdio test/configs/wdio.saucelabs.android.conf.js",
+    "test.saucelabs.ios.us": "wdio test/configs/wdio.saucelabs.ios.conf.js",
+    "test.saucelabs.ios.eu": "REGION=eu wdio test/configs/wdio.saucelabs.ios.conf.js"
   },
   "keywords": [],
   "author": "",
