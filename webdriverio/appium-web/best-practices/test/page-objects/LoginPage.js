@@ -42,10 +42,10 @@ class LoginPage extends BasePage {
 
     this.waitForIsShown();
     if (username) {
-      this.#username.setValue(username);
+      this.#username.addValue(username);
     }
     if (password) {
-      this.#password.setValue(password);
+      this.#password.addValue(password);
     }
 
     // For some reason Android is not clicking propery

@@ -15,7 +15,7 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
         - [Examples](./webdriverio/appium-app/examples)
             - [WebdriverIO with Appium and Native App Gestures](./webdriverio/mobile-app/examples/gestures)
     - WebdriverIO with Appium for Mobile Web (Chrome/Safari)
-        - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/webdriver/best-practices)
+        - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/appium-web/best-practices)
         - [Examples](./webdriverio/appium-web/examples)
             - [Real Device Allocation](./webdriverio/appium-web/examples/device-allocation)
     - WebdriverIO for Desktop Web (Selenium, but officially WebDriver)

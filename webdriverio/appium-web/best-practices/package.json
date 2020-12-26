@@ -4,9 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test.local": "wdio test/configs/wdio.local.chrome.conf.js",
-    "test.saucelabs.desktop.eu": "REGION=eu wdio test/configs/wdio.saucelabs.desktop.conf.js",
-    "test.saucelabs.desktop.us": "wdio test/configs/wdio.saucelabs.desktop.conf.js",
     "test.saucelabs.android.us": "wdio test/configs/wdio.saucelabs.android.conf.js",
     "test.saucelabs.android.eu": "REGION=eu wdio test/configs/wdio.saucelabs.android.conf.js",
     "test.saucelabs.ios.us": "wdio test/configs/wdio.saucelabs.ios.conf.js",
