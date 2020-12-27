@@ -44,7 +44,7 @@ framework when using Sauce Labs.
             - [Nightwatch Mobile Web: Update Sauce Status Real Devices](./nightwatch/appium-web/examples/update-sauce-real-devices)
 - [Protractor with Jasmine](./protractor)
     - Protractor for Desktop Web (Selenium)
-        - [Best Practices](./protractor/selenium/best-practices)
+        - [Protractor "Best Practices"](./protractor/selenium/best-practices)
 - [Puppeteer with Jest](./puppeteer)
 - [Screener Runner (DEPRECATED)](./screener-runner)
 - [Visual E2E](./visual-e2e) (*in beta*)

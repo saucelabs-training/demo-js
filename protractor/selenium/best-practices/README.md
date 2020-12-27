@@ -1,4 +1,4 @@
-# Protractor
+# Protractor "Best Practices"
 This folder contains a simple set up for Protractor.
 
 > **NOTE:**\
@@ -18,7 +18,7 @@ This folder contains a simple set up for Protractor.
 >
 > **Also be aware of the fact that Protractor DOES NOT SUPPORT W3C!** 
 >
->![Protractor Support](./docs/protractor-support.jpg) 
+>![Protractor Support](docsrotractor-support.jpg) 
 
 ## Install dependencies
 You can install all dependencies by running the following command
@@ -27,7 +27,7 @@ You can install all dependencies by running the following command
     
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `protractor` when you execute this command
+> NOTE: Make sure you are in the folder `protractor/selenium/best-practices` when you execute this command
 
 ## Run tests locally
 You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this command
@@ -235,4 +235,4 @@ You can run your tests on Sauce Labs EU DC with this command
 
     npm run test.saucelabs.eu
 
-It will spin up multiple browsers which you can find [here](./tests/configs/protractor.saucelabs.conf.js).
+It will spin up multiple browsers which you can find [here](testsonfigs/protractor.saucelabs.conf.js).
