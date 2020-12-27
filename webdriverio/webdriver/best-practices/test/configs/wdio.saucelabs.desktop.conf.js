@@ -10,9 +10,9 @@ const chromeOptions = {
     },
 };
 
-// =========================
-// Sauce RDC specific config
-// =========================
+// =====================
+// Sauce specific config
+// =====================
 config.user = process.env.SAUCE_USERNAME;
 config.key = process.env.SAUCE_ACCESS_KEY;
 // If you run your tests on Sauce Labs you can specify the region you want to run your tests
@@ -98,6 +98,9 @@ config.capabilities = [
     }
 ];
 
+// ========
+// Services
+// ========
 config.services = config.services.concat('sauce');
 
 exports.config = config;

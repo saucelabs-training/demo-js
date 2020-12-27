@@ -1,0 +1,40 @@
+{
+  "name": "webdriverio-up-download",
+  "version": "1.0.0",
+  "description": "Example of how to do down and uploads with WebdriverIO and local / Sauce Labs",
+  "main": "index.js",
+  "scripts": {
+    "test.local.download": "npx wdio ./tests/configs/wdio.local.download.conf.js",
+    "test.local.upload": "npx wdio ./tests/configs/wdio.local.upload.conf.js",
+    "test.sauce.chrome.upload.eu": "REGION=eu npx wdio ./tests/configs/wdio.sauce.chrome.upload.conf.js",
+    "test.sauce.chrome.upload.us": "npx wdio ./tests/configs/wdio.sauce.chrome.upload.conf.js",
+    "test.sauce.download.eu": "REGION=eu npx wdio ./tests/configs/wdio.sauce.download.conf.js",
+    "test.sauce.download.us": "npx wdio ./tests/configs/wdio.sauce.download.conf.js",
+    "test.sauce.upload.eu": "REGION=eu  ./scripts/push_to_storage.sh && REGION=eu npx wdio ./tests/configs/wdio.sauce.upload.conf.js",
+    "test.sauce.upload.us": "./scripts/push_to_storage.sh && npx wdio ./tests/configs/wdio.sauce.upload.conf.js"
+  },
+  "keywords": [
+    "upload",
+    "download",
+    "webdriverio"
+  ],
+  "author": "wswebcreation",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "@babel/traverse": "^7.12.12",
+    "@babel/types": "^7.12.12",
+    "@wdio/cli": "^6.10.11",
+    "@wdio/firefox-profile-service": "^6.10.6",
+    "@wdio/jasmine-framework": "^6.10.11",
+    "@wdio/local-runner": "^6.10.13",
+    "@wdio/sauce-service": "^6.10.14",
+    "@wdio/selenium-standalone-service": "^6.10.11",
+    "@wdio/spec-reporter": "^6.10.6",
+    "@wdio/sync": "^6.10.11",
+    "fs-extra": "^9.0.1"
+  }
+}
