@@ -2,12 +2,17 @@
 
 [![CircleCI](https://circleci.com/gh/saucelabs-training/demo-js.svg?style=svg)](https://circleci.com/gh/saucelabs-training/demo-js)
 
-This repository will hold multiple NodeJS based automation frameworks and examples which will help you run tests with NodeJS based automation frameworks locally and or in Sauce Labs.
+This repository will hold multiple Node.js based automation frameworks and examples which will help you run tests with
+Node.js based automation frameworks locally and or in Sauce Labs.
 
 > **DISCLAIMER**\
-> The code in these scripts is provided on an "AS-IS" basis without warranty of any kind, either express or implied, including without limitation any implied warranties of condition, uninterrupted use, merchantability, fitness for a particular purpose, or non-infringement.
-> These scripts are provided for educational and demonstration purposes only, and should not be used in production. Issues regarding these scripts should be submitted through GitHub. These scripts are maintained by the Technical Services team at Sauce Labs.\
-> Some examples in this repository, such as `appium-examples` and `headless-examples`, may require a different account tier beyond free trial. Please contact the [Sauce Labs Sales Team](https://saucelabs.com/contact) for support and information.
+> The code in these scripts is provided on an "AS-IS" basis without warranty of any kind, either express or implied,
+> including without limitation any implied warranties of condition, uninterrupted use, merchantability, fitness for a
+> particular purpose, or non-infringement.
+> These scripts are provided for educational and demonstration purposes only, and should not be used in production.
+> Issues regarding these scripts should be submitted through GitHub. These scripts are maintained by the Technical 
+> Services team at Sauce Labs.\
+> Please contact the [Sauce Labs Sales Team](https://saucelabs.com/contact) for support and information.
 
 ## Framework examples
 - [WebdriverIO with Jasmine*](./webdriverio)
@@ -28,9 +33,15 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
             - [WebdriverIO with Up and Downloading Files](webdriverio/webdriver/examples/up-download)
 - [TestCafe](./testcafe)
 - [NightWatch](./nightwatch)
-    [Nightwatch Mobile Web](./nightwatch/appium-web)
-    [Nightwatch Desktop Web](./nightwatch/selenium)
+    - NightWatch for Desktop Web (Selenium, but officially WebDriver)
+        - [Examples](./nightwatch/webdriver/examples)
+            - [NightWatch Desktop Web: Update Sauce Status](./nightwatch/webdriver/examples/update-sauce)
+    - NightWatch for Mobile Web (Chrome/Safari)
+        - [Examples](./nightwatch/appium-web/examples)
+            - [Nightwatch Mobile Web: Update Sauce Status Real Devices](./nightwatch/appium-web/examples/update-sauce-real-devices)
 - [Protractor with Jasmine](./protractor)
+    - Protractor for Desktop Web (Selenium)
+        - [Best Practices](./protractor/selenium/best-practices)
 - [Puppeteer with Jest](./puppeteer)
 - [Screener Runner (DEPRECATED)](./screener-runner)
 - [Visual E2E](./visual-e2e) (*in beta*)

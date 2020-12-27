@@ -1,9 +1,12 @@
 const {join} = require('path');
 const build = `Nightwatch Desktop Web build-${process.env.DATE}`;
 
+// More information about the configuration file can be found here
+// https://nightwatchjs.org/gettingstarted/configuration/
 module.exports = {
     src_folders: [join(process.cwd(), 'tests/specs/')],
     page_objects_path: [join(process.cwd(), 'tests/page-objects/')],
+    // See `/tests/custom-commands/customSauceLabsEnd.js` for the logic
     custom_commands_path: 'tests/custom-commands/',
 
     test_workers: {
@@ -15,6 +18,7 @@ module.exports = {
         default: {
             launch_url: 'https://www.saucedemo.com',
         },
+        // Our Sauce Labs object
         sauceLabs: {
             selenium_host: `ondemand.${process.env.REGION === 'eu' ? 'eu-central-1' : 'us-west-1'}.saucelabs.com`,
             selenium_port: 80,
@@ -47,6 +51,7 @@ module.exports = {
             },
         },
 
+        // Sauce Labs capabilities
         sauceChrome: {
             extends: 'sauceLabs',
             desiredCapabilities: {
@@ -55,7 +60,6 @@ module.exports = {
                 version: 'latest',
             },
         },
-
         sauceFirefox: {
             extends: 'sauceLabs',
             desiredCapabilities: {
@@ -64,7 +68,6 @@ module.exports = {
                 version: 'latest',
             },
         },
-
         sauceIE: {
             extends: 'sauceLabs',
             desiredCapabilities: {
@@ -73,7 +76,6 @@ module.exports = {
                 version: 'latest',
             },
         },
-
         sauceEdge: {
             extends: 'sauceLabs',
             desiredCapabilities: {
