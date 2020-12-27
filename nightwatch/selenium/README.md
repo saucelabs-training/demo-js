@@ -1,5 +1,5 @@
-# Nightwatch
-This folder contains a simple set up for Nightwatch.
+# Nightwatch Desktop Web
+This folder contains a simple set up for Nightwatch desktop web tests.
 
 > **NOTE:**\
 > This folder doesn't hold all tests like all other frameworks. We, read Sauce Labs, wants to show how Nightwatch can be integrated with Chrome and Sauce Labs and not show some best practices.\
@@ -18,7 +18,7 @@ You can install all dependencies by running the following command
     
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `nightwatch` when you execute this command
+> NOTE: Make sure you are in the folder `nightwatch/selenium` when you execute this command
 
 ## Run tests locally
 You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this command

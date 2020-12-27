@@ -1,5 +1,5 @@
 const {join} = require('path');
-const build = `Nightwatch build-${process.env.DATE}`;
+const build = `Nightwatch Appium Web build-${process.env.DATE}`;
 
 module.exports = {
     src_folders: [join(process.cwd(), 'tests/specs/')],
@@ -16,8 +16,10 @@ module.exports = {
             launch_url: 'https://www.saucedemo.com',
         },
         sauceLabs: {
-            selenium_host: `${process.env.REGION === 'eu' ? 'appium' : 'us1-manual.app'}.testobject.com`,
+            selenium_host: `ondemand.${process.env.REGION === 'eu' ? 'eu-central-1' : 'us-west-1'}.saucelabs.com`,
             selenium_port: 80,
+            username: process.env.SAUCE_USERNAME,
+            access_key: process.env.SAUCE_ACCESS_KEY,
         },
         androidChrome: {
             extends: 'sauceLabs',
@@ -27,14 +29,11 @@ module.exports = {
                 deviceName: 'Samsung Galaxy S[12789]?.*',
                 automationName: 'UiAutomator2',
                 phoneOnly: true,
-                // The api key that has a reference to the app-project in the TO cloud
-                testobject_api_key: process.env.SAUCE_RDC_EU_ACCESS_KEY_WEB,
-                // The name of the test for in the cloud
-                testobject_test_name: build,
+                build,
                 // Some default settings
                 // You can find more info in the TO Appium Basic Setup section
                 idleTimeout: 180,
-                testobject_cache_device: true,
+                cacheId: '1234klq1',
                 noReset: true,
                 orientation: 'PORTRAIT',
                 newCommandTimeout: 180,
@@ -49,16 +48,13 @@ module.exports = {
             desiredCapabilities: {
                 browserName: 'safari',
                 platformName: 'iOS',
-                deviceName: 'iPhone [1678X]?.*',
+                deviceName: 'iPhone [12678X]?.*',
                 automationName: 'XCUITEST',
-                // The api key that has a reference to the app-project in the TO cloud
-                testobject_api_key: process.env.SAUCE_RDC_EU_ACCESS_KEY_WEB,
-                // The name of the test for in the cloud
-                testobject_test_name: build,
+                build,
                 // Some default settings
                 // You can find more info in the TO Appium Basic Setup section
                 idleTimeout: 180,
-                testobject_cache_device: true,
+                cacheId: '1234klq2',
                 noReset: true,
                 orientation: 'PORTRAIT',
                 newCommandTimeout: 180,

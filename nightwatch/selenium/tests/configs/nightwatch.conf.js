@@ -1,5 +1,5 @@
 const {join} = require('path');
-const build = `Nightwatch build-${process.env.DATE}`;
+const build = `Nightwatch Desktop Web build-${process.env.DATE}`;
 
 module.exports = {
     src_folders: [join(process.cwd(), 'tests/specs/')],
@@ -16,7 +16,7 @@ module.exports = {
             launch_url: 'https://www.saucedemo.com',
         },
         sauceLabs: {
-            selenium_host: `ondemand.${process.env.REGION === 'eu' ? 'eu-central-1.' : ''}saucelabs.com`,
+            selenium_host: `ondemand.${process.env.REGION === 'eu' ? 'eu-central-1' : 'us-west-1'}.saucelabs.com`,
             selenium_port: 80,
             username: process.env.SAUCE_USERNAME,
             access_key: process.env.SAUCE_ACCESS_KEY,

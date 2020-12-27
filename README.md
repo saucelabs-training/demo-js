@@ -28,6 +28,8 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
             - [WebdriverIO with Up and Downloading Files](webdriverio/webdriver/examples/up-download)
 - [TestCafe](./testcafe)
 - [NightWatch](./nightwatch)
+    [Nightwatch Mobile Web](./nightwatch/appium-web)
+    [Nightwatch Desktop Web](./nightwatch/selenium)
 - [Protractor with Jasmine](./protractor)
 - [Puppeteer with Jest](./puppeteer)
 - [Screener Runner (DEPRECATED)](./screener-runner)

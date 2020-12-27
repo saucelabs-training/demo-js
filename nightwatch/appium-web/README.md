@@ -1,4 +1,4 @@
-# Nightwatch
+# Nightwatch Mobile Web
 This folder contains a simple Real Device set up for Nightwatch.
 
 > **NOTE:**\
@@ -18,15 +18,23 @@ You can install all dependencies by running the following command
     
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `nightwatch` when you execute this command
+> NOTE: Make sure you are in the folder `nightwatch/appium-web` when you execute this command
 
-## Run tests on real devices in the Sauce Labs Legacy cloud
+## Run tests on real devices in the Sauce Labs cloud
 You can run your tests on Sauce Labs EU DC with this command for Android
 
-    npm run test.legacy.rdc.android.eu
+    npm run test.saucelabs.android.eu
 
 and this command for iOS
 
-    npm run test.legacy.rdc.ios.eu
+    npm run test.saucelabs.ios.eu
+    
+You can run your tests on Sauce Labs US DC with this command for Android
+
+    npm run test.saucelabs.android.us
+
+and this command for iOS
+
+    npm run test.saucelabs.ios.us
 
 
