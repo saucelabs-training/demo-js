@@ -14,6 +14,9 @@ Node.js based automation frameworks locally and or in Sauce Labs.
 > Services team at Sauce Labs.\
 > Please contact the [Sauce Labs Sales Team](https://saucelabs.com/contact) for support and information.
 
+> Most of the Sauce Labs features will be explained with [WebdriverIO](https://webdriver.io/), the preferred Node.js 
+framework when using Sauce Labs.
+
 ## Framework examples
 - [WebdriverIO with Jasmine*](./webdriverio)
     - WebdriverIO with Appium for Native/Hybrid Apps
@@ -51,27 +54,9 @@ Node.js based automation frameworks locally and or in Sauce Labs.
     - [Puppeteer with Jest](./testrunner-toolkit/puppeteer)
     - [TestCafe](./testrunner-toolkit/testcafe)
 
-- more to follow
-
-The above mentioned frameworks include some best practices.
-
 > \* The connection to Sauce Labs doesn't depend on using Mocha, Jasmine or CucumberJS. Please check the 
 [frameworks](https://webdriver.io/docs/frameworks.html) page of WebdriverIO on how to implement a different framework then 
 the used framework here in this repository.
-
-## Sauce Labs Feature Examples
-
-* [Sauce Connect with WebdriverIO](/webdriverio/webdriver/examples/sc/test/specs/sauce-connect.example.js)
-
-
-## Solution Outline
-* [Tests that can help you quickly and easily get started with Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/on-boarding-modules)
-* [W3C examples using Sauce Labs](https://github.com/saucelabs-training/demo-js/tree/master/w3c-example)
-* [Tests that use the Headless feature of Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/headless-examples) (not included with basic tier or free trial customers)
-* [Mobile Examples using Appium on Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/appium-examples)
-* [Using Biometric login on Sauce Labs](./biometric-login)
-* [Using Image Injection on Sauce Labs Real Devices](./image-injection)
-* [Up/Download files with Appium](./up-download-file/appium)
 
 ## Prerequisites
 In order to run these scripts you must complete the following prerequisite steps:
