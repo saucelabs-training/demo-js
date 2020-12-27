@@ -56,6 +56,7 @@ framework when using Sauce Labs.
         - [Protractor "Best Practices"](./protractor/selenium/best-practices)
 - [Puppeteer with Jest](./puppeteer)
 - [TestCafe](./testcafe)
+    - [TestCafe "Best Practices"](./testcafe/best-practices)
 
 > \* The connection to Sauce Labs doesn't depend on using Mocha, Jasmine or CucumberJS. Please check the 
 [frameworks](https://webdriver.io/docs/frameworks.html) page of WebdriverIO on how to implement a different framework then 

@@ -1,5 +1,5 @@
-# TestCafe
-This folder contains a simple set up for TestCafe.
+# TestCafe "BestPractices"
+This folder contains set up for TestCafe to run on your local machine or in Sauce Labs.
 
 ## Install dependencies
 You can install all dependencies by running the following command
@@ -8,7 +8,7 @@ You can install all dependencies by running the following command
     
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `testcafe` when you execute this command
+> NOTE: Make sure you are in the folder `testcafe/best-practices` when you execute this command
 
 ## Run tests locally
 You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this command
@@ -75,7 +75,7 @@ To get all the browsers / emulators run the following command
 
     npm run test.saucelabs.get.browsers
 
-Just pick the browsers you need and add them to the TestCafe-configuration file which can be found [here](./tests/configs/saucelabs.config.js).
+Just pick the browsers you need and add them to the TestCafe-configuration file which can be found [here](testsonfigs/saucelabs.config.js).
 
 You can run your tests on Sauce Labs US DC with this command
 
