@@ -1,11 +1,10 @@
 {
-  "name": "webdriverio-device-allocation",
+  "name": "webdriverio-headless",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test.saucelabs.eu": "REGION=eu wdio test/configs/wdio.saucelabs.conf.js",
-    "test.saucelabs.us": "wdio test/configs/wdio.saucelabs.conf.js"
+    "test.saucelabs.headless": "wdio test/configs/wdio.saucelabs.conf.js"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +18,7 @@
     "@wdio/cli": "^6.10.11",
     "@wdio/jasmine-framework": "^6.10.11",
     "@wdio/local-runner": "^6.10.13",
-    "@wdio/sauce-service": "^6.10.11",
+    "@wdio/sauce-service": "^6.10.14",
     "@wdio/spec-reporter": "^6.10.6",
     "@wdio/sync": "^6.10.11"
   }

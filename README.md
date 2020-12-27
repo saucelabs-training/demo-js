@@ -23,6 +23,7 @@ This repository will hold multiple NodeJS based automation frameworks and exampl
         - [Examples](webdriverio/webdriver/examples)
             - [WebdriverIO and extendedDebugging](webdriverio/webdriver/examples/extended-debugging)
             - [WebdriverIO and Sauce Connect](webdriverio/webdriver/examples/sc)
+            - [WebdriverIO and Sauce Labs Headless](webdriverio/webdriver/examples/headless)
             - [WebdriverIO and Sauce Labs Front-End Performance](webdriverio/webdriver/examples/performance)
             - [WebdriverIO with Up and Downloading Files](webdriverio/webdriver/examples/up-download)
 - [TestCafe](./testcafe)

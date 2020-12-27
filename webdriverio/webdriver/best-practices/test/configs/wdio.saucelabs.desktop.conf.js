@@ -2,12 +2,6 @@ const {config} = require('./wdio.shared.conf');
 const defaultBrowserSauceOptions = {
     build: `Best Practices: Sauce Labs Desktop Web build-${new Date().getTime()}`,
     screenResolution: '1600x1200',
-    seleniumVersion: '3.141.59',
-};
-const chromeOptions = {
-    'goog:chromeOptions': {
-        'w3c': true,
-    },
 };
 
 // =====================
@@ -35,7 +29,6 @@ config.capabilities = [
         'sauce:options': {
             ...defaultBrowserSauceOptions,
         },
-        ...chromeOptions,
     },
     {
         browserName: 'firefox',
@@ -51,7 +44,6 @@ config.capabilities = [
         browserVersion: 'latest',
         'sauce:options': {
             ...defaultBrowserSauceOptions,
-            iedriverVersion: '3.141.59',
         },
     },
     {
