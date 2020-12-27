@@ -1,7 +1,7 @@
 import {isBrowserOpened, openDeepLinkUrl, restartApp} from '../helpers/utils';
 import {join} from 'path';
 import {readFileSync} from 'fs';
-import LoginScreen from '../screen-objects/login';
+import LoginScreen from '../screen-objects/Login';
 import QrCodeScreen from '../screen-objects/qrCodeScreen';
 
 describe('Sauce Labs Image Injection', () => {

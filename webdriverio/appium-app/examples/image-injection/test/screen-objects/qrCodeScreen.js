@@ -1,4 +1,4 @@
-import Base from './base';
+import Base from './Base';
 
 class QrCodeScreen extends Base {
 	constructor() {

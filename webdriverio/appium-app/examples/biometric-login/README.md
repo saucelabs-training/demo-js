@@ -17,7 +17,7 @@ You can install all dependencies by running the following command
 
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `biometric-login` when you execute this command
+> NOTE: Make sure you are in the folder `webdriverio/appium-app/examples/biometric-login` when you execute this command
 
 ## Important information
 ### Environment variables for Sauce Labs
@@ -38,7 +38,7 @@ Be aware of the fact that and iOS simulator uses a different build then a iOS re
 
 ### Upload apps to Sauce Storage
 If you want to use Android emulators, iOS simulators or iOS real devices in the New Sauce Labs UI you need to upload the apps to the Sauce Storage.
-You can find a script to upload them to, or the US, or EU DC in [this](./scripts)-folder. You can push the files to the
+You can find a script to upload them to, or the US, or EU DC in [this](scripts)-folder. You can push the files to the
 storage by doing the following from the root of this folder:
 
     cd scripts
@@ -54,10 +54,10 @@ When you've done that you will see for example the following logs
 
 ### iOS
 Using TouchID or FaceID for iOS simulators is pretty straightforward, you **don't** need to add an extra capability to your capabilities,
-you can just enable it during runtime, please check [this](./test/specs/touch.face.id.spec.js) to see how to do that.
+you can just enable it during runtime, please check [this](test/specs/touch.face.id.spec.js) to see how to do that.
 
 On the Sauce Labs Legacy RDC **AND** the New Sauce Labs UI you need to add `allowTouchIdEnroll: true` to your capabilities,
-see also the [Legacy RDC config](./test/configs/wdio.ios.legacy.rdc.conf.js) and the [New Sauce Labs UI config](./test/configs/wdio.ios.sauce.real.conf.js)-file
+see also the [Legacy RDC config](test/configs/wdio.ios.legacy.rdc.conf.js) and the [New Sauce Labs UI config](test/configs/wdio.ios.sauce.real.conf.js)-file
 
 ### Android
 Android is not that straightforward as iOS, there is no specific capability you can use to enable fingerprint support.
@@ -67,7 +67,7 @@ to get the flow (Thanks my friend!!).
 The challenge with Android was that there is a different flow for almost each version. Take for example Android 7,
 that version doesn't support to automatically set a pin, you need to walk through a complete flow to enable this.
 There is also a small different in the fingerprint wizard between Android 9 and 10. This has been covered in the used code,
-see [this](./test/screen-objects/AndroidSettings.js)-file. The method `enableBiometricLogin()` will do all the magic for you.
+see [this](test/screen-objects/AndroidSettings.js)-file. The method `enableBiometricLogin()` will do all the magic for you.
 
 ## Run tests locally
 ### Local iOS simulator
@@ -76,7 +76,7 @@ If you want to run the tests on your local machine then you can run the iOS test
     npm run test.local.ios.simulator
 
 Make sure you have Appium Globally installed and have the same simulator available on your Mac as can be found in this
-[config](./test/configs/wdio.ios.local.sim.conf.js).
+[config](test/configs/wdio.ios.local.sim.conf.js).
 
 ### Local Android emulator
 If you want to run the tests on your local machine then you can run the Android test with
@@ -84,7 +84,7 @@ If you want to run the tests on your local machine then you can run the Android 
     npm run test.local.android.emulator
 
 Make sure you have Appium Globally installed and have the same emulator available on your Mac/Windows/Linux machine as
-can be found in this [config](./test/configs/wdio.android.local.emu.conf.js).
+can be found in this [config](test/configs/wdio.android.local.emu.conf.js).
 
 ## Run tests on Sauce Labs iOS simulators or Android emulators
 > To configure your Android emulator or iOS simulator check our
@@ -114,7 +114,7 @@ The default Appium Version provided by Sauce Labs can be overriden as seen in th
     // If using the EU DC
     npm run test.sauce.ios.simulator.eu --appium_version=1.17.1
 
-See this [config](./test/configs/wdio.ios.sauce.sim.conf.js)-file for more information.
+See this [config](test/configs/wdio.ios.sauce.sim.conf.js)-file for more information.
 
 ### Sauce Labs Android emulator
 If you want to run the tests on Sauce Labs emulators then you can run the Android test with
@@ -140,7 +140,7 @@ The default Appium Version provided by Sauce Labs can be overriden as seen in th
     // If using the EU DC
     npm run test.sauce.android.emulator.eu --appium_version=1.16.0
 
-See this [config](./test/configs/wdio.android.sauce.emu.conf.js)-file for more information.
+See this [config](test/configs/wdio.android.sauce.emu.conf.js)-file for more information.
 
 ## Run tests on Sauce Labs iOS real devices in the New Sauce Labs UI
 If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs UI** then you can run the iOS test with
@@ -153,7 +153,7 @@ If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs 
 
 The tests will be executed for FaceID.
 
-See this [config](./test/configs/wdio.ios.sauce.real.conf.js)-file for more information.
+See this [config](test/configs/wdio.ios.sauce.real.conf.js)-file for more information.
 
 ## Run tests on Sauce Labs iOS real devices in the Legacy RDC
 If you want to run the tests on Sauce Labs real devices in the **Legacy RDC** then you can run the iOS test with
@@ -166,4 +166,4 @@ If you want to run the tests on Sauce Labs real devices in the **Legacy RDC** th
 
 The tests will be executed for **AND** TouchID **AND** FaceID.
 
-See this [config](./test/configs/wdio.ios.legacy.rdc.conf.js)-file for more information.
+See this [config](test/configs/wdio.ios.legacy.rdc.conf.js)-file for more information.

@@ -21,7 +21,10 @@ framework when using Sauce Labs.
 - [WebdriverIO with Jasmine*](./webdriverio)
     - WebdriverIO with Appium for Native/Hybrid Apps
         - [Examples](./webdriverio/appium-app/examples)
-            - [WebdriverIO with Appium and Native App Gestures](./webdriverio/mobile-app/examples/gestures)
+            - [Native App Gestures](webdriverio/appium-app/examples/gestures)
+            - [Using Biometric Login on Sauce Labs](webdriverio/appium-app/examples/biometric-login)
+            - [Using Image Injection on Sauce Labs Real Devices](webdriverio/appium-app/examples/image-injection)
+            - [Using Uploading and Downloading Files from Sauce Labs Emulators and Real Devices](webdriverio/appium-app/examples/up-download-file)
     - WebdriverIO with Appium for Mobile Web (Chrome/Safari)
         - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/appium-web/best-practices)
         - [Examples](./webdriverio/appium-web/examples)
@@ -34,7 +37,13 @@ framework when using Sauce Labs.
             - [WebdriverIO and Sauce Labs Headless](webdriverio/webdriver/examples/headless)
             - [WebdriverIO and Sauce Labs Front-End Performance](webdriverio/webdriver/examples/performance)
             - [WebdriverIO with Up and Downloading Files](webdriverio/webdriver/examples/up-download)
-- [TestCafe](./testcafe)
+- **SauceCTL Testrunner Toolkit**
+    - [Cypress](./testrunner-toolkit/cypress)
+    - [Playwright with Jest](./testrunner-toolkit/playwright)
+    - [Puppeteer with Jest](./testrunner-toolkit/puppeteer)
+    - [TestCafe](./testrunner-toolkit/testcafe)
+- [Screener Runner (THIS DEMO PROJECT IS DEPRECATED)](./screener-runner)
+- [Visual E2E](./visual-e2e) (*in beta*)
 - [NightWatch](./nightwatch)
     - NightWatch for Desktop Web (Selenium, but officially WebDriver)
         - [Examples](./nightwatch/webdriver/examples)
@@ -46,13 +55,7 @@ framework when using Sauce Labs.
     - Protractor for Desktop Web (Selenium)
         - [Protractor "Best Practices"](./protractor/selenium/best-practices)
 - [Puppeteer with Jest](./puppeteer)
-- [Screener Runner (DEPRECATED)](./screener-runner)
-- [Visual E2E](./visual-e2e) (*in beta*)
-- **SauceCTL Testrunner Toolkit**
-    - [Cypress](./testrunner-toolkit/cypress)
-    - [Playwright with Jest](./testrunner-toolkit/playwright)
-    - [Puppeteer with Jest](./testrunner-toolkit/puppeteer)
-    - [TestCafe](./testrunner-toolkit/testcafe)
+- [TestCafe](./testcafe)
 
 > \* The connection to Sauce Labs doesn't depend on using Mocha, Jasmine or CucumberJS. Please check the 
 [frameworks](https://webdriver.io/docs/frameworks.html) page of WebdriverIO on how to implement a different framework then 

@@ -1,5 +1,5 @@
 import {restartApp} from '../helpers/utils';
-import LoginScreen from '../screen-objects/login';
+import LoginScreen from '../screen-objects/Login';
 import AndroidSettings from '../screen-objects/AndroidSettings';
 
 describe('Touch / Face ID', () => {

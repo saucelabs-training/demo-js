@@ -1,4 +1,4 @@
-# Uploading and downloading files from Sauce Labs
+# Using Uploading and Downloading Files from Sauce Labs Emulators and Real Devices
 This folder contains examples for using up / download files from:
 
 - [Android real devices on the new Sauce Labs UI](#run-tests-on-sauce-labs-android-real-devices-in-the-new-sauce-labs-ui)
@@ -18,7 +18,7 @@ You can install all dependencies by running the following command
 This will install all needed dependencies that are listed in the `package.json`-file
 
 > **NOTE:**\
-> Make sure you are in the folder `up-download-file/appium` when you execute this command
+> Make sure you are in the folder `webdriverio/appium-app/examples/up-download-file` when you execute this command
 
 ## Important information
 ### Up/downloading files to and or from Android real devices
@@ -50,13 +50,13 @@ The examples in this repository that can run on Sauce Labs use environment varia
 The script on how to use this can be found [here](test/specs/real-devices/upload.image.android.real.spec.js) and the execution 
 will look like this
 
-![Upload Android real device](./assets/upload-real-device.gif)
+![Upload Android real device](assets/upload-real-device.gif)
 
 ### Android emulators
 The script on how to use this can be found [here](test/specs/emu-sim/upload.image.android.emulator.spec.js) and the execution 
 will look like this
 
-![Upload Android emulators](./assets/android-emulator-upload.gif)
+![Upload Android emulators](assets/android-emulator-upload.gif)
 
 ## Run tests on Sauce Labs Android real devices in the New Sauce Labs UI
 If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs UI** then you can run the Android test with
@@ -69,7 +69,7 @@ If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs 
     
 The tests will be executed on a Samsung Galaxy 10.
 
-See this [config](./test/configs/wdio.android.sauce.real.conf.js)-file for more information.
+See this [config](test/configs/wdio.android.sauce.real.conf.js)-file for more information.
 
 ## Run tests on Sauce Labs Android real devices in the Legacy RDC
 If you want to run the tests on Sauce Labs real devices in the **Legacy RDC** then you can run the Android test with
@@ -82,7 +82,7 @@ If you want to run the tests on Sauce Labs real devices in the **Legacy RDC** th
     
 The tests will be executed on a Samsung Galaxy 10.    
 
-See this [config](./test/configs/wdio.android.legacy.rdc.conf.js)-file for more information.
+See this [config](test/configs/wdio.android.legacy.rdc.conf.js)-file for more information.
 
 ## Run tests on Sauce Labs Android Emulators
 If you want to run the tests on Sauce Labs Android Emulators then you can run the Android test with
@@ -95,7 +95,7 @@ If you want to run the tests on Sauce Labs Android Emulators then you can run th
     
 The tests will be executed on a Android 8.1, 9.0 and 10.0.
 
-See this [config](./test/configs/wdio.android.sauce.emu.conf.js)-file for more information.
+See this [config](test/configs/wdio.android.sauce.emu.conf.js)-file for more information.
 
 ## Run tests on your local Android Emulator
 If you want to run the tests on your local Android Emulator you can test this with
@@ -103,7 +103,7 @@ If you want to run the tests on your local Android Emulator you can test this wi
     // If using the US DC
     npm run test.local.android.emulator
 
-Please check this [config](./test/configs/wdio.android.local.emu.conf.js)-file for more information.
+Please check this [config](test/configs/wdio.android.local.emu.conf.js)-file for more information.
 
 ## Credits
 This repo of examples is based on [this article](https://appiumpro.com/editions/2-seeding-an-android-device-with-test-photos)

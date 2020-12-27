@@ -39,14 +39,14 @@ export SAUCE_ACCESS_KEY=*******
 - Install all dependencies with `npm install`
 
 ### Test Apps
-This project has 3 test apps which can be found [here](./test-apps). You will find
+This project has 3 test apps which can be found [here](test-apps). You will find
 - an Android build, which can be used for Android emulators and Android real devices
 - an iOS Simulator build
 - and an iOS Real device build
 
 ### Sauce Labs Storage
 If you want to use Sauce Labs you need to upload the apps to the storage, more information can be found [here](https://wiki.saucelabs.com/display/DOCS/Application+Storage).
-You can find a script to upload the used apps [here](./scripts/push_apps_to_storage.sh). Here you will find
+You can find a script to upload the used apps [here](scripts/push_apps_to_storage.sh). Here you will find
 a curl command that can upload the apps to the EU and US data center for you.
 
 > **NOTE:** Make sure you've added your credentials to your environment variables so you can start uploading the apps.
@@ -59,16 +59,16 @@ a curl command that can upload the apps to the EU and US data center for you.
 > **Note:** It's always easy to cheat ;-) and go to the answer immediately, but the advice is to play with it
 >and learn =)
 
-You can find the exercises in [this](./tests/specs/exercises.spec.js) file.
+You can find the exercises in [this](tests/specs/exercises.spec.js) file.
 
 ### Answers
-You can find the answers / explanation how to use the Gestures in [this](./tests/specs/answers.spec.js) file.
+You can find the answers / explanation how to use the Gestures in [this](tests/specs/answers.spec.js) file.
 
 ### Running them locally
 Please check the configuration for:
 
-- [Android](./tests/configs/wdio.android.local.emu.conf.js)
-- [iOS](./tests/configs/wdio.ios.local.sim.conf.js)
+- [Android](tests/configs/wdio.android.local.emu.conf.js)
+- [iOS](tests/configs/wdio.ios.local.sim.conf.js)
 
 Make sure you have the same configuration, so you can run the tests with the following command
 
@@ -81,8 +81,8 @@ to Sauce Labs.
 
 You can find the configurations for here:
 
-- [Android](./tests/configs/wdio.android.sauce.emu.conf.js)
-- [iOS](./tests/configs/wdio.ios.sauce.sim.conf.js)
+- [Android](tests/configs/wdio.android.sauce.emu.conf.js)
+- [iOS](tests/configs/wdio.ios.sauce.sim.conf.js)
 
 The tests can be executed on the EU or US Data Center, all depending on what you use. Run the following commands for
 the correct Data Centers.
@@ -98,8 +98,8 @@ the correct Data Centers.
 ### Running them on Sauce Labs Real Devices
 You can find the configurations for here:
 
-- [Android](./tests/configs/wdio.android.sauce.real.conf.js)
-- [iOS](./tests/configs/wdio.ios.sauce.real.conf.js)
+- [Android](tests/configs/wdio.android.sauce.real.conf.js)
+- [iOS](tests/configs/wdio.ios.sauce.real.conf.js)
 
 The tests can be executed on the EU or US Data Center, all depending on what you use. Run the following commands for
 the correct Data Centers.

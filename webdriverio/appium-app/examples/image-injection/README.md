@@ -1,4 +1,4 @@
-# Using image injection on Sauce Labs Real Devices
+# Using Image Injection on Sauce Labs Real Devices
 This folder contains examples for using image injection on real devices for:
 
 - [Android real devices on the new Sauce Labs UI](#run-tests-on-sauce-labs-android-real-devices-in-the-new-sauce-labs-ui)
@@ -13,7 +13,7 @@ You can install all dependencies by running the following command
 
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `image-injection` when you execute this command
+> NOTE: Make sure you are in the folder `webdriverio/appium-app/examples/image-injection` when you execute this command
 
 ## Important information
 ### Environment variables for Sauce Labs
@@ -31,7 +31,7 @@ Be aware of the fact that you need the build for the iOS real device. So please 
 
 ### Upload apps to Sauce Storage
 If you want to use Android emulators, iOS simulators or iOS real devices in the New Sauce Labs UI you need to upload the apps to the Sauce Storage.
-You can find a script to upload them to, or the US, or EU DC in [this](./scripts)-folder. You can push the files to the 
+You can find a script to upload them to, or the US, or EU DC in [this](scripts)-folder. You can push the files to the 
 storage by doing the following from the root of this folder:
 
     cd scripts
@@ -54,7 +54,7 @@ If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs 
     
 The tests will be executed on a Samsung Galaxy 10.
 
-See this [config](./test/configs/wdio.android.sauce.real.conf.js)-file for more information.
+See this [config](test/configs/wdio.android.sauce.real.conf.js)-file for more information.
 
 ## Run tests on Sauce Labs iOS real devices in the New Sauce Labs UI
 If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs UI** then you can run the iOS test with
@@ -67,4 +67,4 @@ If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs 
     
 The tests will be executed on a iPhone XS.
 
-See this [config](./test/configs/wdio.ios.sauce.real.conf.js)-file for more information.
+See this [config](test/configs/wdio.ios.sauce.real.conf.js)-file for more information.
