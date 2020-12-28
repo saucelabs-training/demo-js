@@ -82,7 +82,7 @@ class CheckoutSummaryPage extends BasePage {
      * @return {Promise<void>}
      */
     async cancelCheckout() {
-        await this.#cancelButton.click();
+        return this.#cancelButton.click();
     }
 
     /**
@@ -91,7 +91,7 @@ class CheckoutSummaryPage extends BasePage {
      * @return {Promise<void>}
      */
     async finishCheckout() {
-        await this.#finishButton.click();
+        return this.#finishButton.click();
     }
 }
 

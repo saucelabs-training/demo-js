@@ -62,7 +62,9 @@ class SwagOverviewPage extends BasePage {
      * @returns {Promise<void>}
      */
     async addSwagToCart(needle) {
-        await (await this.swag(needle)).$('.btn_primary.btn_inventory').click();
+        (await this.swag(needle)).$('.btn_primary.btn_inventory').click();
+
+        return await browser.sleep(500);
     }
 
     /**
@@ -73,7 +75,9 @@ class SwagOverviewPage extends BasePage {
      * @returns {Promise<void>}
      */
     async removeSwagFromCart(needle) {
-        await (await this.swag(needle)).$('.btn_secondary.btn_inventory').click();
+        (await this.swag(needle)).$('.btn_secondary.btn_inventory').click();
+
+        return await browser.sleep(500);
     }
 
     /**
@@ -84,7 +88,7 @@ class SwagOverviewPage extends BasePage {
      * @returns {Promise<void>}
      */
     async openSwagDetails(needle) {
-        await (await this.swag(needle)).$('.inventory_item_name').click();
+        return (await this.swag(needle)).$('.inventory_item_name').click();
     }
 }
 

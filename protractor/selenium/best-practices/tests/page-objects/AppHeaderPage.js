@@ -23,7 +23,7 @@ class AppHeaderPage {
      * @returns {Promise<void>}
      */
     async openCart() {
-        await this.#cart.click();
+        return this.#cart.click();
     }
 }
 

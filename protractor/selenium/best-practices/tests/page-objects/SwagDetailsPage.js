@@ -60,6 +60,8 @@ class SwagDetailsPage extends BasePage {
      */
     async addToCart() {
         await this.#addButton.click();
+
+        return await browser.sleep(500);
     }
 
     /**
@@ -69,6 +71,8 @@ class SwagDetailsPage extends BasePage {
      */
     async removeFromCart() {
         await this.#removeButton.click();
+
+        return await browser.sleep(500);
     }
 
     /**
@@ -77,7 +81,7 @@ class SwagDetailsPage extends BasePage {
      * @returns {Promise<void>}
      */
     async goBack() {
-        await this.#goBackButton.click();
+        return this.#goBackButton.click();
     }
 }
 

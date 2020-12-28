@@ -72,7 +72,9 @@ class CartSummaryPage extends BasePage {
      * @returns {Promise<void>}
      */
     async removeSwag(needle) {
-        return (await this.swag(needle)).$('.btn_secondary.cart_button').click();
+        (await this.swag(needle)).$('.btn_secondary.cart_button').click();
+
+        return browser.sleep(500);
     }
 
     /**
@@ -81,7 +83,7 @@ class CartSummaryPage extends BasePage {
      * @returns {Promise<void>}
      */
     async continueShopping() {
-        this.#continueShoppingButton.click();
+        return this.#continueShoppingButton.click();
     }
 
     /**
@@ -90,7 +92,7 @@ class CartSummaryPage extends BasePage {
      * @returns {Promise<void>}
      */
     async goToCheckout() {
-        this.#checkoutButton.click();
+        return this.#checkoutButton.click();
     }
 }
 

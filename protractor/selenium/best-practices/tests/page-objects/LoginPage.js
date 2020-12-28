@@ -53,7 +53,8 @@ class LoginPage extends BasePage {
     if (password) {
       await this.#password.sendKeys(password);
     }
-    await this.#loginButton.click();
+
+    return this.#loginButton.click();
   }
 
   /**

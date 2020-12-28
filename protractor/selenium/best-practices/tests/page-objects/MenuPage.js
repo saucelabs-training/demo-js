@@ -34,7 +34,7 @@ class MenuPage {
     async open() {
         await this.#menu.click();
 
-        await browser.sleep(500);
+        return browser.sleep(500);
     }
 
     /**
@@ -43,7 +43,7 @@ class MenuPage {
      * @returns {Promise<void>}
      */
     async openInventoryList() {
-        await this.#inventoryListButton.click();
+        return this.#inventoryListButton.click();
     }
 
     /**
@@ -52,7 +52,7 @@ class MenuPage {
      * @returns {Promise<void>}
      */
     async openAboutPage() {
-        await this.#aboutButton.click();
+        return this.#aboutButton.click();
     }
 
     /**
@@ -61,7 +61,7 @@ class MenuPage {
      * @returns {Promise<void>}
      */
     async logout() {
-        await this.#logoutButton.click();
+        return this.#logoutButton.click();
     }
 
     /**
@@ -70,7 +70,7 @@ class MenuPage {
      * @returns {Promise<void>}
      */
     async restAppState() {
-        await this.#resetButton.click();
+        return this.#resetButton.click();
     }
 }
 

@@ -67,7 +67,8 @@ class CheckoutPersonalInfoPage extends BasePage {
         if (zip){
             await this.#postalCode.sendKeys(zip);
         }
-        await this.#continueCheckoutButton.click();
+
+        return this.#continueCheckoutButton.click();
     }
 
     /**
@@ -87,7 +88,7 @@ class CheckoutPersonalInfoPage extends BasePage {
      * @returns {Promise<void>}
      */
     async cancelCheckout() {
-        await this.#cancelButton.click();
+        return this.#cancelButton.click();
     }
 }
 
