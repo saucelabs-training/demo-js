@@ -1,24 +1,28 @@
 # Protractor "Best Practices"
-This folder contains a simple set up for Protractor.
-
 > **NOTE:**\
-> If you look at Protractor you can get the feeling that, in spite of all the effort that the Open Source Community is putting into it, 
-> it is not being maintained by Google anymore.\
-> To be honest, [I'm](https://github.com/wswebcreation) pretty sure about it. If you look at the facts, see image below, you will notice that:
+> If you look at Protractor you can get the feeling that, in spite of all the effort that the Open Source Community is 
+> putting into it, it is not being maintained by Google anymore.\
+> To be honest, [I'm](https://github.com/wswebcreation) pretty sure about it. If you look at the facts, see image below,
+> you will notice that:
 > - the amount of issues is increasing
 > - the amount of PR's is increasing
 > - the activity in the project is decreasing
 > - the last official functional release was from end of 2018 (adding support for Sauce Labs EU data center) 
 >
-> This is not giving me a good feeling. As a contributor to the Protractor project in the last years, I also have the feeling 
-> that there won't be a big chance that this is going to change.
-> I'm not the only one who thinks about Protractor like this, please take a look at [this great article](https://dev.to/davert/5-reasons-you-should-not-use-protractor-in-2019-3l4b) which might also give you some insights.\
+> This is not giving me a good feeling. As a contributor to the Protractor project in the last years, I also have the 
+> feeling that there won't be a big chance that this is going to change.
+> I'm not the only one who thinks about Protractor like this, please take a look at
+> [this great article](https://dev.to/davert/5-reasons-you-should-not-use-protractor-in-2019-3l4b) which might also give you some insights.\
 >
-> Last but not leat, even though Protractor released version 7.0, no **NEW FUNCTIONALITY AND OR BUGFIXES** were released. This was mainly a release to support Node.js 10.
+> Last but not leat, even though Protractor released version 7.0, **NO NEW FUNCTIONALITY AND OR BUGFIXES** were
+> released. This was mainly a release to support Node.js 10.
 >
 > **Also be aware of the fact that Protractor DOES NOT SUPPORT W3C!** 
 >
->![Protractor Support](docsrotractor-support.jpg) 
+>![Protractor Support](docs/protractor-support.jpg)
+
+This folder contains a "best practices" set up for Protractor. Please check the `onPrepare`-hook in the
+[protractor.saucelabs.conf.js](./tests/configs/protractor.saucelabs.conf.js)-file for optimal usage with Sauce Labs.
 
 ## Install dependencies
 You can install all dependencies by running the following command
@@ -30,7 +34,8 @@ This will install all needed dependencies that are listed in the `package.json`-
 > NOTE: Make sure you are in the folder `protractor/selenium/best-practices` when you execute this command
 
 ## Run tests locally
-You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this command
+You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this 
+command
 
     npm run test.local
 

@@ -1,6 +1,8 @@
 const {join} = require('path');
 const {SpecReporter} = require('jasmine-spec-reporter');
 
+// More information about the config file can be found here
+// https://github.com/angular/protractor/blob/master/lib/config.ts
 exports.config = {
     // ---------------------------------------------------------------------------
     // ----- The test framework
