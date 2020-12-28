@@ -2,15 +2,15 @@
 
 aliases:
   - &prepare_environment
-    working_directory: ~/repo
-    docker:
-      - image: circleci/node:dubnium  # primary container for the build job
-    steps:
-      - checkout
-      - run:
-          name: "Update NPM"
-          command: |
-            sudo npm install -g npm@latest
+      working_directory: ~/repo
+      docker:
+        - image: circleci/node:dubnium  # primary container for the build job
+      steps:
+        - checkout
+        - run:
+            name: "Update NPM"
+            command: |
+              sudo npm install -g npm@latest
 
 version: 2
 workflows:
