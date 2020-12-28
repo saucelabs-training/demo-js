@@ -10,80 +10,37 @@ jobs:
           name: "Update NPM"
           command: |
             sudo npm install -g npm@latest
-      - restore_cache: # special step to restore the dependency cache
-          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
-          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: "Resolve Dependencies"
           command: |
             npm install
-      - save_cache: # special step to save the dependency cache
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
-#      - run:
-#          name: "Run Node Tests"
-#          command: |
-#            while ! lsof -i:4445 -t; do sleep 3; done
-#            npm test
       - run:
-          name: "Run Mocha Tests"
+          name: "Run Nightwatch Webdriver"
           command: |
-            cd on-boarding-modules/mocha-examples
-            npm install
-            npm test
-      - run:
-          name: "Run Jasmine Tests"
-          command: |
-            cd on-boarding-modules/jasmine-examples
-            npm install
-            npm test
-      - run:
-          name: "Run WDIO4 Mocha Tests"
-          command: |
-            cd appium-examples/wdio4/mocha-framework
-            npm install
-            npm test
-      - run:
-          name: "Run WDIO5 Mocha Tests"
-          command: |
-            cd appium-examples/wdio5/mocha-framework
-            npm install
-            npm test
-#      - run:
-#          name: "Run Headless Tests"
-#          command: |
-#            cd headless-examples
-#            npm install
-#            npm test
-      - run:
-          name: "Run W3C Examples"
-          command: |
-            cd w3c-example
-            npm install
-            npm test
-      - run:
-          name: "Run WebdriverIO V6"
-          command: |
-            cd webdriverio/web/webdriver
+            cd nightwatch/webdriver/examples/update-sauce
             npm install
             npm run test.saucelabs.us
       - run:
-          name: "Run TestCafe"
+          name: "Run Protractor Best Practices"
           command: |
-            cd testcafe
+            cd protractor/selenium/best-practices
             npm install
             npm run test.saucelabs.us
       - run:
-          name: "Run Protractor"
+          name: "Run TestCafe Best Practices"
           command: |
-            cd testcafe
+            cd testcafe/best-practices
             npm install
             npm run test.saucelabs.us
-#      - run:
-#          name: "Run Nightwatch"
-#          command: |
-#            cd nightwatch
-#            npm install
-#            npm run test.saucelabs.us
-
+      - run:
+          name: "Run WebdriverIO Headless"
+          command: |
+            cd webdriverio/webdriver/examples/headless
+            npm install
+            npm run test.saucelabs.headless
+      - run:
+          name: "Run WebdriverIO Best Practices"
+          command: |
+            cd webdriverio/webdriver/best-practices
+            npm install
+            npm run test.saucelabs.us
