@@ -20,6 +20,9 @@ config.region = process.env.REGION || 'us';
 // https://wiki.saucelabs.com/display/DOCS/W3C+Capabilities+Support
 // ===================================================================================
 config.capabilities = [
+  /**
+   * Android
+   */
   {
     // All vendor specific, in this case Appium capabilities, should be
     // put in vendor prefixed options, see
@@ -39,6 +42,30 @@ config.capabilities = [
     'sauce:options': {
       build: `Sauce Labs W3C Mobile Web build-${new Date().getTime()}`,
       appiumVersion: '1.18.1'
+    },
+  },
+  /**
+   * iOS
+   */
+  {
+    // All vendor specific, in this case Appium capabilities, should be
+    // put in vendor prefixed options, see
+    // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
+    // All Appium capabilities, see
+    // http://appium.io/docs/en/writing-running-appium/caps/
+    // should be prefixed with `appium:{capability-name}`
+    'appium:deviceName': 'iPhone 11 Simulator',
+    'appium:platformVersion': '14.0',
+    // For the W3C capabilities, please check
+    // https://www.w3.org/TR/webdriver1/#capabilities
+    browserName: 'safari',
+    platformName: 'iOS',
+    // All vendor specific, in this case Sauce specific capabilities, should be
+    // put in vendor prefixed options, see
+    // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
+    'sauce:options': {
+      build: `Sauce Labs W3C Mobile Web build-${new Date().getTime()}`,
+      appiumVersion: '1.19.1'
     },
   },
 ];

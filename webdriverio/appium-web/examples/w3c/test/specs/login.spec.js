@@ -8,7 +8,7 @@ describe('LoginPage', () => {
         LoginPage.waitForIsShown();
     });
 
-    fit('should be able to test loading of login page', () => {
+    it('should be able to test loading of login page', () => {
         expect(LoginPage.waitForIsShown()).toEqual(
             true,
             'LoginPage page was not shown',
