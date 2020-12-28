@@ -29,6 +29,7 @@ framework when using Sauce Labs.
         - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/appium-web/best-practices)
         - [Examples](./webdriverio/appium-web/examples)
             - [Real Device Allocation](./webdriverio/appium-web/examples/device-allocation)
+            - [Sauce Labs Mobile Web and W3C](webdriverio/appium-web/examples/w3c)
     - WebdriverIO for Desktop Web (Selenium, but officially WebDriver)
         - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/webdriver/best-practices)
         - [Examples](webdriverio/webdriver/examples)
@@ -37,6 +38,7 @@ framework when using Sauce Labs.
             - [WebdriverIO and Sauce Labs Headless](webdriverio/webdriver/examples/headless)
             - [WebdriverIO and Sauce Labs Front-End Performance](webdriverio/webdriver/examples/performance)
             - [WebdriverIO with Up and Downloading Files](webdriverio/webdriver/examples/up-download)
+            - [WebdriverIO, Sauce Labs and W3C](webdriverio/webdriver/examples/w3c)
 - **SauceCTL Testrunner Toolkit**
     - [Cypress](./testrunner-toolkit/cypress)
     - [Playwright with Jest](./testrunner-toolkit/playwright)
