@@ -56,7 +56,7 @@ describe('Cart Summary page', () => {
             'The amount of items in the cart overview is not equal to 1',
         );
 
-        CartSummaryPage.removeSwag(0);
+        await CartSummaryPage.removeSwag(0);
 
         expect(await AppHeaderPage.getCartAmount()).toEqual(
             '',
