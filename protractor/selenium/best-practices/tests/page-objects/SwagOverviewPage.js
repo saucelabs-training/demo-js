@@ -62,7 +62,7 @@ class SwagOverviewPage extends BasePage {
      * @returns {Promise<void>}
      */
     async addSwagToCart(needle) {
-        (await this.swag(needle)).$('.btn_primary.btn_inventory').click();
+        await (await this.swag(needle)).$('.btn_primary.btn_inventory').click();
 
         return await browser.sleep(500);
     }
@@ -75,7 +75,7 @@ class SwagOverviewPage extends BasePage {
      * @returns {Promise<void>}
      */
     async removeSwagFromCart(needle) {
-        (await this.swag(needle)).$('.btn_secondary.btn_inventory').click();
+        await (await this.swag(needle)).$('.btn_secondary.btn_inventory').click();
 
         return await browser.sleep(500);
     }

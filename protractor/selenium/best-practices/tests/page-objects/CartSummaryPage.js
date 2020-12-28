@@ -72,7 +72,7 @@ class CartSummaryPage extends BasePage {
      * @returns {Promise<void>}
      */
     async removeSwag(needle) {
-        (await this.swag(needle)).$('.btn_secondary.cart_button').click();
+        await (await this.swag(needle)).$('.btn_secondary.cart_button').click();
 
         return browser.sleep(500);
     }
