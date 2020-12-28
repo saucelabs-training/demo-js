@@ -43,4 +43,4 @@ jobs:
           command: |
             cd webdriverio/webdriver/best-practices
             npm install
-            npm run test.saucelabs.us
+            npm run test.saucelabs.us -- --maxInstances=25
