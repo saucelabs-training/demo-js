@@ -1,6 +1,7 @@
-version: 2
-jobs:
-  build:
+# We are using parallel jobs here
+
+aliases:
+  - &prepare_environment
     working_directory: ~/repo
     docker:
       - image: circleci/node:dubnium  # primary container for the build job
@@ -10,10 +11,25 @@ jobs:
           name: "Update NPM"
           command: |
             sudo npm install -g npm@latest
+
+version: 2
+workflows:
+  version: 2
+  build:
+    jobs:
+      - notRecommended
+      - testcafe
+      - webdriverio
+
+jobs:
+  # Not recommended frameworks like NightWatch and Protractor
+  notRecommended:
+    steps:
+      - *prepare_environment
       - run:
-          name: "Resolve Dependencies"
+          name: "Update NPM"
           command: |
-            npm install
+            sudo npm install -g npm@latest
       - run:
           name: "Run Nightwatch Webdriver"
           command: |
@@ -26,12 +42,28 @@ jobs:
             cd protractor/selenium/best-practices
             npm install
             npm run test.saucelabs.us
+  # Testcafe takes pretty long due to the sauce connect tunnel
+  testcafe:
+    steps:
+      - *prepare_environment
+      - run:
+          name: "Update NPM"
+          command: |
+            sudo npm install -g npm@latest
       - run:
           name: "Run TestCafe Best Practices"
           command: |
             cd testcafe/best-practices
             npm install
             npm run test.saucelabs.us
+  # WebdriverIO headless and best practices
+  webdriverio:
+    steps:
+      - *prepare_environment
+      - run:
+          name: "Update NPM"
+          command: |
+            sudo npm install -g npm@latest
       - run:
           name: "Run WebdriverIO Headless"
           command: |
