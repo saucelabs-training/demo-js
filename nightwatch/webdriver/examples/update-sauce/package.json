@@ -1,0 +1,23 @@
+{
+  "name": "nightwatch-update-status-sauce-desktop-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test.local": "nightwatch --config tests/configs/nightwatch.conf.js --env localChrome",
+    "test.saucelabs.us": "env DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env sauceChrome,sauceFirefox,sauceIE,sauceEdge",
+    "test.saucelabs.eu": "env REGION=eu env DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env sauceChrome,sauceFirefox,sauceIE,sauceEdge",
+    "lint": "eslint ../../.. --ext .js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "chromedriver": "^87.0.4",
+    "eslint": "^7.16.0",
+    "eslint-plugin-import": "^2.22.1",
+    "nightwatch": "^1.5.1",
+    "saucelabs": "^4.6.2"
+  }
+}

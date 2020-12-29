@@ -2,58 +2,67 @@
 
 [![CircleCI](https://circleci.com/gh/saucelabs-training/demo-js.svg?style=svg)](https://circleci.com/gh/saucelabs-training/demo-js)
 
-This repository will hold multiple NodeJS based automation frameworks and examples which will help you run tests with NodeJS based automation frameworks locally and or in Sauce Labs.
+This repository will hold multiple Node.js based automation frameworks and examples which will help you run tests with
+Node.js based automation frameworks locally and or in Sauce Labs.
 
 > **DISCLAIMER**\
-> The code in these scripts is provided on an "AS-IS" basis without warranty of any kind, either express or implied, including without limitation any implied warranties of condition, uninterrupted use, merchantability, fitness for a particular purpose, or non-infringement.
-> These scripts are provided for educational and demonstration purposes only, and should not be used in production. Issues regarding these scripts should be submitted through GitHub. These scripts are maintained by the Technical Services team at Sauce Labs.\
-> Some examples in this repository, such as `appium-examples` and `headless-examples`, may require a different account tier beyond free trial. Please contact the [Sauce Labs Sales Team](https://saucelabs.com/contact) for support and information.
+> The code in these scripts is provided on an "AS-IS" basis without warranty of any kind, either express or implied,
+> including without limitation any implied warranties of condition, uninterrupted use, merchantability, fitness for a
+> particular purpose, or non-infringement.
+> These scripts are provided for educational and demonstration purposes only, and should not be used in production.
+> Issues regarding these scripts should be submitted through GitHub. These scripts are maintained by the Technical 
+> Services team at Sauce Labs.\
+> Please contact the [Sauce Labs Sales Team](https://saucelabs.com/contact) for support and information.
+
+> Most of the Sauce Labs features will be explained with [WebdriverIO](https://webdriver.io/), the preferred Node.js 
+framework when using Sauce Labs.
 
 ## Framework examples
 - [WebdriverIO with Jasmine*](./webdriverio)
-    - WebdriverIO with Appium for Mobile Chrome/Safari
-        - [WebdriverIO with Appium (mobile browser tests)](./webdriverio/web/appium)
     - WebdriverIO with Appium for Native/Hybrid Apps
-        - [WebdriverIO with Appium and Native App Gestures](./webdriverio/mobile-app/examples/gestures)
-    - WebdriverIO with WebDriver
-        - [WebdriverIO with WebDriver (desktop browser tests)](./webdriverio/web/webdriver)
-        - [WebdriverIO examples](./webdriverio/web/examples)
-            - [WebdriverIO and Sauce Connect](./webdriverio/web/examples/sc)
-            - [WebdriverIO and extendedDebugging](./webdriverio/web/examples/extended-debugging)
-            - [WebdriverIO and Sauce Labs Front-End Performance](./webdriverio/web/examples/performance)
-- [TestCafe](./testcafe)
-- [NightWatch](./nightwatch)
-- [Protractor with Jasmine](./protractor)
-- [Puppeteer with Jest](./puppeteer)
-- [Screener Runner (DEPRECATED)](./screener-runner)
-- [Visual E2E](./visual-e2e) (*in beta*)
+        - [Examples](./webdriverio/appium-app/examples)
+            - [Native App Gestures](webdriverio/appium-app/examples/gestures)
+            - [Using Biometric Login on Sauce Labs](webdriverio/appium-app/examples/biometric-login)
+            - [Using Image Injection on Sauce Labs Real Devices](webdriverio/appium-app/examples/image-injection)
+            - [Using Uploading and Downloading Files from Sauce Labs Emulators and Real Devices](webdriverio/appium-app/examples/up-download-file)
+    - WebdriverIO with Appium for Mobile Web (Chrome/Safari)
+        - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/appium-web/best-practices)
+        - [Examples](./webdriverio/appium-web/examples)
+            - [Real Device Allocation](./webdriverio/appium-web/examples/device-allocation)
+            - [Sauce Labs Mobile Web and W3C](webdriverio/appium-web/examples/w3c)
+    - WebdriverIO for Desktop Web (Selenium, but officially WebDriver)
+        - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/webdriver/best-practices)
+        - [Examples](webdriverio/webdriver/examples)
+            - [WebdriverIO and extendedDebugging](webdriverio/webdriver/examples/extended-debugging)
+            - [WebdriverIO and Sauce Connect](webdriverio/webdriver/examples/sc)
+            - [WebdriverIO and Sauce Labs Headless](webdriverio/webdriver/examples/headless)
+            - [WebdriverIO and Sauce Labs Front-End Performance](webdriverio/webdriver/examples/performance)
+            - [WebdriverIO with Up and Downloading Files](webdriverio/webdriver/examples/up-download)
+            - [WebdriverIO, Sauce Labs and W3C](webdriverio/webdriver/examples/w3c)
 - **SauceCTL Testrunner Toolkit**
     - [Cypress](./testrunner-toolkit/cypress)
     - [Playwright with Jest](./testrunner-toolkit/playwright)
     - [Puppeteer with Jest](./testrunner-toolkit/puppeteer)
     - [TestCafe](./testrunner-toolkit/testcafe)
-
-- more to follow
-
-The above mentioned frameworks include some best practices.
+- [Screener Runner (THIS DEMO PROJECT IS DEPRECATED)](./screener-runner)
+- [Visual E2E](./visual-e2e) (*in beta*)
+- [NightWatch](./nightwatch)
+    - NightWatch for Desktop Web (Selenium, but officially WebDriver)
+        - [Examples](./nightwatch/webdriver/examples)
+            - [NightWatch Desktop Web: Update Sauce Status](./nightwatch/webdriver/examples/update-sauce)
+    - NightWatch for Mobile Web (Chrome/Safari)
+        - [Examples](./nightwatch/appium-web/examples)
+            - [Nightwatch Mobile Web: Update Sauce Status Real Devices](./nightwatch/appium-web/examples/update-sauce-real-devices)
+- [Protractor with Jasmine](./protractor)
+    - Protractor for Desktop Web (Selenium)
+        - [Protractor "Best Practices"](./protractor/selenium/best-practices)
+- [Puppeteer with Jest](./puppeteer)
+- [TestCafe](./testcafe)
+    - [TestCafe "Best Practices"](./testcafe/best-practices)
 
 > \* The connection to Sauce Labs doesn't depend on using Mocha, Jasmine or CucumberJS. Please check the 
 [frameworks](https://webdriver.io/docs/frameworks.html) page of WebdriverIO on how to implement a different framework then 
 the used framework here in this repository.
-
-## Sauce Labs Feature Examples
-
-* [Sauce Connect with WebdriverIO](/webdriverio/web/examples/sc/test/specs/sauce-connect.example.js)
-
-
-## Solution Outline
-* [Tests that can help you quickly and easily get started with Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/on-boarding-modules)
-* [W3C examples using Sauce Labs](https://github.com/saucelabs-training/demo-js/tree/master/w3c-example)
-* [Tests that use the Headless feature of Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/headless-examples) (not included with basic tier or free trial customers)
-* [Mobile Examples using Appium on Sauce Labs](https://github.com/saucelabs-training/demo-js/blob/master/appium-examples)
-* [Using Biometric login on Sauce Labs](./biometric-login)
-* [Using Image Injection on Sauce Labs Real Devices](./image-injection)
-* [Up/Download files with Appium](./up-download-file/appium)
 
 ## Prerequisites
 In order to run these scripts you must complete the following prerequisite steps:

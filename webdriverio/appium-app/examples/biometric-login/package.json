@@ -1,0 +1,33 @@
+{
+  "name": "webdriverio-touch-faceid-fingerprint",
+  "version": "0.0.1",
+  "description": "Touch-FacId examples",
+  "main": "",
+  "scripts": {
+    "test.local.android.emulator": "wdio test/configs/wdio.android.local.emu.conf.js",
+    "test.local.ios.simulator": "wdio test/configs/wdio.ios.local.sim.conf.js",
+    "test.sauce.android.emulator.us": "wdio test/configs/wdio.android.sauce.emu.conf.js",
+    "test.sauce.android.emulator.eu": "REGION=eu wdio test/configs/wdio.android.sauce.emu.conf.js",
+    "test.sauce.ios.simulator.us": "wdio test/configs/wdio.ios.sauce.sim.conf.js",
+    "test.sauce.ios.simulator.eu": "REGION=eu wdio test/configs/wdio.ios.sauce.sim.conf.js",
+    "test.legacy.rdc.ios.us": "RDC=true wdio test/configs/wdio.ios.legacy.rdc.conf.js",
+    "test.legacy.rdc.ios.eu": "REGION=eu RDC=true wdio test/configs/wdio.ios.legacy.rdc.conf.js",
+    "test.sauce.rdc.ios.us": "RDC=true wdio test/configs/wdio.ios.sauce.real.conf.js",
+    "test.sauce.rdc.ios.eu": "REGION=eu RDC=true wdio test/configs/wdio.ios.sauce.real.conf.js"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "@wdio/appium-service": "^6.10.11",
+    "@wdio/cli": "^6.10.11",
+    "@wdio/jasmine-framework": "^6.10.11",
+    "@wdio/local-runner": "^6.10.13",
+    "@wdio/sauce-service": "^6.10.14",
+    "@wdio/spec-reporter": "^6.10.6",
+    "@wdio/sync": "^6.10.11"
+  }
+}

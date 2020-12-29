@@ -1,0 +1,24 @@
+{
+  "name": "nightwatch-update-status-sauce-rdc-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test.saucelabs.android.eu": "REGION=eu DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env androidChrome",
+    "test.saucelabs.android.us": "REGION=eu DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env androidChrome",
+    "test.saucelabs.ios.eu": "REGION=eu DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env iosSafari",
+    "test.saucelabs.ios.us": "REGION=eu DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env iosSafari",
+    "lint": "eslint ../.. --ext .js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.16.0",
+    "eslint-plugin-import": "^2.22.1",
+    "nightwatch": "^1.5.1",
+    "node-fetch": "^2.6.1",
+    "saucelabs": "^4.6.2"
+  }
+}

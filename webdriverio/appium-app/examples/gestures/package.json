@@ -1,0 +1,33 @@
+{
+  "name": "webdriverio-appium-gestures",
+  "version": "1.0.0",
+  "description": "This repository has been created for the Webinar about \"Automating Mobile Gestures with Appium\".",
+  "scripts": {
+    "test.android.local.emu": "wdio tests/configs/wdio.android.local.emu.conf.js",
+    "test.android.sauce.real.eu": "REGION=eu wdio tests/configs/wdio.android.sauce.real.conf.js",
+    "test.android.sauce.real.us": "wdio tests/configs/wdio.android.sauce.real.conf.js",
+    "test.android.sauce.emu.eu": "REGION=eu wdio tests/configs/wdio.android.sauce.emu.conf.js",
+    "test.android.sauce.emu.us": "wdio tests/configs/wdio.android.sauce.emu.conf.js",
+    "test.ios.local.sim": "wdio tests/configs/wdio.ios.local.sim.conf.js",
+    "test.ios.sauce.real.eu": "REGION=eu wdio tests/configs/wdio.ios.sauce.real.conf.js",
+    "test.ios.sauce.real.us": "wdio tests/configs/wdio.ios.sauce.real.conf.js",
+    "test.ios.sauce.sim.eu": "REGION=eu wdio tests/configs/wdio.ios.sauce.sim.conf.js",
+    "test.ios.sauce.sim.us": "wdio tests/configs/wdio.ios.sauce.sim.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "@wdio/appium-service": "^6.10.11",
+    "@wdio/cli": "^6.10.11",
+    "@wdio/jasmine-framework": "^6.10.11",
+    "@wdio/local-runner": "^6.10.13",
+    "@wdio/sauce-service": "^6.10.14",
+    "@wdio/spec-reporter": "^6.10.6",
+    "@wdio/sync": "^6.10.11"
+  }
+}
