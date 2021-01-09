@@ -26,4 +26,5 @@ hs_err_pid*
 nightwatch/webdriver/examples/update-sauce/tests_output/
 apps
 **/cypress/results/
+**/cypress/videos/
 *.xml

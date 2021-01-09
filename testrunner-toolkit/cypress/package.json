@@ -1,0 +1,17 @@
+{
+  "name": "cypress-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "open": "npx cypress open",
+    "test.local": "npx cypress run",
+    "test.local.headfull": "npx cypress run --headed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^6.2.1"
+  }
+}
