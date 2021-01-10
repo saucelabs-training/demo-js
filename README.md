@@ -33,6 +33,7 @@ framework when using Sauce Labs.
     - WebdriverIO for Desktop Web (Selenium, but officially WebDriver)
         - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/webdriver/best-practices)
         - [Examples](webdriverio/webdriver/examples)
+            - [WebdriverIO and CucumberJS](webdriverio/webdriver/examples/cucumberjs)
             - [WebdriverIO and extendedDebugging](webdriverio/webdriver/examples/extended-debugging)
             - [WebdriverIO and Sauce Connect](webdriverio/webdriver/examples/sc)
             - [WebdriverIO and Sauce Labs Headless](webdriverio/webdriver/examples/headless)
