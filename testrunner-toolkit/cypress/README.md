@@ -620,6 +620,6 @@ capabilities:
 saucectl run --test-env sauce
 ```
 
-<img src="docs/cypress-recording.gif" />
+<img src="./docs/cypress-recording.gif" />
 
 Want to start running cypress tests on Sauce Labs cloud ? Join our beta program: [https://info.saucelabs.com/scale-cypress-testing.html](https://info.saucelabs.com/scale-cypress-testing.html). 
