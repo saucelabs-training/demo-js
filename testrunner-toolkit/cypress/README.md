@@ -613,3 +613,15 @@ We support Chrome by default, but if you want to run on Firefox please add the f
 capabilities:
   - browserName: firefox
 ```
+
+### Running tests on Sauce Labs cloud
+You can also run Cypress tests on Sauce Labs VM's with the following command:
+
+```bash
+saucectl run --test-env sauce
+```
+
+which will result in this
+<img src="docs/cypress-recording.gif" />
+
+Want to start running cypress tests on Sauce Labs cloud ? Join our beta program: [https://info.saucelabs.com/scale-cypress-testing.html](https://info.saucelabs.com/scale-cypress-testing.html). 
