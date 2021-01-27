@@ -9,11 +9,8 @@ sauce:
       - release team
       - other tag
     build: Release $CI_COMMIT_SHORT_SHA
-docker:
-  image:
-    name: saucelabs/stt-cypress-mocha-node
-    tag: v0.3.0
 cypress:
+  version: 5.6.0
   configFile: "cypress.json"  # We determine related files based on the location of the config file.
 suites:
   - name: "Cypress Chrome"
