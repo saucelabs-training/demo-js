@@ -1,13 +1,7 @@
 const {config} = require('./wdio.shared.conf');
 const defaultBrowserSauceOptions = {
-    build: `WebdriverIO-V6 build-${new Date().getTime()}`,
+    build: `WebdriverIO Sauce Connect build-${new Date().getTime()}`,
     screenResolution: '1600x1200',
-    seleniumVersion: '3.141.59',
-};
-const chromeOptions = {
-    'goog:chromeOptions': {
-        'w3c': true,
-    },
 };
 
 config.user = process.env.SAUCE_USERNAME;
@@ -42,13 +36,12 @@ config.services = config.services.concat([
 
 config.capabilities = [
     {
-        browserName: 'googlechrome',
+        browserName: 'chrome',
         platformName: 'Windows 10',
         browserVersion: 'latest',
         'sauce:options': {
             ...defaultBrowserSauceOptions,
         },
-        ...chromeOptions,
     }
 ];
 
