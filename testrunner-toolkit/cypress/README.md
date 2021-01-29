@@ -619,9 +619,40 @@ You can also run Cypress tests on Sauce Labs VM's with the following command:
 
 ```bash
 saucectl run --test-env sauce
+
+# OR
+npm run test.sauce
 ```
 
 which will result in this
 <img src="docs/cypress-recording.gif" />
 
 Want to start running cypress tests on Sauce Labs cloud ? Join our beta program: [https://info.saucelabs.com/scale-cypress-testing.html](https://info.saucelabs.com/scale-cypress-testing.html). 
+
+#### Run tests in parallel
+> Concurrency with saucectl is tied to the test suites field in your .sauce/config.yml.
+>For example if you have ten .spec files split across two test suites, and you set --ccy to 10, the max concurrency is 2.
+
+You can also run your tests in parallel by running the following command
+
+```bash
+# The DATE variable is to give the build name a unique name in Sauce Labs like `Cypress: parallel - Fri Jan 29 09:54:18 CET 2021`
+DATE="$(date)" saucectl run --config .sauce/config-suites.yml --test-env sauce --ccy 4
+
+# OR
+npm run test.sauce.parallel
+```
+
+#### Run tests in parallel on different browsers
+> Concurrency with saucectl is tied to the test suites field in your .sauce/config.yml.
+>For example if you have ten .spec files split across two test suites, and you set --ccy to 10, the max concurrency is 2.
+
+You can also run your tests in parallel with different browsers by running the following command
+
+```bash
+# The DATE variable is to give the build name a unique name in Sauce Labs like `Cypress: Multiple Browsers - Fri Jan 29 09:47:16 CET 2021`
+DATE="$(date)" saucectl run --config .sauce/config-suites-browsers.yml --test-env sauce --ccy 15
+
+# OR
+npm run test.sauce.browsers
+```

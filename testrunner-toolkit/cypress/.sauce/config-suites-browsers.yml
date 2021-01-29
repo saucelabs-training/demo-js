@@ -1,0 +1,109 @@
+apiVersion: v1alpha
+kind: cypress
+sauce:
+  region: eu-central-1 # or us-west-1
+  metadata:
+    name: Testing Cypress Support
+    tags:
+      - e2e
+      - release team
+      - other tag
+    build: "Cypress: Multiple Browsers - $DATE"
+docker:
+  image:
+    name: saucelabs/stt-cypress-mocha-node
+    tag: v0.3.3
+cypress:
+  version: 5.6.0
+  configFile: "cypress.json"  # We determine related files based on the location of the config file.
+suites:
+  # Chrome
+  - name: "Swag Labs Login Chrome"
+    browser: "chrome"
+    platformName: "Windows 10"
+    # Available resolutions on Windows:
+    # - '800x600'
+    # - '1024x768'
+    # - '1152x864'
+    # - '1280x768'
+    # - '1280x800'
+    # - '1280x960'
+    # - '1280x1024'
+    # - '1400x1050'
+    # - '1440x900'
+    # - '1600x1200'
+    # - '1680x1050'
+    # - '1920x1080'
+    # - '1920x1200'
+    # - '2560x1600'
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/login.*" ]
+  - name: "Swag Labs Rest Chrome"
+    browser: "chrome"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/cart.spec.js","**/menu.spec.js" ]
+  - name: "Swag Labs Swag Items Chrome"
+    browser: "chrome"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/swag.item.*" ]
+  - name: "Swag Labs Checkout Chrome"
+    browser: "chrome"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/checkout.*" ]
+  # Firefox
+  - name: "Swag Labs Login Firefox"
+    browser: "firefox"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/login.*" ]
+  - name: "Swag Labs Rest Firefox"
+    browser: "firefox"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/cart.spec.js","**/menu.spec.js" ]
+  - name: "Swag Labs Swag Items Firefox"
+    browser: "firefox"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/swag.item.*" ]
+  - name: "Swag Labs Checkout Firefox"
+    browser: "firefox"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/checkout.*" ]
+  # MicrosoftEdge
+  - name: "Swag Labs Login MicrosoftEdge"
+    browser: "MicrosoftEdge"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/login.*" ]
+  - name: "Swag Labs Rest MicrosoftEdge"
+    browser: "MicrosoftEdge"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/cart.spec.js","**/menu.spec.js" ]
+  - name: "Swag Labs Swag Items MicrosoftEdge"
+    browser: "MicrosoftEdge"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/swag.item.*" ]
+  - name: "Swag Labs Checkout MicrosoftEdge"
+    browser: "MicrosoftEdge"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/checkout.*" ]

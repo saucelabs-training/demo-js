@@ -8,17 +8,16 @@ sauce:
       - e2e
       - release team
       - other tag
-    build: "Cypress: Single browser - $DATE"
+    build: "Cypress: parallel - $DATE"
 docker:
   image:
     name: saucelabs/stt-cypress-mocha-node
     tag: v0.3.3
-
 cypress:
   version: 5.6.0
   configFile: "cypress.json"  # We determine related files based on the location of the config file.
 suites:
-  - name: "Cypress Chrome"
+  - name: "Swag Labs Login"
     browser: "chrome"
     platformName: "Windows 10"
     # Available resolutions on Windows:
@@ -38,4 +37,22 @@ suites:
     # - '2560x1600'
     screenResolution: "1400x1050"
     config:
-      testFiles: [ "**/*.*" ] # Cypress native glob support.
+      testFiles: [ "**/login.*" ]
+  - name: "Swag Labs Rest"
+    browser: "chrome"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/cart.spec.js","**/menu.spec.js" ]
+  - name: "Swag Labs Swag Items"
+    browser: "chrome"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/swag.item.*" ]
+  - name: "Swag Labs Checkout"
+    browser: "chrome"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/checkout.*" ]

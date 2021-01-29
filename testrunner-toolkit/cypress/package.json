@@ -6,12 +6,17 @@
   "scripts": {
     "open": "npx cypress open",
     "test.local": "npx cypress run",
-    "test.local.headfull": "npx cypress run --headed"
+    "test.local.headfull": "npx cypress run --headed",
+    "test.docker.sauce": "saucectl run",
+    "test.sauce": "saucectl run --test-env sauce",
+    "test.sauce.parallel": "DATE=\"$(date)\" saucectl run --config .sauce/config-suites.yml --test-env sauce --ccy 4",
+    "test.sauce.browsers": "DATE=\"$(date)\" saucectl run --config .sauce/config-suites-browsers.yml --test-env sauce --ccy 15"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^6.2.1"
+    "cypress": "^6.2.1",
+    "saucectl": "^0.25.1"
   }
 }
