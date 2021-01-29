@@ -625,6 +625,7 @@ npm run test.sauce
 ```
 
 which will result in this
+
 <img src="docs/cypress-recording.gif" />
 
 Want to start running cypress tests on Sauce Labs cloud ? Join our beta program: [https://info.saucelabs.com/scale-cypress-testing.html](https://info.saucelabs.com/scale-cypress-testing.html). 
