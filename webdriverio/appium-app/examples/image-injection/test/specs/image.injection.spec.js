@@ -24,5 +24,8 @@ describe('Sauce Labs Image Injection', () => {
 
         // Verify that the browser is running
         expect(isBrowserOpened()).toEqual(true);
+
+        // For demo purpose so we can see the image injection in the movie
+        driver.pause(5000);
     });
 });

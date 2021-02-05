@@ -28,7 +28,7 @@ exports.config = {
     bail: 0,
     baseUrl: '',
     waitforTimeout: 45000,
-    connectionRetryTimeout: 120000,
+    connectionRetryTimeout: 180000,
     connectionRetryCount: 3,
     // Empty for now, will be filled with the separate configs
     services: [],
