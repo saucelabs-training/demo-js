@@ -1,7 +1,7 @@
 import { LOGIN_USERS } from '../configs/e2eConstants';
 import LoginPage from '../pageobjects/LoginPage';
 import SwagOverviewPage from '../pageobjects/SwagOverviewPage';
-import {Given, When, Then} from 'cucumber';
+import {Given, When, Then} from '@cucumber/cucumber';
 
 /**
  * This step example is using the CucumberJS regular expressions,

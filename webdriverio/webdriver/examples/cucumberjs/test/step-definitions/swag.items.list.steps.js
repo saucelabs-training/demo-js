@@ -4,7 +4,7 @@ import SwagDetailsPage from '../pageobjects/SwagDetailsPage';
 import CartSummaryPage from '../pageobjects/CartSummaryPage';
 import {setTestContext} from '../helpers';
 import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants";
-import {Given, When, Then} from 'cucumber';
+import {Given, When, Then} from "@cucumber/cucumber";
 
 /**
  * This step example is using the CucumberJS cucumber expressions,

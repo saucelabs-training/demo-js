@@ -28,3 +28,4 @@ apps
 **/cypress/results/
 **/cypress/videos/
 *.xml
+v6/
