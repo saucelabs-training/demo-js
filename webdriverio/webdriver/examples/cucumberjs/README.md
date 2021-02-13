@@ -1,6 +1,17 @@
 # WebdriverIO, CucumberJS and Sauce Labs Desktop Web
 This folder contains an example on how to run WebdriverIO tests written with CucumberJS in the Sauce Labs Desktop Web.
 
+> **NOTE:** This project now uses WebdriverIO V7 instead of V6. The only difference is the way you now need to import
+> CucumberJS, see below:
+> 
+```git
+- const { Given, When, Then } = require('cucumber')
++ const { Given, When, Then } = require('@cucumber/cucumber')
+// Or
+- import {Given, When, Then} from 'cucumber'
++ import {Given, When, Then} from '@cucumber/cucumber'
+```
+
 ## Install dependencies
 You can install all dependencies by running the following command
 
