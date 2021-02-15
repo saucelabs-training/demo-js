@@ -17,6 +17,6 @@
   "license": "MIT",
   "devDependencies": {
     "cypress": "^6.2.1",
-    "saucectl": "^0.25.1"
+    "saucectl": "^0.27.1"
   }
 }
