@@ -7,8 +7,8 @@
     "open": "npx cypress open",
     "test.local": "npx cypress run",
     "test.local.headfull": "npx cypress run --headed",
-    "test.docker.sauce": "saucectl run",
-    "test.sauce": "saucectl run --test-env sauce",
+    "test.docker.sauce": "npx saucectl run",
+    "test.sauce": "npx saucectl run --test-env sauce",
     "test.sauce.parallel": "DATE=\"$(date)\" saucectl run --config .sauce/config-suites.yml --test-env sauce --ccy 4",
     "test.sauce.browsers": "DATE=\"$(date)\" saucectl run --config .sauce/config-suites-browsers.yml --test-env sauce --ccy 15"
   },
