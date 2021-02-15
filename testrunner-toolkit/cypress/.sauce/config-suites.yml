@@ -10,9 +10,7 @@ sauce:
       - other tag
     build: "Cypress: parallel - $DATE"
 docker:
-  image:
-    name: saucelabs/stt-cypress-mocha-node
-    tag: v0.3.3
+  fileTransfer: mount
 cypress:
   version: 5.6.0
   configFile: "cypress.json"  # We determine related files based on the location of the config file.

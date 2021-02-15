@@ -1,6 +1,14 @@
 # Cypress
 This folder contains a simple set up for Cypress which can be run local and with the Sauce Labs Testrunner Toolkit.
 
+It is based on the following user journey:
+
+1. A QA/DEV already has Cypress tests which he/she can run on his local machine, see [Run tests locally](./README.md#run-tests-locally)
+1. A QA/DEV wants to use his existing tests together with the Docker infrastructure solution that Sauce Labs offers, see [Sauce Labs Testrunner Toolkit](./README.md#sauce-labs-testrunner-toolkit)
+1. A QA/DEV wants to run his existing tests on Sauce Labs VMs, see [Run tests in Sauce](./README.md#run-tests-in-sauce)
+
+Make sure you follow all steps as mentioned below.
+
 ## Intro
 More information about Cypress and writing Cypress tests can be found 
 [here](https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell)
@@ -373,7 +381,7 @@ Follow instructions from [here](https://github.com/saucelabs/testrunner-toolkit)
 
 ### Run tests in Sauce
 
-    saucectl run
+    npx saucectl run
     
     # OR
     npm run test.docker.sauce
@@ -622,7 +630,7 @@ capabilities:
 You can also run Cypress tests on Sauce Labs VM's with the following command:
 
 ```bash
-saucectl run --test-env sauce
+npx saucectl run --test-env sauce
 
 # OR
 npm run test.sauce
@@ -642,7 +650,7 @@ You can also run your tests in parallel by running the following command
 
 ```bash
 # The DATE variable is to give the build name a unique name in Sauce Labs like `Cypress: parallel - Fri Jan 29 09:54:18 CET 2021`
-DATE="$(date)" saucectl run --config .sauce/config-suites.yml --test-env sauce --ccy 4
+DATE="$(date)" npx saucectl run --config .sauce/config-suites.yml --test-env sauce --ccy 4
 
 # OR
 npm run test.sauce.parallel
@@ -656,7 +664,7 @@ You can also run your tests in parallel with different browsers by running the f
 
 ```bash
 # The DATE variable is to give the build name a unique name in Sauce Labs like `Cypress: Multiple Browsers - Fri Jan 29 09:47:16 CET 2021`
-DATE="$(date)" saucectl run --config .sauce/config-suites-browsers.yml --test-env sauce --ccy 15
+DATE="$(date)" npx saucectl run --config .sauce/config-suites-browsers.yml --test-env sauce --ccy 15
 
 # OR
 npm run test.sauce.browsers
