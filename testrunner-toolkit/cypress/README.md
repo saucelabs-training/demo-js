@@ -374,235 +374,239 @@ Follow instructions from [here](https://github.com/saucelabs/testrunner-toolkit)
 ### Run tests in Sauce
 
     saucectl run
+    
+    # OR
+    npm run test.docker.sauce
 
 It will run all tests and the logs will look like this
 
 ```log
-╰ saucectl run
-8:37PM INF Running version 0.23.2
-8:37PM INF Reading config file config=.sauce/config.yml
-8:37PM INF Running Cypress in Docker
-8:37PM INF Setting up test environment
-8:37PM INF File mounted from=cypress.json to=/home/seluser/cypress.json
-8:37PM INF File mounted from=cypress to=/home/seluser/cypress
-8:37PM INF Using credentials set by environment variables
-8:37PM INF Starting container id=1045e845dc25 img=saucelabs/stt-cypress-mocha-node:v0.3.0
-
-> sauce-cypress-runner@0.3.0 test /home/seluser
-> ./bin/cypress "-r" "/home/seluser/sauce-runner.json" "-s" "Cypress Chrome"
-
-Sauce Cypress Runner 0.3.0
-It looks like this is your first time using Cypress: 5.6.0
-
-[20:37:34]  Verifying Cypress can run /home/seluser/.cache/Cypress/5.6.0/Cypress [started]
-[20:37:35]  Verified Cypress!       /home/seluser/.cache/Cypress/5.6.0/Cypress [title changed]
-[20:37:35]  Verified Cypress!       /home/seluser/.cache/Cypress/5.6.0/Cypress [completed]
-
-Opening Cypress...
-Couldn't find tsconfig.json. tsconfig-paths will be skipped
-
-tput: No value for $TERM and no -T specified
-================================================================================
-
-  (Run Starting)
-
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Cypress:    5.6.0                                                                              │
-  │ Browser:    Chrome 81                                                                          │
-  │ Specs:      8 found (cart.summary.spec.js, checkout.complete.spec.js, checkout.personal.info.s │
-  │             pec.js, checkout.summary.spec.js, login.spec.js, menu.spec.js, swag.item.details.s │
-  │             pec.js, swag.item.list.spec.js)                                                    │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-
-────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                    
-  Running:  cart.summary.spec.js                                                            (1 of 8)
-
-  (Results)
-
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Tests:        3                                                                                │
-  │ Passing:      3                                                                                │
-  │ Failing:      0                                                                                │
-  │ Pending:      0                                                                                │
-  │ Skipped:      0                                                                                │
-  │ Screenshots:  0                                                                                │
-  │ Video:        true                                                                             │
-  │ Duration:     2 seconds                                                                        │
-  │ Spec Ran:     cart.summary.spec.js                                                             │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-
-────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                    
-  Running:  checkout.complete.spec.js                                                       (2 of 8)
-
-  (Results)
-
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Tests:        1                                                                                │
-  │ Passing:      1                                                                                │
-  │ Failing:      0                                                                                │
-  │ Pending:      0                                                                                │
-  │ Skipped:      0                                                                                │
-  │ Screenshots:  0                                                                                │
-  │ Video:        true                                                                             │
-  │ Duration:     0 seconds                                                                        │
-  │ Spec Ran:     checkout.complete.spec.js                                                        │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-
-────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                    
-  Running:  checkout.personal.info.spec.js                                                  (3 of 8)
-
-  (Results)
-
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Tests:        3                                                                                │
-  │ Passing:      3                                                                                │
-  │ Failing:      0                                                                                │
-  │ Pending:      0                                                                                │
-  │ Skipped:      0                                                                                │
-  │ Screenshots:  0                                                                                │
-  │ Video:        true                                                                             │
-  │ Duration:     2 seconds                                                                        │
-  │ Spec Ran:     checkout.personal.info.spec.js                                                   │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-
-────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                    
-  Running:  checkout.summary.spec.js                                                        (4 of 8)
-
-  (Results)
-
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Tests:        3                                                                                │
-  │ Passing:      3                                                                                │
-  │ Failing:      0                                                                                │
-  │ Pending:      0                                                                                │
-  │ Skipped:      0                                                                                │
-  │ Screenshots:  0                                                                                │
-  │ Video:        true                                                                             │
-  │ Duration:     1 second                                                                         │
-  │ Spec Ran:     checkout.summary.spec.js                                                         │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-
-────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                    
-  Running:  login.spec.js                                                                   (5 of 8)
-
-  (Results)
-
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Tests:        3                                                                                │
-  │ Passing:      3                                                                                │
-  │ Failing:      0                                                                                │
-  │ Pending:      0                                                                                │
-  │ Skipped:      0                                                                                │
-  │ Screenshots:  0                                                                                │
-  │ Video:        true                                                                             │
-  │ Duration:     2 seconds                                                                        │
-  │ Spec Ran:     login.spec.js                                                                    │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-
-────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                    
-  Running:  menu.spec.js                                                                    (6 of 8)
-
-  (Results)
-
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Tests:        3                                                                                │
-  │ Passing:      3                                                                                │
-  │ Failing:      0                                                                                │
-  │ Pending:      0                                                                                │
-  │ Skipped:      0                                                                                │
-  │ Screenshots:  0                                                                                │
-  │ Video:        true                                                                             │
-  │ Duration:     2 seconds                                                                        │
-  │ Spec Ran:     menu.spec.js                                                                     │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-
-────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                    
-  Running:  swag.item.details.spec.js                                                       (7 of 8)
-
-  (Results)
-
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Tests:        3                                                                                │
-  │ Passing:      3                                                                                │
-  │ Failing:      0                                                                                │
-  │ Pending:      0                                                                                │
-  │ Skipped:      0                                                                                │
-  │ Screenshots:  0                                                                                │
-  │ Video:        true                                                                             │
-  │ Duration:     2 seconds                                                                        │
-  │ Spec Ran:     swag.item.details.spec.js                                                        │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-
-────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                    
-  Running:  swag.item.list.spec.js                                                          (8 of 8)
-
-  (Results)
-
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Tests:        5                                                                                │
-  │ Passing:      5                                                                                │
-  │ Failing:      0                                                                                │
-  │ Pending:      0                                                                                │
-  │ Skipped:      0                                                                                │
-  │ Screenshots:  0                                                                                │
-  │ Video:        true                                                                             │
-  │ Duration:     2 seconds                                                                        │
-  │ Spec Ran:     swag.item.list.spec.js                                                           │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-
-================================================================================
-
-  (Run Finished)
-tput: No value for $TERM and no -T specified
-
-
-       Spec                                              Tests  Passing  Failing  Pending  Skipped  
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ ✔  cart.summary.spec.js                     00:02        3        3        -        -        - │
-  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-  │ ✔  checkout.complete.spec.js                735ms        1        1        -        -        - │
-  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-  │ ✔  checkout.personal.info.spec.js           00:02        3        3        -        -        - │
-  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-  │ ✔  checkout.summary.spec.js                 00:01        3        3        -        -        - │
-  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-  │ ✔  login.spec.js                            00:02        3        3        -        -        - │
-  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-  │ ✔  menu.spec.js                             00:02        3        3        -        -        - │
-  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-  │ ✔  swag.item.details.spec.js                00:02        3        3        -        -        - │
-  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-  │ ✔  swag.item.list.spec.js                   00:02        5        5        -        -        - │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
-    ✔  All specs passed!                        00:16       24       24        -        -        -  
-
-Detected inconsistent video sizes.
-Using /home/seluser/__assets__/cart.summary.spec.js.mp4 as the main video.
-
-Open job details page: https://app.eu-central-1.saucelabs.com/tests/1fb3f396360340e4a2518d72322f071b
-
-8:38PM INF Command Finished ExitCode=0
-8:38PM INF Tearing down environment
-
-
-
+╰ npm run test.docker.sauce                
+   
+   > cypress-1@1.0.0 test.docker.sauce /Users/wimselles/Sauce/Git/sauce-training/demo-js/testrunner-toolkit/cypress
+   > npx saucectl run
+   
+   11:50:31 INF Running version 0.27.1
+   11:50:31 INF Reading config file config=.sauce/config.yml
+   11:50:31 INF Running Cypress in Docker
+   11:50:31 INF Setting up test environment
+   11:50:32 INF File mounted from=cypress.json to=/home/seluser/cypress.json
+   11:50:32 INF File mounted from=cypress to=/home/seluser/cypress
+   11:50:32 INF Using credentials set by environment variables
+   11:50:32 INF Starting container id=046b32756883 img=saucelabs/stt-cypress-mocha-node:v5.6.0
+   
+   > sauce-cypress-runner@5.6.0 test /home/seluser
+   > ./bin/cypress "-r" "/home/seluser/sauce-runner.json" "-s" "Cypress Chrome"
+   
+   Sauce Cypress Runner 5.6.0
+   It looks like this is your first time using Cypress: 5.6.0
+   
+   [11:50:33]  Verifying Cypress can run /home/seluser/.cache/Cypress/5.6.0/Cypress [started]
+   [11:50:35]  Verified Cypress!       /home/seluser/.cache/Cypress/5.6.0/Cypress [title changed]
+   [11:50:35]  Verified Cypress!       /home/seluser/.cache/Cypress/5.6.0/Cypress [completed]
+   
+   Opening Cypress...
+   Couldn't find tsconfig.json. tsconfig-paths will be skipped
+   
+   tput: No value for $TERM and no -T specified
+   ================================================================================
+   
+     (Run Starting)
+   
+     ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+     │ Cypress:    5.6.0                                                                              │
+     │ Browser:    Chrome 81                                                                          │
+     │ Specs:      8 found (cart.summary.spec.js, checkout.complete.spec.js, checkout.personal.info.s │
+     │             pec.js, checkout.summary.spec.js, login.spec.js, menu.spec.js, swag.item.details.s │
+     │             pec.js, swag.item.list.spec.js)                                                    │
+     └────────────────────────────────────────────────────────────────────────────────────────────────┘
+   
+   
+   ────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                       
+     Running:  cart.summary.spec.js                                                            (1 of 8)
+   
+     (Results)
+   
+     ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+     │ Tests:        3                                                                                │
+     │ Passing:      3                                                                                │
+     │ Failing:      0                                                                                │
+     │ Pending:      0                                                                                │
+     │ Skipped:      0                                                                                │
+     │ Screenshots:  0                                                                                │
+     │ Video:        true                                                                             │
+     │ Duration:     1 second                                                                         │
+     │ Spec Ran:     cart.summary.spec.js                                                             │
+     └────────────────────────────────────────────────────────────────────────────────────────────────┘
+   
+   
+   ────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                       
+     Running:  checkout.complete.spec.js                                                       (2 of 8)
+   
+     (Results)
+   
+     ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+     │ Tests:        1                                                                                │
+     │ Passing:      1                                                                                │
+     │ Failing:      0                                                                                │
+     │ Pending:      0                                                                                │
+     │ Skipped:      0                                                                                │
+     │ Screenshots:  0                                                                                │
+     │ Video:        true                                                                             │
+     │ Duration:     0 seconds                                                                        │
+     │ Spec Ran:     checkout.complete.spec.js                                                        │
+     └────────────────────────────────────────────────────────────────────────────────────────────────┘
+   
+   
+   ────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                       
+     Running:  checkout.personal.info.spec.js                                                  (3 of 8)
+   
+     (Results)
+   
+     ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+     │ Tests:        3                                                                                │
+     │ Passing:      3                                                                                │
+     │ Failing:      0                                                                                │
+     │ Pending:      0                                                                                │
+     │ Skipped:      0                                                                                │
+     │ Screenshots:  0                                                                                │
+     │ Video:        true                                                                             │
+     │ Duration:     2 seconds                                                                        │
+     │ Spec Ran:     checkout.personal.info.spec.js                                                   │
+     └────────────────────────────────────────────────────────────────────────────────────────────────┘
+   
+   
+   ────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                       
+     Running:  checkout.summary.spec.js                                                        (4 of 8)
+   
+     (Results)
+   
+     ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+     │ Tests:        3                                                                                │
+     │ Passing:      3                                                                                │
+     │ Failing:      0                                                                                │
+     │ Pending:      0                                                                                │
+     │ Skipped:      0                                                                                │
+     │ Screenshots:  0                                                                                │
+     │ Video:        true                                                                             │
+     │ Duration:     1 second                                                                         │
+     │ Spec Ran:     checkout.summary.spec.js                                                         │
+     └────────────────────────────────────────────────────────────────────────────────────────────────┘
+   
+   
+   ────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                       
+     Running:  login.spec.js                                                                   (5 of 8)
+   
+     (Results)
+   
+     ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+     │ Tests:        3                                                                                │
+     │ Passing:      3                                                                                │
+     │ Failing:      0                                                                                │
+     │ Pending:      0                                                                                │
+     │ Skipped:      0                                                                                │
+     │ Screenshots:  0                                                                                │
+     │ Video:        true                                                                             │
+     │ Duration:     2 seconds                                                                        │
+     │ Spec Ran:     login.spec.js                                                                    │
+     └────────────────────────────────────────────────────────────────────────────────────────────────┘
+   
+   
+   ────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                       
+     Running:  menu.spec.js                                                                    (6 of 8)
+   
+     (Results)
+   
+     ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+     │ Tests:        3                                                                                │
+     │ Passing:      3                                                                                │
+     │ Failing:      0                                                                                │
+     │ Pending:      0                                                                                │
+     │ Skipped:      0                                                                                │
+     │ Screenshots:  0                                                                                │
+     │ Video:        true                                                                             │
+     │ Duration:     2 seconds                                                                        │
+     │ Spec Ran:     menu.spec.js                                                                     │
+     └────────────────────────────────────────────────────────────────────────────────────────────────┘
+   
+   
+   ────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                       
+     Running:  swag.item.details.spec.js                                                       (7 of 8)
+   
+     (Results)
+   
+     ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+     │ Tests:        3                                                                                │
+     │ Passing:      3                                                                                │
+     │ Failing:      0                                                                                │
+     │ Pending:      0                                                                                │
+     │ Skipped:      0                                                                                │
+     │ Screenshots:  0                                                                                │
+     │ Video:        true                                                                             │
+     │ Duration:     1 second                                                                         │
+     │ Spec Ran:     swag.item.details.spec.js                                                        │
+     └────────────────────────────────────────────────────────────────────────────────────────────────┘
+   
+   
+   ────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                       
+     Running:  swag.item.list.spec.js                                                          (8 of 8)
+   
+     (Results)
+   
+     ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+     │ Tests:        5                                                                                │
+     │ Passing:      5                                                                                │
+     │ Failing:      0                                                                                │
+     │ Pending:      0                                                                                │
+     │ Skipped:      0                                                                                │
+     │ Screenshots:  0                                                                                │
+     │ Video:        true                                                                             │
+     │ Duration:     2 seconds                                                                        │
+     │ Spec Ran:     swag.item.list.spec.js                                                           │
+     └────────────────────────────────────────────────────────────────────────────────────────────────┘
+   
+   
+   ================================================================================
+   
+     (Run Finished)
+   tput: No value for $TERM and no -T specified
+   
+   
+          Spec                                              Tests  Passing  Failing  Pending  Skipped  
+     ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+     │ ✔  cart.summary.spec.js                     00:01        3        3        -        -        - │
+     ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+     │ ✔  checkout.complete.spec.js                545ms        1        1        -        -        - │
+     ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+     │ ✔  checkout.personal.info.spec.js           00:02        3        3        -        -        - │
+     ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+     │ ✔  checkout.summary.spec.js                 00:01        3        3        -        -        - │
+     ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+     │ ✔  login.spec.js                            00:02        3        3        -        -        - │
+     ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+     │ ✔  menu.spec.js                             00:02        3        3        -        -        - │
+     ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+     │ ✔  swag.item.details.spec.js                00:01        3        3        -        -        - │
+     ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+     │ ✔  swag.item.list.spec.js                   00:02        5        5        -        -        - │
+     └────────────────────────────────────────────────────────────────────────────────────────────────┘
+       ✔  All specs passed!                        00:13       24       24        -        -        -  
+   
+   Detected inconsistent video sizes.
+   Using /home/seluser/__assets__/cart.summary.spec.js.mp4 as the main video.
+   
+   Open job details page: https://app.eu-central-1.saucelabs.com/tests/4cfb0f58bb214983bdbfa1c89e9cccd1
+   
+   11:51:22 INF Command Finished ExitCode=0
+   11:51:22 INF Tearing down environment
 ```
 
 ### Browser support
