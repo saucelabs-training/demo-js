@@ -21,8 +21,8 @@ export async function setTestContext(data = {}) {
     // Go to the domain and set the storage
     await t.navigateTo(baseUrl);
     const setSessionStorage = ClientFunction((sessionUserName, productSessionStorage) => {
-        sessionStorage.setItem('session-username', sessionUserName);
-        sessionStorage.setItem('cart-contents', productSessionStorage);
+        document.cookie=`session-username=${sessionUserName}`;
+        localStorage.setItem('cart-contents', productSessionStorage);
     });
     await setSessionStorage(username, productStorage);
     await t.navigateTo(`${baseUrl}${path}`);
