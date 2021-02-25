@@ -25,8 +25,8 @@ async function setTestContext(data = {}) {
     await basePage.goTo(BASE_URL)
     await page.evaluate(
         ([sessionUserName, productSessionStorage]) => {
-            sessionStorage.setItem('session-username', sessionUserName)
-            sessionStorage.setItem('cart-contents', productSessionStorage)
+            document.cookie=`session-username=${sessionUserName}`;
+            localStorage.setItem('cart-contents', productSessionStorage)
         },
         [username, productStorage],
     )
