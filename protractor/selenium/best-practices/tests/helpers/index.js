@@ -29,7 +29,7 @@ export async function setTestContext(data = {}) {
     const {path, products = [], user} = data;
     const {username} = user;
     const userCookies = `document.cookie="session-username=${username}";`;
-    const productStorage = products.length > 0 ? `sessionStorage.setItem("cart-contents", "[${products.toString()}]");` : '';
+    const productStorage = products.length > 0 ? `localStorage.setItem("cart-contents", "[${products.toString()}]");` : '';
 
     // Go to the domain and set the storage
     await browser.get('/');
