@@ -11,12 +11,12 @@
 export function setTestContext(data = {}) {
     const {path, products = [], user} = data;
     const {username} = user;
-    const userStorage = `sessionStorage.setItem("session-username", "${username}");`;
-    const productStorage = products.length > 0 ? `sessionStorage.setItem("cart-contents", "[${products.toString()}]");` : '';
+    const userCookies = `document.cookie="session-username=${username}";`;
+    const productStorage = products.length > 0 ? `localStorage.setItem("cart-contents", "[${products.toString()}]");` : '';
 
     // Go to the domain and set the storage
     browser.url('');
-    browser.execute(`${userStorage} ${productStorage}`);
+    browser.execute(`${userCookies} ${productStorage}`);
 
     // Now got to the page
     browser.url(path);

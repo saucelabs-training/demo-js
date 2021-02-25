@@ -14,14 +14,14 @@
 function setTestContext(browser, data = {}) {
     const {path, products = [], user} = data;
     const {username} = user;
-    const userStorage = `sessionStorage.setItem("session-username", "${username}");`;
-    const productStorage = products.length > 0 ? `sessionStorage.setItem("cart-contents", "[${products.toString()}]");` : '';
+    const userCookies = `document.cookie="session-username=${username}";`;
+    const productStorage = products.length > 0 ? `localStorage.setItem("cart-contents", "[${products.toString()}]");` : '';
 
     return browser
         // Go to the domain
         .url(browser.launchUrl)
         // Set the storage
-        .execute(`${userStorage} ${productStorage}`)
+        .execute(`${userCookies} ${productStorage}`)
         // Go to the page
         .url(`${browser.launchUrl}${path}`);
 }
