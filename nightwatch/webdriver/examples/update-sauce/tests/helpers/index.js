@@ -15,7 +15,7 @@ function setTestContext(browser, data = {}) {
     const {path, products = [], user} = data;
     const {username} = user;
     const userCookies = `document.cookie="session-username=${username}";`;
-    const productStorage = products.length > 0 ? `sessionStorage.setItem("cart-contents", "[${products.toString()}]");` : '';
+    const productStorage = products.length > 0 ? `localStorage.setItem("cart-contents", "[${products.toString()}]");` : '';
 
     return browser
         // Go to the domain
