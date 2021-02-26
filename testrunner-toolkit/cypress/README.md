@@ -632,8 +632,12 @@ You can also run Cypress tests on Sauce Labs VM's with the following command:
 ```bash
 npx saucectl run --test-env sauce
 
-# OR
-npm run test.sauce
+# OR for use with the EU data center
+
+npm run test.sauce.eu
+
+# OR for use with the US data center
+npm run test.sauce.us
 ```
 
 which will result in this
@@ -652,8 +656,13 @@ You can also run your tests in parallel by running the following command
 # The DATE variable is to give the build name a unique name in Sauce Labs like `Cypress: parallel - Fri Jan 29 09:54:18 CET 2021`
 DATE="$(date)" npx saucectl run --config .sauce/config-suites.yml --test-env sauce --ccy 4
 
-# OR
-npm run test.sauce.parallel
+# OR for use with the EU data center
+
+npm run test.sauce.parallel.eu
+
+# OR for use with the US data center
+
+npm run test.sauce.parallel.us
 ```
 
 #### Run tests in parallel on different browsers
@@ -666,6 +675,10 @@ You can also run your tests in parallel with different browsers by running the f
 # The DATE variable is to give the build name a unique name in Sauce Labs like `Cypress: Multiple Browsers - Fri Jan 29 09:47:16 CET 2021`
 DATE="$(date)" npx saucectl run --config .sauce/config-suites-browsers.yml --test-env sauce --ccy 15
 
-# OR
-npm run test.sauce.browsers
+# OR for use with the EU data center
+npm run test.sauce.browsers.eu
+
+# OR for use with the US data center
+
+npm run test.sauce.browsers.us
 ```
