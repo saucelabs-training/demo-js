@@ -61,8 +61,11 @@ describe('Sauce Labs Front-End Performance', () => {
 
   it('(sauce:jankinessCheck) should validate the smoothness of the page', () => {
     //
-    // Go to the inventory page
-    browser.url('/inventory.html');
+    // Login
+    $('[data-test="username"]').setValue('standard_user');
+    $('[data-test="password"]').setValue('secret_sauce');
+    $('#login-button').click();
+    $('#inventory_container').waitForDisplayed({timeout: 15000});
 
     //
     // Get the jankiness results
