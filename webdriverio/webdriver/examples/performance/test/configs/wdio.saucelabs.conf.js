@@ -1,6 +1,6 @@
 const {config} = require('./wdio.shared.conf');
 const defaultBrowserSauceOptions = {
-    build: `WebdriverIO-V6 Front-End Performance-${new Date().getTime()}`,
+    build: `WebdriverIO Front-End Performance-${new Date().getTime()}`,
     screenResolution: '1600x1200',
     extendedDebugging: true,
     capturePerformance: true,

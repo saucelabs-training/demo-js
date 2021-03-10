@@ -1,4 +1,4 @@
-describe('Sauce Labs Front-End Performance', () => {
+describe('Sauce Labs Start Stop Front-End Performance', () => {
   beforeEach(() => {
     //
     // Adding extra logs to the Sauce Commands Dashboard
