@@ -1,4 +1,4 @@
-# Protractor "Appium Web"
+# Protractor "Real Devices and Sauce Labs"
 > **NOTE:**\
 > If you look at Protractor you can get the feeling that, in spite of all the effort that the Open Source Community is 
 > putting into it, it is not being maintained by Google anymore.\
