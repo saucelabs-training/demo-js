@@ -17,5 +17,8 @@ More information about the Sauce Labs Testrunner Toolkit can be found
 [here](https://docs.saucelabs.com/testrunner-toolkit/index.html)
 
 ## Examples:
-- [Cypress and a default test set](./sauce-connect). This folder will hold a default
-test setup for Cypress with multiple test files. This can be executed locally, in a docker container or on Sauce Labs
+- [Cypress and a default test set](./sauce-connect). This folder will hold a default 
+  test setup for Cypress with multiple test files. This can be executed locally, in a docker container or on Sauce Labs.
+- [Cypress and a default test set](./cross-browser). This folder will hold a default 
+  test setup for Cypress that can run Cross Browser Tess on Sauce Labs. This can be executed locally, in a docker
+  container or on Sauce Labs.
