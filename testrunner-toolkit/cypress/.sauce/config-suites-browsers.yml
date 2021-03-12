@@ -80,28 +80,28 @@ suites:
     screenResolution: "1400x1050"
     config:
       testFiles: [ "**/checkout.*" ]
-  # MicrosoftEdge
-  - name: "Swag Labs Login MicrosoftEdge"
-    browser: "MicrosoftEdge"
-    platformName: "Windows 10"
-    screenResolution: "1400x1050"
-    config:
-      testFiles: [ "**/login.*" ]
-  - name: "Swag Labs Rest MicrosoftEdge"
-    browser: "MicrosoftEdge"
-    platformName: "Windows 10"
-    screenResolution: "1400x1050"
-    config:
-      testFiles: [ "**/cart.spec.js","**/menu.spec.js" ]
-  - name: "Swag Labs Swag Items MicrosoftEdge"
-    browser: "MicrosoftEdge"
-    platformName: "Windows 10"
-    screenResolution: "1400x1050"
-    config:
-      testFiles: [ "**/swag.item.*" ]
-  - name: "Swag Labs Checkout MicrosoftEdge"
-    browser: "MicrosoftEdge"
-    platformName: "Windows 10"
-    screenResolution: "1400x1050"
-    config:
-      testFiles: [ "**/checkout.*" ]
+#  # MicrosoftEdge
+#  - name: "Swag Labs Login MicrosoftEdge"
+#    browser: "MicrosoftEdge"
+#    platformName: "Windows 10"
+#    screenResolution: "1400x1050"
+#    config:
+#      testFiles: [ "**/login.*" ]
+#  - name: "Swag Labs Rest MicrosoftEdge"
+#    browser: "MicrosoftEdge"
+#    platformName: "Windows 10"
+#    screenResolution: "1400x1050"
+#    config:
+#      testFiles: [ "**/cart.spec.js","**/menu.spec.js" ]
+#  - name: "Swag Labs Swag Items MicrosoftEdge"
+#    browser: "MicrosoftEdge"
+#    platformName: "Windows 10"
+#    screenResolution: "1400x1050"
+#    config:
+#      testFiles: [ "**/swag.item.*" ]
+#  - name: "Swag Labs Checkout MicrosoftEdge"
+#    browser: "MicrosoftEdge"
+#    platformName: "Windows 10"
+#    screenResolution: "1400x1050"
+#    config:
+#      testFiles: [ "**/checkout.*" ]
