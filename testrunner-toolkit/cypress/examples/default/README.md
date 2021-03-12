@@ -12,8 +12,6 @@ You can install all dependencies by running the following command
     
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `testrunner-toolkit/cypress/examples/default` when you execute this command
-
 ### Run tests locally
 You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this 
 command

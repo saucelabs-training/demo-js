@@ -41,7 +41,12 @@ framework when using Sauce Labs.
             - [WebdriverIO with Up and Downloading Files](webdriverio/webdriver/examples/up-download)
             - [WebdriverIO, Sauce Labs and W3C](webdriverio/webdriver/examples/w3c)
 - **SauceCTL Testrunner Toolkit**
-    - [Cypress](./testrunner-toolkit/cypress)
+    - [Cypress examples](./testrunner-toolkit/cypress/examples)
+        - [Cypress and a default test set](./testrunner-toolkit/cypress/examples/sauce-connect)
+        - [Cypress and Cross Browser testing](./testrunner-toolkit/cypress/examples/cross-browser)
+        - [Cypress and testing in parallel](./testrunner-toolkit/cypress/examples/parallel-tests)
+        - [Cypress and Sauce Connect](./testrunner-toolkit/cypress/examples/sauce-connect)
+        - [Cypress and extra dependencies](./testrunner-toolkit/cypress/examples/dependencies)
     - [Playwright with Jest](./testrunner-toolkit/playwright)
     - [Puppeteer with Jest](./testrunner-toolkit/puppeteer)
     - [TestCafe](./testrunner-toolkit/testcafe)

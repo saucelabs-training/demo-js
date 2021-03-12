@@ -1,28 +1,24 @@
 # Cypress Cross Browser Tests
-This folder contains a simple set up for Cypress for Cross Browser Testing. This can can be run locally, in a docker 
-container and on Sauce Labs with the
+This folder contains a simple set up for Cypress with a test that uses a dependency. In this case the 
+[cypress-axe](https://github.com/component-driven/cypress-axe/)-library to test accessibility with axe-core.
+This can can be run locally, in a docker container and on Sauce Labs with the
 [Sauce Labs Testrunner Toolkit](https://docs.saucelabs.com/testrunner-toolkit/index.html).
 
-> **Note:**
-> Setting running Cross Browser tests on the Sauce Labs cloud can be done in the [config.yml](./.sauce/config.yml) by
-> adding extra suites with extra browsers like this
+> **NOTE 1:**
+> 
+>Running Cypress Test with dependencies on the Sauce Labs cloud can be set in the [config.yml](./.sauce/config.yml) by
+> adding extra `npm` dependencies on the root of the `yml`-file like this
 > ```yaml
-> suites:
->   # Chrome
->   - name: "Swag Labs Login Chrome"
->     browser: "chrome"
->     platformName: "Windows 10"
->     screenResolution: "1400x1050"
->     config:
->       testFiles: [ "**/login.*" ]
-> # Firefox
->   - name: "Swag Labs Login Firefox"
->     browser: "firefox"
->     platformName: "Windows 10"
->     screenResolution: "1400x1050"
->     config:
->       testFiles: [ "**/login.*" ]
+> #...
+> npm:
+>   packages:
+>     "axe-core": "^4.1.3"
+>     "cypress-axe": "^0.12.2"
 > ```
+> Form more information check [npm dependencies](https://docs.saucelabs.com/testrunner-toolkit/configuration/common-syntax#npm)
+> in our documentation.
+
+> **NOTE 2:** The sample AXE test will fail due to accessibility issues
 
 Make sure you follow all steps as mentioned below.
 
