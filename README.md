@@ -40,6 +40,7 @@ framework when using Sauce Labs.
             - [WebdriverIO and Sauce Labs Front-End Performance](webdriverio/webdriver/examples/performance)
             - [WebdriverIO with Up and Downloading Files](webdriverio/webdriver/examples/up-download)
             - [WebdriverIO, Sauce Labs and W3C](webdriverio/webdriver/examples/w3c)
+            - [WebdriverIO with TypeScript](webdriverio/web/examples/typescript)
 - **SauceCTL Testrunner Toolkit**
     - [Cypress](./testrunner-toolkit/cypress)
     - [Playwright with Jest](./testrunner-toolkit/playwright)
