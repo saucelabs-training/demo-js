@@ -3,22 +3,15 @@ import Page from './page';
 /**
  * sub page containing specific selectors and methods for a specific page
  */
-class LoginPage extends Page {
-    /**
-     * define selectors using getter methods
-     */
-    get inputUsername () { return $('#username') }
-    get inputPassword () { return $('#password') }
-    get btnSubmit () { return $('button[type="submit"]') }
-
+export class LoginPage extends Page {
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
      */
     login (username: string, password: string) {
-        this.inputUsername.setValue(username);
-        this.inputPassword.setValue(password);
-        this.btnSubmit.click(); 
+        $('#username').setValue(username);
+        $('#password').setValue(password);
+        $('button[type="submit"]').click(); 
     }
 
     /**
@@ -28,5 +21,3 @@ class LoginPage extends Page {
         return super.open('login');
     }
 }
-
-export default new LoginPage();

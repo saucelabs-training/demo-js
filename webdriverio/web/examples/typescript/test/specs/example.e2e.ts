@@ -1,13 +1,17 @@
-import LoginPage from  '../pageobjects/login.page';
-import SecurePage from '../pageobjects/secure.page';
+import {LoginPage} from  '../pageobjects/login.page';
+import {SecurePage} from '../pageobjects/secure.page';
 
 describe('My Login application', () => {
     it('should login with valid credentials', () => {
-        LoginPage.open();
-
-        LoginPage.login('tomsmith', 'SuperSecretPassword!');
-        expect(SecurePage.flashAlert).toBeExisting();
-        expect(SecurePage.flashAlert).toHaveTextContaining(
+        // arrange
+        const loginPage = new LoginPage();
+        const securePage = new SecurePage();
+        //act
+        loginPage.open();
+        loginPage.login('tomsmith', 'SuperSecretPassword!');
+        //assert
+        expect(securePage.flashAlert).toBeExisting();
+        expect(securePage.flashAlert).toHaveTextContaining(
             'You logged into a secure area!');
     });
 });
