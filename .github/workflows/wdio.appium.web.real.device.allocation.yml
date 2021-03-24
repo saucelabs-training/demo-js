@@ -47,4 +47,4 @@ jobs:
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
         # Limit to 4 so we don't spin up to many devices
-        run: npm run test.saucelabs.android.us -- --maxInstances=4
+        run: npm run test.saucelabs.us -- --maxInstances=4
