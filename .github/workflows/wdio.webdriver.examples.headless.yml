@@ -46,4 +46,4 @@ jobs:
         env:
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
-        run: npm run test.saucelabs.us -- --maxInstances=25
+        run: npm run test.saucelabs.headless -- --maxInstances=25
