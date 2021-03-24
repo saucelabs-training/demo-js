@@ -19,7 +19,7 @@ framework when using Sauce Labs.
 
 ## Framework examples
 - [WebdriverIO with Jasmine*](./webdriverio)
-    - WebdriverIO with Appium for Native/Hybrid Apps
+    - WebdriverIO with Appium for Native/Hybrid Apps ![WebdriverIO - Webdriver - Best Practices](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Best%20Practices/badge.svg)
         - [Examples](./webdriverio/appium-app/examples)
             - [Native App Gestures](webdriverio/appium-app/examples/gestures)
             - [Using Biometric Login on Sauce Labs](webdriverio/appium-app/examples/biometric-login)
