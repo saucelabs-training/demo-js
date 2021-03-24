@@ -3,12 +3,11 @@ kind: cypress
 sauce:
   region: eu-central-1 # or us-west-1
   metadata:
-    name: Testing Cypress Support
+    name: Default Cypress set
     tags:
-      - e2e
-      - release team
-      - other tag
-    build: "Cypress: Single browser - $DATE"
+      - cypress
+      - default
+    build: "Cypress: Default test set - $DATE"
 docker:
   fileTransfer: mount
 cypress:

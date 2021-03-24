@@ -2,12 +2,13 @@ apiVersion: v1alpha
 kind: cypress
 sauce:
   region: eu-central-1 # or us-west-1
+  # This is important, increase this number to the amount of Suite you want to run
+  concurrency: 4
   metadata:
-    name: Testing Cypress Support
+    name: Parallel Cypress Set
     tags:
-      - e2e
-      - release team
-      - other tag
+      - cypress
+      - parallel
     build: "Cypress: parallel - $DATE"
 docker:
   fileTransfer: mount
