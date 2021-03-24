@@ -1,0 +1,49 @@
+name: WebdriverIO - Webdriver - Examples- CucumberJS
+
+on:
+  push:
+    # Only trigger if files in this path changed
+    paths:
+      - 'webdriverio/webdriver/examples/cucumberjs/**'
+      - '.github/workflows/wdio.webdriver.examples.cucumberjs.yml'
+      # Don't run on Markdown changes
+      - '!**.md'
+    branches: [ master ]
+  pull_request:
+    # Only trigger if files in this path changed
+    paths:
+      - 'webdriverio/webdriver/examples/cucumberjs/**'
+      - '.github/workflows/wdio.webdriver.examples.cucumberjs.yml'
+      # Don't run on Markdown changes
+      - '!**.md'
+    branches: [ master ]
+  schedule:
+    - cron:  '0 0 * * 0'
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        working-directory: ./webdriverio/webdriver/examples/cucumberjs/
+        run: npm install
+
+      - name: Run tests
+        working-directory: ./webdriverio/webdriver/examples/cucumberjs/
+        env:
+          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+        run: npm run test.saucelabs.us -- --maxInstances=25
