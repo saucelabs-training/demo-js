@@ -1,0 +1,57 @@
+apiVersion: v1alpha
+kind: cypress
+sauce:
+  region: eu-central-1 # or us-west-1
+  # This is important, increase this number to the amount of Suite you want to run
+  concurrency: 4
+  metadata:
+    name: Parallel Cypress Set
+    tags:
+      - cypress
+      - parallel
+    build: "Cypress: parallel - $DATE"
+docker:
+  fileTransfer: mount
+cypress:
+  version: 5.6.0
+  configFile: "cypress.json"  # We determine related files based on the location of the config file.
+suites:
+  - name: "Swag Labs Login"
+    browser: "chrome"
+    platformName: "Windows 10"
+    # Available resolutions on Windows:
+    # - '800x600'
+    # - '1024x768'
+    # - '1152x864'
+    # - '1280x768'
+    # - '1280x800'
+    # - '1280x960'
+    # - '1280x1024'
+    # - '1400x1050'
+    # - '1440x900'
+    # - '1600x1200'
+    # - '1680x1050'
+    # - '1920x1080'
+    # - '1920x1200'
+    # - '2560x1600'
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/login.*" ]
+  - name: "Swag Labs Rest"
+    browser: "chrome"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/cart.spec.js","**/menu.spec.js" ]
+  - name: "Swag Labs Swag Items"
+    browser: "chrome"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/swag.item.*" ]
+  - name: "Swag Labs Checkout"
+    browser: "chrome"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/checkout.*" ]

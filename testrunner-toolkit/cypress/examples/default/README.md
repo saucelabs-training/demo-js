@@ -6,6 +6,8 @@ Make sure you follow all steps as mentioned below.
 
 ## Local Usage
 ### Install dependencies
+>**Note:** Make sure you are in the `testrunner-toolkit/cypress/examples/default`-folder
+
 You can install all dependencies by running the following command
 
     npm install
@@ -24,7 +26,11 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
  <summary>Click to expand and see the logs.</summary>
  
 ```log
- ╰ npx cypress run                        
+ ╰ npm run test.local         
+
+> cypress-1@1.0.0 test.local /Users/sauce-training/demo-js/testrunner-toolkit/cypress/examples/default
+> npx cypress run
+                   
  
  ====================================================================================================
  
@@ -121,7 +127,7 @@ Make sure you've installed Docker on your local machine or in your pipeline, see
 
 You can then run this project with
 
-    npx saucectl run
+    npx saucectl run --test-env docker
     
     # OR
     npm run test.docker.sauce
@@ -132,102 +138,33 @@ It will run all tests and the logs will look like this
  <summary>Click to expand and see the logs.</summary>
 
 ```log
-╰ npm run test.docker.sauce                
-   
-   > cypress-1@1.0.0 test.docker.sauce /Users/Sauce/Git/sauce-training/demo-js/testrunner-toolkit/cypress
-   > npx saucectl run
-   
-   11:50:31 INF Running version 0.27.1
-   11:50:31 INF Reading config file config=.sauce/config.yml
-   11:50:31 INF Running Cypress in Docker
-   11:50:31 INF Setting up test environment
-   11:50:32 INF File mounted from=cypress.json to=/home/seluser/cypress.json
-   11:50:32 INF File mounted from=cypress to=/home/seluser/cypress
-   11:50:32 INF Using credentials set by environment variables
-   11:50:32 INF Starting container id=046b32756883 img=saucelabs/stt-cypress-mocha-node:v5.6.0
-   
-   > sauce-cypress-runner@5.6.0 test /home/seluser
-   > ./bin/cypress "-r" "/home/seluser/sauce-runner.json" "-s" "Cypress Chrome"
-   
-   Sauce Cypress Runner 5.6.0
-   It looks like this is your first time using Cypress: 5.6.0
-   
-   [11:50:33]  Verifying Cypress can run /home/seluser/.cache/Cypress/5.6.0/Cypress [started]
-   [11:50:35]  Verified Cypress!       /home/seluser/.cache/Cypress/5.6.0/Cypress [title changed]
-   [11:50:35]  Verified Cypress!       /home/seluser/.cache/Cypress/5.6.0/Cypress [completed]
-   
-   Opening Cypress...
-   Couldn't find tsconfig.json. tsconfig-paths will be skipped
-   
-   tput: No value for $TERM and no -T specified
-   ================================================================================
-   
-     (Run Starting)
-   
-     ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-     │ Cypress:    5.6.0                                                                              │
-     │ Browser:    Chrome 81                                                                          │
-     │ Specs:      8 found (cart.summary.spec.js, checkout.complete.spec.js, checkout.personal.info.s │
-     │             pec.js, checkout.summary.spec.js, login.spec.js, menu.spec.js, swag.item.details.s │
-     │             pec.js, swag.item.list.spec.js)                                                    │
-     └────────────────────────────────────────────────────────────────────────────────────────────────┘
-   
-   
-   ────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                       
-     Running:  cart.summary.spec.js                                                            (1 of 8)
-   
-     (Results)
-   
-     ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-     │ Tests:        3                                                                                │
-     │ Passing:      3                                                                                │
-     │ Failing:      0                                                                                │
-     │ Pending:      0                                                                                │
-     │ Skipped:      0                                                                                │
-     │ Screenshots:  0                                                                                │
-     │ Video:        true                                                                             │
-     │ Duration:     1 second                                                                         │
-     │ Spec Ran:     cart.summary.spec.js                                                             │
-     └────────────────────────────────────────────────────────────────────────────────────────────────┘
-   
-   
-//..................................
-   
-   
-   ================================================================================
-   
-     (Run Finished)
-   tput: No value for $TERM and no -T specified
-   
-   
-          Spec                                              Tests  Passing  Failing  Pending  Skipped  
-     ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-     │ ✔  cart.summary.spec.js                     00:01        3        3        -        -        - │
-     ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-     │ ✔  checkout.complete.spec.js                545ms        1        1        -        -        - │
-     ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-     │ ✔  checkout.personal.info.spec.js           00:02        3        3        -        -        - │
-     ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-     │ ✔  checkout.summary.spec.js                 00:01        3        3        -        -        - │
-     ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-     │ ✔  login.spec.js                            00:02        3        3        -        -        - │
-     ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-     │ ✔  menu.spec.js                             00:02        3        3        -        -        - │
-     ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-     │ ✔  swag.item.details.spec.js                00:01        3        3        -        -        - │
-     ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-     │ ✔  swag.item.list.spec.js                   00:02        5        5        -        -        - │
-     └────────────────────────────────────────────────────────────────────────────────────────────────┘
-       ✔  All specs passed!                        00:13       24       24        -        -        -  
-   
-   Detected inconsistent video sizes.
-   Using /home/seluser/__assets__/cart.summary.spec.js.mp4 as the main video.
-   
-   Open job details page: https://app.eu-central-1.saucelabs.com/tests/4cfb0f58bb214983bdbfa1c89e9cccd1
-   
-   11:51:22 INF Command Finished ExitCode=0
-   11:51:22 INF Tearing down environment
+╰ npm run test.docker.sauce
+
+> cypress-1@1.0.0 test.docker.sauce /Users/sauce-training/demo-js/testrunner-toolkit/cypress/examples/default
+> npx saucectl run --test-env docker
+
+10:11:11 INF Running version 0.33.3
+10:11:11 INF Reading config file config=.sauce/config.yml
+10:11:11 INF Running Cypress in Docker
+10:11:11 INF concurrency > 1: forcing file transfer mode to use 'copy'.
+10:11:11 INF Launching workers. concurrency=2
+10:11:11 INF Setting up test environment suite="Cypress Chrome"
+10:11:11 INF Using credentials set by environment variables suite="Cypress Chrome"
+10:11:11 INF Starting container id=2d1f4f77697d img=saucelabs/stt-cypress-mocha-node:v5.8.0 suite="Cypress Chrome"
+10:11:12 INF File copied from=cypress.json suite="Cypress Chrome" to=/home/seluser/
+10:11:12 INF File copied from=cypress suite="Cypress Chrome" to=/home/seluser/
+10:11:21 INF Suites in progress: 1
+10:11:31 INF Suites in progress: 1
+10:11:41 INF Suites in progress: 1
+10:11:51 INF Suites in progress: 1
+10:12:01 INF Suites in progress: 1
+10:12:11 INF Suites in progress: 1
+10:12:21 INF Suites in progress: 1
+10:12:24 INF Tearing down environment suite="Cypress Chrome"
+10:12:27 INF Suite finished. passed=true suite="Cypress Chrome" url=https://app.eu-central-1.saucelabs.com/tests/8ed9cc2fa3e5491da8628b72f7155320
+10:12:27 INF ┌───────────────────────┐
+10:12:27 INF  All suites have passed! 
+10:12:27 INF └───────────────────────┘
 ```
 </details>
 

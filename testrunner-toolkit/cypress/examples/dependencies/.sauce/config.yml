@@ -7,7 +7,6 @@ sauce:
     name: Cypress Dependency Test
     tags:
       - cypress
-      - cross-browser
       - dependencies
     build: "Cypress: Axe dependency test - $DATE"
 npm:
