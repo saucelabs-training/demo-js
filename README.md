@@ -1,7 +1,5 @@
 # JavaScript Demonstration Scripts
 
-[![CircleCI](https://circleci.com/gh/saucelabs-training/demo-js.svg?style=svg)](https://circleci.com/gh/saucelabs-training/demo-js)
-
 This repository will hold multiple Node.js based automation frameworks and examples which will help you run tests with
 Node.js based automation frameworks locally and or in Sauce Labs.
 
@@ -19,7 +17,7 @@ framework when using Sauce Labs.
 
 ## Framework examples
 - [WebdriverIO with Jasmine*](./webdriverio)
-    - WebdriverIO with Appium for Native/Hybrid Apps ![WebdriverIO - Webdriver - Best Practices](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Best%20Practices/badge.svg)
+    - WebdriverIO with Appium for Native/Hybrid Apps
         - [Examples](./webdriverio/appium-app/examples)
             - [Native App Gestures](webdriverio/appium-app/examples/gestures)
             - [Using Biometric Login on Sauce Labs](webdriverio/appium-app/examples/biometric-login)
@@ -31,7 +29,7 @@ framework when using Sauce Labs.
             - [Real Device Allocation](./webdriverio/appium-web/examples/device-allocation)
             - [Sauce Labs Mobile Web and W3C](webdriverio/appium-web/examples/w3c)
     - WebdriverIO for Desktop Web (Selenium, but officially WebDriver)
-        - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/webdriver/best-practices)
+        - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/webdriver/best-practices) ![WebdriverIO - Webdriver - Best Practices](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Best%20Practices/badge.svg)
         - [Examples](webdriverio/webdriver/examples)
             - [WebdriverIO and CucumberJS](webdriverio/webdriver/examples/cucumberjs)
             - [WebdriverIO and extendedDebugging](webdriverio/webdriver/examples/extended-debugging)

@@ -2,8 +2,18 @@ name: WebdriverIO - Webdriver - Best Practices
 
 on:
   push:
+    # Only trigger if files in this path changed
+    paths:
+      - './webdriverio/webdriver/best-practices/**'
+      # Don't run on Markdown changes
+      - '!**.md'
     branches: [ master ]
   pull_request:
+    # Only trigger if files in this path changed
+    paths:
+      - './webdriverio/webdriver/best-practices/**'
+      # Don't run on Markdown changes
+      - '!**.md'
     branches: [ master ]
   schedule:
     - cron:  '0 0 * * 0'
