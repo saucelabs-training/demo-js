@@ -136,10 +136,10 @@ config.capabilities = [
      * Capabilities to run on a patch version of the OS
      */
     {
-        name: 'Run on patch iOS version - 12.4.1',
+        name: 'Run on patch iOS version - 14.4.1',
         browserName: 'safari',
         platformName: 'iOS',
-        platformVersion: '12.4.1',
+        platformVersion: '14.4.1',
         // Extra caps
         cacheId: 'dn7zr1irmc', // See the capabilities url as mentioned above
        build
