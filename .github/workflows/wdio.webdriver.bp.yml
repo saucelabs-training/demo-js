@@ -4,14 +4,16 @@ on:
   push:
     # Only trigger if files in this path changed
     paths:
-      - './webdriverio/webdriver/best-practices/**'
+      - 'webdriverio/webdriver/best-practices/**'
+      - '.github/workflows/wdio.webdriver.bp.yml
       # Don't run on Markdown changes
       - '!**.md'
     branches: [ master ]
   pull_request:
     # Only trigger if files in this path changed
     paths:
-      - './webdriverio/webdriver/best-practices/**'
+      - 'webdriverio/webdriver/best-practices/**'
+      - '.github/workflows/wdio.webdriver.bp.yml
       # Don't run on Markdown changes
       - '!**.md'
     branches: [ master ]
