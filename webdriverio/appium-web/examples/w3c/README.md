@@ -1,5 +1,5 @@
-# WebdriverIO, Sauce Labs Mobile Web and W3C
-This folder contains an example on how to run WebdriverIO tests in the Sauce Labs Desktop Web cloud with W3C 
+# WebdriverIO, Sauce Labs Mobile Web and W3C on Emulators/Simulators
+This folder contains an example on how to run WebdriverIO tests in the Sauce Labs Emulator/Simulator cloud with W3C 
 capabilities.
 
 > **NOTE:** Sauce Labs Real Device cloud is currently not W3C compliant, only the Sauce Labs Emulators and Simulators

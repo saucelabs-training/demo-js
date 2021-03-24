@@ -25,7 +25,7 @@ config.capabilities = [
         name: 'Run on deviceID iOS',
         browserName: 'safari',
         // When you have private devices in EU and US
-        deviceName: process.env.REGION === 'eu' ? 'iPhone_XS_ws' : 'iPhone_SE_POC119',
+        deviceName: process.env.REGION === 'eu' ? 'iPhone_XS_ws' : 'iPhone_SE_2020_POC142',
         platformName: 'iOS',
         // Extra caps
         cacheId: '17506a5f122', // See the capabilities url as mentioned above
@@ -145,10 +145,10 @@ config.capabilities = [
        build
     },
     {
-        name: 'Run on patch Android version - 7.1.2',
+        name: 'Run on patch Android version - 6.0.1',
         browserName: 'chrome',
         platformName: 'Android',
-        platformVersion: '7.1.2',
+        platformVersion: '6.0.1',
         // Extra caps
         cacheId: 'itfdqgn5mp', // See the capabilities url as mentioned above
        build
