@@ -41,7 +41,7 @@ jobs:
         working-directory: ./webdriverio/appium-web/examples/device-allocation/
         run: npm install
 
-      - name: Run tests Android
+      - name: Run tests
         working-directory: ./webdriverio/appium-web/examples/device-allocation/
         env:
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
