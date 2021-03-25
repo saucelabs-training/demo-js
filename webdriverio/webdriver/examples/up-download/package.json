@@ -1,5 +1,5 @@
 {
-  "name": "webdriverio-up-download",
+  "name": "webdriverio-webdriver-examples-up-download",
   "version": "1.0.0",
   "description": "Example of how to do down and uploads with WebdriverIO and local / Sauce Labs",
   "main": "index.js",

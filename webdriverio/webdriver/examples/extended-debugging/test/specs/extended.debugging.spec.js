@@ -46,8 +46,8 @@ describe('LoginPage and Sauce extendedDebugging API', () => {
         // https://webdriver.io/docs/api/saucelabs.html#getpagelogs
 
         expect(JSON.stringify(networkLogs)).toContain(
-            'https://www.saucedemo.com/css/sample-app-web.css',
-            'No network call to the `sample-app-web.css` asset has been executed');
+            'https://www.saucedemo.com/favicon.ico',
+            'No call to the `favicon.ico` asset has been executed');
 
     });
 

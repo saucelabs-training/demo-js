@@ -43,6 +43,11 @@ config.multiCapabilities = [
 		platform: 'Windows 10',
 		version: 'latest',
 		...DEFAULT_CAPABILITIES,
+		// This is needed for ChromeDriver, as of ChromeDriver 75
+		// it is W3C by default. Protractor doesn't support this.
+		'goog:chromeOptions':{
+			w3c: false,
+		},
 	},
 	{
 		browserName: 'firefox',
