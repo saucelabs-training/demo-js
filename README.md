@@ -1,7 +1,5 @@
 # JavaScript Demonstration Scripts
 
-[![CircleCI](https://circleci.com/gh/saucelabs-training/demo-js.svg?style=svg)](https://circleci.com/gh/saucelabs-training/demo-js)
-
 This repository will hold multiple Node.js based automation frameworks and examples which will help you run tests with
 Node.js based automation frameworks locally and or in Sauce Labs.
 
@@ -27,22 +25,39 @@ framework when using Sauce Labs.
             - [Using Uploading and Downloading Files from Sauce Labs Emulators and Real Devices](webdriverio/appium-app/examples/up-download-file)
     - WebdriverIO with Appium for Mobile Web (Chrome/Safari)
         - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/appium-web/best-practices)
+          ![WebdriverIO - Appium Web - Best Practices](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Appium%20Web%20-%20Best%20Practices/badge.svg)
         - [Examples](./webdriverio/appium-web/examples)
-            - [Real Device Allocation](./webdriverio/appium-web/examples/device-allocation)
+            - [WebdriverIO - Appium Web - Real Device Allocation](./webdriverio/appium-web/examples/device-allocation)
+              ![WebdriverIO - Appium Web - Real Device Allocation](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Appium%20Web%20-%20Real%20Device%20Allocation/badge.svg)
             - [Sauce Labs Mobile Web and W3C](webdriverio/appium-web/examples/w3c)
+              ![WebdriverIO - Appium Web - W3C on EMUSIM](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Appium%20Web%20-%20W3C%20on%20EMUSIM/badge.svg)
     - WebdriverIO for Desktop Web (Selenium, but officially WebDriver)
-        - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/webdriver/best-practices)
+        - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/webdriver/best-practices) 
+          ![WebdriverIO - Webdriver - Best Practices](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Best%20Practices/badge.svg)
         - [Examples](webdriverio/webdriver/examples)
             - [WebdriverIO and CucumberJS](webdriverio/webdriver/examples/cucumberjs)
+              ![WebdriverIO - Webdriver - Examples - CucumberJS](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20CucumberJS/badge.svg)
             - [WebdriverIO and extendedDebugging](webdriverio/webdriver/examples/extended-debugging)
+              ![WebdriverIO - Webdriver - Examples - Extended Debugging](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Extended%20Debugging/badge.svg)
             - [WebdriverIO and Sauce Connect](webdriverio/webdriver/examples/sc)
+              ![WebdriverIO - Webdriver - Examples - Sauce Connect](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Sauce%20Connect/badge.svg)
             - [WebdriverIO and Sauce Labs Headless](webdriverio/webdriver/examples/headless)
+              ![WebdriverIO - Webdriver - Examples - Headless](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Headless/badge.svg)
             - [WebdriverIO and Sauce Labs Front-End Performance](webdriverio/webdriver/examples/performance)
+              ![WebdriverIO - Webdriver - Examples - Front-End Performance](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Front-End%20Performance/badge.svg)
             - [WebdriverIO with Up and Downloading Files](webdriverio/webdriver/examples/up-download)
+              ![WebdriverIO - Webdriver - Examples - Up and Downloading Files](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20UpDownload/badge.svg)
             - [WebdriverIO, Sauce Labs and W3C](webdriverio/webdriver/examples/w3c)
+              ![WebdriverIO - Webdriver - Examples - W3C](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20W3C/badge.svg)
             - [WebdriverIO with TypeScript](webdriverio/web/examples/typescript)
+
 - **SauceCTL Testrunner Toolkit**
-    - [Cypress](./testrunner-toolkit/cypress)
+    - [Cypress examples](./testrunner-toolkit/cypress/examples)
+        - [Cypress and a Default Test Set](./testrunner-toolkit/cypress/examples/default)
+        - [Cypress and Cross Browser Testing on Sauce Labs](./testrunner-toolkit/cypress/examples/cross-browser)
+        - [Cypress and Testing in Parallel](./testrunner-toolkit/cypress/examples/parallel-tests)
+        - [Cypress and Sauce Connect](./testrunner-toolkit/cypress/examples/README.md#coming-soon)
+        - [Cypress and Extra Dependencies](./testrunner-toolkit/cypress/examples/dependencies)
     - [Playwright with Jest](./testrunner-toolkit/playwright)
     - [Puppeteer with Jest](./testrunner-toolkit/puppeteer)
     - [TestCafe](./testrunner-toolkit/testcafe)
