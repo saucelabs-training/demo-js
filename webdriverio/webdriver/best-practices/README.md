@@ -149,3 +149,4 @@ You can run your tests on Sauce Labs EU DC with this command
     npm run test.saucelabs.eu
 
 It will spin up multiple browsers which you can find [here](test/configs/wdio.saucelabs.conf.js).
+

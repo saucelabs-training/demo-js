@@ -1,5 +1,5 @@
 {
-  "name": "sc",
+  "name": "webdriverio-webdriver-examples-sauce-connect",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
