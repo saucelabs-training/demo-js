@@ -49,6 +49,7 @@ framework when using Sauce Labs.
               ![WebdriverIO - Webdriver - Examples - Up and Downloading Files](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20UpDownload/badge.svg)
             - [WebdriverIO, Sauce Labs and W3C](webdriverio/webdriver/examples/w3c)
               ![WebdriverIO - Webdriver - Examples - W3C](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20W3C/badge.svg)
+            - [WebdriverIO with Typescript](webdriverio/webdriver/examples/typescript/)
 - **SauceCTL Testrunner Toolkit**
     - [Cypress examples](./testrunner-toolkit/cypress/examples)
         - [Cypress and a Default Test Set](./testrunner-toolkit/cypress/examples/default)
