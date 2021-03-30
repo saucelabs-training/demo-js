@@ -6,14 +6,14 @@ on:
   push:
     # Only trigger if files in this path changed
     paths:
-      - ${{ PWD }}
+      - './webdriverio/webdriver/examples/typescript/'
       # Don't run on Markdown changes
       - '!**.md'
     branches: [ master ]
   pull_request:
     # Only trigger if files in this path changed
     paths:
-      - ${{ PWD }}
+      - './webdriverio/webdriver/examples/typescript/'
       # Don't run on Markdown changes
       - '!**.md'
     branches: [ master ]
@@ -38,11 +38,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        working-directory: ${{ PWD }}
+        working-directory: './webdriverio/webdriver/examples/typescript/'
         run: npm install
 
       - name: Run tests
-        working-directory: ${{ PWD }}
+        working-directory: './webdriverio/webdriver/examples/typescript/'
         env:
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
