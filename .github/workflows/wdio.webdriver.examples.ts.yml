@@ -1,6 +1,6 @@
 name: WebdriverIO - Webdriver - Examples - TS
 env:
-  PWD: ./webdriverio/webdriver/examples/typescript/
+  PWD: './webdriverio/webdriver/examples/typescript/'
 
 on:
   push:
@@ -13,6 +13,7 @@ on:
   pull_request:
     # Only trigger if files in this path changed
     paths:
+      - ${{ PWD }}
       # Don't run on Markdown changes
       - '!**.md'
     branches: [ master ]
