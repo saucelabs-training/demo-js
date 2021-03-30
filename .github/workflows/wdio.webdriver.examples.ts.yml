@@ -4,16 +4,12 @@ on:
   push:
     # Only trigger if files in this path changed
     paths:
-      - 'webdriverio/webdriver/examples/w3c/**'
-      - '.github/workflows/wdio.webdriver.examples.w3c.yml'
       # Don't run on Markdown changes
       - '!**.md'
     branches: [ master ]
   pull_request:
     # Only trigger if files in this path changed
     paths:
-      - 'webdriverio/webdriver/examples/w3c/**'
-      - '.github/workflows/wdio.webdriver.examples.w3c.yml'
       # Don't run on Markdown changes
       - '!**.md'
     branches: [ master ]
