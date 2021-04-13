@@ -12,7 +12,7 @@ exports.config = {
   // ============
   // Capabilities
   // ============
-  maxInstances: 100,
+  maxInstances: 25,
   // capabilities can be found in the `wdio.saucelabs.android.conf.js` or `wdio.saucelabs.ios.conf.js`
   // ===================
   // Test Configurations
@@ -25,9 +25,8 @@ exports.config = {
   connectionRetryCount: 3,
   framework: 'jasmine',
   reporters: ['spec'],
-  jasmineNodeOpts: {
+  jasmineOpts: {
     defaultTimeoutInterval: 60000,
-    helpers: [require.resolve('@babel/register')],
   },
   services: [],
   // ============

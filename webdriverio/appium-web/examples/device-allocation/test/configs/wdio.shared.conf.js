@@ -13,7 +13,7 @@ exports.config = {
     // ============
     // Capabilities
     // ============
-    maxInstances: 10,
+    maxInstances: 5,
     // capabilities can be found in the `wdio.local.chrome.conf.js` or `wdio.sauce.conf.js`
     // ===================
     // Test Configurations
@@ -26,9 +26,8 @@ exports.config = {
     connectionRetryCount: 3,
     framework: 'jasmine',
     reporters: ['spec'],
-    jasmineNodeOpts: {
+    jasmineOpts: {
         defaultTimeoutInterval: 60000,
-        helpers: [require.resolve('@babel/register')],
     },
     services: []
 };
