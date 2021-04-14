@@ -1,6 +1,6 @@
 const {config} = require('./wdio.shared.conf');
 const defaultBrowserSauceOptions = {
-    build: `WebdriverIO-V6 extendedDebugging-${new Date().getTime()}`,
+    build: `WebdriverIO extendedDebugging-${new Date().getTime()}`,
     screenResolution: '1600x1200',
     // More information about extendedDebugging can be found here
     // https://wiki.saucelabs.com/pages/viewpage.action?pageId=70072943

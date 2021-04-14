@@ -46,7 +46,7 @@ describe('LoginPage and Sauce extendedDebugging API', () => {
         // https://webdriver.io/docs/api/saucelabs.html#getpagelogs
 
         expect(JSON.stringify(networkLogs)).toContain(
-            'https://www.saucedemo.com/favicon.ico',
+            'https://www.saucedemo.com/v1/favicon.ico',
             'No call to the `favicon.ico` asset has been executed');
 
     });
@@ -134,7 +134,7 @@ describe('LoginPage and Sauce extendedDebugging API', () => {
         //
         // 1. Tell Chrome to redirect the url
         browser.execute('sauce:intercept', {
-            url: 'https://www.saucedemo.com/',
+            url: 'https://www.saucedemo.com/v1/index.html',
             redirect: 'https://saucelabs.com',
         });
         //
@@ -149,7 +149,7 @@ describe('LoginPage and Sauce extendedDebugging API', () => {
         //
         // 3. Verify that the url is still the same
         expect(browser.getUrl()).toEqual(
-            'https://www.saucedemo.com/',
+            'https://www.saucedemo.com/v1/index.html',
             'Demo url is not loaded',
         );
         //
