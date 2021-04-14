@@ -27,9 +27,8 @@ exports.config = {
   // ==============
   framework: 'jasmine',
   reporters: ['spec'],
-  jasmineNodeOpts: {
+  jasmineOpts: {
     defaultTimeoutInterval: 60000,
-    helpers: [require.resolve('@babel/register')],
   },
 
   // ========
