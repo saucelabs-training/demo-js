@@ -18,7 +18,7 @@ steps:
 - script: |
     cd ./webdriverio/webdriver/examples/w3c/
     npm install
-    npm run test.saucelabs.us
+    npm run test.saucelabs.us -- --logLevel "debug"
   env: 
     SAUCE_USERNAME: $(sauceUsername) #this will read the value from 'sauceUsername' in ADO and will store it into SAUCE_USERNAME env variable
     SAUCE_ACCESS_KEY: $(sauceKey)
