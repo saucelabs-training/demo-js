@@ -26,4 +26,4 @@ steps:
   env: 
     SAUCE_USERNAME: $(sauceUsername) #this will read the value from 'sauceUsername' in ADO and will store it into SAUCE_USERNAME env variable
     SAUCE_ACCESS_KEY: $(sauceAccessKey)
-  displayName: 'install and run saucelabs tests'
+  displayName: 'install and run WebdriverIO tests in Sauce Labs'
