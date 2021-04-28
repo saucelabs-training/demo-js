@@ -9,6 +9,10 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+# multiple pipelines can re-use variables that are stored in a variable group
+variables:
+- group: sauce-labs-variables
+
 steps:
 - task: NodeTool@0
   inputs:
@@ -21,5 +25,5 @@ steps:
     npm run test.saucelabs.us -- --logLevel "debug"
   env: 
     SAUCE_USERNAME: $(sauceUsername) #this will read the value from 'sauceUsername' in ADO and will store it into SAUCE_USERNAME env variable
-    SAUCE_ACCESS_KEY: $(sauceKey)
+    SAUCE_ACCESS_KEY: $(sauceAccessKey)
   displayName: 'install and run saucelabs tests'
