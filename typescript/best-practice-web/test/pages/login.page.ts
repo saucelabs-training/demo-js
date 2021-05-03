@@ -1,8 +1,5 @@
 import Page from './page';
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
 class LoginPage extends Page {
     /**
      * The current implementation uses the locators inside of the method.
@@ -10,18 +7,24 @@ class LoginPage extends Page {
      * locators in multiple places. In that case, you might want to move
      * them into a private property
      */
-    login (username: string, password: string):void {
-        $('#username').setValue(username);
-        $('#password').setValue(password);
-        $('button[type="submit"]').click(); 
+    login (userDetails):void {
+        const {password, username} = userDetails;
+
+        $('[data-test=username]').setValue(username);
+        $('[data-test=password]').setValue(password);
+        $('[data-test=login-button]').click(); 
     }
 
     /**
      * overwrite specifc options to adapt it to page object
      */
     open():void {
-        super.open('login');
+        super.open('');
     }
+
+    takeSnapshot():void {
+      super.takeSnapshot('/')
+  }
 }
 
 export default new LoginPage();

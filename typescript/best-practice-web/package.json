@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio run ./wdio.conf.ts"
+    "test": "wdio run ./wdio.conf.ts",
+    "test:visual": "wdio run ./wdio.conf.ts",
+    "test:visual:ci": "wdio run wdio.visual.conf.ts -- --logLevel='debug'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "@wdio/cli": "^7.4.2",
+    "@wdio/jasmine-framework": "^7.4.2",
     "@wdio/local-runner": "^7.4.2",
     "@wdio/mocha-framework": "^7.4.2",
     "@wdio/sauce-service": "^7.4.2",
