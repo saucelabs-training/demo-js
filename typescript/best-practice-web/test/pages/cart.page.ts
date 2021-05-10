@@ -1,7 +1,8 @@
 import Page from './page';
+import {PAGES} from '../e2eConstants';
 
 class CartPage extends Page {
-    private _urlPart:string = 'cart.html';
+    private _urlPart:string = PAGES.CART;
 
     open():void {
         super.open(this._urlPart);

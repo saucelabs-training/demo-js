@@ -5,8 +5,8 @@ export const PAGES = {
     CHECKOUT_PERSONAL_INFO: '/checkout-step-one.html',
     CHECKOUT_SUMMARY: '/checkout-step-two.html',
     LOGIN: '',
-    SWAG_DETAILS: '/inventory-item.html',
-    SWAG_ITEMS: '/inventory.html',
+    INVENTORY_DETAILS: '/inventory-item.html',
+    INVENTORY: '/inventory.html',
 };
 export const PRODUCTS = {
     BIKE_LIGHT: 0,
