@@ -7,7 +7,7 @@ class LoginPage extends Page {
      * locators in multiple places. In that case, you might want to move
      * them into a private property
      */
-    login (userDetails):void {
+    login (userDetails: { password: string; username: string; }):void {
         const {password, username} = userDetails;
 
         $('[data-test=username]').setValue(username);
