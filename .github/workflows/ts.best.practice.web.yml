@@ -1,0 +1,51 @@
+name: TS Best Practice Web
+
+env:
+  SCREENER_API_KEY: ${{ secrets.SCREENER_API_KEY }}
+  SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+  SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+
+on:
+  push:
+    # Only trigger if files in this path changed
+    paths:
+      - 'typescript/best-practice-web/**'
+      - '.github/workflows/ts.best.practice.web.yml'
+      # Don't run on Markdown changes
+      - '!**.md'
+    branches: [ master ]
+  pull_request:
+    # Only trigger if files in this path changed
+    paths:
+      - 'typescript/best-practice-web/**'
+      - '.github/workflows/ts.best.practice.web.yml'
+      # Don't run on Markdown changes
+      - '!**.md'
+    branches: [ master ]
+  schedule:
+    - cron:  '0 0 * * 0'
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies 📦
+        working-directory: ./typescript/best-practice-web
+        run: npm ci
+
+      - name: Run e2e visual tests 👁
+        working-directory: ./typescript/best-practice-web
+        run: npm run test:visual:ci
