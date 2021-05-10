@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio run ./wdio.conf.ts",
-    "test:visual": "wdio run ./wdio.conf.ts",
+    "test:visual": "wdio run ./wdio.visual.conf.ts",
     "test:visual:ci": "wdio run wdio.visual.conf.ts -- --logLevel='debug'"
   },
   "keywords": [],
