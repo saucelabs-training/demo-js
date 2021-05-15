@@ -18,7 +18,7 @@ config.region = process.env.REGION || 'us';
         'sauce:visual': {
             apiKey: process.env.SCREENER_API_KEY,
             projectName: 'demo-js',
-            viewportSize: {viewportSize}
+            viewportSize: `${viewportSize}`
         }
     }
     ));
