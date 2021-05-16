@@ -24,7 +24,7 @@ hs_err_pid*
 # Extra folders
 .tmp/
 nightwatch/webdriver/examples/update-sauce/tests_output/
-apps
+**/apps/
 **/cypress/results/
 **/cypress/videos/
 *.xml

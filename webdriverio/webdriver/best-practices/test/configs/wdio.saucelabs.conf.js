@@ -2,6 +2,7 @@ const {config} = require('./wdio.shared.conf');
 const defaultBrowserSauceOptions = {
     build: `Best Practices: Sauce Labs Desktop Web build-${new Date().getTime()}`,
     screenResolution: '1600x1200',
+    enableZapscan: true
 };
 
 // =====================
@@ -30,64 +31,64 @@ config.capabilities = [
             ...defaultBrowserSauceOptions,
         },
     },
-    {
-        browserName: 'firefox',
-        platformName: 'Windows 10',
-        browserVersion: 'latest',
-        'sauce:options': {
-            ...defaultBrowserSauceOptions,
-        },
-    },
-    {
-        browserName: 'internet explorer',
-        platformName: 'Windows 8.1',
-        browserVersion: 'latest',
-        'sauce:options': {
-            ...defaultBrowserSauceOptions,
-        },
-    },
-    {
-        browserName: 'MicrosoftEdge',
-        platformName: 'Windows 10',
-        browserVersion: '18.17763',
-        'sauce:options': {
-            ...defaultBrowserSauceOptions,
-        },
-    },
-    {
-        browserName: 'MicrosoftEdge',
-        platformName: 'Windows 10',
-        browserVersion: 'latest',
-        'sauce:options': {
-            ...defaultBrowserSauceOptions,
-        },
-    },
-    // Safari 11 is not W3C compliant,
-    // see https://developer.apple.com/documentation/webkit/macos_webdriver_commands_for_safari_11_1_and_earlier
-    {
-        browserName: 'safari',
-        platform: 'macOS 10.13',
-        version: '11.1',
-        ...defaultBrowserSauceOptions,
-    },
-    // Safari 13
-    {
-        browserName: 'safari',
-        platformName: 'macOS 10.15',
-        browserVersion: 'latest',
-        'sauce:options': {
-            ...defaultBrowserSauceOptions,
-        },
-    },
-    // Safari 12
-    {
-        browserName: 'safari',
-        platformName: 'macOS 10.14',
-        browserVersion: 'latest',
-        'sauce:options': {
-            ...defaultBrowserSauceOptions,
-        },
-    }
+    // {
+    //     browserName: 'firefox',
+    //     platformName: 'Windows 10',
+    //     browserVersion: 'latest',
+    //     'sauce:options': {
+    //         ...defaultBrowserSauceOptions,
+    //     },
+    // },
+    // {
+    //     browserName: 'internet explorer',
+    //     platformName: 'Windows 8.1',
+    //     browserVersion: 'latest',
+    //     'sauce:options': {
+    //         ...defaultBrowserSauceOptions,
+    //     },
+    // },
+    // {
+    //     browserName: 'MicrosoftEdge',
+    //     platformName: 'Windows 10',
+    //     browserVersion: '18.17763',
+    //     'sauce:options': {
+    //         ...defaultBrowserSauceOptions,
+    //     },
+    // },
+    // {
+    //     browserName: 'MicrosoftEdge',
+    //     platformName: 'Windows 10',
+    //     browserVersion: 'latest',
+    //     'sauce:options': {
+    //         ...defaultBrowserSauceOptions,
+    //     },
+    // },
+    // // Safari 11 is not W3C compliant,
+    // // see https://developer.apple.com/documentation/webkit/macos_webdriver_commands_for_safari_11_1_and_earlier
+    // {
+    //     browserName: 'safari',
+    //     platform: 'macOS 10.13',
+    //     version: '11.1',
+    //     ...defaultBrowserSauceOptions,
+    // },
+    // // Safari 13
+    // {
+    //     browserName: 'safari',
+    //     platformName: 'macOS 10.15',
+    //     browserVersion: 'latest',
+    //     'sauce:options': {
+    //         ...defaultBrowserSauceOptions,
+    //     },
+    // },
+    // // Safari 12
+    // {
+    //     browserName: 'safari',
+    //     platformName: 'macOS 10.14',
+    //     browserVersion: 'latest',
+    //     'sauce:options': {
+    //         ...defaultBrowserSauceOptions,
+    //     },
+    // }
 ];
 
 // ========

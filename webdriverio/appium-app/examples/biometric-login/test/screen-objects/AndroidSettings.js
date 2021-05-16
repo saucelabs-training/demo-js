@@ -16,9 +16,9 @@ class AndroidSettings {
      * Enable biometric login
      */
     enableBiometricLogin() {
-        // Android Oreo and higher (API 26+) added `locksettings` to ADB to set the pin. So we need to take
+        // Android Oreo and higher (Android 8) added `locksettings` to ADB to set the pin. So we need to take
         // a different flow Android on lower than OREO
-        if (driver.capabilities.deviceApiLevel < 26) {
+        if (parseInt(driver.capabilities.platformVersion) < 8) {
             // Open the settings screen
             this.executeAdbCommand('am start -a android.settings.SECURITY_SETTINGS');
             this.waitAndClick('Fingerprint');
@@ -29,10 +29,6 @@ class AndroidSettings {
             this.waitAndClick('Fingerprint');
             this.fingerPrintWizardEightOrHigher(DEFAULT_PIN);
         }
-
-        // We need to end this method where we started it, which is the current running app
-        // Open the app again
-        driver.launchApp();
     }
 
     /**
@@ -54,7 +50,7 @@ class AndroidSettings {
      */
     fingerPrintWizardEightOrHigher(pin) {
         // There is a difference in the order the wizard in Android 10 is executed
-        if (driver.capabilities.deviceApiLevel > 28) {
+        if (parseInt(driver.capabilities.platformVersion) > 9) {
             this.reEnterPin(pin);
             this.waitAndClick('NEXT');
         } else {

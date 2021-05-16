@@ -16,6 +16,8 @@ describe('Touch / Face ID', () => {
         } else if (driver.isAndroid && !LoginScreen.biometryButton.isDisplayed()) {
             // Android is more complex, see this method
             AndroidSettings.enableBiometricLogin();
+            // restart the app
+            restartApp();
         }
 
         // Wait for the button to be shown
