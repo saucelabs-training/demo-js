@@ -1,5 +1,5 @@
 # WebdriverIO Real Device Offline Mode
-This folder contains a set up for WebdriverIO on how to test offline mode with Real Devices. The app under test will be
+This folder contains a set up for WebdriverIO on how to test offline mode with **Real Devices**. The app under test will be
 the Sauce Demo app. This is a Progressive Web App (PWA) and can still work without having an internet connection
 (due to caching).
 
