@@ -47,12 +47,15 @@ describe('Offline feature', () => {
 function toggleWiFi() {
     // Do the Android magic
     if (driver.isAndroid) {
+        // See http://appium.io/docs/en/commands/device/network/toggle-wifi/
+        // This will work for Android Emulators and Real Devices
         driver.toggleWiFi();
 
         // Just for demoing purpose
         return driver.pause(3000);
     }
 
+    // NOTE: The following will NOT work for iOS Simulators!!! Only for Real Devices!!!
     // Store the current context, this is only if you want to get back to the browser again
     const currentContext = driver.getContext();
 
