@@ -27,6 +27,7 @@ framework when using Sauce Labs.
         - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/appium-web/best-practices)
           ![WebdriverIO - Appium Web - Best Practices](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Appium%20Web%20-%20Best%20Practices/badge.svg)
         - [Examples](./webdriverio/appium-web/examples)
+            - [WebdriverIO - Appium Web - Real Device Offline Mode](./webdriverio/appium-web/examples/offline-testing)
             - [WebdriverIO - Appium Web - Real Device Allocation](./webdriverio/appium-web/examples/device-allocation)
               ![WebdriverIO - Appium Web - Real Device Allocation](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Appium%20Web%20-%20Real%20Device%20Allocation/badge.svg)
             - [Sauce Labs Mobile Web and W3C](webdriverio/appium-web/examples/w3c)
