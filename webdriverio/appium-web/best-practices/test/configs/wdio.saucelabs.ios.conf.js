@@ -9,7 +9,7 @@ const build = `Best Practices: iOS Safari Appium '${config.appiumVersion}' build
 //
 // For configuring a Simulator please check
 // https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/
-config.capabilities = ['10.3','11.3','12.4', '13.4', '14.0'].map(iOSVersion =>(
+config.capabilities = ['10.3','11.3','12.4', '13.4', '14.0', '14.3'].map(iOSVersion =>(
   {
       build: build,
       browserName: 'safari',
