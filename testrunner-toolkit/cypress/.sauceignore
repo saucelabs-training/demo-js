@@ -1,0 +1,5 @@
+cypress/videos/
+cypress/results/
+cypress/screenshots/
+# Remove this to have node_modules uploaded with code
+node_modules/
