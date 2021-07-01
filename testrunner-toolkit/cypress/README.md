@@ -64,3 +64,7 @@ In this example, all tests are executed on a single chrome browser in sequential
 ### Example 4 - Cross Versions tests
 `config-ex4.yml` run the login tests on different Chrome versions
 
+### [Cypress and using extra dependencies](./dependencies).
+  This folder contains a simple set up for Cypress with a test 
+  that uses a dependency. This can be executed locally or on Sauce Labs.
+
