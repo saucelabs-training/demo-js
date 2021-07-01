@@ -9,7 +9,9 @@
     "test.local.headfull": "npx cypress run --headed",
     "test.docker.sauce": "npx saucectl run --test-env docker",
     "test.sauce.eu": "DATE=\\\"$(date)\\\" npx saucectl run --test-env sauce",
-    "test.sauce.us": "DATE=\\\"$(date)\\\" npx saucectl run --test-env sauce --region us-west-1"
+    "test.sauce.us": "DATE=\\\"$(date)\\\" npx saucectl run --test-env sauce --region us-west-1",
+    "test.sauce.ex1.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml --test-env sauce",
+    "test.sauce.ex1.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml --test-env sauce --region us-west-1"
   },
   "keywords": [],
   "author": "",
