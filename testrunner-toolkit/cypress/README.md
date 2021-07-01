@@ -22,7 +22,19 @@ It is based on the following user journey:
   [this](https://docs.saucelabs.com/testrunner-toolkit/installation#associating-your-sauce-labs-account)-doc
 - Check the [Cypress](https://docs.saucelabs.com/testrunner-toolkit/configuration/cypress/index.html)-docs for all options
 
+
+### Install dependencies
+You can install all dependencies by running the following command
+
+    npm install
+    
+This will install all needed dependencies that are listed in the `package.json`-file
+
+> NOTE: Make sure you are in the folder `testrunner-toolkit/cypress` when you execute this command
+
 ### Install `saucectl`
+You can install only saucectl by running the following command
+
 ```shell
 npm install -g saucectl
 ```
