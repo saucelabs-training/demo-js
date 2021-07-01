@@ -8,10 +8,14 @@
     "test.local": "npx cypress run",
     "test.local.headfull": "npx cypress run --headed",
     "test.docker.sauce": "npx saucectl run --test-env docker",
-    "test.sauce.eu": "DATE=\\\"$(date)\\\" npx saucectl run --test-env sauce",
-    "test.sauce.us": "DATE=\\\"$(date)\\\" npx saucectl run --test-env sauce --region us-west-1",
     "test.sauce.ex1.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml --test-env sauce",
-    "test.sauce.ex1.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml --test-env sauce --region us-west-1"
+    "test.sauce.ex1.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml --test-env sauce --region us-west-1",
+    "test.sauce.ex2.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex2.yml --test-env sauce",
+    "test.sauce.ex2.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex2.yml --test-env sauce --region us-west-1",
+    "test.sauce.ex3.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex3.yml --test-env sauce",
+    "test.sauce.ex3.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex3.yml --test-env sauce --region us-west-1",
+    "test.sauce.ex4.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex4.yml --test-env sauce",
+    "test.sauce.ex4.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex4.yml --test-env sauce --region us-west-1"
   },
   "keywords": [],
   "author": "",
