@@ -9,8 +9,6 @@ sauce:
       - cypress
       - cross-browser
     build: "Cypress: Cross Browser - $DATE"
-docker:
-  fileTransfer: mount
 cypress:
   version: 7.3.0
   configFile: "cypress.json"  # We determine related files based on the location of the config file.

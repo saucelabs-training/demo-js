@@ -9,32 +9,30 @@ sauce:
       - cypress
       - cross-browser
     build: "Cypress: Cross Browser - $DATE"
-docker:
-  fileTransfer: mount
 cypress:
   version: 7.3.0
   configFile: "cypress.json"  # We determine related files based on the location of the config file.
 suites:
   # Chrome v91
-  - name: "Swag Labs Login Chrome 91"
+  - name: "Swag Labs Login Chrome latest"
     browser: "chrome"
-    browserVersion: "91.0"
+    browserVersion: "latest"
     platformName: "Windows 10"
     screenResolution: "1400x1050"
     config:
       testFiles: [ "**/login.*" ]
   # chrome 85
-  - name: "Swag Labs Login chrome 85"
+  - name: "Swag Labs Login chrome latest-1"
     browser: "chrome"
-    browserVersion: "85.0"
+    browserVersion: "latest-1"
     platformName: "Windows 10"
     screenResolution: "1400x1050"
     config:
       testFiles: [ "**/login.*" ]
   # chrome 76
-  - name: "Swag Labs Login chrome 76"
+  - name: "Swag Labs Login chrome latest-2"
     browser: "chrome"
-    browserVersion: "76.0"
+    browserVersion: "latest-2"
     platformName: "Windows 10"
     screenResolution: "1400x1050"
     config:

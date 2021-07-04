@@ -9,7 +9,7 @@
 
 ## Introduction
 This repository will hold multiple examples on how to run Cypress tests locally and with the
-[Sauce Labs Testrunner Toolkit](https://docs.saucelabs.com/testrunner-toolkit/index.html).
+[Sauce Labs saucectl](https://docs.saucelabs.com/testrunner-toolkit/index.html).
 
 It is based on the following user journey:
 
@@ -39,21 +39,19 @@ You can install only saucectl by running the following command
 npm install -g saucectl
 ```
 
-> ⚠️ Make sure saucectl version is newer than **v0.44.0**
-
 ## Cypress info
 More information about Cypress and writing Cypress tests can be found 
 [here](https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell)
 
-## Sauce Labs Testrunner toolkit info
-More information about the Sauce Labs Testrunner Toolkit can be found 
+## Sauce Labs saucectl info
+More information about the Sauce Labs saucectl can be found 
 [here](https://docs.saucelabs.com/testrunner-toolkit/index.html)
 
 ## Examples:
 All below mentioned examples can be found in the [`.sauce`](./.sauce)-folder. You can run the configurations by running
 the following command from the root of this folder
 
-      saucectl run --config ./.sauce/config-ex{#}.yml --test-env sauce
+      saucectl run --config ./.sauce/config-ex{#}.yml
       
       # OR for use with the EU data center
       npm run test.sauce.ex{#}.eu
