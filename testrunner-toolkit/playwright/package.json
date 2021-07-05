@@ -4,9 +4,13 @@
   "description": "This folder contains a simple set up for Jest and Playwright.",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ",
-    "test.local": "jest --verbose",
-    "test.local.headfull": "HEADLESS=false jest --verbose"
+    "test.local": "npx playwright test",
+    "test.sauce.ex1.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml",
+    "test.sauce.ex1.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml --region us-west-1",
+    "test.sauce.ex2.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex2.yml",
+    "test.sauce.ex2.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex2.yml --region us-west-1",
+    "test.sauce.ex3.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex3.yml",
+    "test.sauce.ex3.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex3.yml --region us-west-1"
   },
   "husky": {
     "hooks": {
@@ -17,16 +21,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^7.13.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest-playwright": "^0.2.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^4.3.0",
-    "jest": "^26.6.3",
-    "jest-playwright-preset": "^1.4.0",
-    "playwright-chromium": "^1.6.2",
-    "prettier": "^2.1.2"
+    "playwright": "^1.12.3",
+    "@playwright/test": "^1.12.3",
+    "saucectl": "^0.52.2"
   }
 }

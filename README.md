@@ -58,7 +58,7 @@ framework when using Sauce Labs.
         - [Cypress and Testing in Parallel](./testrunner-toolkit/cypress/examples/parallel-tests)
         - [Cypress and Sauce Connect](./testrunner-toolkit/cypress/examples/README.md#coming-soon)
         - [Cypress and Extra Dependencies](./testrunner-toolkit/cypress/examples/dependencies)
-    - [Playwright with Jest](./testrunner-toolkit/playwright)
+    - [Playwright](./testrunner-toolkit/playwright)
     - [Puppeteer with Jest](./testrunner-toolkit/puppeteer)
     - [TestCafe](./testrunner-toolkit/testcafe)
 - [Screener Runner (DEPRECATED!! Move to Visual E2E)](./screener-runner)

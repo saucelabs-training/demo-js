@@ -1,58 +1,53 @@
-const { LOGIN_USERS, PAGES, PERSONAL_INFO } = require('../e2eConstants')
-const CheckoutPersonalInfoPage = require('../page-objects/CheckoutPersonalInfoPage')
-const CheckoutSummaryPage = require('../page-objects/CheckoutSummaryPage')
-const CartSummaryPage = require('../page-objects/CartSummaryPage')
-const { setTestContext } = require('../helpers')
+const {test, expect} = require('@playwright/test');
+const {LOGIN_USERS, PAGES, PERSONAL_INFO} = require('../e2eConstants')
+const {CheckoutPersonalInfoPage} = require('../page-objects/CheckoutPersonalInfoPage')
+const {CheckoutSummaryPage} = require('../page-objects/CheckoutSummaryPage')
+const {CartSummaryPage} = require('../page-objects/CartSummaryPage')
+const {setTestContext} = require('../helpers')
 
-describe('Checkout - Personal info', () => {
-    beforeEach(async () => {
-        await setTestContext({
-            user: LOGIN_USERS.STANDARD,
-            path: PAGES.CHECKOUT_PERSONAL_INFO,
-        })
-        await CheckoutPersonalInfoPage.waitForIsDisplayed()
-    })
+test.describe('Checkout - Personal info', () => {
+  let checkoutPersonalInfoPage
+  let checkoutSummaryPage
+  let cartSummaryPage
+  test.beforeEach(async ({page}) => {
+    checkoutPersonalInfoPage = new CheckoutPersonalInfoPage(page)
+    checkoutSummaryPage = new CheckoutSummaryPage(page)
+    cartSummaryPage = new CartSummaryPage(page)
 
-    it('should validate we get an error if we don not provide all personal information', async () => {
-        // It doesn't matter which error we check here, all error states should have been tested in a UT
-        // Reason for selecting this one is that it triggers multiple fields and thus triggers the state
-        await CheckoutPersonalInfoPage.submitPersonalInfo(
-            PERSONAL_INFO.NO_POSTAL_CODE,
-        )
+    await setTestContext(
+      page,
+      {
+        user: LOGIN_USERS.STANDARD,
+        path: PAGES.CHECKOUT_PERSONAL_INFO,
+      }
+    )
+    await checkoutPersonalInfoPage.waitForIsDisplayed()
+  })
 
-        expect(await CheckoutPersonalInfoPage.waitForIsDisplayed()).toEqual(
-            true,
-            'Error message is shown, this is not correct',
-        )
+  test('should validate we get an error if we don not provide all personal information', async () => {
+    // It doesn't matter which error we check here, all error states should have been tested in a UT
+    // Reason for selecting this one is that it triggers multiple fields and thus triggers the state
+    await checkoutPersonalInfoPage.submitPersonalInfo(
+      PERSONAL_INFO.NO_POSTAL_CODE,
+    )
 
-        expect(await CheckoutPersonalInfoPage.getErrorMessage()).toEqual(
-            'Error: Postal Code is required',
-            'Error message is shown, but not with the correct message',
-        )
-    })
+    expect(await checkoutPersonalInfoPage.waitForIsDisplayed()).toEqual(true)
+    expect(await checkoutPersonalInfoPage.getErrorMessage()).toEqual('Error: Postal Code is required')
+  })
 
-    it('should validate that we can cancel the first checkout', async () => {
-        expect(await CartSummaryPage.waitForIsDisplayed()).toEqual(
-            false,
-            'Cart screen is already visible',
-        )
+  test('should validate that we can cancel the first checkout', async () => {
+    expect(await cartSummaryPage.waitForIsDisplayed()).toEqual(false)
 
-        await CheckoutPersonalInfoPage.cancelCheckout()
+    await checkoutPersonalInfoPage.cancelCheckout()
 
-        expect(await CartSummaryPage.waitForIsDisplayed()).toEqual(
-            true,
-            'Cart content screen is still not visible',
-        )
-    })
+    expect(await cartSummaryPage.waitForIsDisplayed()).toEqual(true)
+  })
 
-    it('should be able to continue the checkout', async () => {
-        await CheckoutPersonalInfoPage.submitPersonalInfo(
-            PERSONAL_INFO.STANDARD,
-        )
+  test('should be able to continue the checkout', async () => {
+    await checkoutPersonalInfoPage.submitPersonalInfo(
+      PERSONAL_INFO.STANDARD,
+    )
 
-        expect(await CheckoutSummaryPage.waitForIsDisplayed()).toEqual(
-            true,
-            'Checkout page two is still not visible',
-        )
-    })
+    expect(await checkoutSummaryPage.waitForIsDisplayed()).toEqual(true)
+  })
 })

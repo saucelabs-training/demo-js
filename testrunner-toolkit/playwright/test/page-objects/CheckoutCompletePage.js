@@ -1,12 +1,12 @@
 const BasePage = require('./BasePage')
 const SELECTORS = {
-    screen: '#checkout_complete_container',
+  screen: '#checkout_complete_container',
 }
 
 class CheckoutCompletePage extends BasePage {
-    constructor() {
-        super(SELECTORS.screen)
-    }
+  constructor(page) {
+    super(page, SELECTORS.screen)
+  }
 }
 
-module.exports = new CheckoutCompletePage()
+module.exports = {CheckoutCompletePage}

@@ -1,104 +1,108 @@
-const { LOGIN_USERS, PAGES, PRODUCTS } = require('../e2eConstants')
-const SwagOverviewPage = require('../page-objects/SwagOverviewPage')
-const SwagDetailsPage = require('../page-objects/SwagDetailsPage')
-const AppHeaderPage = require('../page-objects/AppHeaderPage')
-const CartSummaryPage = require('../page-objects/CartSummaryPage')
-const { setTestContext } = require('../helpers')
+const {test, expect} = require('@playwright/test');
+const {LOGIN_USERS, PAGES, PRODUCTS} = require('../e2eConstants')
+const {AppHeaderPage} = require('../page-objects/AppHeaderPage')
+const {CartSummaryPage} = require('../page-objects/CartSummaryPage')
+const {SwagDetailsPage} = require('../page-objects/SwagDetailsPage')
+const {SwagOverviewPage} = require('../page-objects/SwagOverviewPage')
+const {setTestContext} = require('../helpers')
 
-describe('Swag items list', () => {
-    it('should validate that all products are present', async () => {
-        await setTestContext({
-            user: LOGIN_USERS.STANDARD,
-            path: PAGES.SWAG_ITEMS,
-        })
-        await SwagOverviewPage.waitForIsDisplayed()
+test.describe('Swag items list', () => {
+  let appHeaderPage
+  let cartSummaryPage
+  let swagDetailsPage
+  let swagOverviewPage
 
-        // Actual test starts here
-        expect(await SwagOverviewPage.getAmount()).toEqual(
-            6,
-            'Amount of items was not equal to 6',
-        )
-    })
+  test.beforeEach(async ({page}) => {
+    appHeaderPage = new AppHeaderPage(page)
+    cartSummaryPage = new CartSummaryPage(page)
+    swagDetailsPage = new SwagDetailsPage(page)
+    swagOverviewPage = new SwagOverviewPage(page)
+  })
 
-    it('should validate that the details of a product can be opened', async () => {
-        await setTestContext({
-            user: LOGIN_USERS.STANDARD,
-            path: PAGES.SWAG_ITEMS,
-        })
-        await SwagOverviewPage.waitForIsDisplayed()
+  test('should validate that all products are present', async ({page}) => {
+    await setTestContext(
+      page,
+      {
+        user: LOGIN_USERS.STANDARD,
+        path: PAGES.SWAG_ITEMS,
+      }
+    )
+    await swagOverviewPage.waitForIsDisplayed()
 
-        // Actual test starts here
-        const product = 'Sauce Labs Backpack'
+    // Actual test starts here
+    expect(await swagOverviewPage.getAmount()).toEqual(6)
+  })
 
-        await SwagOverviewPage.openSwagDetails(product)
+  test('should validate that the details of a product can be opened', async ({page}) => {
+    await setTestContext(
+      page,
+      {
+        user: LOGIN_USERS.STANDARD,
+        path: PAGES.SWAG_ITEMS,
+      }
+    )
+    await swagOverviewPage.waitForIsDisplayed()
 
-        expect(await SwagDetailsPage.waitForIsDisplayed()).toEqual(
-            true,
-            'Swag Item detail page was not shown',
-        )
+    // Actual test starts here
+    const product = 'Sauce Labs Backpack'
 
-        expect(await SwagDetailsPage.getSwagDetailsText()).toContain(
-            product,
-            'Swag Item detail page did not show the right text',
-        )
-    })
+    await swagOverviewPage.openSwagDetails(product)
 
-    it('should validate that a product can be added to the cart', async () => {
-        await setTestContext({
-            user: LOGIN_USERS.STANDARD,
-            path: PAGES.SWAG_ITEMS,
-        })
-        await SwagOverviewPage.waitForIsDisplayed()
+    expect(await swagDetailsPage.waitForIsDisplayed()).toEqual(true)
 
-        // Actual test starts here
-        expect(await AppHeaderPage.getCartAmount()).toEqual(
-            '',
-            'The amount of cart items is not equal to nothing',
-        )
+    expect(await swagDetailsPage.getSwagDetailsText()).toContain(product)
+  })
 
-        await SwagOverviewPage.addSwagToCart(0)
+  test('should validate that a product can be added to the cart', async ({page}) => {
+    await setTestContext(
+      page,
+      {
+        user: LOGIN_USERS.STANDARD,
+        path: PAGES.SWAG_ITEMS,
+      }
+    )
+    await swagOverviewPage.waitForIsDisplayed()
 
-        expect(await AppHeaderPage.getCartAmount()).toEqual(
-            '1',
-            'The amount of cart items is not equal to 1',
-        )
-    })
+    // Actual test starts here
+    expect(await appHeaderPage.getCartAmount()).toEqual('')
 
-    it('should validate that a product can be removed from the cart', async () => {
-        await setTestContext({
-            user: LOGIN_USERS.STANDARD,
-            path: PAGES.SWAG_ITEMS,
-            products: [PRODUCTS.BACKPACK],
-        })
-        await SwagOverviewPage.waitForIsDisplayed()
+    await swagOverviewPage.addSwagToCart(0)
 
-        // Actual test starts here
-        expect(await AppHeaderPage.getCartAmount()).toEqual(
-            '1',
-            'The amount of cart items is not equal to 1',
-        )
+    expect(await appHeaderPage.getCartAmount()).toEqual('1')
+  })
 
-        await SwagOverviewPage.removeSwagFromCart(0)
+  test('should validate that a product can be removed from the cart', async ({page}) => {
+    await setTestContext(
+      page,
+      {
+        user: LOGIN_USERS.STANDARD,
+        path: PAGES.SWAG_ITEMS,
+        products: [PRODUCTS.BACKPACK],
+      }
+    )
+    await swagOverviewPage.waitForIsDisplayed()
 
-        expect(await AppHeaderPage.getCartAmount()).toEqual(
-            '',
-            'The amount of cart items is not equal to 0',
-        )
-    })
+    // Actual test starts here
+    expect(await appHeaderPage.getCartAmount()).toEqual('1')
 
-    it('should be able to open the cart summary page', async () => {
-        await setTestContext({
-            user: LOGIN_USERS.STANDARD,
-            path: PAGES.SWAG_ITEMS,
-        })
-        await SwagOverviewPage.waitForIsDisplayed()
+    await swagOverviewPage.removeSwagFromCart(0)
 
-        // Actual test starts here
-        await AppHeaderPage.openCart()
+    expect(await appHeaderPage.getCartAmount()).toEqual('')
+  })
 
-        expect(await CartSummaryPage.waitForIsDisplayed()).toEqual(
-            true,
-            'Cart Summary page was not shown',
-        )
-    })
+  test('should be able to open the cart summary page', async ({page}) => {
+    await setTestContext(
+      page,
+      {
+        user: LOGIN_USERS.STANDARD,
+        path: PAGES.SWAG_ITEMS,
+      }
+    )
+    await swagOverviewPage.waitForIsDisplayed()
+
+    // Actual test starts here
+    await appHeaderPage.openCart()
+
+    expect(await cartSummaryPage.waitForIsDisplayed()).toEqual(true)
+  })
 })

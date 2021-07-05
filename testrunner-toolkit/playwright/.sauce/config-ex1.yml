@@ -1,0 +1,58 @@
+apiVersion: v1alpha
+kind: playwright
+showconsolelog: false
+
+# Sauce Labs specific information
+sauce:
+  region: eu-central-1 # or us-west-1
+  concurrency: 10 # Controls how many suites are executed at the same time.
+  metadata:
+    name: Default Playwright with SauceCTL
+    tags:
+      - playwright
+      - default
+    build: "Playwright: Default test set - $DATE"
+  sauceignore: .sauceignore
+
+# Playwright specific information
+playwright:
+  version: 1.11.1
+# Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
+rootDir: .
+
+# Add extra dev dependencies which are needed to run this specific project
+npm:
+  packages:
+    # This project has been set up with the "Playwright Test Runner", see https://playwright.dev/docs/test-intro
+    # That one needs to be added as a devDependency
+    "@playwright/test": "^1.12.3"
+    "playwright": "^1.12.3"
+
+suites:
+  - name: "Playwright - default - Chrome"
+    platformName: windows 10
+    # Available resolutions on Windows:
+    # - '800x600'
+    # - '1024x768'
+    # - '1152x864'
+    # - '1280x768'
+    # - '1280x800'
+    # - '1280x960'
+    # - '1280x1024'
+    # - '1400x1050'
+    # - '1440x900'
+    # - '1600x1200'
+    # - '1680x1050'
+    # - '1920x1080'
+    # - '1920x1200'
+    # - '2560x1600'
+    params:
+      browserName: chromium
+      headful: true
+
+artifacts:
+  download:
+    match:
+      - '*'
+    when: always
+    directory: ./artifacts

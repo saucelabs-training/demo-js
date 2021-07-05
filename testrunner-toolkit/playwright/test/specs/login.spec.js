@@ -1,37 +1,35 @@
-const { LOGIN_USERS } = require('../e2eConstants')
-const LoginPage = require('../page-objects/LoginPage')
-const SwagOverviewPage = require('../page-objects/SwagOverviewPage')
+const {test, expect} = require('@playwright/test')
+const {LOGIN_USERS} = require('../e2eConstants')
+const {LoginPage} = require('../page-objects/LoginPage')
+const {SwagOverviewPage} = require('../page-objects/SwagOverviewPage')
 
-describe('LoginPage', () => {
-    beforeEach(async () => {
-        await LoginPage.open()
-    })
+test.describe('LoginPage', () => {
+  let loginPage
+  let swagOverviewPage
 
-    it('should be able to test loading of login page', async () => {
-        expect(await LoginPage.waitForIsDisplayed()).toEqual(
-            true,
-            'LoginPage page was not shown',
-        )
-    })
+  test.beforeEach(async ({page}) => {
+    loginPage = new LoginPage(page)
+    swagOverviewPage = new SwagOverviewPage(page)
 
-    it('should be able to login with a standard user', async () => {
-        await LoginPage.signIn(LOGIN_USERS.STANDARD)
+    await loginPage.open();
+  })
 
-        // Wait for the inventory screen and check it
-        expect(await SwagOverviewPage.waitForIsDisplayed()).toEqual(
-            true,
-            'Inventory List screen was not shown',
-        )
-    })
+  test('should be able to test loading of login page', async ({page}) => {
+    expect(await loginPage.waitForIsDisplayed()).toEqual(true)
+  })
 
-    it('should not be able to login with a locked user', async () => {
-        // It doesn't matter which error we check, all errors should be checked in a UT
-        // With this UT we just check that A failure is triggered
-        await LoginPage.signIn(LOGIN_USERS.LOCKED)
+  test('should be able to login with a standard user', async ({page}) => {
+    await loginPage.signIn(LOGIN_USERS.STANDARD)
 
-        expect(await LoginPage.getErrorMessage()).toContain(
-            'Epic sadface: Sorry, this user has been locked out.',
-            'The error message is not as expected',
-        )
-    })
+    // Wait for the inventory screen and check it
+    expect(await swagOverviewPage.waitForIsDisplayed()).toEqual(true)
+  })
+
+  test('should not be able to login with a locked user', async ({page}) => {
+    // It doesn't matter which error we check, all errors should be checked in a UT
+    // With this UT we just check that A failure is triggered
+    await loginPage.signIn(LOGIN_USERS.LOCKED)
+
+    expect(await loginPage.getErrorMessage()).toContain('Epic sadface: Sorry, this user has been locked out.')
+  })
 })

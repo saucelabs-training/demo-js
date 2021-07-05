@@ -1,17 +1,24 @@
-const { LOGIN_USERS, PAGES } = require('../e2eConstants')
-const CheckoutCompletePage = require('../page-objects/CheckoutCompletePage')
-const { setTestContext } = require('../helpers')
+const {test, expect} = require('@playwright/test');
+const {LOGIN_USERS, PAGES} = require('../e2eConstants')
+const {CheckoutCompletePage} = require('../page-objects/CheckoutCompletePage')
+const {setTestContext} = require('../helpers')
 
-describe('Checkout - Complete', () => {
-    it('should be able to test loading of login page', async () => {
-        await setTestContext({
-            user: LOGIN_USERS.STANDARD,
-            path: PAGES.CHECKOUT_COMPLETE,
-        })
+test.describe('Checkout - Complete', () => {
+  let checkoutCompletePage
 
-        expect(await CheckoutCompletePage.waitForIsDisplayed()).toEqual(
-            true,
-            'Checkout complete page was not shown',
-        )
-    })
+  test.beforeEach(async ({page}) => {
+    checkoutCompletePage = new CheckoutCompletePage(page)
+  })
+
+  test('should be able to test loading of login page', async ({page}) => {
+    await setTestContext(
+      page,
+      {
+        user: LOGIN_USERS.STANDARD,
+        path: PAGES.CHECKOUT_COMPLETE,
+      }
+    )
+
+    expect(await checkoutCompletePage.waitForIsDisplayed()).toEqual(true)
+  })
 })

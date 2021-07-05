@@ -1,55 +1,56 @@
 const BasePage = require('./BasePage')
 const SELECTORS = {
-    screen: '#checkout_info_container',
-    cancelButton: '.cart_cancel_link',
-    continueCheckoutButton: '.cart_button',
-    firstName: '[data-test="firstName"]',
-    lastName: '[data-test="lastName"]',
-    postalCode: '[data-test="postalCode"]',
-    errorMessage: '[data-test="error"]',
+  screen: '#checkout_info_container',
+  cancelButton: '.cart_cancel_link',
+  continueCheckoutButton: '.cart_button',
+  firstName: '[data-test="firstName"]',
+  lastName: '[data-test="lastName"]',
+  postalCode: '[data-test="postalCode"]',
+  errorMessage: '[data-test="error"]',
 }
 
 class CheckoutPersonalInfoPage extends BasePage {
-    constructor() {
-        super(SELECTORS.screen)
-    }
+  constructor(page) {
+    super(page, SELECTORS.screen)
+    this.page = page
+  }
 
-    /**
-     * Submit personal info
-     *
-     * @param {object} personalInfo
-     * @param {string} personalInfo.firstName
-     * @param {string} personalInfo.lastName
-     * @param {string} personalInfo.zip
-     */
-    async submitPersonalInfo(personalInfo) {
-        const { firstName, lastName, zip } = personalInfo
+  /**
+   * Submit personal info
+   *
+   * @param {object} personalInfo
+   * @param {string} personalInfo.firstName
+   * @param {string} personalInfo.lastName
+   * @param {string} personalInfo.zip
+   */
+  async submitPersonalInfo(personalInfo) {
+    const {firstName, lastName, zip} = personalInfo
 
-        await page.type(SELECTORS.firstName, firstName)
-        await page.type(SELECTORS.lastName, lastName)
-        await page.type(SELECTORS.postalCode, zip)
-        await page.click(SELECTORS.continueCheckoutButton)
-    }
+    await this.page.type(SELECTORS.firstName, firstName)
+    await this.page.type(SELECTORS.lastName, lastName)
+    await this.page.type(SELECTORS.postalCode, zip)
+    await this.page.click(SELECTORS.continueCheckoutButton)
+  }
 
-    /**
-     * Get the text or the error message container
-     *
-     * @return {Promise<string>}
-     */
-    async getErrorMessage() {
-        const elementHandle = await page.$(SELECTORS.errorMessage)
+  /**
+   * Get the text or the error message container
+   *
+   * @return {Promise<string>}
+   */
+  async getErrorMessage() {
+    const elementHandle = await this.page.$(SELECTORS.errorMessage)
 
-        return elementHandle.textContent()
-    }
+    return elementHandle.textContent()
+  }
 
-    /**
-     * Cancel checkout
-     *
-     * @return {Promise<void>}
-     */
-    async cancelCheckout() {
-        return page.click(SELECTORS.cancelButton)
-    }
+  /**
+   * Cancel checkout
+   *
+   * @return {Promise<void>}
+   */
+  async cancelCheckout() {
+    return this.page.click(SELECTORS.cancelButton)
+  }
 }
 
-module.exports = new CheckoutPersonalInfoPage()
+module.exports = {CheckoutPersonalInfoPage}
