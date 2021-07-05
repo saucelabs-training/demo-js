@@ -36,14 +36,7 @@ command in a new terminal
 
     npm run test.local
 
-It will run all tests in your local Chrome browser in headless mode. The logs will look like this
-
-<details>
-<summary>Expand to see the logs of a local execution</summary>
-```shell
-
-```
-</details>
+It will run all tests in your local Chrome browser in headless mode.
 
 ## Run tests in Sauce
 There are two options to run the examples (see the [examples](#examples) below):
