@@ -14,7 +14,9 @@ fixture`Test checkout summary page`
             path: PAGES.CART,
             products: [PRODUCTS.BACKPACK],
         });
-        await t.expect(CartSummaryPage.isScreenDisplayed()).ok();
+        await t
+          .resizeWindow(1400, 900)
+          .expect(CartSummaryPage.isScreenDisplayed()).ok();
         await MenuPage.open();
     });
 

@@ -7,6 +7,9 @@ import {setTestContext} from '../helpers';
 import CartSummaryPage from '../page-objects/CartSummaryPage';
 
 fixture`Test swag items overview page`
+  .beforeEach(async t => {
+      await t.resizeWindow(1400, 900);
+  });
 
 test('should validate that all products are present', async t => {
     await setTestContext({
