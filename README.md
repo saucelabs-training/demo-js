@@ -52,7 +52,7 @@ framework when using Sauce Labs.
               ![WebdriverIO - Webdriver - Examples - W3C](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20W3C/badge.svg)
             - [WebdriverIO with Typescript](webdriverio/webdriver/examples/typescript/)
 - **SauceCTL Testrunner Toolkit**
-    - [Cypress examples](./testrunner-toolkit/cypress/examples)
+    - [Cypress examples](./testrunner-toolkit/cypress)
         - [Cypress and a Default Test Set](./testrunner-toolkit/cypress/README.md#example-1---minimal-configuration-for-all-tests)
         - [Cypress and Cross Browser Testing on Sauce Labs](./testrunner-toolkit/cypress/README.md#example-3---cross-browser-tests)
         - [Cypress and Cross Browser Testing browser versioning](./testrunner-toolkit/cypress/README.md#example-4---cross-versions-tests)
