@@ -1,0 +1,39 @@
+apiVersion: v1alpha
+kind: cypress
+sauce:
+  region: eu-central-1 # or us-west-1
+  concurrency: 3
+  metadata:
+    name: Cypress Cross Browser tests
+    tags:
+      - cypress
+      - cross-browser
+    build: "Cypress: Cross Browser - $DATE"
+cypress:
+  version: 7.3.0
+  configFile: "cypress.json"  # We determine related files based on the location of the config file.
+suites:
+  # Chrome v91
+  - name: "Swag Labs Login Chrome latest"
+    browser: "chrome"
+    browserVersion: "latest"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/login.*" ]
+  # chrome 85
+  - name: "Swag Labs Login chrome latest-1"
+    browser: "chrome"
+    browserVersion: "latest-1"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/login.*" ]
+  # chrome 76
+  - name: "Swag Labs Login chrome latest-2"
+    browser: "chrome"
+    browserVersion: "latest-2"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/login.*" ]

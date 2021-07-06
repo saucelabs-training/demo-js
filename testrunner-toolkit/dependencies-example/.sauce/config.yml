@@ -1,0 +1,28 @@
+apiVersion: v1alpha
+kind: cypress
+sauce:
+  region: eu-central-1 # or us-west-1
+  concurrency: 2
+  metadata:
+    name: Cypress Dependency Test
+    tags:
+      - cypress
+      - dependencies
+    build: "Cypress: Axe dependency test - $DATE"
+npm:
+  packages:
+    "axe-core": "^4.1.3"
+    "cypress-axe": "^0.12.2"
+docker:
+  fileTransfer: mount
+cypress:
+  version: 7.3.0
+  configFile: "cypress.json"  # We determine related files based on the location of the config file.
+suites:
+  # Chrome
+  - name: "Swag Labs Login Axe Test"
+    browser: "chrome"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    config:
+      testFiles: [ "**/axe.*" ]
