@@ -75,6 +75,6 @@ In this example, all tests are executed on a single chrome browser in sequential
 `config-ex4.yml` run the login tests on different Chrome versions
 
 ### Example about using extra dependencies
-  [This folder](./dependencies) contains a simple set up for Cypress with a test 
-  that uses a dependency. This can be executed locally or on Sauce Labs.
+[This folder](../dependencies-example) contains a simple set up for Cypress with a test that uses a dependency. This can
+be executed locally or on Sauce Labs.
 
