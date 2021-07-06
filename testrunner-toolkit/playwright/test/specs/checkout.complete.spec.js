@@ -1,16 +1,16 @@
-const {test, expect} = require('@playwright/test');
+const {describe, it, beforeEach, expect} = require('@playwright/test');
 const {LOGIN_USERS, PAGES} = require('../e2eConstants')
 const {CheckoutCompletePage} = require('../page-objects/CheckoutCompletePage')
 const {setTestContext} = require('../helpers')
 
-test.describe('Checkout - Complete', () => {
+describe('Checkout - Complete', () => {
   let checkoutCompletePage
 
-  test.beforeEach(async ({page}) => {
+  beforeEach(async ({page}) => {
     checkoutCompletePage = new CheckoutCompletePage(page)
   })
 
-  test('should be able to test loading of login page', async ({page}) => {
+  it('should be able to test loading of login page', async ({page}) => {
     await setTestContext(
       page,
       {

@@ -1,4 +1,4 @@
-const {test, expect} = require('@playwright/test');
+const {describe, it, beforeEach, expect} = require('@playwright/test');
 const {LOGIN_USERS, PAGES, PRODUCTS} = require('../e2eConstants')
 const {MenuPage} = require('../page-objects/MenuPage')
 const {SwagOverviewPage} = require('../page-objects/SwagOverviewPage')
@@ -7,14 +7,14 @@ const {LoginPage} = require('../page-objects/LoginPage')
 const {AppHeaderPage} = require('../page-objects/AppHeaderPage')
 const {setTestContext} = require('../helpers')
 
-test.describe('Menu', () => {
+describe('Menu', () => {
   let appHeaderPage
   let cartSummaryPage
   let loginPage
   let menuPage
   let swagOverviewPage
 
-  test.beforeEach(async ({page}) => {
+  beforeEach(async ({page}) => {
     appHeaderPage = new AppHeaderPage(page)
     cartSummaryPage = new CartSummaryPage(page)
     menuPage = new MenuPage(page)
@@ -33,26 +33,26 @@ test.describe('Menu', () => {
     await menuPage.open()
   })
 
-  test('should be able to the swag items overview page', async () => {
+  it('should be able to the swag items overview page', async () => {
     await menuPage.openInventoryList()
 
     expect(await swagOverviewPage.waitForIsDisplayed()).toEqual(true)
   })
 
-  test('should be able to open the about page', async ({page}) => {
+  it('should be able to open the about page', async ({page}) => {
     const currentUrl = page.url()
     await menuPage.openAboutPage()
 
     expect(page.url()).not.toEqual(currentUrl)
   })
 
-  test('should be able to log out', async () => {
+  it('should be able to log out', async () => {
     await menuPage.logout()
 
     expect(await loginPage.waitForIsDisplayed()).toEqual(true)
   })
 
-  test('should be able to clear the cart', async () => {
+  it('should be able to clear the cart', async () => {
     expect(await appHeaderPage.getCartAmount()).toEqual('1')
 
     await menuPage.restAppState()

@@ -20,14 +20,6 @@ playwright:
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: .
 
-# Add extra dev dependencies which are needed to run this specific project
-npm:
-  packages:
-    # This project has been set up with the "Playwright Test Runner", see https://playwright.dev/docs/test-intro
-    # That one needs to be added as a devDependency
-    "@playwright/test": "^1.12.3"
-    "playwright": "^1.12.3"
-
 suites:
   - name: "Playwright - default - Chrome"
     platformName: windows 10

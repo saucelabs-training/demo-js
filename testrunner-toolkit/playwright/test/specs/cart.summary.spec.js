@@ -1,4 +1,4 @@
-const {test, expect} = require('@playwright/test');
+const {describe, it, beforeEach, expect} = require('@playwright/test');
 const {LOGIN_USERS, PAGES, PRODUCTS} = require('../e2eConstants')
 const {SwagOverviewPage} = require('../page-objects/SwagOverviewPage')
 const {CheckoutPersonalInfoPage} = require('../page-objects/CheckoutPersonalInfoPage')
@@ -6,20 +6,20 @@ const {AppHeaderPage} = require('../page-objects/AppHeaderPage')
 const {CartSummaryPage} = require('../page-objects/CartSummaryPage')
 const {setTestContext} = require('../helpers')
 
-test.describe('Cart Summary page', () => {
+describe('Cart Summary page', () => {
   let appHeaderPage
   let cartSummaryPage
   let checkoutPersonalInfoPage
   let swagOverviewPage
 
-  test.beforeEach(async ({page}) => {
+  beforeEach(async ({page}) => {
     appHeaderPage = new AppHeaderPage(page)
     cartSummaryPage = new CartSummaryPage(page)
     checkoutPersonalInfoPage = new CheckoutPersonalInfoPage(page)
     swagOverviewPage = new SwagOverviewPage(page)
   })
 
-  test('should validate that we can continue shopping', async ({page}) => {
+  it('should validate that we can continue shopping', async ({page}) => {
     await setTestContext(
       page,
       {
@@ -35,7 +35,7 @@ test.describe('Cart Summary page', () => {
     expect(await swagOverviewPage.waitForIsDisplayed()).toEqual(true)
   })
 
-  test('should validate that we can go from the cart to the checkout page', async ({page}) => {
+  it('should validate that we can go from the cart to the checkout page', async ({page}) => {
     await setTestContext(
       page,
       {
@@ -51,7 +51,7 @@ test.describe('Cart Summary page', () => {
     expect(await checkoutPersonalInfoPage.waitForIsDisplayed()).toEqual(true)
   })
 
-  test('should validate that a product can be removed from the cart', async ({page}) => {
+  it('should validate that a product can be removed from the cart', async ({page}) => {
     await setTestContext(
       page,
       {

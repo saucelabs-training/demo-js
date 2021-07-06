@@ -1,4 +1,4 @@
-const {test, expect} = require('@playwright/test');
+const {describe, it, beforeEach, expect} = require('@playwright/test');
 const {LOGIN_USERS, PAGES, PRODUCTS} = require('../e2eConstants')
 const {AppHeaderPage} = require('../page-objects/AppHeaderPage')
 const {CartSummaryPage} = require('../page-objects/CartSummaryPage')
@@ -6,20 +6,20 @@ const {SwagDetailsPage} = require('../page-objects/SwagDetailsPage')
 const {SwagOverviewPage} = require('../page-objects/SwagOverviewPage')
 const {setTestContext} = require('../helpers')
 
-test.describe('Swag items list', () => {
+describe('Swag items list', () => {
   let appHeaderPage
   let cartSummaryPage
   let swagDetailsPage
   let swagOverviewPage
 
-  test.beforeEach(async ({page}) => {
+  beforeEach(async ({page}) => {
     appHeaderPage = new AppHeaderPage(page)
     cartSummaryPage = new CartSummaryPage(page)
     swagDetailsPage = new SwagDetailsPage(page)
     swagOverviewPage = new SwagOverviewPage(page)
   })
 
-  test('should validate that all products are present', async ({page}) => {
+  it('should validate that all products are present', async ({page}) => {
     await setTestContext(
       page,
       {
@@ -33,7 +33,7 @@ test.describe('Swag items list', () => {
     expect(await swagOverviewPage.getAmount()).toEqual(6)
   })
 
-  test('should validate that the details of a product can be opened', async ({page}) => {
+  it('should validate that the details of a product can be opened', async ({page}) => {
     await setTestContext(
       page,
       {
@@ -53,7 +53,7 @@ test.describe('Swag items list', () => {
     expect(await swagDetailsPage.getSwagDetailsText()).toContain(product)
   })
 
-  test('should validate that a product can be added to the cart', async ({page}) => {
+  it('should validate that a product can be added to the cart', async ({page}) => {
     await setTestContext(
       page,
       {
@@ -71,7 +71,7 @@ test.describe('Swag items list', () => {
     expect(await appHeaderPage.getCartAmount()).toEqual('1')
   })
 
-  test('should validate that a product can be removed from the cart', async ({page}) => {
+  it('should validate that a product can be removed from the cart', async ({page}) => {
     await setTestContext(
       page,
       {
@@ -90,7 +90,7 @@ test.describe('Swag items list', () => {
     expect(await appHeaderPage.getCartAmount()).toEqual('')
   })
 
-  test('should be able to open the cart summary page', async ({page}) => {
+  it('should be able to open the cart summary page', async ({page}) => {
     await setTestContext(
       page,
       {
