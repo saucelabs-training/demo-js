@@ -1,10 +1,17 @@
-# Cypress Cross Browser Tests
+# `saucectl` with extra dependencies
+> **NOTE 1:**
+> 
+> `saucectl` can install extra dependencies, see the docs
+> [here](https://docs.saucelabs.com/testrunner-toolkit/configuration/index.html#set-npm-packages-in-configyml). The way
+> `saucectl` provides the option to install extra dependencies works the same for all supported JavaScript based
+> frameworks.
+
 This folder contains a simple set up for Cypress with a test that uses a **dependency**. In this case the 
 [cypress-axe](https://github.com/component-driven/cypress-axe/)-library to test accessibility with axe-core.
 This can be run locally, in a docker container and on Sauce Labs with the
 [Sauce Labs Testrunner Toolkit](https://docs.saucelabs.com/testrunner-toolkit/index.html).
 
-> **NOTE 1:**
+> **NOTE 2:**
 > 
 >Running Cypress Test with dependencies on the Sauce Labs cloud can be set in the [config.yml](./.sauce/config.yml) by
 > adding extra `npm` dependencies on the root of the `yml`-file like this
@@ -18,21 +25,30 @@ This can be run locally, in a docker container and on Sauce Labs with the
 > Form more information check [npm dependencies](https://docs.saucelabs.com/testrunner-toolkit/configuration/common-syntax#npm)
 > in our documentation.
 
-> **NOTE 2:** The sample AXE test will fail due to accessibility issues
+> **NOTE 3:** The sample AXE test will fail due to accessibility issues
 
 Make sure you follow all steps as mentioned below.
 
-## Local Usage
-### Install dependencies
->**Note:** Make sure you are in the `testrunner-toolkit/cypress/examples/dependencies`-folder
+## Install dependencies
+- Open a new terminal and clone the main project by using the following command
 
-You can install all dependencies by running the following command
+  `git clone https://github.com/saucelabs-training/demo-js.git`
 
-    npm install
-    
-This will install all needed dependencies that are listed in the `package.json`-file
+- From the root of the project, execute
 
-### Run tests locally
+  ```shell
+  cd testrunner-toolkit
+  cd dependencies-example
+  ```
+
+  You are now in this folder.
+- Install all dependencies by running the following command in the terminal
+
+  `npm install`
+
+  This will install all dependencies, including the `saucectl`-runner
+
+## Run tests locally
 You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this 
 command
 
@@ -44,19 +60,24 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
  <summary>Click to expand and see the logs.</summary>
 
 ```log
- ╰ npm run test.local   
+npm run test.local
 
-> cypress-1@1.0.0 test.local /Users/sauce-training/demo-js/testrunner-toolkit/cypress/examples/dependencies
+> cypress-1@1.0.0 test.local
 > npx cypress run
 
+It looks like this is your first time using Cypress: 7.6.0
+
+✔  Verified Cypress! /Users/wimselles/Library/Caches/Cypress/7.6.0/Cypress.app
+
+Opening Cypress...
 
 ====================================================================================================
 
   (Run Starting)
 
   ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Cypress:    6.8.0                                                                              │
-  │ Browser:    Electron 87 (headless)                                                             │
+  │ Cypress:    7.6.0                                                                              │
+  │ Browser:    Electron 89 (headless)                                                             │
   │ Specs:      1 found (axe.spec.js)                                                              │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
 
@@ -70,13 +91,13 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
     1) should be able to test loading of login page
 
 
-  0 passing (1s)
+  0 passing (2s)
   1 failing
 
   1) Axe Login test
        should be able to test loading of login page:
      AssertionError: 6 accessibility violations were detected: expected 6 to equal 0
-      at Context.eval (https://www.saucedemo.com/__cypress/tests?p=cypress/support/index.js:37608:20)
+      at Context.eval (https://www.saucedemo.com/__cypress/tests?p=cypress/support/index.js:37605:20)
 
 
 
@@ -91,24 +112,24 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
   │ Skipped:      0                                                                                │
   │ Screenshots:  1                                                                                │
   │ Video:        true                                                                             │
-  │ Duration:     1 second                                                                         │
+  │ Duration:     2 seconds                                                                        │
   │ Spec Ran:     axe.spec.js                                                                      │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 
   (Screenshots)
 
-  -  /Users/sauce-training/demo-js/testrunner-toolkit/cypress/exa     (1280x720)
-     mples/dependencies/cypress/screenshots/axe.spec.js/Axe Login test -- should be a               
-     ble to test loading of login page (failed).png                                                 
+  -  /sauce-training/demo-js/testrunner-toolkit/dependencie    (1920x1080)
+     s-example/cypress/screenshots/axe.spec.js/Axe Login test -- should be able to te               
+     st loading of login page (failed).png                                                          
 
 
   (Video)
 
   -  Started processing:  Compressing to 32 CRF                                                     
-  -  Finished processing: /Users/sauce-training/demo-js/testrunne    (0 seconds)
-                          r-toolkit/cypress/examples/dependencies/cypress/videos/axe.               
-                          spec.js.mp4                                                               
+  -  Finished processing: /sauce-training/demo-js/testrunne     (1 second)
+                          r-toolkit/dependencies-example/cypress/videos/axe.spec.js.m               
+                          p4                                                                        
 
 
 ====================================================================================================
@@ -118,9 +139,9 @@ It will run all tests in *headless*-mode, meaning you will not see a browser sta
 
        Spec                                              Tests  Passing  Failing  Pending  Skipped  
   ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ ✖  axe.spec.js                              00:01        1        -        1        -        - │
+  │ ✖  axe.spec.js                              00:02        1        -        1        -        - │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
-    ✖  1 of 1 failed (100%)                     00:01        1        -        1        -        -  
+    ✖  1 of 1 failed (100%)                     00:02        1        -        1        -        - 
  ```
 </details>
 
@@ -130,79 +151,111 @@ You can also run the test in *headfull*-mode with this command
     
 You will then see Chrome popping up.
 
-## Sauce Labs Testrunner Toolkit
-### Install dependencies
-Follow instructions from [here](https://docs.saucelabs.com/testrunner-toolkit/installation)
+## Run tests in Sauce
+There are two options to run the tests:
+1. Through a npm script by opening a terminal and enter
 
-### Run tests with Docker and Sauce
-Make sure you've installed Docker on your local machine or in your pipeline, see also 
-[this](https://docs.saucelabs.com/testrunner-toolkit/installation) page.
+     ```shell
+     # For the EU DC
+     npm run test.sauce.eu
+     
+     # For the US DC
+     npm run test.sauce.us
+     ```
 
-You can then run this project with
+1. Or using the `saucectl`-command and select a configuration. This can be done by opening a terminal and type in the
+   following command
 
-    npx saucectl run --test-env docker
-    
-    # OR
-    npm run test.docker.sauce
+   > **Note:** `npx` is used here because `saucectl` is one of the `devDependencies` in this project. When `saucectl`
+   > is installed globally (with `npm install -g saucectl`) then you can use `saucectl` without the `npx prefix`
+    ```shell
+    # For the EU DC
+    npx saucectl run
+     
+    # For the US DC
+    npx saucectl run --region us-west-1
+    ```
 
-It will run all tests and the logs will look like this
+> **NOTE 4:** To see all options that `saucectl` is providing type in `npx saucectl --help`
+
+It will run all tests on Chrome, Firefox and MicroSoftEdge and the logs will look like this
 
 <details>
  <summary>Click to expand and see the logs.</summary>
 
 ```log
-╰ npm run test.docker.sauce
+npm run test.sauce.eu
 
-> cypress-1@1.0.0 test.docker.sauce /Users/sauce-training/demo-js/testrunner-toolkit/cypress/examples/dependencies
-> npx saucectl run --test-env docker
+> cypress-1@1.0.0 test.sauce.eu
+> DATE=\"$(date)\" npx saucectl run
 
-10:39:34 INF Running version 0.33.3
-10:39:34 INF Reading config file config=.sauce/config.yml
-10:39:34 INF Running Cypress in Docker
-10:39:34 INF concurrency > 1: forcing file transfer mode to use 'copy'.
-10:39:35 INF Launching workers. concurrency=2
-10:39:35 INF Setting up test environment suite="Swag Labs Login Axe Test"
-10:39:35 INF Using credentials set by environment variables suite="Swag Labs Login Axe Test"
-10:39:35 INF Starting container id=7d0cfcdcd741 img=saucelabs/stt-cypress-mocha-node:v5.8.0 suite="Swag Labs Login Axe Test"
-10:39:35 INF File copied from=cypress.json suite="Swag Labs Login Axe Test" to=/home/seluser/
-10:39:35 INF File copied from=cypress suite="Swag Labs Login Axe Test" to=/home/seluser/
-10:39:45 INF Suites in progress: 1
-10:39:55 INF Suites in progress: 1
-10:40:05 INF Suites in progress: 1
-10:40:06 WRN exitCode is 1 suite="Swag Labs Login Axe Test"
-10:40:06 INF Tearing down environment suite="Swag Labs Login Axe Test"
-10:40:08 ERR Suite finished. passed=false suite="Swag Labs Login Axe Test" url=https://app.eu-central-1.saucelabs.com/tests/a75bd31870f944a6b7dc6176b20004b2
-10:40:08 INF console.log output: 
+Running version 0.52.3
+11:58:29 WRN 'rootDir' is not defined. Using the current working directory instead (equivalent to 'rootDir: .'). Please set 'rootDir' explicitly in your config!
+11:58:29 INF Running Cypress in Sauce Labs
 
-> sauce-cypress-runner@5.8.0 test /home/seluser
-> ./bin/cypress "-r" "/home/seluser/sauce-runner.json" "-s" "Swag Labs Login Axe Test"
+                                        (.                          
+                                       #.                           
+                                       #.                           
+                           .####################                    
+                         #####////////*******/######                
+                       .##///////*****************###/              
+                      ,###////*********************###              
+                      ####//***********************####             
+                       ###/************************###              
+                        ######********************###. ##           
+                           (########################  ##     ##     
+                                   ,######(#*         ##*   (##     
+                               /############*          #####        
+                           (########(  #########(    ###            
+                         .#######,    */  ############              
+                      ,##########  %#### , ########*                
+                    *### .#######/  ##  / ########                  
+                   ###   .###########//###########                  
+               ######     ########################                  
+             (#(    *#(     #######.    (#######                    
+                    ##,    /########    ########                    
+                           *########    ########                    
 
-Sauce Cypress Runner 5.8.0
+   _____        _    _  _____ ______    _____ _      ____  _    _ _____  
+  / ____|  /\  | |  | |/ ____|  ____|  / ____| |    / __ \| |  | |  __ \ 
+ | (___   /  \ | |  | | |    | |__    | |    | |   | |  | | |  | | |  | |
+  \___ \ / /\ \| |  | | |    |  __|   | |    | |   | |  | | |  | | |  | |
+  ____) / ____ \ |__| | |____| |____  | |____| |___| |__| | |__| | |__| |
+ |_____/_/    \_\____/ \_____|______|  \_____|______\____/ \____/|_____/
+
+11:58:29 INF Project archived. durationMs=6 size=59946
+11:58:29 INF Checking if /var/folders/vg/lfm83td92t921fbqjrxrs4ym0000gp/T/saucectl-app-payload879868874/app.zip has already been uploaded previously
+11:58:30 INF Project uploaded. durationMs=401 storageId=67151189-af24-4320-b427-ab8673002caa
+11:58:30 INF Launching workers. concurrency=2
+11:58:30 INF Starting suite. region=eu-central-1 suite="Swag Labs Login Axe Test"
+11:58:32 INF Suite started. browser=chrome platform="Windows 10" suite="Swag Labs Login Axe Test" url=https://app.eu-central-1.saucelabs.com/tests/1f994b76f18848799d35e505e5f6e505
+11:58:40 INF Suites in progress: 1
+11:58:50 INF Suites in progress: 1
+11:59:00 INF Suites in progress: 1
+11:59:10 INF Suites in progress: 1
+11:59:18 ERR Suite finished. passed=false suite="Swag Labs Login Axe Test" url=https://app.eu-central-1.saucelabs.com/tests/1f994b76f18848799d35e505e5f6e505
+11:59:18 INF console.log output: 
+Sauce Cypress Runner 7.1.1
 Preparing npm environment
 
 Installing packages: axe-core@^4.1.3 cypress-axe@^0.12.2
-npm WARN The package typescript is included as both a dev and production dependency.
+npm WARN read-shrinkwrap This version of npm is compatible with lockfileVersion@1, but package-lock.json was generated for lockfileVersion@2. I'll try to do my best with it!
+npm WARN cypress-axe@0.12.2 requires a peer of cypress@^3 || ^4 || ^5 || ^6 but none is installed. You must install peer dependencies yourself.
+npm WARN cypress-1@1.0.0 No repository field.
 
-+ axe-core@4.1.3
++ axe-core@4.2.3
 + cypress-axe@0.12.2
-added 2 packages from 5 contributors in 10.732s
-It looks like this is your first time using Cypress: 5.6.0
+added 2 packages from 5 contributors in 1.915s
 
-[10:39:48]  Verifying Cypress can run /home/seluser/.cache/Cypress/5.6.0/Cypress [started]
-[10:39:50]  Verified Cypress!       /home/seluser/.cache/Cypress/5.6.0/Cypress [title changed]
-[10:39:50]  Verified Cypress!       /home/seluser/.cache/Cypress/5.6.0/Cypress [completed]
+Couldn't determine Mocha version
 
-Opening Cypress...
-Couldn't find tsconfig.json. tsconfig-paths will be skipped
-
-tput: No value for $TERM and no -T specified
-================================================================================
+====================================================================================================
 
   (Run Starting)
 
   ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Cypress:    5.6.0                                                                              │
-  │ Browser:    Chrome 81                                                                          │
+  │ Cypress:    7.3.0                                                                              │
+  │ Browser:    Custom Chrome 91                                                                   │
   │ Specs:      1 found (axe.spec.js)                                                              │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
 
@@ -219,6 +272,7 @@ tput: No value for $TERM and no -T specified
   84 |         }
   85 |         else if (violations.length) {
   86 |             Cypress.log({
+6 accessibility violations were detected: expected 6 to equal 0
 
   (Results)
 
@@ -229,88 +283,35 @@ tput: No value for $TERM and no -T specified
   │ Pending:      0                                                                                │
   │ Skipped:      0                                                                                │
   │ Screenshots:  1                                                                                │
-  │ Video:        true                                                                             │
-  │ Duration:     1 second                                                                         │
+  │ Video:        false                                                                            │
+  │ Duration:     6 seconds                                                                        │
   │ Spec Ran:     axe.spec.js                                                                      │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 
   (Screenshots)
 
-  -  /home/seluser/__assets__/axe.spec.js/Axe Login test -- should be able to test lo     (1050x886)
-     ading of login page (failed).png                                                               
+  -  c:\chef\payload\__project__\__assets__\axe.spec.js\Axe Login test -- should be a     (1400x933)
+     ble to test loading of login page (failed).png                                                 
 
 
-================================================================================
+====================================================================================================
 
   (Run Finished)
-tput: No value for $TERM and no -T specified
 
 
        Spec                                              Tests  Passing  Failing  Pending  Skipped  
   ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ ✖  axe.spec.js                              00:01        1        -        1        -        - │
+  │ ×  axe.spec.js                              00:06        1        -        1        -        - │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
-    ✖  1 of 1 failed (100%)                     00:01        1        -        1        -        -  
+    ×  1 of 1 failed (100%)                     00:06        1        -        1        -        -  
 
-Using /home/seluser/__assets__/axe.spec.js.mp4 as the main video.
-
-Open job details page: https://app.eu-central-1.saucelabs.com/tests/a75bd31870f944a6b7dc6176b20004b2
-
-npm ERR! Test failed.  See above for more details.
  suite="Swag Labs Login Axe Test"
-10:40:08 ERR ┌────────────────────────────────┐
-10:40:08 ERR  1 of 1 suites have failed (100%) 
-10:40:08 ERR └────────────────────────────────┘
-```
-</details>
 
-### Running tests on the Sauce Labs cloud
-You can also run Cypress tests on Sauce Labs VM's with the following command:
-
-```bash
-npx saucectl run --test-env sauce
-
-# OR for use with the EU data center
-
-npm run test.sauce.eu
-
-# OR for use with the US data center
-npm run test.sauce.us
-```
-It will run all tests on Chrome, Firefox and MicroSoftEdge and the logs will look like this
-
-<details>
- <summary>Click to expand and see the logs.</summary>
-
-```log
-╰ npm run test.sauce.eu
-
-> cypress-1@1.0.0 test.sauce.eu /Users/sauce-training/demo-js/testrunner-toolkit/cypress/examples/cross-browser
-> DATE=\"$(date)\" npx saucectl run --test-env sauce
-
-10:31:40 INF Running version 0.33.3
-10:31:40 INF Reading config file config=.sauce/config.yml
-10:31:40 INF Running Cypress in Sauce Labs
-10:31:40 INF Project archived. durationMs=4 size=4087
-10:31:42 INF Project uploaded. durationMs=1115 storageId=b84ceb53-d5c0-4899-b6dd-a9d7546d336f
-10:31:42 INF Launching workers. concurrency=3
-10:31:42 INF Starting suite. region=us-west-1 suite="Swag Labs Login Chrome"
-10:31:42 INF Starting suite. region=us-west-1 suite="Swag Labs Login MicrosoftEdge"
-10:31:42 INF Starting suite. region=us-west-1 suite="Swag Labs Login Firefox"
-10:31:44 INF Suite started. suite="Swag Labs Login Chrome" url=https://app.saucelabs.com/tests/4a5a84a3906f48c98f774dd356ad678e
-10:31:45 INF Suite started. suite="Swag Labs Login Firefox" url=https://app.saucelabs.com/tests/638c20fc5e874d69bdb2418977e2326a
-10:31:48 INF Suite started. suite="Swag Labs Login MicrosoftEdge" url=https://app.saucelabs.com/tests/8765f0bc0eaf40fa80d0c0de555bc1b0
-10:31:52 INF Suites in progress: 3
-10:32:02 INF Suites in progress: 3
-10:32:12 INF Suites in progress: 3
-10:32:22 INF Suites in progress: 3
-10:32:29 INF Suite finished. passed=true suite="Swag Labs Login Chrome" url=https://app.saucelabs.com/tests/4a5a84a3906f48c98f774dd356ad678e
-10:32:31 INF Suite finished. passed=true suite="Swag Labs Login Firefox" url=https://app.saucelabs.com/tests/638c20fc5e874d69bdb2418977e2326a
-10:32:32 INF Suites in progress: 1
-10:32:33 INF Suite finished. passed=true suite="Swag Labs Login MicrosoftEdge" url=https://app.saucelabs.com/tests/8765f0bc0eaf40fa80d0c0de555bc1b0
-10:32:33 INF ┌───────────────────────┐
-10:32:33 INF  All suites have passed! 
-10:32:33 INF └───────────────────────┘
+       Name                                Duration    Status    Browser      Platform    
+──────────────────────────────────────────────────────────────────────────────────────────
+  ✖    Swag Labs Login Axe Test                 47s    failed    chrome 91    Windows 10  
+──────────────────────────────────────────────────────────────────────────────────────────
+  ✖    1 of 1 suites have failed (100%)         47s 
 ```
 </details>
