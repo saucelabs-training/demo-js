@@ -1,0 +1,22 @@
+{
+  "name": "cypress-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "open": "npx cypress open",
+    "test.local": "npx cypress run",
+    "test.local.headfull": "npx cypress run --headed",
+    "test.sauce.eu": "DATE=\\\"$(date)\\\" npx saucectl run",
+    "test.sauce.us": "DATE=\\\"$(date)\\\" npx saucectl run --region us-west-1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "axe-core": "^4.2.3",
+    "cypress": "^7.6.0",
+    "cypress-axe": "^0.12.2",
+    "saucectl": "^0.52.3"
+  }
+}

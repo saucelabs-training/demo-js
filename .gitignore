@@ -29,4 +29,4 @@ nightwatch/webdriver/examples/update-sauce/tests_output/
 **/cypress/videos/
 *.xml
 v6/
-artifacts
+**/artifacts/
