@@ -4,7 +4,8 @@
   "description": "This folder contains a simple set up for Jest and Playwright.",
   "main": "index.js",
   "scripts": {
-    "test.local": "npx playwright test",
+    "test.local": "npx folio --param browserName=chromium --reporter=list",
+    "test.local.headful": "npm run test.local -- --param headful=true",
     "test.sauce.ex1.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml",
     "test.sauce.ex1.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml --region us-west-1",
     "test.sauce.ex2.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex2.yml",
@@ -21,8 +22,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@playwright/test": "^1.12.3",
-    "playwright": "^1.12.3",
-    "saucectl": "^0.52.2"
+    "@playwright/test": "0.1111.0",
+    "playwright": "1.11.1",
+    "saucectl": "^0.52.4"
   }
 }

@@ -7,11 +7,11 @@ sauce:
   region: eu-central-1 # or us-west-1
   concurrency: 10 # Controls how many suites are executed at the same time.
   metadata:
-    name: Default Playwright with SauceCTL
+    name: Playwright Cross Browser tests with SauceCTL
     tags:
       - playwright
-      - default
-    build: "Playwright: Default test set - $DATE"
+      - cross browser
+    build: "Playwright: Cross Browser test set - $DATE"
   sauceignore: .sauceignore
 
 # Playwright specific information
@@ -21,11 +21,24 @@ playwright:
 rootDir: .
 
 suites:
-  - name: "Playwright - default - Chrome"
+  - name: "Swag Labs Login Chrome"
     platformName: windows 10
     params:
       browserName: chromium
       headful: true
+    testMatch: "**/login.*"
+  - name: "Swag Labs Login Firefox"
+    platformName: windows 10
+    params:
+      browserName: firefox
+      headful: true
+    testMatch: "**/login.*"
+  - name: "Swag Labs Login Webkit"
+    platformName: windows 10
+    params:
+      browserName: webkit
+      headful: true
+    testMatch: "**/login.*"
 
 artifacts:
   download:

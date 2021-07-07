@@ -37,6 +37,52 @@ command in a new terminal
 
 It will run all tests in your local Chrome browser in headless mode.
 
+You can also run the tests in headful mode by running this command
+
+    npm run test.local.headful
+
+The logs from a local execution will look like this
+
+<details>
+<summary>Expand to see the local logs</summary>
+
+```shell
+npx folio --param browserName=chromium --reporter=list
+
+Running 25 tests using 4 workers
+
+✓ Cart Summary page should validate that we can continue shopping (3s)
+✓ Checkout - Complete should be able to test loading of login page (3s)
+✓ Checkout - Personal info should validate we get an error if we don not provide all personal information (3s)
+✓ Checkout - Summary should validate that we can continue shopping (3s)
+✓ LoginPage should be able to test loading of login page (676ms)
+✓ Cart Summary page should validate that we can go from the cart to the checkout page (1s)
+✓ LoginPage should be able to login with a standard user (1s)
+✓ Checkout - Personal info should validate that we can cancel the first checkout (4s)
+✓ Checkout - Summary should validate that we can cancel checkout and go to the inventory page (2s)
+✓ Cart Summary page should validate that a product can be removed from the cart (1s)
+✓ LoginPage should not be able to login with a locked user (1s)
+✓ Checkout - Summary should validate that we have 1 product in our checkout overview (904ms)
+✓ Menu should be able to the swag items overview page (2s)
+✓ Swag Item Details should validate that we can go back from the details to the inventory page (2s)
+✓ Swag items list should validate that all products are present (2s)
+✓ Menu should be able to open the about page (7s)
+✓ Swag Item Details should validate that a product can be added to a cart (2s)
+✓ Swag items list should validate that the details of a product can be opened (2s)
+✓ Checkout - Personal info should be able to continue the checkout (2s)
+✓ Swag items list should validate that a product can be added to the cart (1s)
+✓ Swag Item Details should validate that a product can be removed from the cart (1s)
+✓ Swag items list should validate that a product can be removed from the cart (1s)
+✓ Swag items list should be able to open the cart summary page (920ms)
+✓ Menu should be able to log out (1s)
+✓ Menu should be able to clear the cart (1s)
+
+25 passed (17s)
+
+✨  Done in 21.10s.
+```
+</details>
+
 ## Run tests in Sauce
 There are two options to run the examples (see the [examples](#examples) below):
 1. Through a npm script by opening a terminal and enter
@@ -84,8 +130,14 @@ npm run test.sauce.ex#.us
 > **Note:** The `#` stands for the number of the below mentioned examples.
 
 ### Example 1 - Minimal configuration for all tests
-`config-ex1.yml` provides a minimum configuration needed to run the Playwright tests. In this example, all tests are 
+[`config-ex1.yml`](./.sauce/config-ex1.yml) provides a minimum configuration needed to run the Playwright tests. In this example, all tests are 
 executed on a single chrome browser in sequential order.
+
+### Example 2 - Parallel tests
+[`config-ex2.yml`](./.sauce/config-ex2.yml) breaks apart the execution of the tests such that they can run in parallel on separate chrome browsers.
+
+### Example 3 - Cross Browser tests
+[`config-ex3.yml`](./.sauce/config-ex3.yml) run the login tests on Chrome, Firefox and MicroSoftEdge
 
 
 > **Note:** More options can be found in the
