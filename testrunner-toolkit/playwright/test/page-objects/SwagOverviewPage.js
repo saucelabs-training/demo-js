@@ -8,8 +8,9 @@ const SELECTORS = {
 }
 
 class SwagOverviewPage extends BasePage {
-    constructor() {
-        super(SELECTORS.screen)
+    constructor(page) {
+        super(page, SELECTORS.screen)
+        this.page = page
     }
 
     /**
@@ -18,7 +19,7 @@ class SwagOverviewPage extends BasePage {
      * @returns {Promise<number>}
      */
     async getAmount() {
-        return (await page.$$(SELECTORS.swagItems)).length
+        return (await this.page.$$(SELECTORS.swagItems)).length
     }
 
     /**
@@ -30,7 +31,7 @@ class SwagOverviewPage extends BasePage {
      */
     async swag(needle) {
         if (typeof needle === 'string') {
-            return page.evaluateHandle(
+            return this.page.evaluateHandle(
                 ([items, string]) =>
                     [...document.querySelectorAll(items)].find((item) =>
                         item.textContent.includes(string),
@@ -39,7 +40,7 @@ class SwagOverviewPage extends BasePage {
             )
         }
 
-        return (await page.$$(SELECTORS.swagItems))[needle]
+        return (await this.page.$$(SELECTORS.swagItems))[needle]
     }
 
     /**
@@ -51,7 +52,7 @@ class SwagOverviewPage extends BasePage {
      * @returns {Promise<JSHandle>}
      */
     async findJsHandleWithinSwag(needle, elementSelector) {
-        return page.evaluateHandle(
+        return this.page.evaluateHandle(
             ([item, selector]) => item.querySelector(selector),
             [await this.swag(needle), elementSelector],
         )
@@ -106,4 +107,4 @@ class SwagOverviewPage extends BasePage {
     }
 }
 
-module.exports = new SwagOverviewPage()
+module.exports = {SwagOverviewPage}

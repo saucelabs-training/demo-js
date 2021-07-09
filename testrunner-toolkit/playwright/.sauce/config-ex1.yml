@@ -1,0 +1,35 @@
+apiVersion: v1alpha
+kind: playwright
+showconsolelog: false
+
+# Sauce Labs specific information
+sauce:
+  region: eu-central-1 # or us-west-1
+  concurrency: 10 # Controls how many suites are executed at the same time.
+  metadata:
+    name: Default Playwright with SauceCTL
+    tags:
+      - playwright
+      - default
+    build: "Playwright: Default test set - $DATE"
+  sauceignore: .sauceignore
+
+# Playwright specific information
+playwright:
+  version: 1.11.1
+# Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
+rootDir: .
+
+suites:
+  - name: "Playwright - default - Chrome"
+    platformName: windows 10
+    params:
+      browserName: chromium
+      headful: true
+
+artifacts:
+  download:
+    match:
+      - '*'
+    when: always
+    directory: ./artifacts

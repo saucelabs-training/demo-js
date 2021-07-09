@@ -1,148 +1,144 @@
-# Jest with Playwright
-This folder contains a simple set up for Jest and Playwright which can be run locally and with the Sauce Labs Testrunner Toolkit
+# Playwright
+> **For Demonstration Purposes Only**\
+> The code in these scripts is provided on an "AS-IS" basis without warranty of any kind, either express or implied,
+> including without limitation any implied warranties of condition, uninterrupted use, merchantability, fitness for a
+> particular purpose, or non-infringement. These scripts are provided for educational and demonstration purposes only,
+> and should not be used in production. Issues regarding these scripts should be submitted through GitHub. These scripts
+> are maintained by the Technical Services team at Sauce Labs.
 
-## Local Usage
-### Install dependencies
-You can install all dependencies by running the following command
+## Introduction
+This folder contains a simple set up for Playwright which can be run locally and with
+[`saucectl`](https://docs.saucelabs.com/testrunner-toolkit/index.html).
 
-    npm install
-    
-This will install all needed dependencies that are listed in the `package.json`-file
+## Install dependencies
+- Open a new terminal and clone the main project by using the following command
 
-> NOTE: Make sure you are in the folder `testrunner-toolkit/playwright` when you execute this command
+  `git clone https://github.com/saucelabs-training/demo-js.git`
+
+- From the root of the project, execute
+
+  ```shell
+  cd testrunner-toolkit
+  cd playwright
+  ```
+
+  You are now in this folder.
+- Install all dependencies by running the following command in the terminal
+
+  `npm install`
+
+  This will install all dependencies, including the `saucectl`-runner
 
 ### Run tests locally
-You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this command
+You can run the tests on your local machine, the only thing you need to have is Chrome. If you have it you can run this
+command in a new terminal
 
     npm run test.local
 
-It will run all tests in *headless*-mode, meaning you will not see a browser starting, but the logs will look like this
+It will run all tests in your local Chrome browser in headless mode.
 
-```log
-➜  jest-playwright git:(feat/jest-playwright) ✗ npm run test.local
-> jest-playwright-examples@1.0.0 test.local /jest-playwright
-> jest --verbose
+You can also run the tests in headful mode by running this command
 
- PASS   browser: chromium  test/specs/login.spec.js
-  LoginPage
-    ✓ should be able to test loading of login page (510 ms)
-    ✓ should be able to login with a standard user (973 ms)
-    ✓ should not be able to login with a locked user (381 ms)
+    npm run test.local.headful
 
- PASS   browser: chromium  test/specs/cart.summary.spec.js
-  Cart Summary page
-    ✓ should validate that we can continue shopping (1323 ms)
-    ✓ should validate that we can go from the cart to the checkout page (333 ms)
-    ✓ should validate that a product can be removed from the cart (321 ms)
+The logs from a local execution will look like this
 
- PASS   browser: chromium  test/specs/checkout.summary.spec.js
-  Checkout - Summary
-    ✓ should validate that we can continue shopping (977 ms)
-    ✓ should validate that we can cancel checkout and go to the inventory page (381 ms)
-    ✓ should validate that we have 1 product in our checkout overview (338 ms)
+<details>
+<summary>Expand to see the local logs</summary>
 
- PASS   browser: chromium  test/specs/swag.item.details.spec.js
-  Swag Item Details
-    ✓ should validate that we can go back from the details to the inventory page (1585 ms)
-    ✓ should validate that a product can be added to a cart (435 ms)
-    ✓ should validate that a product can be removed from the cart (341 ms)
+```shell
+npx folio --param browserName=chromium --reporter=list
 
- PASS   browser: chromium  test/specs/swag.items.list.spec.js
-  Swag items list
-    ✓ should validate that all products are present (874 ms)
-    ✓ should validate that the details of a product can be opened (844 ms)
-    ✓ should validate that a product can be added to the cart (361 ms)
-    ✓ should validate that a product can be removed from the cart (263 ms)
-    ✓ should be able to open the cart summary page (251 ms)
+Running 25 tests using 4 workers
 
- PASS   browser: chromium  test/specs/checkout.complete.spec.js
-  Checkout - Complete
-    ✓ should be able to test loading of login page (330 ms)
+✓ Cart Summary page should validate that we can continue shopping (3s)
+✓ Checkout - Complete should be able to test loading of login page (3s)
+✓ Checkout - Personal info should validate we get an error if we don not provide all personal information (3s)
+✓ Checkout - Summary should validate that we can continue shopping (3s)
+✓ LoginPage should be able to test loading of login page (676ms)
+✓ Cart Summary page should validate that we can go from the cart to the checkout page (1s)
+✓ LoginPage should be able to login with a standard user (1s)
+✓ Checkout - Personal info should validate that we can cancel the first checkout (4s)
+✓ Checkout - Summary should validate that we can cancel checkout and go to the inventory page (2s)
+✓ Cart Summary page should validate that a product can be removed from the cart (1s)
+✓ LoginPage should not be able to login with a locked user (1s)
+✓ Checkout - Summary should validate that we have 1 product in our checkout overview (904ms)
+✓ Menu should be able to the swag items overview page (2s)
+✓ Swag Item Details should validate that we can go back from the details to the inventory page (2s)
+✓ Swag items list should validate that all products are present (2s)
+✓ Menu should be able to open the about page (7s)
+✓ Swag Item Details should validate that a product can be added to a cart (2s)
+✓ Swag items list should validate that the details of a product can be opened (2s)
+✓ Checkout - Personal info should be able to continue the checkout (2s)
+✓ Swag items list should validate that a product can be added to the cart (1s)
+✓ Swag Item Details should validate that a product can be removed from the cart (1s)
+✓ Swag items list should validate that a product can be removed from the cart (1s)
+✓ Swag items list should be able to open the cart summary page (920ms)
+✓ Menu should be able to log out (1s)
+✓ Menu should be able to clear the cart (1s)
 
- PASS   browser: chromium  test/specs/checkout.personal.info.spec.js (6.355 s)
-  Checkout - Personal info
-    ✓ should validate we get an error if we don not provide all personal information (950 ms)
-    ✓ should validate that we can cancel the first checkout (3164 ms)
-    ✓ should be able to continue the checkout (167 ms)
+25 passed (17s)
 
- PASS   browser: chromium  test/specs/menu.spec.js (6.492 s)
-  Menu
-    ✓ should be able to the swag items overview page (1340 ms)
-    ✓ should be able to open the about page (1453 ms)
-    ✓ should be able to log out (997 ms)
-    ✓ should be able to clear the cart (627 ms)
+✨  Done in 21.10s.
+```
+</details>
 
-Test Suites: 8 passed, 8 total
-Tests:       25 passed, 25 total
-Snapshots:   0 total
-Time:        7.912 s
-Ran all test suites.
+## Run tests in Sauce
+There are two options to run the examples (see the [examples](#examples) below):
+1. Through a npm script by opening a terminal and enter
+
+     ```shell
+     # For the EU DC, where `#` is the number of the example
+     npm run test.sauce.ex#.eu
+     
+     # For the US DC, where `#` is the number of the example
+     npm run test.sauce.ex#.us
+     ```
+
+1. Or using the `saucectl`-command and select a configuration. This can be done by opening a terminal and type in the
+   following command
+
+   > **Note:** `npx` is used here because `saucectl` is one of the `devDependencies` in this project. When `saucectl`
+   > is installed globally (with `npm install -g saucectl`) then you can use `saucectl` without the `npx prefix`
+    ```shell
+    # For the EU DC, where `#` is the number of the example
+    npx saucectl run -c ./.sauce/config-ex1.yml --region
+     
+    # For the US DC, where `#` is the number of the example
+    npx saucectl run -c ./.sauce/config-ex1.yml --region us-west-1
+    ```
+
+> **Note:** To see all options that `saucectl` is providing type in `npx saucectl --help`
+It will run all tests, and the logs will look like this
+
+## Examples
+All below mentioned examples can be found in the [`.sauce`](./.sauce)-folder. You can run the configurations by running
+the following command from the root of this folder
+
+```shell
+# By default all configs run on the EU DC, if you run `saucectl` directly from the command line and you
+# want to run on the US DC then add `--region us-west-1` at the end
+npx saucectl run -c ./.sauce/config-ex#.yml
+
+# OR for use with the EU data center
+npm run test.sauce.ex#.eu
+
+# OR for use with the US data center
+npm run test.sauce.ex#.us
 ```
 
-You can also run the test in *headfull*-mode with this command
+> **Note:** The `#` stands for the number of the below mentioned examples.
 
-    npm run test.local.headfull
-    
-You will then see Chrome poping up.
+### Example 1 - Minimal configuration for all tests
+[`config-ex1.yml`](./.sauce/config-ex1.yml) provides a minimum configuration needed to run the Playwright tests. In this example, all tests are 
+executed on a single chrome browser in sequential order.
 
-## Sauce Labs Testrunner Toolkit
-### Install dependencies
+### Example 2 - Parallel tests
+[`config-ex2.yml`](./.sauce/config-ex2.yml) breaks apart the execution of the tests such that they can run in parallel on separate chrome browsers.
 
-Follow instructions from [here](https://github.com/saucelabs/testrunner-toolkit)
+### Example 3 - Cross Browser tests
+[`config-ex3.yml`](./.sauce/config-ex3.yml) run the login tests on Chrome, Firefox and MicroSoftEdge
 
-> NOTE: Make sure you are in the folder `testrunner-toolkit/playwright` when you execute this command
 
-### Run tests in Sauce
-
-    saucectl run
-
-It will run all tests and the logs will look like this
-
-```log
-saucectl run
-
-> sauce-playwright-runner@0.0.0 test /home/seluser
-> DISPLAY="$(cat DISPLAY)" DEBUG="playwright:*" jest --config=./.config/jest.config.js --runInBand
-
-Setting test timeout to 60sec
-
-PASS tests/specs/swag.items.list.spec.js (7.546s)
-Setting test timeout to 60sec
-
-PASS tests/specs/swag.item.details.spec.js (5.647s)
-Setting test timeout to 60sec
-
-PASS tests/specs/cart.summary.spec.js
-Setting test timeout to 60sec
-
-PASS tests/specs/checkout.personal.info.spec.js (8.001s)
-Setting test timeout to 60sec
-
-PASS tests/specs/menu.spec.js (7.958s)
-Setting test timeout to 60sec
-
-PASS tests/specs/checkout.summary.spec.js
-Setting test timeout to 60sec
-
-PASS tests/specs/login.spec.js
-Setting test timeout to 60sec
-
-PASS tests/specs/checkout.complete.spec.js
-
-Test Suites: 8 passed, 8 total
-Tests:       25 passed, 25 total
-Snapshots:   0 total
-Time:        48.223s
-Ran all test suites.
-
-Open job details page: https://app.eu-central-1.saucelabs.com/tests/69d115d3f59d44a897581a0557ccd1ed
-
-```
-
-### Browser support
-We support Chrome by default, but if you want to run on Firefox please add the following to the [config](./.sauce/config.yml)
-
-```yaml
-capabilities:
-  - browserName: firefox
-```
+> **Note:** More options can be found in the
+> [Playwright on Sauce Labs](https://docs.saucelabs.com/web-apps/automated-testing/playwright) documentation 

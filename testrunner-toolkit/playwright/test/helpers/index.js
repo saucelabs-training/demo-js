@@ -4,6 +4,7 @@ const { PAGES } = require('../e2eConstants')
 /**
  * Set the tests context
  *
+ * @param {object} page
  * @param {object} data
  * @param {object} data.user
  * @param {string} data.user.username
@@ -13,8 +14,8 @@ const { PAGES } = require('../e2eConstants')
  *
  * @returns {Promise<void>}
  */
-async function setTestContext(data = {}) {
-    const basePage = new BasePage()
+async function setTestContext(page, data = {}) {
+    const basePage = new BasePage(page)
     const { BASE_URL } = PAGES
     const { path, products = [], user } = data
     const { username } = user

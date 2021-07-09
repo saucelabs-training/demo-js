@@ -7,8 +7,9 @@ const SELECTORS = {
 }
 
 class CheckoutSummaryPage extends BasePage {
-    constructor() {
-        super(SELECTORS.screen)
+    constructor(page) {
+        super(page, SELECTORS.screen)
+        this.page = page
     }
 
     /**
@@ -17,7 +18,7 @@ class CheckoutSummaryPage extends BasePage {
      * @returns {Promise<number>}
      */
     async getSwagAmount() {
-        return (await page.$$(SELECTORS.items)).length
+        return (await this.page.$$(SELECTORS.items)).length
     }
 
     /**
@@ -29,7 +30,7 @@ class CheckoutSummaryPage extends BasePage {
      */
     async swag(needle) {
         if (typeof needle === 'string') {
-            return page.evaluateHandle(
+            return this.page.evaluateHandle(
                 ([items, string]) =>
                     [...document.querySelectorAll(items)].find((item) =>
                         item.textContent.includes(string),
@@ -38,22 +39,22 @@ class CheckoutSummaryPage extends BasePage {
             )
         }
 
-        return (await page.$$(SELECTORS.items))[needle]
+        return (await this.page.$$(SELECTORS.items))[needle]
     }
 
     /**
      * Cancel checkout
      */
     async cancelCheckout() {
-        await page.click(SELECTORS.cancelButton)
+        await this.page.click(SELECTORS.cancelButton)
     }
 
     /**
      * Finish checkout
      */
     async finishCheckout() {
-        await page.click(SELECTORS.finishButton)
+        await this.page.click(SELECTORS.finishButton)
     }
 }
 
-module.exports = new CheckoutSummaryPage()
+module.exports = {CheckoutSummaryPage}

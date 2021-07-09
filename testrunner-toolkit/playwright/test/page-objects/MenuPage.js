@@ -6,41 +6,45 @@ const SELECTORS = {
     resetButton: '#reset_sidebar_link',
 }
 class MenuPage {
+    constructor(page) {
+        this.page = page
+    }
+
     /**
      * Open the menu
      */
     async open() {
-        await page.click(SELECTORS.menu)
-        await page.waitForTimeout(500)
+        await this.page.click(SELECTORS.menu)
+        await this.page.waitForTimeout(500)
     }
 
     /**
      * Open the inventory list page
      */
     async openInventoryList() {
-        await page.click(SELECTORS.inventoryListButton)
+        await this.page.click(SELECTORS.inventoryListButton)
     }
 
     /**
      * Open the about page
      */
     async openAboutPage() {
-        await page.click(SELECTORS.aboutButton)
+        await this.page.click(SELECTORS.aboutButton)
     }
 
     /**
      * Logout
      */
     async logout() {
-        await page.click(SELECTORS.logoutButton)
+        await this.page.click(SELECTORS.logoutButton)
     }
 
     /**
      * Reset the app state
      */
     async restAppState() {
-        await page.click(SELECTORS.resetButton)
+        await this.page.click(SELECTORS.resetButton)
     }
 }
 
-module.exports = new MenuPage()
+module.exports = {MenuPage}

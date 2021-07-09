@@ -1,5 +1,6 @@
 class BasePage {
-    constructor(selector) {
+    constructor(page, selector) {
+        this.page = page;
         this.selector = selector
     }
 
@@ -11,7 +12,7 @@ class BasePage {
      * @returns {Promise<void>}
      */
     async goTo(url) {
-        await page.goto(url, 'networkidle0')
+        await this.page.goto(url, 'networkidle0')
     }
 
     /**
@@ -23,7 +24,7 @@ class BasePage {
      */
     async waitForIsDisplayed(selector = this.selector) {
         try {
-            await page.waitForSelector(selector, {
+            await this.page.waitForSelector(selector, {
                 visible: true,
                 timeout: 3000,
             })
