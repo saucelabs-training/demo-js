@@ -13,7 +13,9 @@ fixture`Test checkout summary page`
             path: PAGES.CHECKOUT_SUMMARY,
             products: [PRODUCTS.BACKPACK],
         });
-        await t.expect(CheckoutSummaryPage.isScreenDisplayed()).ok();
+        await t
+          .resizeWindow(1400, 900)
+          .expect(CheckoutSummaryPage.isScreenDisplayed()).ok();
     });
 
 test('should validate that we can continue shopping', async t => {

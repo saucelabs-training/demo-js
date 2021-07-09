@@ -68,6 +68,9 @@ Tests failed: 0
 ```
 
 ## Run tests on Sauce Labs
+> **NOTE:** The preferred way of running TestCafe tests in **NOT** through the `testcafe-browser-provider-saucelabs`-plugin
+> but through `saucectl`. Please check [this](../../testrunner-toolkit/testcafe)-folder for instructions
+
 To run the tests on Sauce Labs we advise you to read [this](https://github.com/DevExpress/testcafe-browser-provider-saucelabs) 
 document and follow the step to set up your local and or CI-pipeline.
 

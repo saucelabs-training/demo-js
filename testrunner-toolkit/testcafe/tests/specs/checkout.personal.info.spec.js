@@ -12,7 +12,9 @@ fixture`Test checkout overview page`
             user: LOGIN_USERS.STANDARD,
             path: PAGES.CHECKOUT_PERSONAL_INFO,
         });
-        await t.expect(CheckoutPersonalInfoPage.isScreenDisplayed()).ok();
+        await t
+          .resizeWindow(1400, 900)
+          .expect(CheckoutPersonalInfoPage.isScreenDisplayed()).ok();
     });
 
 test('should validate we get an error if we don not provide all personal information', async t => {

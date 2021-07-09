@@ -4,6 +4,10 @@ import LoginPage from '../page-objects/LoginPage';
 import CheckoutCompletePage from '../page-objects/CheckoutCompletePage';
 
 fixture`Test cart items overview page`
+  .beforeEach(async t => {
+      await t
+        .resizeWindow(1400, 900)
+  });
 
 test('should validate that we can continue shopping', async t => {
     await setTestContext({

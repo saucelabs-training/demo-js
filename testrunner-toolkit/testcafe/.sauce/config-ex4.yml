@@ -1,0 +1,44 @@
+apiVersion: v1alpha
+kind: testcafe
+
+# Sauce Labs specific information
+sauce:
+  region: eu-central-1 # or us-west-1
+  concurrency: 10 # Controls how many suites are executed at the same time.
+  metadata:
+    name: TestCafe on iOS Simulators with SauceCTL
+    tags:
+      - testcafe
+      - ios simulators
+    build: "TestCafe: iOS Simulator test set - $DATE"
+
+# Testcafe specific info
+testcafe:
+  version: 1.14.2
+# Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
+rootDir: ./
+
+# Tests
+suites:
+  - name: "Testcafe - iOS Tests - Safari"
+    browserName: "safari"
+    src:
+      # test files glob
+      - "**/login.*"
+    simulators:
+      - name: iPhone 12 Simulator
+        platformName: iOS
+        platformVersions:
+          - "14.3"
+      - name: iPad mini (5th generation) Simulator
+        platformName: iOS
+        platformVersions:
+          - "14.3"
+
+# Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
+artifacts:
+  download:
+    directory: ./artifacts
+    match:
+      - '*'
+    when: always
