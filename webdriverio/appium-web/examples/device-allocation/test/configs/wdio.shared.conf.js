@@ -13,7 +13,7 @@ exports.config = {
     // ============
     // Capabilities
     // ============
-    maxInstances: 5,
+    maxInstances: 2,
     // capabilities can be found in the `wdio.local.chrome.conf.js` or `wdio.sauce.conf.js`
     // ===================
     // Test Configurations

@@ -8,9 +8,9 @@ DC_ENDPOINT=""
 # Set the correct DC endpoint
 #
 if [ "$REGION" = 'eu' ]; then
-    DC_ENDPOINT="eu-central-1.saucelabs"
+    DC_ENDPOINT="eu-central-1"
 else
-    DC_ENDPOINT="saucelabs"
+    DC_ENDPOINT="us-west-1"
 fi
 
 ##
@@ -20,13 +20,10 @@ echo "**************** PUBLISH RE-RUN EXECUTABLE TO SAUCELABS WITH THIS DATA ***
 echo "DC_ENDPOINT             => $DC_ENDPOINT"
 
 curl \
+  -F "payload=@scripts/mac_download.sh" \
   -u "$SAUCE_USERNAME:$SAUCE_ACCESS_KEY" \
-  -X POST \
-  -H "Content-Type: application/octet-stream" \
-  "https://$DC_ENDPOINT.com/rest/v1/storage/$SAUCE_USERNAME/mac_download.sh?overwrite=true" \
-  --data-binary @scripts/mac_download.sh
+  "https://api.$DC_ENDPOINT.saucelabs.com/v1/storage/upload"
 curl \
+  -F "payload=@scripts/windows_download.bat" \
   -u "$SAUCE_USERNAME:$SAUCE_ACCESS_KEY" \
-  -X POST -H "Content-Type: application/octet-stream" \
-  "https://$DC_ENDPOINT.com/rest/v1/storage/$SAUCE_USERNAME/windows_download.bat?overwrite=true" \
-  --data-binary @scripts/windows_download.bat
+  "https://api.$DC_ENDPOINT.saucelabs.com/v1/storage/upload"

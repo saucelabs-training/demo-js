@@ -71,6 +71,15 @@ config.capabilities = [
         version: '11.1',
         ...defaultBrowserSauceOptions,
     },
+    // Safari 12
+    {
+        browserName: 'safari',
+        platformName: 'macOS 10.14',
+        browserVersion: 'latest',
+        'sauce:options': {
+            ...defaultBrowserSauceOptions,
+        },
+    },
     // Safari 13
     {
         browserName: 'safari',
@@ -80,15 +89,15 @@ config.capabilities = [
             ...defaultBrowserSauceOptions,
         },
     },
-    // Safari 12
+    // Safari 14
     {
         browserName: 'safari',
-        platformName: 'macOS 10.14',
+        platformName: 'macOS 11',
         browserVersion: 'latest',
         'sauce:options': {
             ...defaultBrowserSauceOptions,
         },
-    }
+    },
 ];
 
 // ========
