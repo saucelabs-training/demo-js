@@ -18,6 +18,7 @@ describe('Appium', () => {
      * A before hook that will prepare the device for the actual test
      */
     beforeEach(() => {
+        driver.switchContext('NATIVE_APP');
         // Make sure the download dir we are going to use is empty
         removeSync(downloadFolder);
         // Create the directory

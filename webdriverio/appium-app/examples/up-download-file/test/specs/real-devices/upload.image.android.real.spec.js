@@ -10,6 +10,7 @@ describe('Appium', () => {
      *   into a SamsungGallery screen-object so you can focus on how to upload a photo to a real device.
      */
     it('should be able to upload a photo to the Gallery and delete it', () => {
+        driver.switchContext('NATIVE_APP');
         // Start the Gallery on the device
         SamsungGallery.open();
         const currentPhotos = SamsungGallery.amountOfPhotos;

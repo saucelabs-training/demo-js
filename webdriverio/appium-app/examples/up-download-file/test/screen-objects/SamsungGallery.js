@@ -27,6 +27,7 @@ class SamsungGallery{
             'com.samsung.android.gallery.app.activity.GalleryActivity',
         );
         this.picturesTabBarButton.waitForDisplayed();
+        this.picturesTabBarButton.click();
     }
 
     /**
