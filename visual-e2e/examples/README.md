@@ -4,11 +4,12 @@ This folder contains a simple examples using Screener e2e visual testing
 ## Install dependencies
 You can install all dependencies by running the following command
 
+```bash
+    cd visual-e2e/examples
     npm install
-    
-This will install all needed dependencies that are listed in the `package.json`-file
+```    
 
-> NOTE: Make sure you are in the folder `visual-e2e/examples` when you execute this command
+This will install all needed dependencies that are listed in the `package.json`-file
 
 ## Run tests on Sauce Labs
 You can run your tests on Sauce Labs US DC with this command
