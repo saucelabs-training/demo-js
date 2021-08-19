@@ -1,8 +1,8 @@
-const {config} = require('./wdio.shared.conf');
+const {config: sharedConfig} = require('./wdio.shared.conf');
 
-config.region = process.env.REGION || 'us';
+sharedConfig.region = process.env.REGION || 'us';
 
-    config.capabilities = ['1280x1024',
+sharedConfig.capabilities = ['1280x1024',
     '1920x1080',
     '375x812',
     '414x736',
@@ -21,7 +21,7 @@ config.region = process.env.REGION || 'us';
             viewportSize: `${viewportSize}`
         }
     }
-    ));
+));
 
 
-exports.config = config;
+exports.config = sharedConfig;

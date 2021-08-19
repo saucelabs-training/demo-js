@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test.visual.sauce": "npx wdio test/configs/wdio.visual.all.conf.js",
-    "test.visual.crossplatform": "npx wdio test/configs/wdio.visual.conf.js"
+    "test.visual.crossplatform": "npx wdio test/configs/wdio.cross.platform.conf.js"
   },
   "keywords": [],
   "author": "",

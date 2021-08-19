@@ -1,3 +1,5 @@
+
+
 exports.config = {
     // ====================
     // More information about the configuration is found here https://webdriver.io/docs/configurationfile.html
@@ -7,11 +9,11 @@ exports.config = {
         './test/specs/**/*.js'
     ],
     maxInstances: 100,
-    logLevel: 'debug',
+    logLevel: 'warn',
     bail: 0,
     baseUrl: 'https://www.saucedemo.com/',
-    waitforTimeout: 10000,
-    connectionRetryTimeout: 90000,
+    waitforTimeout: 30000,
+    connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
     reporters: ['spec'],
     services: [],
@@ -19,5 +21,11 @@ exports.config = {
     hostname: 'hub.screener.io',
     port: 443,
     protocol: 'https',
-    path: '/wd/hub'
+    path: '/wd/hub',
+
+    framework: 'mocha',
+    mochaOpts: {
+        ui: 'bdd',
+        timeout: 60000
+    }
 };
