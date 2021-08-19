@@ -4,6 +4,7 @@ const sauceOptions = {
     accesskey: process.env.SAUCE_ACCESS_KEY
 };
 const visualOptions = {
+    //https://screener.io/v2/docs/visual-e2e/visual-options
     apiKey: process.env.SCREENER_API_KEY,
     projectName: 'Sauce Demo JS',
     failOnNewStates: false

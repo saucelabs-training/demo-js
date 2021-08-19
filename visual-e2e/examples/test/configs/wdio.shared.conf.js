@@ -6,7 +6,7 @@ exports.config = {
     // ====================
     runner: 'local',
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/simple.spec.js'
     ],
     maxInstances: 100,
     logLevel: 'warn',
@@ -22,6 +22,23 @@ exports.config = {
     port: 443,
     protocol: 'https',
     path: '/wd/hub',
+    capabilities: [
+        {
+            browserName: 'chrome',
+            platformName: 'macOS 10.15',
+            browserVersion: 'latest',
+            'sauce:options': {
+                username: process.env.SAUCE_USERNAME,
+                accesskey: process.env.SAUCE_ACCESS_KEY
+            },
+            'sauce:visual': {
+                apiKey: process.env.SCREENER_API_KEY,
+                projectName: 'demo-js',
+                viewportSize: `1920x1080`,
+                failOnNewStates: false
+            }
+        }
+    ],
 
     framework: 'mocha',
     mochaOpts: {
