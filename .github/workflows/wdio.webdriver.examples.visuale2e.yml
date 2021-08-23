@@ -47,4 +47,4 @@ jobs:
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
           SCREENER_API_KEY: ${{ secrets.SCREENER_API_KEY }}
-        run: npm run test.saucelabs.visual
+        run: npm run test.visual.sauce
