@@ -1,5 +1,5 @@
-describe('Visual rendering', () => {
-    it('should be correct', async () => {
+describe('My app', () => {
+    it('should look correctly', async () => {
         await browser.url('');
         await browser.execute('/*@visual.init*/', 'My React App');
         await browser.execute('/*@visual.snapshot*/', 'Home Page');
