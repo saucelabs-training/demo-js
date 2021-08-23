@@ -5,7 +5,7 @@ This folder contains a simple examples using Screener e2e visual testing
 You can install all dependencies by running the following command
 
 ```bash
-    cd visual-e2e/examples
+    cd webdriverio/webdriver/examples/visual-e2e
     npm install
 ```    
 
@@ -16,7 +16,7 @@ You can run your tests on Sauce Labs US DC with this command
     
 Run cross-platform, across multiple resolutions using:
 
-`npm run test.visual.crossplatform`
+    npm run test.visual.crossplatform
     
 The output will look like this
 

@@ -38,7 +38,7 @@ framework when using Sauce Labs.
         - [Examples](webdriverio/webdriver/examples)
             - [WebdriverIO and CucumberJS](webdriverio/webdriver/examples/cucumberjs)\
               ![WebdriverIO - Webdriver - Examples - CucumberJS](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20CucumberJS/badge.svg)
-            - [WebdriverIO Visual E2E](./visual-e2e)
+            - [WebdriverIO Visual E2E](./webdriverio/webdriver/examples/visual-e2e/README.md)
             - [WebdriverIO and extendedDebugging](webdriverio/webdriver/examples/extended-debugging)\
               ![WebdriverIO - Webdriver - Examples - Extended Debugging](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Extended%20Debugging/badge.svg)
             - [WebdriverIO and Sauce Connect](webdriverio/webdriver/examples/sc)\
