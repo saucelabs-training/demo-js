@@ -1,5 +1,5 @@
 const {config} = require('./wdio.shared.conf');
-const build = `WebdriverIO RDC UP build-${new Date().getTime()}`;
+const build = `WebdriverIO RDC Device Allocation build-${new Date().getTime()}`;
 
 // =========================
 // Sauce RDC specific config
