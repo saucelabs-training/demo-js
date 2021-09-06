@@ -13,11 +13,6 @@
     "test.sauce.ex3.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex3.yml",
     "test.sauce.ex3.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex3.yml --region us-west-1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
-  },
   "keywords": [],
   "author": "",
   "license": "MIT",
