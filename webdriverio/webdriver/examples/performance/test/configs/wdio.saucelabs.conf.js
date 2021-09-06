@@ -1,9 +1,18 @@
+const {existsSync, mkdirSync} = require('fs');
+const {join} = require('path');
+const SauceLabs = require("saucelabs").default;
 const {config} = require('./wdio.shared.conf');
+const {
+  getSessionIdsFromFile,
+  getPerformanceMetrics,
+  writePerformanceMetricsToFile,
+  writeToSessionIdsFile
+} = require("../utils/utils");
 const defaultBrowserSauceOptions = {
-    build: `WebdriverIO Front-End Performance-${new Date().getTime()}`,
-    screenResolution: '1600x1200',
-    extendedDebugging: true,
-    capturePerformance: true,
+  build: `WebdriverIO Front-End Performance-${new Date().getTime()}`,
+  screenResolution: '1600x1200',
+  extendedDebugging: true,
+  capturePerformance: true,
 };
 
 // =========================
@@ -21,27 +30,90 @@ config.region = process.env.REGION || 'us';
 // Capabilities
 // ============
 config.capabilities = [
-    /**
-     * Desktop browsers
-     */
-    {
-        browserName: 'chrome',
-        platformName: 'Windows 10',
-        browserVersion: 'latest',
-        'sauce:options': {
-            ...defaultBrowserSauceOptions,
-        },
+  /**
+   * Desktop browsers
+   */
+  {
+    browserName: 'chrome',
+    platformName: 'Windows 10',
+    browserVersion: 'latest',
+    'sauce:options': {
+      ...defaultBrowserSauceOptions,
     },
-    {
-        browserName: 'chrome',
-        platformName: 'macOS 10.15',
-        browserVersion: 'latest',
-        'sauce:options': {
-            ...defaultBrowserSauceOptions,
-        },
+  },
+  {
+    browserName: 'chrome',
+    platformName: 'macOS 10.15',
+    browserVersion: 'latest',
+    'sauce:options': {
+      ...defaultBrowserSauceOptions,
     },
+  },
 ];
 
-config.services = config.services.concat('sauce');
+config.services = config.services.concat(['sauce']);
+
+// =====
+// Hooks
+// =====
+
+/**
+ * How to download the Performance Metrics through an API:
+ *
+ * The performance data can be retrieved with an API based on the sessionID. This can only be done when the session
+ * is finished on Sauce Labs and the Metrics is stored in the Databases of Sauce Labs.
+ * The flow we need to take:
+ *  1.  The sessionId is not available in the `onComplete` hook, see https://webdriver.io/docs/configurationfile/
+ *      We need to store the sessionIds to a file and read the file when we're in the `onComplete`-hook.
+ *      We need to create an empty file in the `onPrepare`-hook (will overwrite itself after each new WebdriverIO run
+ *      which is started)
+ *  2.  Store the sessionId(s) in the file from step 1, this will be done in the `beforeSuite`, but can be every
+ *      hook in WebdriverIO that has access to the `sessionId`
+ *  3.  When WebdriverIO is done with executing all tests and all sessions in Sauce Labs are closed we need to retrieve
+ *      the data through the API. We need to be aware that it might take some time to store all data in the DBs so
+ *      a retry needs to happen
+ */
+const tmpFolder = `.tmp`;
+const sessionIdsFile = join(process.cwd(), tmpFolder, `sessionIds.json`);
+// 1. Create an empty file
+config.onPrepare = () => {
+  // First make a folder
+  if (!existsSync(tmpFolder)) {
+    mkdirSync(
+      tmpFolder,
+      {
+        recursive: true,
+      }
+    );
+  }
+  // then make a file with an empty array
+  writeToSessionIdsFile(sessionIdsFile,[]);
+};
+// 2. Store all sessionIds in the sessionId-file
+config.beforeSuite = async () => {
+  // Add the sessionId to sessionIds file
+  const newSessionIdsData = getSessionIdsFromFile(sessionIdsFile);
+  newSessionIdsData.push(browser.sessionId);
+  writeToSessionIdsFile(sessionIdsFile, newSessionIdsData);
+};
+// 3. Retrieve the performance metrics based on each `sessionId`
+config.onComplete = async () => {
+  /**
+   * The Sauce Labs lib (https://github.com/saucelabs/node-saucelabs)
+   * will automatically be installed when you use the `@wdio/sauce-service`
+   * We use this lib to get the Performance data from Sauce Labs
+   */
+    // Instantiate the API
+  const api = new SauceLabs({
+      user: config.user,
+      key: config.key,
+      region: config.region,
+    });
+
+  for (let sessionId of getSessionIdsFromFile(sessionIdsFile)) {
+    const performanceData = await getPerformanceMetrics(api, sessionId);
+    writePerformanceMetricsToFile(performanceData, sessionId);
+  }
+};
 
 exports.config = config;
