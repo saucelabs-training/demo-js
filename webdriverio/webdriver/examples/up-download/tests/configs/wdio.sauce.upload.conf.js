@@ -24,7 +24,7 @@ config.capabilities = [
       screenResolution: '1440x900',
       // This refers to the pre-run executable that will first
       // upload the file to the Sauce Labs VM
-      prerun: 'sauce-storage:windows_download.bat',
+      prerun: 'storage:filename=windows_download.bat',
     },
   },
   {
@@ -36,7 +36,7 @@ config.capabilities = [
       screenResolution: '1440x900',
       // This refers to the pre-run executable that will first
       // upload the file to the Sauce Labs VM
-      prerun: 'sauce-storage:windows_download.bat',
+      prerun: 'storage:filename=windows_download.bat',
     },
   },
   {
@@ -48,7 +48,7 @@ config.capabilities = [
       screenResolution: '1440x900',
       // This refers to the pre-run executable that will first
       // upload the file to the Sauce Labs VM
-      prerun: 'sauce-storage:windows_download.bat',
+      prerun: 'storage:filename=windows_download.bat',
     },
   },
   {
@@ -60,7 +60,7 @@ config.capabilities = [
       screenResolution: '1440x900',
       // This refers to the pre-run executable that will first
       // upload the file to the Sauce Labs VM
-      prerun: 'sauce-storage:windows_download.bat',
+      prerun: 'storage:filename=windows_download.bat',
     },
   },
   // ===
@@ -75,7 +75,7 @@ config.capabilities = [
       screenResolution: '1400x1050',
       // This refers to the pre-run executable that will first
       // upload the file to the Sauce Labs VM
-      prerun: 'sauce-storage:mac_download.sh',
+      prerun: 'storage:filename=mac_download.sh',
     },
   },
   {
@@ -87,7 +87,7 @@ config.capabilities = [
       screenResolution: '1400x1050',
       // This refers to the pre-run executable that will first
       // upload the file to the Sauce Labs VM
-      prerun: 'sauce-storage:mac_download.sh',
+      prerun: 'storage:filename=mac_download.sh',
     },
   },
   {
@@ -99,7 +99,7 @@ config.capabilities = [
       screenResolution: '1400x1050',
       // This refers to the pre-run executable that will first
       // upload the file to the Sauce Labs VM
-      prerun: 'sauce-storage:mac_download.sh',
+      prerun: 'storage:filename=mac_download.sh',
     },
   },
 ];
