@@ -16,9 +16,9 @@ Node.js based automation frameworks locally and or in Sauce Labs.
 framework when using Sauce Labs.
 
 ## Framework examples
-- [WebdriverIO with Jasmine*](./webdriverio)
+- [WebdriverIO with Jasmine*](webdriverio)
     - WebdriverIO with Appium for Native/Hybrid Apps
-        - [Examples](./webdriverio/appium-app/examples)
+        - [Examples](webdriverio/appium-app/examples)
             - [Native App Gestures](webdriverio/appium-app/examples/gestures)
             - [Using Biometric Login on Sauce Labs](webdriverio/appium-app/examples/biometric-login)
             - [Using Image Injection on Sauce Labs Real Devices](webdriverio/appium-app/examples/image-injection)
@@ -26,9 +26,9 @@ framework when using Sauce Labs.
     - WebdriverIO with Appium for Mobile Web (Chrome/Safari)
         - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/appium-web/best-practices)\
           ![WebdriverIO - Appium Web - Best Practices](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Appium%20Web%20-%20Best%20Practices/badge.svg)
-        - [Examples](./webdriverio/appium-web/examples)
-            - [WebdriverIO - Appium Web - Real Device Offline Mode](./webdriverio/appium-web/examples/offline-testing)
-            - [WebdriverIO - Appium Web - Real Device Allocation](./webdriverio/appium-web/examples/device-allocation)\
+        - [Examples](webdriverio/appium-web/examples)
+            - [WebdriverIO - Appium Web - Real Device Offline Mode](webdriverio/appium-web/examples/offline-testing)
+            - [WebdriverIO - Appium Web - Real Device Allocation](webdriverio/appium-web/examples/device-allocation)\
               ![WebdriverIO - Appium Web - Real Device Allocation](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Appium%20Web%20-%20Real%20Device%20Allocation/badge.svg)
             - [Sauce Labs Mobile Web and W3C](webdriverio/appium-web/examples/w3c)\
               ![WebdriverIO - Appium Web - W3C on EMUSIM](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Appium%20Web%20-%20W3C%20on%20EMUSIM/badge.svg)
@@ -37,7 +37,7 @@ framework when using Sauce Labs.
           ![WebdriverIO - Webdriver - Best Practices](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Best%20Practices/badge.svg)
         - [Examples](webdriverio/webdriver/examples)
             - [WebdriverIO and Chrome Extensions](webdriverio/webdriver/examples/chrome-extension)\
-              ![WebdriverIO - Webdriver - Examples - Chrome Extension](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%Chrome%20Extensions/badge.svg)
+              ![WebdriverIO - Webdriver - Examples - Chrome Extension](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Chrome%20Extensions/badge.svg)
             - [WebdriverIO and CucumberJS](webdriverio/webdriver/examples/cucumberjs)\
               ![WebdriverIO - Webdriver - Examples - CucumberJS](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20CucumberJS/badge.svg)
             - [WebdriverIO and extendedDebugging](webdriverio/webdriver/examples/extended-debugging)\
@@ -52,36 +52,36 @@ framework when using Sauce Labs.
               ![WebdriverIO - Webdriver - Examples - Up and Downloading Files](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20UpDownload/badge.svg)
             - [WebdriverIO, Sauce Labs and W3C](webdriverio/webdriver/examples/w3c)\
               ![WebdriverIO - Webdriver - Examples - W3C](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20W3C/badge.svg)
-            - [WebdriverIO with Typescript](webdriverio/webdriver/examples/typescript/)\
+            - [WebdriverIO with Typescript](webdriverio/webdriver/examples/typescript)\
               ![WebdriverIO - Webdriver - Examples - TS](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20TS/badge.svg)
 - **SauceCTL Testrunner Toolkit**
-    - [Cypress examples](./testrunner-toolkit/cypress)
-        - [Cypress and a Default Test Set](./testrunner-toolkit/cypress/README.md#example-1---minimal-configuration-for-all-tests)
-        - [Cypress and Cross Browser Testing on Sauce Labs](./testrunner-toolkit/cypress/README.md#example-3---cross-browser-tests)
-        - [Cypress and Cross Browser Testing browser versioning](./testrunner-toolkit/cypress/README.md#example-4---cross-versions-tests)
-        - [Cypress and Testing in Parallel](./testrunner-toolkit/cypress/README.md#example-2---parallel-tests)
-    - [Playwright with Jest](./testrunner-toolkit/playwright)
-    - [Puppeteer with Jest](./testrunner-toolkit/puppeteer)
-    - [TestCafe](./testrunner-toolkit/testcafe)
-    - [Dependencies Examples](./testrunner-toolkit/dependencies-example)
-- [Screener Runner (DEPRECATED!! Move to Visual E2E)](./screener-runner)
-- [Visual E2E](./visual-e2e)
-- [NightWatch](./nightwatch)
+    - [Cypress examples](testrunner-toolkit/cypress)
+        - [Cypress and a Default Test Set](testrunner-toolkit/cypress/README.md#example-1---minimal-configuration-for-all-tests)
+        - [Cypress and Cross Browser Testing on Sauce Labs](testrunner-toolkit/cypress/README.md#example-3---cross-browser-tests)
+        - [Cypress and Cross Browser Testing browser versioning](testrunner-toolkit/cypress/README.md#example-4---cross-versions-tests)
+        - [Cypress and Testing in Parallel](testrunner-toolkit/cypress/README.md#example-2---parallel-tests)
+    - [Playwright with Jest](testrunner-toolkit/playwright)
+    - [Puppeteer with Jest](testrunner-toolkit/puppeteer)
+    - [TestCafe](testrunner-toolkit/testcafe)
+    - [Dependencies Examples](testrunner-toolkit/dependencies-example)
+- [Screener Runner (DEPRECATED!! Move to Visual E2E)](screener-runner)
+- [Visual E2E](visual-e2e)
+- [NightWatch](nightwatch)
     - NightWatch for Desktop Web (Selenium, but officially WebDriver)
-        - [Examples](./nightwatch/webdriver/examples)
-            - [NightWatch Desktop Web: Update Sauce Status](./nightwatch/webdriver/examples/update-sauce)
+        - [Examples](nightwatch/webdriver/examples)
+            - [NightWatch Desktop Web: Update Sauce Status](nightwatch/webdriver/examples/update-sauce)
     - NightWatch for Mobile Web (Chrome/Safari)
-        - [Examples](./nightwatch/appium-web/examples)
-            - [Nightwatch Mobile Web: Update Sauce Status Real Devices](./nightwatch/appium-web/examples/update-sauce-real-devices)
-- [Protractor with Jasmine](./protractor)
+        - [Examples](nightwatch/appium-web/examples)
+            - [Nightwatch Mobile Web: Update Sauce Status Real Devices](nightwatch/appium-web/examples/update-sauce-real-devices)
+- [Protractor with Jasmine](protractor)
     - Protractor for Desktop Web (Selenium)
-        - [Protractor "Best Practices"](./protractor/selenium/best-practices)
+        - [Protractor "Best Practices"](protractor/selenium/best-practices)
     - Protractor for Mobile Web (Appium)
         - [Examples](webdriverio/webdriver/examples)
-            - [Real Devices and Sauce Labs](./protractor/appium-web/examples/real-devices)
-- [Puppeteer with Jest](./puppeteer)
-- [TestCafe](./testcafe)
-    - [TestCafe "Best Practices"](./testcafe/best-practices)
+            - [Real Devices and Sauce Labs](protractor/appium-web/examples/real-devices)
+- [Puppeteer with Jest](puppeteer)
+- [TestCafe](testcafe)
+    - [TestCafe "Best Practices"](testcafe/best-practices)
 
 > \* The connection to Sauce Labs doesn't depend on using Mocha, Jasmine or CucumberJS. Please check the 
 [frameworks](https://webdriver.io/docs/frameworks.html) page of WebdriverIO on how to implement a different framework then 
@@ -90,9 +90,9 @@ the used framework here in this repository.
 ## Prerequisites
 In order to run these scripts you must complete the following prerequisite steps:
 
-* Install [Git](./prerequisites.md#install-git)
-* Install [Node/NPM](./prerequisites.md#install-and-nodejs-and-npm)
-* (Optional) Install an [IDE](./prerequisites.md#install-an-ide)
+* Install [Git](prerequisites.md#install-git)
+* Install [Node/NPM](prerequisites.md#install-and-nodejs-and-npm)
+* (Optional) Install an [IDE](prerequisites.md#install-an-ide)
 
 >   #### Try Demo in Gitpod
 >   Select the button below to try this demo in [Gitpod](https://www.gitpod.io/)
