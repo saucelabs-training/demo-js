@@ -1,26 +1,41 @@
 const {existsSync, mkdirSync, readFileSync, writeFileSync} = require('fs');
 const {join} = require('path');
+const tmpFolder = join(__dirname, '../../', '.tmp');
+const sessionIdsFile = join(tmpFolder, 'sessionIds.json');
+const performanceReportFolder = join(tmpFolder, 'performanceReport');
 
 /**
- * Write the sessionId data to a file
+ * Write the sessionId to a file
  *
- * @param {string} fileName
- *
- * @param {string[]} data
+ * @param {string} sessionId
  */
-const writeToSessionIdsFile = (fileName, data) => {
-  writeFileSync(fileName, JSON.stringify(data, null, 2));
+const writeToSessionIdsFile = (sessionId = '') => {
+  let newSessionIdsData = [];
+  // Verify if the folder is already created
+  if (!existsSync(tmpFolder)) {
+    mkdirSync(
+      tmpFolder,
+      {
+        recursive: true,
+      }
+    );
+  }
+  // When the file exists collect the existing data and the new sessionId to the array
+  if (existsSync(sessionIdsFile)) {
+    newSessionIdsData = getSessionIdsFromFile();
+    newSessionIdsData.push(sessionId);
+  }
+
+  writeFileSync(sessionIdsFile, JSON.stringify(newSessionIdsData, null, 2));
 };
 
 /**
  * Get the sessionIds
  *
- * @param {string} fileName
- *
  * @returns {string[]}
  */
-const getSessionIdsFromFile = (fileName,) => {
-  return JSON.parse(readFileSync(fileName, {encoding: 'utf8'}));
+const getSessionIdsFromFile = () => {
+  return JSON.parse(readFileSync(sessionIdsFile, {encoding: 'utf8'}));
 };
 
 /**
@@ -53,7 +68,6 @@ const getPerformanceMetrics = async (api, sessionId, retriesLeft = 30,) => {
  */
 const writePerformanceMetricsToFile = (performanceData, sessionId) => {
   try {
-    const performanceReportFolder = '.tmp/performanceReport';
     // Create the folder if it doesn't exists
     if (!existsSync(performanceReportFolder)) {
       mkdirSync(
@@ -65,7 +79,7 @@ const writePerformanceMetricsToFile = (performanceData, sessionId) => {
     }
     // Write the data to the file
     writeFileSync(
-      join(process.cwd(), performanceReportFolder, `performance-data-${sessionId}.json`),
+      join(performanceReportFolder, `performance-data-${sessionId}.json`),
       JSON.stringify(performanceData, null, 2),
     );
   } catch (error) {

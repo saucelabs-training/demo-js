@@ -1,5 +1,3 @@
-const {existsSync, mkdirSync} = require('fs');
-const {join} = require('path');
 const SauceLabs = require("saucelabs").default;
 const {config} = require('./wdio.shared.conf');
 const {
@@ -73,28 +71,15 @@ config.services = config.services.concat(['sauce']);
  *      the data through the API. We need to be aware that it might take some time to store all data in the DBs so
  *      a retry needs to happen
  */
-const tmpFolder = `.tmp`;
-const sessionIdsFile = join(process.cwd(), tmpFolder, `sessionIds.json`);
 // 1. Create an empty file
 config.onPrepare = () => {
-  // First make a folder
-  if (!existsSync(tmpFolder)) {
-    mkdirSync(
-      tmpFolder,
-      {
-        recursive: true,
-      }
-    );
-  }
-  // then make a file with an empty array
-  writeToSessionIdsFile(sessionIdsFile,[]);
+  // Create the file, if exists, create an empty file for all sessions
+  writeToSessionIdsFile();
 };
 // 2. Store all sessionIds in the sessionId-file
 config.beforeSuite = async () => {
   // Add the sessionId to sessionIds file
-  const newSessionIdsData = getSessionIdsFromFile(sessionIdsFile);
-  newSessionIdsData.push(browser.sessionId);
-  writeToSessionIdsFile(sessionIdsFile, newSessionIdsData);
+  writeToSessionIdsFile(browser.sessionId);
 };
 // 3. Retrieve the performance metrics based on each `sessionId`
 config.onComplete = async () => {
@@ -110,7 +95,8 @@ config.onComplete = async () => {
       region: config.region,
     });
 
-  for (let sessionId of getSessionIdsFromFile(sessionIdsFile)) {
+  // Now get the performance data for each sessionId and store it into a file
+  for (let sessionId of getSessionIdsFromFile()) {
     const performanceData = await getPerformanceMetrics(api, sessionId);
     writePerformanceMetricsToFile(performanceData, sessionId);
   }
