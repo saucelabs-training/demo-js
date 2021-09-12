@@ -1,20 +1,19 @@
-import { LOGIN_USERS } from '../configs/e2eConstants';
-import LoginPage from '../page-objects/LoginPage';
-import SwagOverviewPage from '../page-objects/SwagOverviewPage';
-
 describe('LoginPage', () => {
-    beforeEach(() => {
-        browser.url('');
-        LoginPage.waitForIsShown();
+    beforeEach(async () => {
+        await browser.url('');
+        await $('#login_button_container').waitForDisplayed();
     });
 
-    it('should be able to login with a standard user', () => {
-        LoginPage.signIn(LOGIN_USERS.STANDARD);
+    it('should be able to login with a standard user', async () => {
+        await $('#user-name').addValue('standard_user');
+        await $('#password').addValue('secret_sauce');
+        // For some reason Android is not clicking properly
+        driver.isAndroid
+          ? await browser.execute('document.querySelector(\'.btn_action\').click()')
+          : await $('.btn_action').click();
 
-        // Wait for the inventory screen and check it
-        expect(SwagOverviewPage.waitForIsShown()).toEqual(
-            true,
-            'Inventory List screen was not shown',
-        );
+        // We will not execute an assertion here because if the page is not displayed it will
+        // already throw an error
+        await $('.inventory_list').waitForDisplayed();
     });
 });
