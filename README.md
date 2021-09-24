@@ -33,10 +33,10 @@ framework when using Sauce Labs.
             - [Sauce Labs Mobile Web and W3C](webdriverio/appium-web/examples/w3c)\
               ![WebdriverIO - Appium Web - W3C on EMUSIM](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Appium%20Web%20-%20W3C%20on%20EMUSIM/badge.svg)
     - WebdriverIO for Desktop Web (Selenium, but officially WebDriver)
-        - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/webdriver/best-practices)\
+        - [WebdriverIO Async Mode and TypeScript with Best Practices, including the use of Page Objects](webdriverio/webdriver/best-practices)\
           ![WebdriverIO - Webdriver - Best Practices](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Best%20Practices/badge.svg)
         - [Examples](webdriverio/webdriver/examples)
-            - [WebdriverIO and Sync Mode](webdriverio/webdriver/examples/sync-mode)\
+            - [WebdriverIO and Sync Mode with Best Practices](webdriverio/webdriver/examples/sync-mode)\
               ![WebdriverIO - Webdriver - Examples - Sync Mode](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Sync%20Mode/badge.svg)
             - [WebdriverIO and Chrome Extensions](webdriverio/webdriver/examples/chrome-extension)\
               ![WebdriverIO - Webdriver - Examples - Chrome Extension](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Chrome%20Extensions/badge.svg)

@@ -1,8 +1,7 @@
 const {config} = require('./wdio.shared.conf');
 const defaultBrowserSauceOptions = {
     build: `WebdriverIO Sync Mode Best Practices: Sauce Labs Desktop Web build-${new Date().getTime()}`,
-    screenResolution: '1600x1200',
-    enableZapscan: true
+    screenResolution: '1600x1200'
 };
 
 // =====================
@@ -120,7 +119,7 @@ config.specFileRetries = 1;
 //   passed (result === 0), then it will update the the previous failed status to passed and change the name
 config.after = (result, capabilities, specs) => {
     // Get the spec name path
-    const spec = specs[0];
+    const specFileNamePath = specs[0];
     const RETRIED_SPECS_KEY = 'retriedSpecs'
 
     // If the retriedSpecs array was not already created, then create it
@@ -134,7 +133,7 @@ config.after = (result, capabilities, specs) => {
         const retriedSpecs =  browser.sharedStore.get(RETRIED_SPECS_KEY)
         retriedSpecs.push({
             sessionId: browser.sessionId,
-            spec,
+            specFileNamePath,
         })
         browser.sharedStore.set(RETRIED_SPECS_KEY, retriedSpecs)
     }
@@ -142,7 +141,9 @@ config.after = (result, capabilities, specs) => {
     // When the test succeeds
     if (result === 0) {
         // Find the test that failed before
-        const matchingSession =  browser.sharedStore.get(RETRIED_SPECS_KEY).find(retriedSpec => retriedSpec.spec === spec);
+        const matchingSession =  browser.sharedStore.get(RETRIED_SPECS_KEY).find(
+          retriedSpec => retriedSpec.specFileNamePath === specFileNamePath
+        );
         // If there is a matching session
         if (matchingSession) {
             // Then update the test in Sauce Labs with the API

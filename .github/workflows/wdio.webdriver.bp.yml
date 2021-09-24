@@ -1,4 +1,4 @@
-name: WebdriverIO - Webdriver - Best Practices
+name: WebdriverIO - Webdriver - Async Best Practices
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [16.x]
 
     steps:
       - name: Checkout Repository

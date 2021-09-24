@@ -4,7 +4,7 @@
  * More information about the config can be found
  * here https://webdriver.io/docs/configurationfile.html
  */
-exports.config = {
+export const config: WebdriverIO.Config = {
     // ====================
     // Runner Configuration
     // ====================
@@ -13,13 +13,14 @@ exports.config = {
     // Specify Test Files
     // ==================
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/*.ts'
     ],
     // ============
     // Capabilities
     // ============
     maxInstances: 100,
-    // capabilities can be found in the `wdio.local.chrome.conf.js` or `wdio.saucelabs.conf.js`
+    // capabilities can be found in the `wdio.local.chrome.conf.ts` or `wdio.saucelabs.conf.ts`
+    capabilities: [],
     // ===================
     // Test Configurations
     // ===================
@@ -29,10 +30,11 @@ exports.config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
-    framework: 'jasmine',
+    framework: 'mocha',
     reporters: ['spec'],
-    jasmineOpts: {
-        defaultTimeoutInterval: 60000,
+    mochaOpts: {
+        ui: 'bdd',
+        timeout: 60 * 1000,
     },
 
     // ========

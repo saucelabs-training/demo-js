@@ -4,26 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test.local": "wdio test/configs/wdio.local.chrome.conf.js",
-    "test.saucelabs.eu": "REGION=eu wdio test/configs/wdio.saucelabs.conf.js",
-    "test.saucelabs.us": "wdio test/configs/wdio.saucelabs.conf.js"
+    "test.local": "wdio test/configs/wdio.local.chrome.conf.ts",
+    "test.saucelabs.eu": "REGION=eu wdio test/configs/wdio.saucelabs.conf.ts",
+    "test.saucelabs.us": "wdio test/configs/wdio.saucelabs.conf.ts"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.15.4",
-    "@babel/core": "^7.15.5",
-    "@babel/plugin-proposal-private-methods": "^7.14.5",
-    "@babel/preset-env": "^7.15.4",
-    "@babel/register": "^7.15.3",
-    "@wdio/cli": "7.12.2",
-    "@wdio/jasmine-framework": "7.12.2",
-    "@wdio/local-runner": "7.12.2",
-    "@wdio/sauce-service": "7.12.2",
-    "@wdio/spec-reporter": "7.10.1",
-    "@wdio/sync": "^7.12.2",
+    "@wdio/cli": "^7.13.1",
+    "@wdio/local-runner": "^7.13.1",
+    "@wdio/mocha-framework": "^7.13.1",
+    "@wdio/sauce-service": "^7.13.1",
+    "@wdio/shared-store-service": "^7.13.1",
+    "@wdio/spec-reporter": "^7.13.0",
     "chromedriver": "^93.0.1",
-    "wdio-chromedriver-service": "^7.2.0"
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3",
+    "wdio-chromedriver-service": "^7.2.2"
   }
 }

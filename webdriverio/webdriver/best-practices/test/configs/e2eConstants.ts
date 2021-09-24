@@ -1,4 +1,4 @@
-export const DEFAULT_TIMEOUT = 30000;
+export const DEFAULT_TIMEOUT = 30 * 1000;
 export const PAGES = {
     CART: '/cart.html',
     CHECKOUT_COMPLETE: '/checkout-complete.html',

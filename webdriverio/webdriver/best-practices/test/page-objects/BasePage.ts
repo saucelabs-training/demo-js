@@ -1,21 +1,23 @@
 import {DEFAULT_TIMEOUT} from '../configs/e2eConstants';
 
 export default class BasePage {
+    private selector;
+
     constructor(selector) {
         this.selector = selector;
     }
 
     /**
      * Wait for the element to be displayed
-     *
-     * @return {boolean}
      */
-    waitForIsShown(isShown = true) {
+    async waitForIsShown(isShown = true): Promise<boolean> {
         try{
-            return $(this.selector).waitForDisplayed({
+            const result = await $(this.selector).waitForDisplayed({
                 timeout: DEFAULT_TIMEOUT,
                 reverse: !isShown
             });
+
+            return !!result;
         } catch (e) {
             return !isShown;
         }
@@ -23,10 +25,8 @@ export default class BasePage {
 
     /**
      * Give back if the element is displayed
-     *
-     * @return {boolean}
      */
-    isDisplayed() {
+    async isDisplayed(): Promise<boolean> {
         return $(this.selector).isDisplayed();
     }
 }
