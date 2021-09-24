@@ -36,6 +36,8 @@ framework when using Sauce Labs.
         - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/webdriver/best-practices)\
           ![WebdriverIO - Webdriver - Best Practices](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Best%20Practices/badge.svg)
         - [Examples](webdriverio/webdriver/examples)
+            - [WebdriverIO and Sync Mode](webdriverio/webdriver/examples/sync-mode)\
+              ![WebdriverIO - Webdriver - Examples - Sync Mode](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Sync%20Mode/badge.svg)
             - [WebdriverIO and Chrome Extensions](webdriverio/webdriver/examples/chrome-extension)\
               ![WebdriverIO - Webdriver - Examples - Chrome Extension](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Chrome%20Extensions/badge.svg)
             - [WebdriverIO and CucumberJS](webdriverio/webdriver/examples/cucumberjs)\
