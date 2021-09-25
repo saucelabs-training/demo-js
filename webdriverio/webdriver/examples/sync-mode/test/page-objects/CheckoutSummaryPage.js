@@ -7,9 +7,7 @@ class CheckoutSummaryPage extends BasePage {
         super(SCREEN_SELECTOR);
     }
 
-    // Make it private so people can't mess with it
-    // Source: https://github.com/tc39/proposal-class-fields#private-fields
-    get #screen() {
+    get screen() {
         return $(SCREEN_SELECTOR);
     }
 
@@ -25,15 +23,15 @@ class CheckoutSummaryPage extends BasePage {
         return this.swag(needle).$('.inventory_item_price');
     }
 
-    get #cancelButton() {
+    get cancelButton() {
         return $('.cart_cancel_link');
     }
 
-    get #finishButton() {
+    get finishButton() {
         return $('.cart_button');
     }
 
-    get #items() {
+    get items() {
         return $$('.cart_item');
     }
 
@@ -42,7 +40,7 @@ class CheckoutSummaryPage extends BasePage {
      * @returns {number}
      */
     getSwagAmount() {
-        return this.#items.length;
+        return this.items.length;
     }
 
     /**
@@ -54,10 +52,10 @@ class CheckoutSummaryPage extends BasePage {
      */
     swag(needle) {
         if (typeof needle === 'string') {
-            return this.#items.find(cartItem => cartItem.getText().includes(needle));
+            return this.items.find(cartItem => cartItem.getText().includes(needle));
         }
 
-        return this.#items[needle];
+        return this.items[needle];
     }
 
     /**
@@ -75,14 +73,14 @@ class CheckoutSummaryPage extends BasePage {
      * Cancel checkout
      */
     cancelCheckout() {
-        this.#cancelButton.click();
+        this.cancelButton.click();
     }
 
     /**
      * Finish checkout
      */
     finishCheckout() {
-        this.#finishButton.click();
+        this.finishButton.click();
     }
 }
 

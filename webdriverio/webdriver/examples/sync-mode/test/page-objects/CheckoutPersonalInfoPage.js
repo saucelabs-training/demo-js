@@ -8,33 +8,31 @@ class CheckoutPersonalInfoPage extends BasePage {
     super(SCREEN_SELECTOR);
   }
 
-  // Make it private so people can't mess with it
-  // Source: https://github.com/tc39/proposal-class-fields#private-fields
-  get #screen() {
+  get screen() {
     return $(SCREEN_SELECTOR);
   }
 
-  get #cancelButton() {
+  get cancelButton() {
     return $('.cart_cancel_link');
   }
 
-  get #continueCheckoutButton() {
+  get continueCheckoutButton() {
     return $('.cart_button');
   }
 
-  get #firstName() {
+  get firstName() {
     return $('[data-test="firstName"]');
   }
 
-  get #lastName() {
+  get lastName() {
     return $('[data-test="lastName"]');
   }
 
-  get #postalCode() {
+  get postalCode() {
     return $('[data-test="postalCode"]');
   }
 
-  get #errorMessage() {
+  get errorMessage() {
     return $('[data-test="error"]');
   }
 
@@ -51,15 +49,15 @@ class CheckoutPersonalInfoPage extends BasePage {
 
     this.waitForIsShown();
     if (firstName) {
-      this.#firstName.addValue(firstName);
+      this.firstName.addValue(firstName);
     }
     if (lastName) {
-      this.#lastName.addValue(lastName);
+      this.lastName.addValue(lastName);
     }
     if (zip) {
-      this.#postalCode.addValue(zip);
+      this.postalCode.addValue(zip);
     }
-    this.#continueCheckoutButton.click();
+    this.continueCheckoutButton.click();
   }
 
   /**
@@ -68,16 +66,16 @@ class CheckoutPersonalInfoPage extends BasePage {
    * @return {string}
    */
   getErrorMessage() {
-    this.#errorMessage.waitForDisplayed({timeout: DEFAULT_TIMEOUT});
+    this.errorMessage.waitForDisplayed({timeout: DEFAULT_TIMEOUT});
 
-    return this.#errorMessage.getText();
+    return this.errorMessage.getText();
   }
 
   /**
    * Cancel checkout
    */
   cancelCheckout() {
-    this.#cancelButton.click();
+    this.cancelButton.click();
   }
 }
 

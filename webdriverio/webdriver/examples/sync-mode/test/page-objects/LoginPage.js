@@ -8,25 +8,23 @@ class LoginPage extends BasePage {
     super(SCREEN_SELECTOR);
   }
 
-  // Make it private so people can't mess with it
-  // Source: https://github.com/tc39/proposal-class-fields#private-fields
-  get #screen() {
+  get screen() {
     return $(SCREEN_SELECTOR);
   }
 
-  get #username() {
+  get username() {
     return $('#user-name');
   }
 
-  get #password() {
+  get password() {
     return $('#password');
   }
 
-  get #loginButton() {
+  get loginButton() {
     return $('.btn_action');
   }
 
-  get #errorMessage() {
+  get errorMessage() {
     return $('[data-test="error"]');
   }
 
@@ -42,13 +40,13 @@ class LoginPage extends BasePage {
 
     this.waitForIsShown();
     if (username) {
-      this.#username.setValue(username);
+      this.username.setValue(username);
     }
     if (password) {
-      this.#password.setValue(password);
+      this.password.setValue(password);
     }
 
-    this.#loginButton.click();
+    this.loginButton.click();
   }
 
   /**
@@ -57,9 +55,9 @@ class LoginPage extends BasePage {
    * @return {string}
    */
   getErrorMessage() {
-    this.#errorMessage.waitForDisplayed({timeout: DEFAULT_TIMEOUT});
+    this.errorMessage.waitForDisplayed({timeout: DEFAULT_TIMEOUT});
 
-    return this.#errorMessage.getText();
+    return this.errorMessage.getText();
   }
 
   /**
@@ -68,7 +66,7 @@ class LoginPage extends BasePage {
    * @return {boolean}
    */
   isErrorMessageDisplayed() {
-    return this.#errorMessage.isDisplayed();
+    return this.errorMessage.isDisplayed();
   }
 }
 

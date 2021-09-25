@@ -7,33 +7,31 @@ class SwagDetailsPage extends BasePage {
         super(SCREEN_SELECTOR);
     }
 
-    // Make it private so people can't mess with it
-    // Source: https://github.com/tc39/proposal-class-fields#private-fields
-    get #screen() {
+    get screen() {
         return $(SCREEN_SELECTOR);
     }
 
-    get #title() {
+    get title() {
         return $('.inventory_details_name');
     }
 
-    get #description() {
+    get description() {
         return $('.inventory_details_desc');
     }
 
-    get #price() {
+    get price() {
         return $('.inventory_details_price');
     }
 
-    get #addButton() {
+    get addButton() {
         return $('.btn_primary.btn_inventory');
     }
 
-    get #removeButton() {
+    get removeButton() {
         return $('.btn_secondary.btn_inventory');
     }
 
-    get #goBackButton() {
+    get goBackButton() {
         return $('.inventory_details_back_button');
     }
 
@@ -43,28 +41,28 @@ class SwagDetailsPage extends BasePage {
      * @return {string}
      */
     getText() {
-        return `${this.#title.getText()} ${this.#description.getText()} ${this.#price.getText()}`;
+        return `${this.title.getText()} ${this.description.getText()} ${this.price.getText()}`;
     }
 
     /**
      * Add a swag items to the cart
      */
     addToCart() {
-        this.#addButton.click();
+        this.addButton.click();
     }
 
     /**
      * Remove a swag items from the cart
      */
     removeFromCart() {
-        this.#removeButton.click();
+        this.removeButton.click();
     }
 
     /**
      * Go back to the inventory list
      */
     goBack() {
-        this.#goBackButton.click();
+        this.goBackButton.click();
     }
 }
 

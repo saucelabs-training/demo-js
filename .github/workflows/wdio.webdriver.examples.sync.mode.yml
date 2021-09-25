@@ -1,19 +1,19 @@
-name: WebdriverIO - Webdriver - Async Best Practices
+name: WebdriverIO - Webdriver - Examples - Sync Mode
+env:
+  PWD: './webdriverio/webdriver/examples/sync-mode/'
 
 on:
   push:
     # Only trigger if files in this path changed
     paths:
-      - 'webdriverio/webdriver/best-practices/**'
-      - '.github/workflows/wdio.webdriver.bp.yml'
+      - './webdriverio/webdriver/examples/sync-mode/'
       # Don't run on Markdown changes
       - '!**.md'
     branches: [ main ]
   pull_request:
     # Only trigger if files in this path changed
     paths:
-      - 'webdriverio/webdriver/best-practices/**'
-      - '.github/workflows/wdio.webdriver.bp.yml'
+      - './webdriverio/webdriver/examples/sync-mode/'
       # Don't run on Markdown changes
       - '!**.md'
     branches: [ main ]
@@ -25,14 +25,15 @@ jobs:
     runs-on: ubuntu-18.04
     defaults:
       run:
-        working-directory: ./webdriverio/webdriver/best-practices/
+        working-directory: ./webdriverio/webdriver/examples/typescript/
     env:
       SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
       SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
 
     strategy:
       matrix:
-        node-version: [16.x]
+        # A higher version will break! So NodeJS 14 is the max
+        node-version: [14.x]
 
     steps:
       - name: Checkout Repository
@@ -47,4 +48,4 @@ jobs:
         run: npm ci
 
       - name: Run tests
-        run: npm run test.saucelabs.us -- --maxInstances=25
+        run: npm run test

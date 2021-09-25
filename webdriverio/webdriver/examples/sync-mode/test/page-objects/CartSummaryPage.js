@@ -7,21 +7,19 @@ class CartSummaryPage extends BasePage {
         super(SCREEN_SELECTOR);
     }
 
-    // Make it private so people can't mess with it
-    // Source: https://github.com/tc39/proposal-class-fields#private-fields
-    get #screen() {
+    get screen() {
         return $(SCREEN_SELECTOR);
     }
 
-    get #checkoutButton() {
+    get checkoutButton() {
         return $('.checkout_button');
     }
 
-    get #continueShoppingButton() {
+    get continueShoppingButton() {
         return $('.btn_secondary');
     }
 
-    get #items() {
+    get items() {
         return $$('.cart_item');
     }
 
@@ -29,7 +27,7 @@ class CartSummaryPage extends BasePage {
      * Get the amount of swag items in the cart
      */
     getSwagAmount() {
-        return this.#items.length;
+        return this.items.length;
     }
 
     /**
@@ -41,10 +39,10 @@ class CartSummaryPage extends BasePage {
      */
     swag(needle) {
         if (typeof needle === 'string') {
-            return this.#items.find(cartItem => cartItem.getText().includes(needle));
+            return this.items.find(cartItem => cartItem.getText().includes(needle));
         }
 
-        return this.#items[needle];
+        return this.items[needle];
     }
 
     /**
@@ -71,14 +69,14 @@ class CartSummaryPage extends BasePage {
      * Continue shopping
      */
     continueShopping() {
-        this.#continueShoppingButton.click();
+        this.continueShoppingButton.click();
     }
 
     /**
      * Go to the checkout process
      */
     goToCheckout() {
-        this.#checkoutButton.click();
+        this.checkoutButton.click();
     }
 }
 

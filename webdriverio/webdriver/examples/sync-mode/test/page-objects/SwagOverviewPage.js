@@ -7,13 +7,11 @@ class SwagOverviewPage extends BasePage {
         super(SCREEN_SELECTOR);
     }
 
-    // Make it private so people can't mess with it
-    // Source: https://github.com/tc39/proposal-class-fields#private-fields
-    get #screen() {
+    get screen() {
         return $(SCREEN_SELECTOR);
     }
 
-    get #swagItems() {
+    get swagItems() {
         return $$('.inventory_item');
     }
 
@@ -22,7 +20,7 @@ class SwagOverviewPage extends BasePage {
      * @returns {number}
      */
     getAmount() {
-        return this.#swagItems.length;
+        return this.swagItems.length;
     }
 
     /**
@@ -34,10 +32,10 @@ class SwagOverviewPage extends BasePage {
      */
     swag(needle) {
         if (typeof needle === 'string') {
-            return this.#swagItems.find(swagItem => swagItem.getText().includes(needle));
+            return this.swagItems.find(swagItem => swagItem.getText().includes(needle));
         }
 
-        return this.#swagItems[needle];
+        return this.swagItems[needle];
     }
 
     /**

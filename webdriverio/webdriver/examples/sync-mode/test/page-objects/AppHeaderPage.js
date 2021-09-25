@@ -1,7 +1,5 @@
 class AppHeaderPage {
-    // Make it private so people can't mess with it
-    // Source: https://github.com/tc39/proposal-class-fields#private-fields
-    get #cart() {
+    get cart() {
         return $('.shopping_cart_link');
     }
 
@@ -13,14 +11,14 @@ class AppHeaderPage {
     getCartAmount() {
         browser.pause(500)
 
-        return this.#cart.getText();
+        return this.cart.getText();
     }
 
     /**
      * Open the cart
      */
     openCart() {
-        this.#cart.click();
+        this.cart.click();
     }
 }
 
