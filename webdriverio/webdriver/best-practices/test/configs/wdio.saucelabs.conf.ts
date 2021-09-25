@@ -41,14 +41,14 @@ config.capabilities = [
       ...defaultBrowserSauceOptions,
     },
   },
-  // {
-  //   browserName: 'internet explorer',
-  //   platformName: 'Windows 8.1',
-  //   browserVersion: 'latest',
-  //   'sauce:options': {
-  //     ...defaultBrowserSauceOptions,
-  //   },
-  // },
+  {
+    browserName: 'internet explorer',
+    platformName: 'Windows 8.1',
+    browserVersion: 'latest',
+    'sauce:options': {
+      ...defaultBrowserSauceOptions,
+    },
+  },
   {
     browserName: 'MicrosoftEdge',
     platformName: 'Windows 10',

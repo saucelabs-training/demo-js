@@ -34,7 +34,7 @@ framework when using Sauce Labs.
               ![WebdriverIO - Appium Web - W3C on EMUSIM](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Appium%20Web%20-%20W3C%20on%20EMUSIM/badge.svg)
     - WebdriverIO for Desktop Web (Selenium, but officially WebDriver)
         - [WebdriverIO Async Mode and TypeScript with Best Practices, including the use of Page Objects](webdriverio/webdriver/best-practices)\
-          ![WebdriverIO - Webdriver - Best Practices](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Best%20Practices/badge.svg)
+          ![WebdriverIO - Webdriver - Best Practices](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Async%20Best%20Practices/badge.svg)
         - [Examples](webdriverio/webdriver/examples)
             - [WebdriverIO and Sync Mode with Best Practices](webdriverio/webdriver/examples/sync-mode)\
               ![WebdriverIO - Webdriver - Examples - Sync Mode](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Sync%20Mode/badge.svg)

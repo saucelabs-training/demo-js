@@ -13,7 +13,6 @@ class SwagOverviewPage extends BasePage {
 
   /**
    * Get the amount of swag items listed on the page
-   * @returns {number}
    */
   async getAmount(): Promise<number> {
     return this.swagItems.length;
@@ -21,17 +20,16 @@ class SwagOverviewPage extends BasePage {
 
   /**
    * Get a swag Item based on a search string or a number of the visible items
-   *
-   * @param {number|string} needle
-   *
-   * @return {Element[]} the selected swag
    */
   async swag(needle: Needle): Promise<WebdriverIO.Element> {
     if (typeof needle === 'string') {
-      return this.swagItems.find(
-        async (swagItem) =>
-          (await swagItem.getText()).includes(needle)
-      );
+      for (const swagItem of await this.swagItems) {
+        if ((await swagItem.getText()).includes(needle)){
+          return swagItem;
+        }
+      }
+
+      return undefined;
     }
 
     return this.swagItems[needle];

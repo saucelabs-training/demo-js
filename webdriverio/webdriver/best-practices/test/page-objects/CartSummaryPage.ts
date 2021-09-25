@@ -31,10 +31,13 @@ class CartSummaryPage extends BasePage {
    */
   async swag(needle: Needle): Promise<WebdriverIO.Element> {
     if (typeof needle === 'string') {
-      return this.items.find(
-        async (cartItem) => (
-          await cartItem.getText()).includes(needle)
-      );
+      for (const item of await this.items) {
+        if ((await item.getText()).includes(needle)){
+          return item;
+        }
+      }
+
+      return undefined;
     }
 
     return this.items[needle];
