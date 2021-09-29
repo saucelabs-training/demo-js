@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test.local": "node tests/configs/local.chrome.config.js",
+    "test.local": "USERNAME=foobar node tests/configs/local.chrome.config.js",
     "test.sauce.ex1.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml",
     "test.sauce.ex1.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml --region us-west-1",
     "test.sauce.ex2.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex2.yml",
@@ -18,7 +18,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "saucectl": "^0.54.0",
-    "testcafe": "^1.14.2"
+    "saucectl": "^0.68.0",
+    "testcafe": "^1.16.0"
   }
 }
