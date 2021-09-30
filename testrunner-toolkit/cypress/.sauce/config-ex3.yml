@@ -4,14 +4,15 @@ sauce:
   region: eu-central-1 # or us-west-1
   concurrency: 3
   metadata:
-    name: Cypress Cross Browser tests
     tags:
       - cypress
       - cross-browser
-    build: "Cypress: Cross Browser - $DATE"
+    build: "Cypress: Cross Browser"
 cypress:
   version: 8.3.0
   configFile: "cypress.json"  # We determine related files based on the location of the config file.
+# Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
+rootDir: ./
 suites:
   # Chrome
   - name: "Swag Labs Login Chrome"

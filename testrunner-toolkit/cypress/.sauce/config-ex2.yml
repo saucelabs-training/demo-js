@@ -5,14 +5,15 @@ sauce:
   # This is important, increase this number to the amount of Suite you want to run
   concurrency: 4
   metadata:
-    name: Parallel Cypress Set
     tags:
       - cypress
       - parallel
-    build: "Cypress: parallel - $DATE"
+    build: "Cypress: parallel"
 cypress:
   version: 8.3.0
   configFile: "cypress.json"  # We determine related files based on the location of the config file.
+# Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
+rootDir: ./
 suites:
   - name: "Swag Labs Login"
     browser: "chrome"
