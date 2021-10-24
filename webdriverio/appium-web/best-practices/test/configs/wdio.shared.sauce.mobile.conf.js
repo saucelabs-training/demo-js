@@ -20,4 +20,7 @@ config.region = process.env.REGION || 'us';
 // for a full list of platforms and capabilities
 config.appiumVersion = process.env.npm_config_appium_version || 'default';
 
+// Retry a spec once if it fails, this could be a WebdriverIO or Driver error
+config.specFileRetries = 1;
+
 exports.config = config;
