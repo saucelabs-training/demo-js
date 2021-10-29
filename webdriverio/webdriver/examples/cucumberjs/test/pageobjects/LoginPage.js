@@ -1,19 +1,13 @@
 import BasePage from './BasePage';
 import {DEFAULT_TIMEOUT} from '../configs/e2eConstants';
 
-const SCREEN_SELECTOR = '#login_button_container';
-
 class LoginPage extends BasePage {
   constructor() {
-    super(SCREEN_SELECTOR);
+    super('#login_button_container');
   }
 
   // Make it private so people can't mess with it
   // Source: https://github.com/tc39/proposal-class-fields#private-fields
-  get #screen() {
-    return $(SCREEN_SELECTOR);
-  }
-
   get #username() {
     return $('#user-name');
   }
@@ -37,27 +31,27 @@ class LoginPage extends BasePage {
    * @param {string} userDetails.username
    * @param {string} userDetails.password
    */
-  signIn(userDetails) {
+  async signIn(userDetails) {
     const {password, username} = userDetails;
 
-    this.waitForIsShown();
+    await this.waitForIsShown();
     if (username) {
-      this.#username.setValue(username);
+      await this.#username.setValue(username);
     }
     if (password) {
-      this.#password.setValue(password);
+      await this.#password.setValue(password);
     }
 
-    this.#loginButton.click();
+    await this.#loginButton.click();
   }
 
   /**
    * Get the text or the error message container
    *
-   * @return {string}
+   * @return {Promise<string>}
    */
-  getErrorMessage() {
-    this.#errorMessage.waitForDisplayed({timeout: DEFAULT_TIMEOUT});
+  async getErrorMessage() {
+    await this.#errorMessage.waitForDisplayed({timeout: DEFAULT_TIMEOUT});
 
     return this.#errorMessage.getText();
   }
@@ -65,9 +59,9 @@ class LoginPage extends BasePage {
   /**
    * Check if the error message is displayed
    *
-   * @return {boolean}
+   * @return {Promise<boolean>}
    */
-  isErrorMessageDisplayed() {
+  async isErrorMessageDisplayed() {
     return this.#errorMessage.isDisplayed();
   }
 }

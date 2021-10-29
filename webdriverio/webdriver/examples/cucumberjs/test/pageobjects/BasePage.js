@@ -8,9 +8,9 @@ export default class BasePage {
     /**
      * Wait for the element to be displayed
      *
-     * @return {boolean}
+     * @return {Promise<boolean>}
      */
-    waitForIsShown(isShown = true) {
+    async waitForIsShown(isShown = true) {
         try{
             return $(this.selector).waitForDisplayed({
                 timeout: DEFAULT_TIMEOUT,
@@ -24,9 +24,9 @@ export default class BasePage {
     /**
      * Give back if the element is displayed
      *
-     * @return {boolean}
+     * @return {Promise<boolean>}
      */
-    isDisplayed() {
+    async isDisplayed() {
         return $(this.selector).isDisplayed();
     }
 }
