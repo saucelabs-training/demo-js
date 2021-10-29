@@ -1,10 +1,9 @@
 # Using Uploading and Downloading Files from Sauce Labs Emulators and Real Devices
 This folder contains examples for using up / download files from:
 
-- [Android real devices on the new Sauce Labs UI](#run-tests-on-sauce-labs-android-real-devices-in-the-new-sauce-labs-ui)
-- [Android real devices on the Legacy RDC cloud](#run-tests-on-sauce-labs-android-real-devices-in-the-legacy-rdc)
+- [Android real devices on the Sauce Labs RDC Cloud](#android-real-devices-on-the-sauce-labs-rdc-cloud)
 - [Android Emulators on the Sauce Labs Emulator cloud](#run-tests-on-sauce-labs-android-emulators)
-- [Android Emulator on the your local machine](#run-tests-on-your-local-android-emulator)
+- [Android Emulator on your local machine](#run-tests-on-your-local-android-emulator)
 
 > **NOTE:**\
 > Up/downloading files to iOS real devices is not supported by Appium!\
@@ -41,9 +40,6 @@ The examples in this repository that can run on Sauce Labs use environment varia
     # For Sauce Labs Real devices in the New UI
     export SAUCE_USERNAME=********
     export SAUCE_ACCESS_KEY=*******
-    
-    # For the Legacy RDC
-    export SAUCE_RDC_EU_ACCESS_KEY_ANDROID=********
 
 ## Uploading files
 ### Android Real devices
@@ -58,8 +54,8 @@ will look like this
 
 ![Upload Android emulators](assets/android-emulator-upload.gif)
 
-## Run tests on Sauce Labs Android real devices in the New Sauce Labs UI
-If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs UI** then you can run the Android test with
+## Android real devices on the Sauce Labs RDC Cloud
+If you want to run the tests on Sauce Labs real devices then you can run the Android test with
 
     // If using the US DC
     npm run test.sauce.rdc.android.us
@@ -71,19 +67,6 @@ The tests will be executed on a Samsung Galaxy 10.
 
 See this [config](test/configs/wdio.android.sauce.real.conf.js)-file for more information.
 
-## Run tests on Sauce Labs Android real devices in the Legacy RDC
-If you want to run the tests on Sauce Labs real devices in the **Legacy RDC** then you can run the Android test with
-
-    // If using the US DC
-    npm run test.legacy.rdc.android.us
-    
-    // If using the EU DC
-    npm run test.legacy.rdc.android.eu
-    
-The tests will be executed on a Samsung Galaxy 10.    
-
-See this [config](test/configs/wdio.android.legacy.rdc.conf.js)-file for more information.
-
 ## Run tests on Sauce Labs Android Emulators
 If you want to run the tests on Sauce Labs Android Emulators then you can run the Android test with
 
@@ -93,7 +76,7 @@ If you want to run the tests on Sauce Labs Android Emulators then you can run th
     // If using the EU DC
     npm run test.sauce.android.emulator.eu
     
-The tests will be executed on a Android 8.1, 9.0 and 10.0.
+The tests will be executed on an Android 8.1, 9.0 and 10.0.
 
 See this [config](test/configs/wdio.android.sauce.emu.conf.js)-file for more information.
 

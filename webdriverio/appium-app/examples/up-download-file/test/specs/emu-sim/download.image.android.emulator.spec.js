@@ -1,32 +1,37 @@
 import {ensureDirSync, readFileSync, removeSync, writeFileSync} from 'fs-extra';
 import {join} from 'path';
 import fileExists from '../../../helpers';
-import SamsungGallery from '../../screen-objects/SamsungGallery';
+import GooglePhotos from '../../screen-objects/GooglePhotos';
 
 /**
  * NOTE:
- * - This test is being executed on a Samsung device, be aware that different devices will have different
- *   `appPackage`s and `appActivity`s, that's the reason why the actions in the Samsung Gallery are put
- *   into a SamsungGallery screen-object so you can focus on how to download a photo from a real device.
+ * This script uses Google Photos to upload and download the photo. Hopefully you understand how the download works
+ * and how you can verify this
  */
 describe('Appium download', () => {
   let currentPhotos = 0;
-  const deviceFilePath = '/storage/self/primary/sauce-bot-coding.png';
-  const downloadFolder = `.tmp/${driver.capabilities.deviceName || 'samsung_real_device'}/`;
+  const deviceFilePath = '/mnt/sdcard/Pictures/sauce-bot-coding.png';
+  const downloadFolder = `.tmp/${driver.capabilities.deviceName}/${driver.capabilities.platformVersion}/`;
+
+  /**
+   * This is only needed for Sauce Labs, starting the project with a browser is much faster. The challenge is that
+   * we start in the webview context, so we set it to Native and can do all the magic with the native context
+   * of the Android emulator
+   */
+  beforeAll(async () => await driver.switchContext('NATIVE_APP'));
 
   /**
    * A before hook that will prepare the device for the actual test
    */
   beforeEach(async () => {
-    await driver.switchContext('NATIVE_APP');
     // Make sure the download dir we are going to use is empty
     removeSync(downloadFolder);
     // Create the directory
     ensureDirSync(downloadFolder);
 
     // Start the Gallery on the device
-    await SamsungGallery.open();
-    currentPhotos = await SamsungGallery.amountOfPhotos;
+    await GooglePhotos.open();
+    currentPhotos = await GooglePhotos.amountOfPhotos;
     // The file we want to upload
     const codingBot = readFileSync(join(process.cwd(), 'assets/sauce-bot-coding.png'), 'base64');
     // Push it to the device and wait till it is uploaded
@@ -34,7 +39,7 @@ describe('Appium download', () => {
     // the file from. I've checked this structure with the VUSB offering of Sauce Labs for private devices.
     await driver.pushFile(deviceFilePath, codingBot);
     await driver.waitUntil(
-      async () => await SamsungGallery.amountOfPhotos > currentPhotos,
+      async () => await GooglePhotos.amountOfPhotos > currentPhotos,
     );
   });
 
@@ -43,14 +48,14 @@ describe('Appium download', () => {
    */
   afterEach(async () => {
     // Delete the photo and verify that the amount of photos is equal to when the test started
-    await SamsungGallery.deletePhoto('last');
-    await expect(await SamsungGallery.amountOfPhotos).toEqual(currentPhotos);
+    await GooglePhotos.deletePhoto('last');
+    await expect(await GooglePhotos.amountOfPhotos).toEqual(currentPhotos);
 
     // Make sure the download dir we are going to use is empty
     removeSync(downloadFolder);
   });
 
-  it('should be able to download a file from a real device', async () => {
+  it('should be able to download a file from an Android emulator', async () => {
     const filePath = join(process.cwd(), downloadFolder, 'downloaded-sauce-bot-coding.png');
 
     // First verify that the file does not exist in our repo
