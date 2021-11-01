@@ -23,7 +23,7 @@ framework when using Sauce Labs.
             - [Using Biometric Login on Sauce Labs](webdriverio/appium-app/examples/biometric-login)
             - [Using Image Injection on Sauce Labs Real Devices](webdriverio/appium-app/examples/image-injection)
             - [Using Uploading and Downloading Files from Sauce Labs Android Emulators, iOS Simulators and Android Real Devices](webdriverio/appium-app/examples/up-download-file)\
-              ![WebdriverIO - Appium App - Up/Download files](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Appium%20App%20-%20Up%20Download%20Files/badge.svg)  
+              [![WebdriverIO - Appium App - UpDownload files](https://github.com/saucelabs-training/demo-js/actions/workflows/wdio.appium.app.up.download.files.yml/badge.svg)](https://github.com/saucelabs-training/demo-js/actions/workflows/wdio.appium.app.up.download.files.yml)  
     - WebdriverIO with Appium for Mobile Web (Chrome/Safari)
         - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/appium-web/best-practices)\
           ![WebdriverIO - Appium Web - Best Practices](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Appium%20Web%20-%20Best%20Practices/badge.svg)
