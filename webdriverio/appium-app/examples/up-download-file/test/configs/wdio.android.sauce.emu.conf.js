@@ -5,7 +5,8 @@ const buildName = `Up/download image on/from Sauce Labs emulators: ${new Date().
 // Specify Test Files
 // ==================
 config.specs = [
-  './test/specs/emu-sim/*.spec.js'
+  './test/specs/emu-sim/upload.image.android.emulator.spec.js',
+  './test/specs/emu-sim/download.image.android.emulator.spec.js'
 ];
 
 // ============
