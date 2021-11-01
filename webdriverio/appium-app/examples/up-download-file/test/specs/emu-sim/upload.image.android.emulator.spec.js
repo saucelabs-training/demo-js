@@ -18,7 +18,7 @@ describe('Appium upload', () => {
     it('should be able to upload a file to Google Photos and delete it', async () => {
         // Open Google Photos
         await GooglePhotos.open();
-        const currentPhotos = await GooglePhotos.amountOfPhotos;
+        const currentPhotos = await GooglePhotos.amountOfPhotos();
 
         /**
          * The magic happens here
@@ -29,10 +29,10 @@ describe('Appium upload', () => {
         // Device manufacturers put pictures in different places, you do need to know the path on your device that
         // stores media. For emulators and at least some real devices, the path on the device is `/mnt/sdcard/Pictures`
         await driver.pushFile('/mnt/sdcard/Pictures/sauce-bot-coding.png', codingBot);
-        await driver.waitUntil(async () => await GooglePhotos.amountOfPhotos > currentPhotos);
+        await driver.waitUntil(async () => await GooglePhotos.amountOfPhotos() > currentPhotos);
 
         // Delete the photo and verify that the amount of photos is equal to when the test started
         await GooglePhotos.deletePhoto('last');
-        await expect(await GooglePhotos.amountOfPhotos).toEqual(currentPhotos);
+        await expect(await GooglePhotos.amountOfPhotos()).toEqual(currentPhotos);
     });
 });

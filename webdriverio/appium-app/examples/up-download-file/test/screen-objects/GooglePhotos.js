@@ -11,10 +11,6 @@ class GooglePhotos {
     return $$('android=new UiSelector().descriptionContains("Photo taken on")');
   }
 
-  get amountOfPhotos() {
-    return this.photos.length;
-  }
-
   get photoDeleteButton() {
     return $('android=new UiSelector().resourceId("com.google.android.apps.photos:id/trash")');
   }
@@ -73,6 +69,15 @@ class GooglePhotos {
     await this.confirmMoveToTrashButton.click();
     // Wait for it to disappear
     await this.confirmMoveToTrashButton.waitForDisplayed({reverse: true});
+  }
+
+  /**
+   * Get the amount of photos
+   *
+   * @returns {Promise<number>}
+   */
+  async amountOfPhotos() {
+    return this.photos.length;
   }
 }
 

@@ -7,10 +7,6 @@ class SamsungGallery {
     return $$('android=new UiSelector().resourceId("com.sec.android.gallery3d:id/recycler_view_item")');
   }
 
-  get amountOfPhotos() {
-    return this.photos.length;
-  }
-
   get deleteButton() {
     return $('android=new UiSelector().resourceId("com.sec.android.gallery3d:id/btn_delete")');
   }
@@ -60,6 +56,15 @@ class SamsungGallery {
     await this.confirmDeleteButton.click();
     // Wait for it to disappear
     await this.confirmDeleteButton.waitForDisplayed({reverse: true});
+  }
+
+  /**
+   * Get the amount of photos
+   *
+   * @returns {Promise<number>}
+   */
+  async amountOfPhotos() {
+    return this.photos.length;
   }
 }
 

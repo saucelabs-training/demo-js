@@ -8,7 +8,10 @@
     "test.sauce.android.emulator.us": "wdio test/configs/wdio.android.sauce.emu.conf.js",
     "test.sauce.android.emulator.eu": "REGION=eu wdio test/configs/wdio.android.sauce.emu.conf.js",
     "test.sauce.rdc.android.us": "wdio test/configs/wdio.android.sauce.real.conf.js",
-    "test.sauce.rdc.android.eu": "REGION=eu RDC=true wdio test/configs/wdio.android.sauce.real.conf.js"
+    "test.sauce.rdc.android.eu": "REGION=eu RDC=true wdio test/configs/wdio.android.sauce.real.conf.js",
+    "test.local.ios.simulator": "wdio test/configs/wdio.ios.local.sim.conf.js",
+    "test.sauce.ios.simulator.eu": "REGION=eu wdio test/configs/wdio.ios.sauce.sim.conf.js",
+    "test.sauce.ios.simulator.us": "wdio test/configs/wdio.ios.sauce.sim.conf.js"
   },
   "keywords": [],
   "license": "MIT",

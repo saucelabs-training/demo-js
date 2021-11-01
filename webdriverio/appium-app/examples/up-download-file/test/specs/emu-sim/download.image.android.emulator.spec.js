@@ -31,7 +31,7 @@ describe('Appium download', () => {
 
     // Start the Gallery on the device
     await GooglePhotos.open();
-    currentPhotos = await GooglePhotos.amountOfPhotos;
+    currentPhotos = await GooglePhotos.amountOfPhotos();
     // The file we want to upload
     const codingBot = readFileSync(join(process.cwd(), 'assets/sauce-bot-coding.png'), 'base64');
     // Push it to the device and wait till it is uploaded
@@ -39,7 +39,7 @@ describe('Appium download', () => {
     // the file from. I've checked this structure with the VUSB offering of Sauce Labs for private devices.
     await driver.pushFile(deviceFilePath, codingBot);
     await driver.waitUntil(
-      async () => await GooglePhotos.amountOfPhotos > currentPhotos,
+      async () => await GooglePhotos.amountOfPhotos() > currentPhotos,
     );
   });
 
@@ -49,7 +49,7 @@ describe('Appium download', () => {
   afterEach(async () => {
     // Delete the photo and verify that the amount of photos is equal to when the test started
     await GooglePhotos.deletePhoto('last');
-    await expect(await GooglePhotos.amountOfPhotos).toEqual(currentPhotos);
+    await expect(await GooglePhotos.amountOfPhotos()).toEqual(currentPhotos);
 
     // Make sure the download dir we are going to use is empty
     removeSync(downloadFolder);

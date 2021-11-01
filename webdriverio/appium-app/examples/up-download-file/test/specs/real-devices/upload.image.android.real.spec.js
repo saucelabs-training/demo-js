@@ -13,7 +13,7 @@ describe('Appium upload', () => {
     await driver.switchContext('NATIVE_APP');
     // Start the Gallery on the device
     await SamsungGallery.open();
-    const currentPhotos = await SamsungGallery.amountOfPhotos;
+    const currentPhotos = await SamsungGallery.amountOfPhotos();
 
     /**
      * The magic happens here
@@ -25,11 +25,11 @@ describe('Appium upload', () => {
     // the file from. I've checked this structure with the VUSB offering of Sauce Labs for private devices.
     await driver.pushFile('/storage/self/primary/sauce-bot-coding.png', codingBot);
     await driver.waitUntil(
-      async () => await SamsungGallery.amountOfPhotos > currentPhotos,
+      async () => await SamsungGallery.amountOfPhotos() > currentPhotos,
     );
 
     // Delete the photo and verify that the amount of photos is equal to when the test started
     await SamsungGallery.deletePhoto('last');
-    await expect(await SamsungGallery.amountOfPhotos).toEqual(currentPhotos);
+    await expect(await SamsungGallery.amountOfPhotos()).toEqual(currentPhotos);
   });
 });
