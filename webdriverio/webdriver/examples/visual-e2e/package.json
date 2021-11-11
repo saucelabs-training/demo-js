@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test.visual.sauce": "npx wdio test/configs/wdio.shared.conf.js",
-    "test.visual.crossplatform": "npx wdio test/configs/wdio.cross.platform.conf.js"
+    "test.visual.sauce": "wdio test/configs/wdio.shared.conf.js",
+    "test.visual.crossplatform": "wdio test/configs/wdio.cross.platform.conf.js"
   },
   "keywords": [],
   "author": "",

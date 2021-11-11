@@ -4,7 +4,7 @@ exports.config = {
     // ====================
     runner: 'local',
     specs: [
-        './test/specs/simple.spec.js'
+        './test/specs/*.spec.js'
     ],
     maxInstances: 100,
     logLevel: 'warn',
