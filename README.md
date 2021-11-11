@@ -69,7 +69,6 @@ framework when using Sauce Labs.
     - [TestCafe](testrunner-toolkit/testcafe)
     - [Dependencies Examples](testrunner-toolkit/dependencies-example)
 - [Screener Runner (DEPRECATED!! Move to Visual E2E)](screener-runner)
-- [Visual E2E](visual-e2e)
 - [NightWatch](nightwatch)
     - NightWatch for Desktop Web (Selenium, but officially WebDriver)
         - [Examples](nightwatch/webdriver/examples)
