@@ -15,6 +15,14 @@ exports.config = {
     connectionRetryCount: 3,
     reporters: ['spec'],
     services: [],
+    // ====================
+    // Add Sauce Connect
+    // ====================
+    // services: [
+    //     ['sauce', {
+    //         sauceConnect: true
+    //     }]
+    // ],
     //Screener Configuration
     hostname: 'hub.screener.io',
     port: 443,
@@ -41,6 +49,6 @@ exports.config = {
     framework: 'mocha',
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 120000
     }
 };
