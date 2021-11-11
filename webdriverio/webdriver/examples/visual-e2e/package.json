@@ -1,0 +1,20 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test.visual.sauce": "npx wdio test/configs/wdio.shared.conf.js",
+    "test.visual.crossplatform": "npx wdio test/configs/wdio.cross.platform.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/cli": "^7.10.1",
+    "@wdio/local-runner": "^7.16.6",
+    "@wdio/mocha-framework": "^7.10.1",
+    "@wdio/sauce-service": "^7.10.1",
+    "@wdio/spec-reporter": "^7.10.1"
+  }
+}
