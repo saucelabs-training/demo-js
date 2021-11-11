@@ -43,6 +43,7 @@ framework when using Sauce Labs.
               ![WebdriverIO - Webdriver - Examples - Chrome Extension](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Chrome%20Extensions/badge.svg)
             - [WebdriverIO and CucumberJS](webdriverio/webdriver/examples/cucumberjs)\
               ![WebdriverIO - Webdriver - Examples - CucumberJS](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20CucumberJS/badge.svg)
+            - [WebdriverIO Visual E2E](webdriverio/webdriver/examples/visual-e2e/README.md) [![VisualE2E](https://github.com/saucelabs-training/demo-js/actions/workflows/wdio.webdriver.examples.visuale2e.yml/badge.svg)](https://github.com/saucelabs-training/demo-js/actions/workflows/wdio.webdriver.examples.visuale2e.yml)
             - [WebdriverIO and extendedDebugging](webdriverio/webdriver/examples/extended-debugging)\
               ![WebdriverIO - Webdriver - Examples - Extended Debugging](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Extended%20Debugging/badge.svg)
             - [WebdriverIO and Sauce Connect](webdriverio/webdriver/examples/sc)\
@@ -58,6 +59,19 @@ framework when using Sauce Labs.
             - [WebdriverIO with Typescript](webdriverio/webdriver/examples/typescript)\
               ![WebdriverIO - Webdriver - Examples - TS](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20TS/badge.svg)
 - **SauceCTL Testrunner Toolkit**
+<<<<<<< HEAD
+    - [Cypress examples](./testrunner-toolkit/cypress)
+        - [Cypress and a Default Test Set](./testrunner-toolkit/cypress/README.md#example-1---minimal-configuration-for-all-tests)
+        - [Cypress and Cross Browser Testing on Sauce Labs](./testrunner-toolkit/cypress/README.md#example-3---cross-browser-tests)
+        - [Cypress and Cross Browser Testing browser versioning](./testrunner-toolkit/cypress/README.md#example-4---cross-versions-tests)
+        - [Cypress and Testing in Parallel](./testrunner-toolkit/cypress/README.md#example-2---parallel-tests)
+    - [Playwright with Jest](./testrunner-toolkit/playwright)
+    - [Puppeteer with Jest](./testrunner-toolkit/puppeteer)
+    - [TestCafe](./testrunner-toolkit/testcafe)
+    - [Dependencies Examples](./testrunner-toolkit/dependencies-example)
+- [Screener Runner (DEPRECATED!! Move to Visual E2E)](./screener-runner)
+- [NightWatch](./nightwatch)
+=======
     - [Cypress examples](testrunner-toolkit/cypress)
         - [Cypress and a Default Test Set](testrunner-toolkit/cypress/README.md#example-1---minimal-configuration-for-all-tests)
         - [Cypress and Cross Browser Testing on Sauce Labs](testrunner-toolkit/cypress/README.md#example-3---cross-browser-tests)
@@ -70,6 +84,7 @@ framework when using Sauce Labs.
 - [Screener Runner (DEPRECATED!! Move to Visual E2E)](screener-runner)
 - [Visual E2E](visual-e2e)
 - [NightWatch](nightwatch)
+>>>>>>> main
     - NightWatch for Desktop Web (Selenium, but officially WebDriver)
         - [Examples](nightwatch/webdriver/examples)
             - [NightWatch Desktop Web: Update Sauce Status](nightwatch/webdriver/examples/update-sauce)

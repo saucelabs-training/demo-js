@@ -1,0 +1,50 @@
+name: VisualE2E
+
+on:
+  push:
+    # Only trigger if files in this path changed
+    paths:
+      - 'webdriverio/webdriver/examples/visual-e2e/**'
+      - '.github/workflows/wdio.webdriver.examples.visuale2e.yml'
+      # Don't run on Markdown changes
+      - '!**.md'
+    branches: [ main ]
+  pull_request:
+    # Only trigger if files in this path changed
+    paths:
+      - 'webdriverio/webdriver/examples/visual-e2e/**'
+      - '.github/workflows/wdio.webdriver.examples.visuale2e.yml'
+      # Don't run on Markdown changes
+      - '!**.md'
+    branches: [ main ]
+  schedule:
+    - cron:  '0 0 * * 0'
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        working-directory: ./webdriverio/webdriver/examples/visual-e2e/
+        run: npm install
+
+      - name: Run visual e2e tests
+        working-directory: ./webdriverio/webdriver/examples/visual-e2e/
+        env:
+          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+          SCREENER_API_KEY: ${{ secrets.SCREENER_API_KEY }}
+        run: npm run test.visual.sauce
