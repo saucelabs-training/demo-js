@@ -1,5 +1,3 @@
-
-
 exports.config = {
     // ====================
     // More information about the configuration is found here https://webdriver.io/docs/configurationfile.html

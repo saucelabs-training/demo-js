@@ -35,4 +35,13 @@ exports.config = {
   // Services
   // ========
   services: [],
+
+  // =======
+  // Retries
+  // =======
+  // Normally a bad practice, but there could be an environmental issue
+  // when this is needed.
+  specFileRetries: 1,
+  specFileRetriesDelay: 0,
+  specFileRetriesDeferred: false,
 };

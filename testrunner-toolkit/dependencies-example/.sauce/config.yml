@@ -11,12 +11,12 @@ sauce:
     build: "Cypress: Axe dependency test - $DATE"
 npm:
   packages:
-    "axe-core": "^4.1.3"
-    "cypress-axe": "^0.12.2"
+    "axe-core": "^4.3.3"
+    "cypress-axe": "^0.13.0"
 docker:
   fileTransfer: mount
 cypress:
-  version: 7.3.0
+  version: 8.3.0
   configFile: "cypress.json"  # We determine related files based on the location of the config file.
 suites:
   # Chrome

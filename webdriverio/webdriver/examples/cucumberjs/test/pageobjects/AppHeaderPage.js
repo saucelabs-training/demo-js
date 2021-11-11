@@ -8,12 +8,12 @@ class AppHeaderPage {
     /**
      * Get the cart amount
      *
-     * @return {number}
+     * @return {Promise<number>}
      */
-    getCartAmount() {
-        browser.pause(500)
+    async getCartAmount() {
+        await browser.pause(500)
 
-        const amount = this.#cart.getText();
+        const amount = await this.#cart.getText();
 
         return parseInt(amount || 0);
     }
@@ -21,8 +21,8 @@ class AppHeaderPage {
     /**
      * Open the cart
      */
-    openCart() {
-        this.#cart.click();
+    async openCart() {
+        await this.#cart.click();
     }
 }
 

@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "types": [
+      "expect-webdriverio",
+      "node",
+      "webdriverio/async",
+      "@wdio/mocha-framework"
+    ]
+  }
+}

@@ -1,14 +1,15 @@
 # Using Uploading and Downloading Files from Sauce Labs Emulators and Real Devices
 This folder contains examples for using up / download files from:
 
-- [Android real devices on the new Sauce Labs UI](#run-tests-on-sauce-labs-android-real-devices-in-the-new-sauce-labs-ui)
-- [Android real devices on the Legacy RDC cloud](#run-tests-on-sauce-labs-android-real-devices-in-the-legacy-rdc)
+- [Android real devices on the Sauce Labs RDC Cloud](#android-real-devices-on-the-sauce-labs-rdc-cloud)
 - [Android Emulators on the Sauce Labs Emulator cloud](#run-tests-on-sauce-labs-android-emulators)
-- [Android Emulator on the your local machine](#run-tests-on-your-local-android-emulator)
+- [Android Emulator on your local machine](#run-tests-on-your-local-android-emulator)
+- [iOS Simulators on the Sauce Labs Emulator cloud](#run-tests-on-sauce-labs-ios-simulators)
+- [iOS Simulator on your local machine](#run-tests-on-your-local-ios-simulator)
 
 > **NOTE:**\
-> Up/downloading files to iOS real devices is not supported by Appium!\
-> Up/downloading files to Sauce Labs iOS Simulators is currently not supported by Sauce Labs
+> - Up/downloading files to iOS real devices is **not supported by Apple/Appium!**\
+> - Downloading files from iOS Simulators is **not possible** (not found a way to do that currently)
 
 ## Install dependencies
 You can install all dependencies by running the following command
@@ -32,8 +33,12 @@ The advice is that you use a dedicated device, so you always know the file struc
 the up/downloading script.
 
 ### Apps to verify up/downloads
-For Android real devices we use the Samsung Gallery, and for Android emulators we use the Google Photos app. The purpose 
-is not to show you how to automate these apps, but more to show you how you can verify if an upload was successful.  
+- For Android real devices we use the Samsung Gallery
+- For Android emulators we use the Google Photos app 
+- For iOS simulators we use the iOS Photo's app 
+
+The purpose is **NOT to show you how to automate these apps, but more to show you how you can verify if an upload** was 
+successful.  
 
 ### Environment variables for Sauce Labs
 The examples in this repository that can run on Sauce Labs use environment variables, make sure you've added the following
@@ -41,9 +46,6 @@ The examples in this repository that can run on Sauce Labs use environment varia
     # For Sauce Labs Real devices in the New UI
     export SAUCE_USERNAME=********
     export SAUCE_ACCESS_KEY=*******
-    
-    # For the Legacy RDC
-    export SAUCE_RDC_EU_ACCESS_KEY_ANDROID=********
 
 ## Uploading files
 ### Android Real devices
@@ -58,8 +60,14 @@ will look like this
 
 ![Upload Android emulators](assets/android-emulator-upload.gif)
 
-## Run tests on Sauce Labs Android real devices in the New Sauce Labs UI
-If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs UI** then you can run the Android test with
+### iOS Simulators
+The script on how to use this can be found [here](test/specs/emu-sim/upload.image.ios.simulator.spec.js) and the execution 
+will look like this
+
+![Upload iOS simulators](assets/ios-simulator-upload.gif)
+
+## Android real devices on the Sauce Labs RDC Cloud
+If you want to run the tests on Sauce Labs real devices then you can run the Android test with
 
     // If using the US DC
     npm run test.sauce.rdc.android.us
@@ -71,19 +79,6 @@ The tests will be executed on a Samsung Galaxy 10.
 
 See this [config](test/configs/wdio.android.sauce.real.conf.js)-file for more information.
 
-## Run tests on Sauce Labs Android real devices in the Legacy RDC
-If you want to run the tests on Sauce Labs real devices in the **Legacy RDC** then you can run the Android test with
-
-    // If using the US DC
-    npm run test.legacy.rdc.android.us
-    
-    // If using the EU DC
-    npm run test.legacy.rdc.android.eu
-    
-The tests will be executed on a Samsung Galaxy 10.    
-
-See this [config](test/configs/wdio.android.legacy.rdc.conf.js)-file for more information.
-
 ## Run tests on Sauce Labs Android Emulators
 If you want to run the tests on Sauce Labs Android Emulators then you can run the Android test with
 
@@ -93,17 +88,36 @@ If you want to run the tests on Sauce Labs Android Emulators then you can run th
     // If using the EU DC
     npm run test.sauce.android.emulator.eu
     
-The tests will be executed on a Android 8.1, 9.0 and 10.0.
+The tests will be executed on an Android 8.1, 9.0 and 10.0.
 
 See this [config](test/configs/wdio.android.sauce.emu.conf.js)-file for more information.
 
 ## Run tests on your local Android Emulator
 If you want to run the tests on your local Android Emulator you can test this with
 
-    // If using the US DC
     npm run test.local.android.emulator
 
 Please check this [config](test/configs/wdio.android.local.emu.conf.js)-file for more information.
+
+## Run tests on Sauce Labs iOS Simulators
+If you want to run the tests on Sauce Labs iOS Simulators then you can run the iOS test with
+
+    // If using the US DC
+    npm run test.sauce.ios.simulator.us
+    
+    // If using the EU DC
+    npm run test.sauce.ios.simulator.eu
+    
+The tests will be executed on an iOS 14.5 and 15.0
+
+See this [config](test/configs/wdio.ios.sauce.sim.conf.js)-file for more information.
+
+## Run tests on your local iOS Simulator
+If you want to run the tests on your local iOS Simulator you can test this with
+
+    npm run test.local.ios.simulator
+
+Please check this [config](test/configs/wdio.ios.local.sim.conf.js)-file for more information.
 
 ## Credits
 This repo of examples is based on [this article](https://appiumpro.com/editions/2-seeding-an-android-device-with-test-photos)

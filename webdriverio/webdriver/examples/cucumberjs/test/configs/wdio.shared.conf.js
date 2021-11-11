@@ -41,7 +41,7 @@ exports.config = {
     cucumberOpts: {
         require: ['./test/step-definitions/**/*.steps.js'],
         backtrace: false,
-        requireModule: ['@babel/register'],
+        // requireModule: ['@babel/register'],
         dryRun: false,
         failFast: false,
         format: ['pretty'],

@@ -62,17 +62,22 @@ the following command from the root of this folder
 The `#` stands for the number of the below mentioned examples.
 
 ### Example 1 - Minimal configuration for all tests
-`config-ex1.yml` provides a minimum configuration needed to run the Cypress tests.
+[`config-ex1.yml`](./.sauce/config-ex1.yml) provides a minimum configuration needed to run the Cypress tests.
 In this example, all tests are executed on a single chrome browser in sequential order.
 
 ### Example 2 - Parallel tests
-`config-ex2.yml` breaks apart the execution of the tests such that they can run in parallel on separate chrome browsers.
+[`config-ex2.yml`](./.sauce/config-ex2.yml) breaks apart the execution of the tests such that they can run in parallel 
+on separate chrome browsers.
 
 ### Example 3 - Cross Browser tests
-`config-ex3.yml` run the login tests on Chrome, Firefox and MicroSoftEdge
+[`config-ex3.yml`](./.sauce/config-ex3.yml) run the login tests on Chrome, Firefox and MicroSoftEdge
 
 ### Example 4 - Cross Versions tests
-`config-ex4.yml` run the login tests on different Chrome versions
+[`config-ex4.yml`](./.sauce/config-ex4.yml) run the login tests on different Chrome versions
+
+### Example 5 - Automatically sharding the tests
+[`config-ex5.yml`](./.sauce/config-ex5.yml) run all tests on 3 different types of browsers where saucectl automatically 
+splits the tests (e.g. by spec) so that they can easily run in parallel. 
 
 ### Example about using extra dependencies
 [This folder](../dependencies-example) contains a simple set up for Cypress with a test that uses a dependency. This can

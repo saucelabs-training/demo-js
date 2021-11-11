@@ -1,19 +1,15 @@
-import SwagOverviewPage from '../page-objects/SwagOverviewPage';
-import {setTestContext} from '../helpers';
-import {LOGIN_USERS, PAGES} from "../configs/e2eConstants";
+const {setTestContext} = require( '../helpers');
 
-describe('Swag items list', () => {
-    it('should validate that all products are present', () => {
-        setTestContext({
-            user: LOGIN_USERS.STANDARD,
-            path: PAGES.SWAG_ITEMS,
+describe('Swag items list',  () => {
+    it('should validate that all products are present', async () => {
+        // Bypass the login and wait for the product page to be loaded
+        await setTestContext({
+            user: {username: 'standard_user'},
+            path: '/inventory.html',
         });
-        SwagOverviewPage.waitForIsShown();
+        await $('.inventory_list').waitForDisplayed();
 
         // Actual test starts here
-        expect(SwagOverviewPage.getAmount()).toEqual(
-            6,
-            'Amount of items was not equal to 6',
-        );
+        await expect((await $$('.inventory_item')).length).toEqual(6);
     });
 });

@@ -8,7 +8,7 @@ on:
       - '.github/workflows/wdio.webdriver.examples.sauce.connect.yml'
       # Don't run on Markdown changes
       - '!**.md'
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
     # Only trigger if files in this path changed
     paths:
@@ -16,13 +16,19 @@ on:
       - '.github/workflows/wdio.webdriver.examples.sauce.connect.yml'
       # Don't run on Markdown changes
       - '!**.md'
-    branches: [ master ]
+    branches: [ main ]
   schedule:
     - cron:  '0 0 * * 0'
 
 jobs:
   build:
     runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: ./webdriverio/webdriver/examples/sc/
+    env:
+      SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+      SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
 
     strategy:
       matrix:
@@ -38,12 +44,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        working-directory: ./webdriverio/webdriver/examples/sc/
-        run: npm install
+        run: npm ci
 
       - name: Run tests
-        working-directory: ./webdriverio/webdriver/examples/sc/
-        env:
-          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
-          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
         run: npm run test.saucelabs.us -- --maxInstances=25

@@ -1,3 +1,9 @@
+/**
+ * This file holds all the shared config options
+ * The rest of the files will extend options
+ * More information about the config can be found
+ * here https://webdriver.io/docs/configurationfile.html
+ */
 exports.config = {
     // ====================
     // Runner Configuration
@@ -18,6 +24,8 @@ exports.config = {
     // ===================
     // Test Configurations
     // ===================
+    // Retry a spec once if it fails, this could be a WebdriverIO or Driver error
+    specFileRetries: 1,
     logLevel: 'silent',
     bail: 0,
     baseUrl: 'https://www.saucedemo.com/',

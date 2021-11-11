@@ -1,45 +1,45 @@
 describe('Sauce Labs Start Stop Front-End Performance', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     //
     // Adding extra logs to the Sauce Commands Dashboard
-    browser.execute('sauce:context=########## Start beforeEach ##########');
+    await browser.execute('sauce:context=########## Start beforeEach ##########');
     //
     // First disable measuring the performance
-    browser.execute('sauce:performanceDisable');
+    await browser.execute('sauce:performanceDisable');
     //
     // Now load the url and wait for it to be displayed
-    browser.url('');
+    await browser.url('');
 
     //
     // Adding extra logs to the Sauce Commands Dashboard
-    browser.execute('sauce:context=########## End beforeEach ##########');
+    await browser.execute('sauce:context=########## End beforeEach ##########');
   });
 
-  afterEach(() => {
+  afterEach(async () => {
     //
     // Adding extra logs to the Sauce Commands Dashboard
-    browser.execute('sauce:context=########## Enf of test ##########');
+    await browser.execute('sauce:context=########## Enf of test ##########');
   });
 
-  it('(sauce:performanceEnable) should enable measuring the performance on inventory the page', () => {
+  it('(sauce:performanceEnable) should enable measuring the performance on inventory the page', async () => {
     //
     // Performance shouldn't have been measured for the home page, but we want it
     // to start measuring after the first click
     // Login, but don't submit
-    $('[data-test="username"]').setValue('standard_user');
-    $('[data-test="password"]').setValue('secret_sauce');
+    await $('[data-test="username"]').setValue('standard_user');
+    await $('[data-test="password"]').setValue('secret_sauce');
 
     //
     // Now enable performance so it will measure the new page
-    browser.execute('sauce:performanceEnable');
+    await browser.execute('sauce:performanceEnable');
     //
     // and click on submit
-    $('#login-button').click();
-    $('#inventory_container').waitForDisplayed({timeout: 15000});
+    await $('#login-button').click();
+    await $('#inventory_container').waitForDisplayed({timeout: 15000});
 
     //
     // Get the performance logs
-    const performance = browser.execute('sauce:log', {type: 'sauce:performance'});
+    const performance = await browser.execute('sauce:log', {type: 'sauce:performance'});
 
     //
     // Verify that all logs have been captured

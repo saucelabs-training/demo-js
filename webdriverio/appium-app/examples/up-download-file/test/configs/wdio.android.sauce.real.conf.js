@@ -16,8 +16,9 @@ config.specs= [
 config.capabilities = [
     {
         // This is a specific private device so I can control the state of it
-        deviceName: process.env.REGION === 'eu' ? 'Samsung_Galaxy_S10_ws' : 'Google_Pixel_3_XL_ws_us',
+        deviceName: process.env.REGION === 'eu' ? 'Samsung_Galaxy_S10_ws' : 'Samsung Galaxy S.*',
         platformName: 'Android',
+        platformVersion: '10',
         orientation: 'PORTRAIT',
         browserName: 'chrome',
         autoLaunch: false,
