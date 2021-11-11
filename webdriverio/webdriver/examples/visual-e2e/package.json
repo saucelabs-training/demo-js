@@ -12,6 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "@wdio/cli": "^7.10.1",
+    "@wdio/local-runner": "^7.16.6",
     "@wdio/mocha-framework": "^7.10.1",
     "@wdio/sauce-service": "^7.10.1",
     "@wdio/spec-reporter": "^7.10.1"
