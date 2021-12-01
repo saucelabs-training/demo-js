@@ -32,6 +32,9 @@ config.capabilities = [
     // @ts-ignore
     allowTouchIdEnroll: true,
     build: buildName,
+    // Need to set the version to 1.21.0 because there's a bug in
+    // Appium 1.22.0 which breaks the reset
+    appiumVersion: "1.21.0"
   },
   {
     // The defaults you need to have in your config
@@ -50,6 +53,9 @@ config.capabilities = [
     // @ts-ignore
     allowTouchIdEnroll: true,
     build: buildName,
+    // Need to set the version to 1.21.0 because there's a bug in
+    // Appium 1.22.0 which breaks the reset
+    appiumVersion: "1.21.0"
   }
 ];
 
