@@ -49,6 +49,13 @@ exports.config = {
     framework: 'mocha',
     mochaOpts: {
         ui: 'bdd',
+        /**
+         * !IMPORTANT!
+         * If you use multiple visual assertions in 1 single test (an `it`) then you might need to
+         * increase this value. A single visual assertion can take up to 30-45 seconds.
+         * A combination of E2E steps and a 2 or 3 visual checks might already exceed the single `it`
+         * timeout that is set here.
+         */
         timeout: 120000
     }
 };
