@@ -43,7 +43,8 @@ framework when using Sauce Labs.
               ![WebdriverIO - Webdriver - Examples - Chrome Extension](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Chrome%20Extensions/badge.svg)
             - [WebdriverIO and CucumberJS](webdriverio/webdriver/examples/cucumberjs)\
               ![WebdriverIO - Webdriver - Examples - CucumberJS](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20CucumberJS/badge.svg)
-            - [WebdriverIO Visual E2E](webdriverio/webdriver/examples/visual-e2e/README.md) [![VisualE2E](https://github.com/saucelabs-training/demo-js/actions/workflows/wdio.webdriver.examples.visuale2e.yml/badge.svg)](https://github.com/saucelabs-training/demo-js/actions/workflows/wdio.webdriver.examples.visuale2e.yml)
+            - [WebdriverIO Visual E2E](webdriverio/webdriver/examples/visual-e2e/README.md)\
+              [![VisualE2E](https://github.com/saucelabs-training/demo-js/actions/workflows/wdio.webdriver.examples.visuale2e.yml/badge.svg)](https://github.com/saucelabs-training/demo-js/actions/workflows/wdio.webdriver.examples.visuale2e.yml)
             - [WebdriverIO and extendedDebugging](webdriverio/webdriver/examples/extended-debugging)\
               ![WebdriverIO - Webdriver - Examples - Extended Debugging](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Extended%20Debugging/badge.svg)
             - [WebdriverIO and Sauce Connect](webdriverio/webdriver/examples/sc)\
