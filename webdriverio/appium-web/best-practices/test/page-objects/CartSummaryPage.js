@@ -28,7 +28,7 @@ class CartSummaryPage extends BasePage {
     /**
      * Get the amount of swag items in the cart
      */
-    getSwagAmount() {
+    async getSwagAmount() {
         return this.#items.length;
     }
 
@@ -37,11 +37,17 @@ class CartSummaryPage extends BasePage {
      *
      * @param {number|string} needle
      *
-     * @return the selected cart swag
+     * @returns {Promise<undefined|WebdriverIO.Element|*>}
      */
-    swag(needle) {
+    async swag(needle) {
         if (typeof needle === 'string') {
-            return this.#items.find(cartItem => cartItem.getText().includes(needle));
+            for (const item of await this.#items) {
+                if ((await item.getText()).includes(needle)) {
+                    return item;
+                }
+            }
+
+            return undefined;
         }
 
         return this.#items[needle];
@@ -54,7 +60,7 @@ class CartSummaryPage extends BasePage {
      *
      * @return {string}
      */
-    getSwagText(needle) {
+    async getSwagText(needle) {
         return this.swag(needle).getText();
     }
 
@@ -63,22 +69,22 @@ class CartSummaryPage extends BasePage {
      *
      * @param {number|string} needle
      */
-    removeSwag(needle) {
-        this.swag(needle).$('.btn_secondary.cart_button').click();
+    async removeSwag(needle) {
+        await (await this.swag(needle)).$('.btn_secondary.cart_button').click();
     }
 
     /**
      * Continue shopping
      */
-    continueShopping() {
-        this.#continueShoppingButton.click();
+    async continueShopping() {
+        await this.#continueShoppingButton.click();
     }
 
     /**
      * Go to the checkout process
      */
-    goToCheckout() {
-        this.#checkoutButton.click();
+    async goToCheckout() {
+        await this.#checkoutButton.click();
     }
 }
 

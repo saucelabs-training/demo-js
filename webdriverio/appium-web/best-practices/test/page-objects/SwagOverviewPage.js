@@ -19,9 +19,9 @@ class SwagOverviewPage extends BasePage {
 
     /**
      * Get the amount of swag items listed on the page
-     * @returns {number}
+     * @returns {Promise<number>}
      */
-    getAmount() {
+    async getAmount() {
         return this.#swagItems.length;
     }
 
@@ -30,11 +30,17 @@ class SwagOverviewPage extends BasePage {
      *
      * @param {number|string} needle
      *
-     * @return {Element[]} the selected swag
+     * @returns {Promise<undefined|WebdriverIO.Element|*>}
      */
-    swag(needle) {
+    async swag(needle) {
         if (typeof needle === 'string') {
-            return this.#swagItems.find(swagItem => swagItem.getText().includes(needle));
+            for (const swagItem of await this.#swagItems) {
+                if ((await swagItem.getText()).includes(needle)) {
+                    return swagItem;
+                }
+            }
+
+            return undefined;
         }
 
         return this.#swagItems[needle];
@@ -45,9 +51,9 @@ class SwagOverviewPage extends BasePage {
      *
      * @param {number|string} needle
      *
-     * @return {string}
+     * @return {Promise <string>}
      */
-    getSwagText(needle) {
+    async getSwagText(needle) {
         return this.swag(needle).getText();
     }
 
@@ -56,8 +62,8 @@ class SwagOverviewPage extends BasePage {
      *
      * @param {number|string} needle
      */
-    addSwagToCart(needle) {
-        this.swag(needle).$('.btn_primary.btn_inventory').click();
+    async addSwagToCart(needle) {
+        await (await this.swag(needle)).$('.btn_primary.btn_inventory').click();
     }
 
     /**
@@ -65,8 +71,8 @@ class SwagOverviewPage extends BasePage {
      *
      * @param {number|string} needle
      */
-    removeSwagFromCart(needle) {
-        this.swag(needle).$('.btn_secondary.btn_inventory').click();
+    async removeSwagFromCart(needle) {
+        await (await this.swag(needle)).$('.btn_secondary.btn_inventory').click();
     }
 
     /**
@@ -74,8 +80,8 @@ class SwagOverviewPage extends BasePage {
      *
      * @param {number|string} needle
      */
-    openSwagDetails(needle) {
-        this.swag(needle).$('.inventory_item_name').click();
+    async openSwagDetails(needle) {
+        await (await this.swag(needle)).$('.inventory_item_name').click();
     }
 }
 

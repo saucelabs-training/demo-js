@@ -47,20 +47,20 @@ class CheckoutPersonalInfoPage extends BasePage {
    * @param {string} personalInfo.lastName
    * @param {string} personalInfo.zip
    */
-  submitPersonalInfo(personalInfo) {
+  async submitPersonalInfo(personalInfo) {
     const {firstName, lastName, zip} = personalInfo;
 
-    this.waitForIsShown();
+    await this.waitForIsShown();
     if (firstName) {
-      this.#firstName.addValue(firstName);
+      await this.#firstName.addValue(firstName);
     }
     if (lastName) {
-      this.#lastName.addValue(lastName);
+      await this.#lastName.addValue(lastName);
     }
     if (zip) {
-      this.#postalCode.addValue(zip);
+      await this.#postalCode.addValue(zip);
     }
-    this.#continueCheckoutButton.click();
+    await this.#continueCheckoutButton.click();
   }
 
   /**
@@ -68,8 +68,8 @@ class CheckoutPersonalInfoPage extends BasePage {
    *
    * @return {string}
    */
-  getErrorMessage() {
-    this.#errorMessage.waitForDisplayed({timeout: DEFAULT_TIMEOUT});
+  async getErrorMessage() {
+    await this.#errorMessage.waitForDisplayed({timeout: DEFAULT_TIMEOUT});
 
     return this.#errorMessage.getText();
   }
@@ -77,8 +77,8 @@ class CheckoutPersonalInfoPage extends BasePage {
   /**
    * Cancel checkout
    */
-  cancelCheckout() {
-    this.#cancelButton.click();
+  async cancelCheckout() {
+    await this.#cancelButton.click();
   }
 }
 

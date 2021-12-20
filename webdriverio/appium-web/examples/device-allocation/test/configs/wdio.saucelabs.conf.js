@@ -15,7 +15,7 @@ config.region = process.env.REGION || 'us';
 // ===================================================================================
 // Capabilities
 // You can find more about constructing the capabilities for real device testing here
-// https://wiki.saucelabs.com/display/DOCS/Appium+Capabilities+for+Real+Device+Testing
+// https://docs.saucelabs.com/dev/test-configuration-options/
 // ===================================================================================
 config.capabilities = [
   /**
