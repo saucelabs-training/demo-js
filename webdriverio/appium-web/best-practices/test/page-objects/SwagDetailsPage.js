@@ -40,31 +40,31 @@ class SwagDetailsPage extends BasePage {
     /**
      * Get the text of the swag swag
      *
-     * @return {string}
+     * @return {Promise<string>}
      */
-    getText() {
-        return `${this.#title.getText()} ${this.#description.getText()} ${this.#price.getText()}`;
+    async getText() {
+        return `${await this.#title.getText()} ${await this.#description.getText()} ${await this.#price.getText()}`;
     }
 
     /**
      * Add a swag items to the cart
      */
-    addToCart() {
-        this.#addButton.click();
+    async addToCart() {
+        await this.#addButton.click();
     }
 
     /**
      * Remove a swag items from the cart
      */
-    removeFromCart() {
-        this.#removeButton.click();
+    async removeFromCart() {
+        await this.#removeButton.click();
     }
 
     /**
      * Go back to the inventory list
      */
-    goBack() {
-        this.#goBackButton.click();
+    async goBack() {
+        await this.#goBackButton.click();
     }
 }
 

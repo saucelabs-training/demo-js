@@ -30,8 +30,8 @@ exports.config = {
     bail: 0,
     baseUrl: 'https://www.saucedemo.com/',
     waitforTimeout: 10000,
-    connectionRetryTimeout: 90000,
-    connectionRetryCount: 3,
+    connectionRetryTimeout: 300000,
+    connectionRetryCount: 1,
     framework: 'jasmine',
     reporters: ['spec'],
     jasmineOpts: {

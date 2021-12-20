@@ -11,14 +11,14 @@ const build = `Best Practices: Android Chrome Appium '${config.appiumVersion}' b
 // https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/
 config.capabilities = ['7.1', '8.1', '9.0', '10.0', '11.0'].map(androidVersion => (
   {
-    build: build,
     browserName: 'Chrome',
+    deviceName: 'Android GoogleAPI Emulator',
     platformName: 'Android',
     platformVersion: androidVersion,
-    deviceName: 'Android GoogleAPI Emulator',
+    build: build,
     // Older versions of Appium give issues with sending keys, see
     // https://github.com/appium/appium/issues/12059
-    appiumVersion: '1.18.1'
+    appiumVersion: '1.20.2'
   }
 ));
 

@@ -1,39 +1,19 @@
-import { LOGIN_USERS } from '../configs/e2eConstants';
-import LoginPage from '../page-objects/LoginPage';
-import SwagOverviewPage from '../page-objects/SwagOverviewPage';
-
 describe('LoginPage', () => {
-    beforeEach(() => {
-        browser.url('');
-        LoginPage.waitForIsShown();
+    beforeEach(async () => {
+        await browser.url('');
+        await $('#login_button_container').waitForDisplayed();
     });
 
-    it('should be able to test loading of login page', () => {
-        expect(LoginPage.waitForIsShown()).toEqual(
-            true,
-            'LoginPage page was not shown',
-        );
-    });
+    it('should be able to login with a standard user', async () => {
+        await $('#user-name').addValue('standard_user');
+        await $('#password').addValue('secret_sauce');
+        // For some reason Android is not clicking properly
+        driver.isAndroid
+          ? await browser.execute('document.querySelector(\'.btn_action\').click()')
+          : await $('.btn_action').click();
 
-    it('should be able to login with a standard user', () => {
-        LoginPage.signIn(LOGIN_USERS.STANDARD);
-
-        // Wait for the inventory screen and check it
-        expect(SwagOverviewPage.waitForIsShown()).toEqual(
-            true,
-            'Inventory List screen was not shown',
-        );
-    });
-
-    it('should not be able to login with a locked user', () => {
-        // It doesn't matter which error we check, all errors should be checked in a UT
-        // With this UT we just check that A failure is triggered
-        LoginPage.signIn(LOGIN_USERS.LOCKED);
-
-        expect(LoginPage.isErrorMessageDisplayed()).toEqual(true, 'Error message is shown');
-        expect(LoginPage.getErrorMessage()).toContain(
-            'Epic sadface: Sorry, this user has been locked out.',
-            'The error message is not as expected',
-        );
+        // We will not execute an assertion here because if the page is not displayed it will
+        // already throw an error
+        await $('.inventory_list').waitForDisplayed();
     });
 });

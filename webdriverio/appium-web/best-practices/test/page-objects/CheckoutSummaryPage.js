@@ -13,16 +13,16 @@ class CheckoutSummaryPage extends BasePage {
         return $(SCREEN_SELECTOR);
     }
 
-    title(needle) {
-        return this.swag(needle).$('.inventory_item_name');
+    async title(needle) {
+        return (await this.swag(needle)).$('.inventory_item_name');
     }
 
-    description(needle) {
-        return this.swag(needle).$('.inventory_item_desc');
+    async description(needle) {
+        return (await this.swag(needle)).$('.inventory_item_desc');
     }
 
-    price(needle) {
-        return this.swag(needle).$('.inventory_item_price');
+    async price(needle) {
+        return (await this.swag(needle)).$('.inventory_item_price');
     }
 
     get #cancelButton() {
@@ -39,9 +39,9 @@ class CheckoutSummaryPage extends BasePage {
 
     /**
      * Get the amount of swag items listed on the page
-     * @returns {number}
+     * @returns {Promise <number>}
      */
-    getSwagAmount() {
+    async getSwagAmount() {
         return this.#items.length;
     }
 
@@ -50,11 +50,17 @@ class CheckoutSummaryPage extends BasePage {
      *
      * @param {number|string} needle
      *
-     * @return the selected cart swag
+     * @returns {Promise<undefined|WebdriverIO.Element|*>}
      */
-    swag(needle) {
+    async swag(needle) {
         if (typeof needle === 'string') {
-            return this.#items.find(cartItem => cartItem.getText().includes(needle));
+            for (const item of await this.#items) {
+                if ((await item.getText()).includes(needle)) {
+                    return item;
+                }
+            }
+
+            return undefined;
         }
 
         return this.#items[needle];
@@ -65,24 +71,24 @@ class CheckoutSummaryPage extends BasePage {
      *
      * @param {number|string} needle
      *
-     * @return {string}
+     * @return {Promise <string>}
      */
-    getSwagText(needle) {
-        return `${this.title(needle).getText()} ${this.description(needle).getText()} ${this.price(needle).getText()}`;
+    async getSwagText(needle) {
+        return `${await this.title(needle).getText()} ${await this.description(needle).getText()} ${await this.price(needle).getText()}`;
     }
 
     /**
      * Cancel checkout
      */
-    cancelCheckout() {
-        this.#cancelButton.click();
+    async cancelCheckout() {
+        await this.#cancelButton.click();
     }
 
     /**
      * Finish checkout
      */
-    finishCheckout() {
-        this.#finishButton.click();
+    async finishCheckout() {
+        await this.#finishButton.click();
     }
 }
 

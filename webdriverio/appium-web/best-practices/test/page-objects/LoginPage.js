@@ -37,23 +37,23 @@ class LoginPage extends BasePage {
    * @param {string} userDetails.username
    * @param {string} userDetails.password
    */
-  signIn(userDetails) {
+  async signIn(userDetails) {
     const {password, username} = userDetails;
 
-    this.waitForIsShown();
+    await this.waitForIsShown();
     if (username) {
-      this.#username.addValue(username);
+      await this.#username.addValue(username);
     }
     if (password) {
-      this.#password.addValue(password);
+      await this.#password.addValue(password);
     }
 
-    // For some reason Android is not clicking propery
+    // For some reason Android is not clicking property
     if (browser.isAndroid) {
       return browser.execute('document.querySelector(\'.btn_action\').click()');
     }
 
-    this.#loginButton.click();
+    await this.#loginButton.click();
   }
 
   /**
@@ -61,8 +61,8 @@ class LoginPage extends BasePage {
    *
    * @return {string}
    */
-  getErrorMessage() {
-    this.#errorMessage.waitForDisplayed({timeout: DEFAULT_TIMEOUT});
+  async getErrorMessage() {
+    await this.#errorMessage.waitForDisplayed({timeout: DEFAULT_TIMEOUT});
 
     return this.#errorMessage.getText();
   }
@@ -70,9 +70,9 @@ class LoginPage extends BasePage {
   /**
    * Check if the error message is displayed
    *
-   * @return {boolean}
+   * @return {Promise <boolean>}
    */
-  isErrorMessageDisplayed() {
+  async isErrorMessageDisplayed() {
     return this.#errorMessage.isDisplayed();
   }
 }

@@ -24,43 +24,43 @@ class MenuPage {
     /**
      * Open the menu
      */
-    open() {
+    async open() {
         // For some reason iOS is not accepting the click properly
         if (browser.isIOS) {
-            browser.execute('document.querySelector(\'.bm-burger-button button\').click()');
+            await browser.execute('document.querySelector(\'.bm-burger-button button\').click()');
         } else {
-            this.#menu.click();
+            await this.#menu.click();
         }
 
-        browser.pause(500);
+        await browser.pause(500);
     }
 
     /**
      * Open the inventory list page
      */
-    openInventoryList() {
-        this.#inventoryListButton.click();
+    async openInventoryList() {
+        await this.#inventoryListButton.click();
     }
 
     /**
      * Open the about page
      */
-    openAboutPage() {
-        this.#aboutButton.click();
+    async openAboutPage() {
+        await this.#aboutButton.click();
     }
 
     /**
      * Logout
      */
-    logout() {
-        this.#logoutButton.click();
+    async logout() {
+        await this.#logoutButton.click();
     }
 
     /**
      * Reset the app state
      */
-    restAppState() {
-        this.#resetButton.click();
+    async restAppState() {
+        await this.#resetButton.click();
     }
 }
 
