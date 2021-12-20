@@ -22,7 +22,7 @@ exports.config = {
     // in via the `region` property. Available short handles for regions are `us` (default) and `eu`.
     // These regions are used for the Sauce Labs VM cloud and the Sauce Labs Real Device Cloud.
     // If you don't provide the region it will default for the `us`
-    region: 'us',
+    region: process.env.REGION || 'us',
     //
     // ==================
     // Specify Test Files

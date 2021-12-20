@@ -8,22 +8,22 @@ const { join } = require('path');
 const { URL } = require('url');
 
 describe('Downloads', () => {
-  it('should download and verify the file', () => {
+  it('should download and verify the file', async () => {
     // Get the base url
     const baseURL = browser.config.baseUrl;
 
     // Go to the correct page for testing the download functionality
-    browser.url('./download');
+    await browser.url('./download');
 
     // Store the element reference for repeated use
-    const downloadLink = $('*=some-file.txt');
+    const downloadLink = await $('*=some-file.txt');
 
     // Click the link to initiate the download.
     // Because the options / profiles have been set correctly no dialog is shown
-    downloadLink.click();
+    await downloadLink.click();
 
     // Get the value of the 'href' attibute on the download link
-    let downloadHref = downloadLink.getAttribute('href');
+    let downloadHref = await downloadLink.getAttribute('href');
 
     if (!downloadHref.includes(baseURL)) {
       downloadHref = new URL(downloadHref, baseURL);
@@ -54,10 +54,10 @@ describe('Downloads', () => {
     const filePath = join(global.downloadDir[ browserName ], fileName);
 
     // Wait for the file to be fully downloaded
-    browser.waitUntil(() => pathExistsSync(filePath), 10000);
+    await browser.waitUntil(() => pathExistsSync(filePath), 10000);
 
     // The file has been downloaded,
     // now for example check the content to verify if the download really succeeded
-    expect(readFileSync(filePath, 'utf-8')).toContain('asdf');
+    await expect(readFileSync(filePath, 'utf-8')).toContain('asdf');
   });
 });

@@ -6,22 +6,22 @@
 const { URL } = require('url');
 
 describe('Sauce Download', () => {
-  it('should be able to download and verify the file', () => {
+  it('should be able to download and verify the file', async () => {
     // Get the base url
     const baseURL = browser.config.baseUrl;
 
     // Go to the correct page for testing the download functionality
-    browser.url('./download');
+    await browser.url('./download');
 
     // Store the element reference for repeated use
-    const downloadLink = $('*=some-file.txt');
+    const downloadLink = await $('*=some-file.txt');
 
     // Click the link to initiate the download.
     // Because the options / profiles have been set correctly no dialog is shown
-    downloadLink.click();
+    await downloadLink.click();
 
     // Get the value of the 'href' attibute on the download link
-    let downloadHref = downloadLink.getAttribute('href');
+    let downloadHref = await downloadLink.getAttribute('href');
 
     if (!downloadHref.includes(baseURL)) {
       downloadHref = new URL(downloadHref, baseURL);
@@ -55,12 +55,12 @@ describe('Sauce Download', () => {
     const filePath = `${ browser.downloadFolder }${ fileName }`;
 
 
-    browser.waitUntil(() => {
+    await browser.waitUntil(async() => {
         // Load the file in the browsser
-        browser.url(`file:///${ filePath }`);
+        await browser.url(`file:///${ filePath }`);
 
         // Get the text from the body element
-        const browserText = $('body').getText().toLowerCase();
+        const browserText = (await $('body').getText()).toLowerCase();
 
         // Check there is no loading error
         return (
@@ -75,6 +75,6 @@ describe('Sauce Download', () => {
       15000);
 
     // now for example check the content to verify if the download really succeeded
-    expect($('body').getText()).toContain('asdf');
+    await expect(await $('body').getText()).toContain('asdf');
   });
 });
