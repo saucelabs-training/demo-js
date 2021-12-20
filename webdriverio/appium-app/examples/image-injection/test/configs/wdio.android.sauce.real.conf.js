@@ -6,8 +6,8 @@ const testName = 'Image injection Android';
 // ============
 // For all capabilities please check
 // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
-// This will run the image-injection on Android 7,8,9,10,11 devices
-config.capabilities = [7, 8, 9, 10, 11].map(platformVersion => (
+// This will run the image-injection on Android 7,8,9,10,11, 12 devices
+config.capabilities = [7, 8, 9, 10, 11, 12].map(platformVersion => (
   {
     platformName: 'Android',
     platformVersion: `${platformVersion}`,

@@ -21,6 +21,7 @@ config.capabilities = [
     locale: 'en',
     // Add a name to the test
     name: 'Appium Gestures',
+    shouldTerminateApp: true,
   },
 ];
 

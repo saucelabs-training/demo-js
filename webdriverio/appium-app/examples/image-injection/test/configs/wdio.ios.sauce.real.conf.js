@@ -6,8 +6,8 @@ const testName = 'Image injection iOS';
 // ============
 // For all capabilities please check
 // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
-// This will run the image-injection on iOS 11,12,13 and 14 devices
-config.capabilities = [11,12,13,14].map(platformVersion =>(
+// This will run the image-injection on iOS 11,12,13,14 and 15 devices
+config.capabilities = [11,12,13,14,15].map(platformVersion =>(
   {
       platformName: 'iOS',
       platformVersion: `${platformVersion}`,
@@ -26,6 +26,7 @@ config.capabilities = [11,12,13,14].map(platformVersion =>(
       name: `${testName} ${platformVersion}`,
       // Enable image-injection on RDC
       sauceLabsImageInjectionEnabled: true,
+      shouldTerminateApp: true
   }
 ));
 

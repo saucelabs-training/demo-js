@@ -11,15 +11,16 @@ class QrCodeScreen extends Base {
 		return $(`-ios predicate string:${ okButtonSelector }`);
 	}
 
-	acceptCameraAccess(){
+	async acceptCameraAccess(){
 		// In Sauce Labs (Legacy) RDC Android permissions are enabled by default.
 		/// iOS needs to be done with automation
 		if(driver.isIOS) {
 			try {
-				this.acceptCameraButton.waitForExist({timeout: 3000});
-				this.acceptCameraButton.click();
+				await this.acceptCameraButton.waitForDisplayed({timeout: 6000});
+				await this.acceptCameraButton.click();
 			} catch (e) {
 				// Do nothing, the alert was not shown
+				console.log('error = ', e)
 			}
 		}
 	}
