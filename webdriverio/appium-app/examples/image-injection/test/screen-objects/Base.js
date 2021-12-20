@@ -8,11 +8,11 @@ export default class Base {
    *
    * @param {Element} element
    *
-   * @return {boolean}
+   * @return {Promise <boolean>}
    */
-  waitForIsShown(element = null) {
+  async waitForIsShown(element = null) {
     return driver.waitUntil(
-      () => this.isShown(element),
+      async () => this.isShown(element),
     );
   }
 
@@ -21,11 +21,11 @@ export default class Base {
    *
    * @param {Element} element
    *
-   * @return {boolean}
+   * @return {Promise <boolean>}
    */
-  waitForIsNotShown(element = null) {
+  async waitForIsNotShown(element = null) {
     return driver.waitUntil(
-      () => !this.isShown(element),
+      async () => !(await this.isShown(element)),
     );
   }
 
@@ -34,13 +34,13 @@ export default class Base {
    *
    * @param {Element} element
    *
-   * @return {boolean}
+   * @return {Promise <boolean>}
    */
-  isShown(element) {
+  async isShown(element) {
     // For android an element that is not visible is also not in the UI tree,
     // so a different approach should be used
     try {
-      const el = element || $(this.selector);
+      const el = await (element || $(this.selector));
 
       return el.isDisplayed();
     } catch (error) {

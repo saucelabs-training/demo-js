@@ -16,16 +16,16 @@
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.15.7",
-    "@babel/core": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
-    "@babel/register": "^7.15.3",
-    "@wdio/appium-service": "^7.16.3",
-    "@wdio/cli": "^7.16.3",
-    "@wdio/jasmine-framework": "^7.16.3",
-    "@wdio/local-runner": "^7.16.3",
-    "@wdio/sauce-service": "^7.16.3",
-    "@wdio/spec-reporter": "^7.16.3",
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/register": "^7.16.5",
+    "@wdio/appium-service": "^7.16.11",
+    "@wdio/cli": "^7.16.12",
+    "@wdio/jasmine-framework": "^7.16.11",
+    "@wdio/local-runner": "^7.16.12",
+    "@wdio/sauce-service": "^7.16.12",
+    "@wdio/spec-reporter": "^7.16.11",
     "fs-extra": "^10.0.0"
   }
 }
