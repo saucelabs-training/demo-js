@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "types": [
+      "node",
+      "webdriverio/async",
+      "@wdio/mocha-framework",
+      "expect-webdriverio",
+      "@wdio/sauce-service"
+    ]
+  }
+}

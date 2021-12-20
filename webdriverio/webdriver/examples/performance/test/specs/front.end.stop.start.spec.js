@@ -42,7 +42,7 @@ describe('Sauce Labs Start Stop Front-End Performance', () => {
     const performance = await browser.execute('sauce:log', {type: 'sauce:performance'});
 
     //
-    // Verify that all logs have been captured
-    expect(performance.speedIndex < 1000, `${performance.speedIndex} is equal or bigger than 100`);
+    // Verify that the speed index can be used for a comparison
+    expect(performance.speedIndex >= 100).toBeTruthy( `${performance.speedIndex} is equal or bigger than 100`);
   });
 });

@@ -22,12 +22,12 @@ class SwagDetailsPage extends BasePage {
     }
 
     /**
-     * Get the text of the swag swag
+     * Get the text of the swag
      *
-     * @return {string}
+     * @return {Promise<string>}
      */
-    getText() {
-        return `${this.#title.getText()} ${this.#description.getText()} ${this.#price.getText()}`;
+    async getText() {
+        return `${await this.#title.getText()} ${await this.#description.getText()} ${await this.#price.getText()}`;
     }
 }
 

@@ -1,14 +1,14 @@
 const { join } = require('path');
 
 describe('Sauce Chrome Upload', () => {
-  it('should be able to upload a file', () => {
+  it('should be able to upload a file', async () => {
     // The name of the file that needs to be uploaded
     const fileName = 'some-file.txt';
 
     // 1a.  Load the browser
-    browser.url('/upload');
+    await browser.url('/upload');
     // 1b.  Set the browser to a smaller screen just for watching
-    browser.setWindowSize(640, 480);
+    await browser.setWindowSize(640, 480);
 
     // Set the file path
     const filePath = join(process.cwd(), `assets/${fileName}`);
@@ -17,16 +17,16 @@ describe('Sauce Chrome Upload', () => {
     // running Chrome or using a Selenium Grid with the Selenium standalone server. The command expects the file payload to be passed
     // in as base64 string, so that's what we will be doing here.
     // See also https://webdriver.io/blog/2019/06/25/file-upload.html
-    const remoteFilePath = browser.uploadFile(filePath);
+    const remoteFilePath = await browser.uploadFile(filePath);
 
     // 2a.  Upload the file
-    $('#file-upload').setValue(remoteFilePath);
+    await $('#file-upload').setValue(remoteFilePath);
     // 2b.  Submit the file upload
-    $('#file-submit').click();
+    await $('#file-submit').click();
 
     // 3a.  Wait for the text to be visible, we are now validating it with the uploaded file container to be visible
-    $('#uploaded-files').waitForDisplayed(15000);
+    await $('#uploaded-files').waitForDisplayed(15000);
     // 3b.  Do the verification
-    expect($('#uploaded-files').getText()).toContain(fileName);
+    await expect(await $('#uploaded-files').getText()).toContain(fileName);
   });
 });

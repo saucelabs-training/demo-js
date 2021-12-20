@@ -97,8 +97,10 @@ config.onComplete = async () => {
 
   // Now get the performance data for each sessionId and store it into a file
   for (let sessionId of getSessionIdsFromFile()) {
-    const performanceData = await getPerformanceMetrics(api, sessionId);
-    writePerformanceMetricsToFile(performanceData, sessionId);
+    if(sessionId) {
+      const performanceData = await getPerformanceMetrics(api, sessionId);
+      writePerformanceMetricsToFile(performanceData, sessionId);
+    }
   }
 };
 
