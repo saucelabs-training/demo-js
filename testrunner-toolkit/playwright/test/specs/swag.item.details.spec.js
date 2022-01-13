@@ -1,22 +1,22 @@
-const {describe, it, beforeEach, expect} = require('@playwright/test');
+const {test, expect} = require('@playwright/test');
 const {LOGIN_USERS, PAGES, PRODUCTS} = require('../e2eConstants')
 const {SwagOverviewPage} = require('../page-objects/SwagOverviewPage')
 const {SwagDetailsPage} = require('../page-objects/SwagDetailsPage')
 const {AppHeaderPage} = require('../page-objects/AppHeaderPage')
 const {setTestContext} = require('../helpers')
 
-describe('Swag Item Details', () => {
+test.describe('Swag Item Details', () => {
   let appHeaderPage
   let swagDetailsPage
   let swagOverviewPage
 
-  beforeEach(async ({page}) => {
+  test.beforeEach(async ({page}) => {
     appHeaderPage = new AppHeaderPage(page)
     swagDetailsPage = new SwagDetailsPage(page)
     swagOverviewPage = new SwagOverviewPage(page)
   })
 
-  it('should validate that we can go back from the details to the inventory page', async ({page}) => {
+  test('should validate that we can go back from the details to the inventory page', async ({page}) => {
     // Need to start with the inventory url here to get the correct routing
     await setTestContext(
       page,
@@ -35,7 +35,7 @@ describe('Swag Item Details', () => {
     expect(await swagOverviewPage.waitForIsDisplayed()).toEqual(true)
   })
 
-  it('should validate that a product can be added to a cart', async ({page}) => {
+  test('should validate that a product can be added to a cart', async ({page}) => {
     // Need to start with the inventory url here to get the correct routing
     await setTestContext(
       page,
@@ -55,7 +55,7 @@ describe('Swag Item Details', () => {
     expect(await appHeaderPage.getCartAmount()).toEqual('1')
   })
 
-  it('should validate that a product can be removed from the cart', async ({page}) => {
+  test('should validate that a product can be removed from the cart', async ({page}) => {
     // Need to start with the inventory url here to get the correct routing
     await setTestContext(
       page,
