@@ -15,10 +15,10 @@
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.16.0",
-    "eslint-plugin-import": "^2.22.1",
-    "nightwatch": "^1.5.1",
-    "node-fetch": "^2.6.1",
-    "saucelabs": "^4.6.2"
+    "eslint": "^8.6.0",
+    "eslint-plugin-import": "^2.25.4",
+    "nightwatch": "^1.7.13",
+    "node-fetch": "^3.1.0",
+    "saucelabs": "^7.1.3"
   }
 }
