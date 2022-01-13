@@ -1,60 +1,55 @@
 apiVersion: v1alpha
 kind: playwright
-showconsolelog: false
+showConsoleLog: false
 
 # Sauce Labs specific information
 sauce:
-  region: eu-central-1 # or us-west-1
-  concurrency: 10 # Controls how many suites are executed at the same time.
-  metadata:
-    name: Parallel Playwright with SauceCTL
-    tags:
-      - playwright
-      - Parallel
-    build: "Playwright: Parallel test set - $DATE"
-  sauceignore: .sauceignore
+    region: eu-central-1 # or us-west-1
+    concurrency: 10 # Controls how many suites are executed at the same time.
+    metadata:
+        name: Parallel Playwright with SauceCTL
+        tags:
+            - playwright
+            - Parallel
+        build: 'Playwright: Parallel test set - $DATE'
+    sauceignore: .sauceignore
 
 # Playwright specific information
 playwright:
-  version: 1.11.1
+    version: 1.17.1
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: .
 
 suites:
-  - name: "Swag Labs Login"
-    platformName: windows 10
-    params:
-      browserName: chromium
-      headful: true
-    testMatch: "**/login.*"
-  - name: "Swag Labs Swag Items"
-    platformName: windows 10
-    params:
-      browserName: chromium
-      headful: true
-    testMatch: "**/swag.item.*"
-  - name: "Swag Labs Checkout"
-    platformName: windows 10
-    params:
-      browserName: chromium
-      headful: true
-    testMatch: "**/checkout.*"
-  - name: "Swag Labs Cart"
-    platformName: windows 10
-    params:
-      browserName: chromium
-      headful: true
-    testMatch: "**/cart.*"
-  - name: "Swag Labs Menu"
-    platformName: windows 10
-    params:
-      browserName: chromium
-      headful: true
-    testMatch: "**/menu.*"
+    - name: 'Swag Labs Login'
+      platformName: windows 10
+      params:
+          browserName: chromium
+      testMatch: '.*/login.*'
+    - name: 'Swag Labs Swag Items'
+      platformName: windows 10
+      params:
+          browserName: chromium
+      testMatch: '.*/swag.item.*'
+    - name: 'Swag Labs Checkout'
+      platformName: windows 10
+      params:
+          browserName: chromium
+      testMatch: '.*/checkout.*'
+    - name: 'Swag Labs Cart'
+      platformName: windows 10
+      params:
+          browserName: chromium
+      testMatch: '.*/cart.*'
+    - name: 'Swag Labs Menu'
+      platformName: windows 10
+      params:
+          browserName: chromium
+      testMatch: '.*/menu.*'
 
 artifacts:
-  download:
-    match:
-      - '*'
-    when: always
-    directory: ./artifacts
+    download:
+        match:
+            - '*'
+        when: always
+        directory: ./artifacts

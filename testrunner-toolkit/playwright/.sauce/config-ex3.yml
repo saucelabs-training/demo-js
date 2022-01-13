@@ -1,48 +1,45 @@
 apiVersion: v1alpha
 kind: playwright
-showconsolelog: false
+showConsoleLog: false
 
 # Sauce Labs specific information
 sauce:
-  region: eu-central-1 # or us-west-1
-  concurrency: 10 # Controls how many suites are executed at the same time.
-  metadata:
-    name: Playwright Cross Browser tests with SauceCTL
-    tags:
-      - playwright
-      - cross browser
-    build: "Playwright: Cross Browser test set - $DATE"
-  sauceignore: .sauceignore
+    region: eu-central-1 # or us-west-1
+    concurrency: 10 # Controls how many suites are executed at the same time.
+    metadata:
+        name: Playwright Cross Browser tests with SauceCTL
+        tags:
+            - playwright
+            - cross browser
+        build: 'Playwright: Cross Browser test set - $DATE'
+    sauceignore: .sauceignore
 
 # Playwright specific information
 playwright:
-  version: 1.11.1
+    version: 1.17.1
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: .
 
 suites:
-  - name: "Swag Labs Login Chrome"
-    platformName: windows 10
-    params:
-      browserName: chromium
-      headful: true
-    testMatch: "**/login.*"
-  - name: "Swag Labs Login Firefox"
-    platformName: windows 10
-    params:
-      browserName: firefox
-      headful: true
-    testMatch: "**/login.*"
-  - name: "Swag Labs Login Webkit"
-    platformName: windows 10
-    params:
-      browserName: webkit
-      headful: true
-    testMatch: "**/login.*"
+    - name: 'Swag Labs Login Chrome'
+      platformName: windows 10
+      params:
+          browserName: chromium
+      testMatch: '.*/login.*'
+    - name: 'Swag Labs Login Firefox'
+      platformName: windows 10
+      params:
+          browserName: firefox
+      testMatch: '.*/login.*'
+    - name: 'Swag Labs Login Webkit'
+      platformName: windows 10
+      params:
+          browserName: webkit
+      testMatch: '.*/login.*'
 
 artifacts:
-  download:
-    match:
-      - '*'
-    when: always
-    directory: ./artifacts
+    download:
+        match:
+            - '*'
+        when: always
+        directory: ./artifacts
