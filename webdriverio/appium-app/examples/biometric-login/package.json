@@ -11,7 +11,7 @@
     "test.sauce.rdc.ios.eu": "REGION=eu wdio test/configs/wdio.ios.sauce.rdc.conf.ts",
     "test.sauce.rdc.ios.us": "wdio test/configs/wdio.ios.sauce.rdc.conf.ts",
     "test.sauce.simulator.ios.eu": "REGION=eu wdio test/configs/wdio.ios.sauce.sim.conf.ts",
-    "test.sauce.simulator.ios.us": "wdio test/configs/wdio.ios.sauce.sim.conf.tss"
+    "test.sauce.simulator.ios.us": "wdio test/configs/wdio.ios.sauce.sim.conf.ts"
   },
   "keywords": [],
   "license": "MIT",
