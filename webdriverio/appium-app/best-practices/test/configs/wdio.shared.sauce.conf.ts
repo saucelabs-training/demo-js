@@ -13,11 +13,6 @@ config.key = process.env.SAUCE_ACCESS_KEY;
 // If you don't provide the region, it defaults to `us`.
 config.region = (process.env.REGION || 'us') as SauceRegions;
 
-// =============================================
-// Max instances of the same device in the cloud
-// =============================================
-config.maxInstances = 10;
-
 // ========
 // Services
 // ========

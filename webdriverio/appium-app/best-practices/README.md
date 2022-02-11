@@ -1,7 +1,9 @@
-# WebdriverIO Native App Best Practices, including the use of Page Objects
+# WebdriverIO Native App Best Practices
 
 This folder contains best practices for WebdriverIO Native App testing:
 
+- for Android Emulators/Real Devices and iOS Simulators/Real Devices
+- Fully W3C compliant
 - in Async Mode
 - with TypeScript
 - including the use of Page Objects.
@@ -23,6 +25,7 @@ This will install all needed dependencies that are listed in the `package.json`-
 > NOTE: Make sure you are in the folder `webdriverio/appium-app/best-practices` when you execute this command
 
 ## Download / Upload Apps
+
 You can download the used apps from [here](https://github.com/saucelabs/my-demo-app-rn/releases/). Make sure you rename the apps to:
 
 - Android Emulators / Real Devices: `Android-MyDemoAppRN.*.*.*.build-***.apk` => `Android.MyDemoAppRN.apk`
