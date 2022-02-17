@@ -7,43 +7,43 @@ sauce:
     tags:
       - cypress
       - cross-browser
-    build: "Cypress: Sharding tests"
+    build: 'Cypress: Sharding tests'
 cypress:
-  version: 8.3.0
-  configFile: "cypress.json"  # We determine related files based on the location of the config file.
+  version: 9.3.1
+  configFile: 'cypress.json' # We determine related files based on the location of the config file.
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
   # Chrome
-  - name: "Swag Labs Shard Tests Chrome"
-    browser: "chrome"
-    platformName: "Windows 10"
-    screenResolution: "1400x1050"
+  - name: 'Swag Labs Shard Tests Chrome'
+    browser: 'chrome'
+    platformName: 'Windows 10'
+    screenResolution: '1400x1050'
     # This will tell the saucectl runner to shard/divide the tests
     # over multiple instances, make sure you have the `concurrency`
     # set to higher than one
     shard: spec
     config:
-      testFiles: [ "**/*.*" ]
+      testFiles: ['**/*.*']
   # Firefox
-  - name: "Swag Labs Shard Tests Firefox"
-    browser: "firefox"
-    platformName: "Windows 10"
-    screenResolution: "1400x1050"
+  - name: 'Swag Labs Shard Tests Firefox'
+    browser: 'firefox'
+    platformName: 'Windows 10'
+    screenResolution: '1400x1050'
     # This will tell the saucectl runner to shard/divide the tests
     # over multiple instances, make sure you have the `concurrency`
     # set to higher than one
     shard: spec
     config:
-      testFiles: [ "**/*.*" ]
+      testFiles: ['**/*.*']
   # MicrosoftEdge
-  - name: "Swag Labs Shard Tests MicrosoftEdge"
-    browser: "microsoftedge"
-    platformName: "Windows 10"
-    screenResolution: "1400x1050"
+  - name: 'Swag Labs Shard Tests MicrosoftEdge'
+    browser: 'microsoftedge'
+    platformName: 'Windows 10'
+    screenResolution: '1400x1050'
     # This will tell the saucectl runner to shard/divide the tests
     # over multiple instances, make sure you have the `concurrency`
     # set to higher than one
     shard: spec
     config:
-      testFiles: [ "**/*.*" ]
+      testFiles: ['**/*.*']

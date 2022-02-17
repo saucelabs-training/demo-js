@@ -9,8 +9,8 @@ sauce:
       - cross-browser
     build: "Cypress: Cross Browser"
 cypress:
-  version: 8.3.0
-  configFile: "cypress.json"  # We determine related files based on the location of the config file.
+  version: 9.3.1
+  configFile: "cypress.json" # We determine related files based on the location of the config file.
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
@@ -21,7 +21,7 @@ suites:
     platformName: "Windows 10"
     screenResolution: "1400x1050"
     config:
-      testFiles: [ "**/login.*" ]
+      testFiles: ["**/login.*"]
   # chrome 85
   - name: "Swag Labs Login chrome latest-1"
     browser: "chrome"
@@ -29,7 +29,7 @@ suites:
     platformName: "Windows 10"
     screenResolution: "1400x1050"
     config:
-      testFiles: [ "**/login.*" ]
+      testFiles: ["**/login.*"]
   # chrome 76
   - name: "Swag Labs Login chrome latest-2"
     browser: "chrome"
@@ -37,4 +37,4 @@ suites:
     platformName: "Windows 10"
     screenResolution: "1400x1050"
     config:
-      testFiles: [ "**/login.*" ]
+      testFiles: ["**/login.*"]
