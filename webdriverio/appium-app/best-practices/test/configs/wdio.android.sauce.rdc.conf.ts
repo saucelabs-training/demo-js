@@ -32,7 +32,6 @@ config.capabilities = [
     // https://docs.saucelabs.com/mobile-apps/app-storage/
     'appium:app': 'storage:filename=Android.MyDemoAppRN.apk',
     'appium:appWaitActivity': 'com.saucelabs.mydemoapp.rn.MainActivity',
-    'appium:build': buildName,
     'appium:newCommandTimeout': 240,
     // This will adjust the Appium server in such a way that it will return all
     // non visible elements so we can assert against it.
