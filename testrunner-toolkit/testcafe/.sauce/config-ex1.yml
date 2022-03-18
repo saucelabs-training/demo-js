@@ -14,7 +14,7 @@ sauce:
 
 # Testcafe specific info
 testcafe:
-  version: 1.14.2
+  version: 1.18.3
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 
@@ -48,5 +48,5 @@ artifacts:
   download:
     directory: ./artifacts
     match:
-      - '*'
+      - "*"
     when: always

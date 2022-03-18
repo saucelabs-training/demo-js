@@ -8,8 +8,8 @@ sauce:
       - default
     build: "Cypress: Default test set"
 cypress:
-  version: 8.3.0
-  configFile: "cypress.json"  # We determine related files based on the location of the config file.
+  version: 9.3.1
+  configFile: "cypress.json" # We determine related files based on the location of the config file.
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
@@ -33,4 +33,4 @@ suites:
     # - '2560x1600'
     screenResolution: "1400x1050"
     config:
-      testFiles: [ "**/*.*" ]
+      testFiles: ["**/*.*"]

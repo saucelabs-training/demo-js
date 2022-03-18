@@ -1,26 +1,28 @@
 {
-  "name": "cypress-1",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "open": "npx cypress open",
-    "test.local": "npx cypress run",
-    "test.local.headfull": "npx cypress run --headed",
-    "test.sauce.ex1.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml ",
-    "test.sauce.ex1.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml --region us-west-1",
-    "test.sauce.ex2.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex2.yml ",
-    "test.sauce.ex2.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex2.yml --region us-west-1",
-    "test.sauce.ex3.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex3.yml ",
-    "test.sauce.ex3.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex3.yml --region us-west-1",
-    "test.sauce.ex4.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex4.yml ",
-    "test.sauce.ex4.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex4.yml --region us-west-1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "cypress": "^8.5.0",
-    "saucectl": "^0.68.0"
-  }
+	"name": "cypress-1",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"open": "npx cypress open",
+		"test.local": "npx cypress run",
+		"test.local.headfull": "npx cypress run --headed",
+		"test.sauce.ex1.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml ",
+		"test.sauce.ex1.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml --region us-west-1",
+		"test.sauce.ex2.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex2.yml ",
+		"test.sauce.ex2.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex2.yml --region us-west-1",
+		"test.sauce.ex3.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex3.yml ",
+		"test.sauce.ex3.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex3.yml --region us-west-1",
+		"test.sauce.ex4.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex4.yml ",
+		"test.sauce.ex4.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex4.yml --region us-west-1",
+		"test.sauce.ex5.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex5.yml ",
+		"test.sauce.ex5.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex5.yml --region us-west-1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"cypress": "^9.3.1",
+		"saucectl": "^0.82.1"
+	}
 }
