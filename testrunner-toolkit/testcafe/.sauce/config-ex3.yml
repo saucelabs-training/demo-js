@@ -14,7 +14,7 @@ sauce:
 
 # Testcafe specific info
 testcafe:
-  version: 1.14.2
+  version: 1.18.3
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 
@@ -58,7 +58,7 @@ suites:
       - "**/login.*"
   - name: "Testcafe - Cross Browser - Swag Labs Login - Mac 11-Chrome"
     browserName: chrome
-    platformName: "mac 11.00"
+    platformName: "macOS 11.00"
     # Available resolutions on Mac 11:
     # - '1024x768'
     # - '1152x864'
@@ -74,30 +74,29 @@ suites:
       - "**/login.*"
   - name: "Testcafe - Cross Browser - Swag Labs Login - Mac 11-Firefox"
     browserName: firefox
-    platformName: "mac 11.00"
+    platformName: "macOS 11.00"
     screenResolution: "1600x1200"
     src:
       # test files glob
       - "**/login.*"
   - name: "Testcafe - Cross Browser - Swag Labs Login - Mac 11-MicrosoftEdge"
     browserName: microsoftedge
-    platformName: "mac 11.00"
+    platformName: "macOS 11.00"
     screenResolution: "1600x1200"
     src:
       # test files glob
       - "**/login.*"
   - name: "Testcafe - Cross Browser - Swag Labs Login - Mac 11-Safari"
     browserName: safari
-    platformName: "mac 11.00"
+    platformName: "macOS 11.00"
     screenResolution: "1600x1200"
     src:
       # test files glob
       - "**/login.*"
-
 # Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
-artifacts:
-  download:
-    directory: ./artifacts
-    match:
-      - '*'
-    when: always
+# artifacts:
+#   download:
+#     directory: ./artifacts
+#     match:
+#       - "*"
+#     when: always
