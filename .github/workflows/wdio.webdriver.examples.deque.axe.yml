@@ -12,7 +12,7 @@ on:
   pull_request:
     # Only trigger if files in this path changed
     paths:
-      - 'webdriverio/webdriver/examples/sc/**'
+      - 'webdriverio/webdriver/examples/deque/**'
       - '.github/workflows/wdio.webdriver.examples.deque.axe.yml'
       # Don't run on Markdown changes
       - '!**.md'
