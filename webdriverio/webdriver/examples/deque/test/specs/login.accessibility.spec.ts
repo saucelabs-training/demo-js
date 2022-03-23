@@ -1,5 +1,4 @@
-describe('Accessibility Spec', () => {
-
+describe('Login Accessibility Spec', () => {
     it('should accessibility scan the login page', async () => {
         //Navigate to the page that you'd like to scan
         await browser.url('');
