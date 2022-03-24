@@ -61,8 +61,7 @@ Node.js based automation frameworks locally and or in Sauce Labs.
         ![WebdriverIO - Webdriver - Examples - W3C](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20W3C/badge.svg)
       - [WebdriverIO with Typescript](webdriverio/webdriver/examples/typescript)\
         ![WebdriverIO - Webdriver - Examples - TS](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20TS/badge.svg)
-      - [WebdriverIO with Deque Axe Accessibility](webdriverio/webdriver/examples/deque)\
-        ![WebdriverIO - Webdriver - Examples - Deque Axe Accessibility](https://github.com/saucelabs-training/demo-js/actions/workflows/wdio.webdriver.examples.deque.axe.yml/badge.svg)]
+      - [WebdriverIO with Deque Axe Accessibility](webdriverio/webdriver/examples/deque)
 - **SauceCTL Testrunner Toolkit**
   - [Cypress examples](testrunner-toolkit/cypress)
     - [Cypress and a Default Test Set](testrunner-toolkit/cypress/README.md#example-1---minimal-configuration-for-all-tests)
