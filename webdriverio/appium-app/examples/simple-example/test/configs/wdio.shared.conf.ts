@@ -1,8 +1,9 @@
 export const config: WebdriverIO.Config = {
+    // Please visit https://webdriver.io/docs/configurationfile/ for the full list of options
 
     // Specify what tests to run
     specs: ['./test/specs/*.spec.ts'],
-    //Capabilities.. We will set these in the platform specific conf files
+    // Capabilities.. We will set these in the platform specific conf files
     capabilities: [],
     maxInstances: 1,
     //Test Configuration

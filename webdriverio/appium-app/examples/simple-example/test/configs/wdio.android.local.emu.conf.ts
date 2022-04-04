@@ -1,15 +1,13 @@
 import {join} from 'path';
 import config from './wdio.shared.local.appium.conf';
 
-config.capabilities = [
-    {
+config.capabilities = [{
         platformName: 'Android',
-        platformVersion: '12.0',
-        deviceName: 'Android Emulator',
-        automationName: 'UIAutomator2',
-        app: join(process.cwd(), './test-apps/Android-MyDemoAppRN.apk'),
-        appWaitActivity: 'com.saucelabs.mydemoapp.rn.MainActivity',
-    }
-];
+        'appium:platformVersion': '12.0',
+        'appium:deviceName': 'Android Emulator',
+        'appium:automationName': 'UIAutomator2',
+        'appium:app': join(process.cwd(), './test-apps/Android-MyDemoAppRN.apk'),
+        'appium:appWaitActivity': 'com.saucelabs.mydemoapp.rn.MainActivity',
+}];
 
 exports.config = config;
