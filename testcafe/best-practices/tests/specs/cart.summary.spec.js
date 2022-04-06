@@ -8,9 +8,6 @@ import AppHeaderPage from '../page-objects/AppHeaderPage';
 
 
 fixture`Test cart items overview page`
-    .beforeEach(async t => {
-        await t.resizeWindow(1366, 768);
-    });
 
 test('should validate that we can continue shopping', async t => {
     await setTestContext({

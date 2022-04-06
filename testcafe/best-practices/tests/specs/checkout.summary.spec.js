@@ -7,7 +7,6 @@ import SwagOverviewPage from '../page-objects/SwagOverviewPage';
 
 fixture`Test checkout summary page`
     .beforeEach(async t => {
-        await t.resizeWindow(1366, 768);
         await setTestContext({
             baseUrl: LoginPage.url,
             user: LOGIN_USERS.STANDARD,

@@ -7,7 +7,6 @@ import CartSummaryPage from '../page-objects/CartSummaryPage';
 
 fixture`Test checkout overview page`
     .beforeEach(async t => {
-        await t.resizeWindow(1366, 768);
         await setTestContext({
             baseUrl: LoginPage.url,
             user: LOGIN_USERS.STANDARD,

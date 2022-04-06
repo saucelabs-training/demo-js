@@ -63,29 +63,37 @@ It will run all tests in your local Chrome browser in headless mode. The logs wi
  ✓ should validate that a product can be added to a cart
 
 
- 22 passed (9s)
+ 25 passed (9s)
 Tests failed: 0
 ```
 
 ## Run tests on Sauce Labs
-> **NOTE:** The preferred way of running TestCafe tests in **NOT** through the `testcafe-browser-provider-saucelabs`-plugin
-> but through `saucectl`. Please check [this](../../testrunner-toolkit/testcafe)-folder for instructions
+We recommend using [SauceCTL](https://github.com/saucelabs/saucectl) for running TestCafe tests. If you haven't installed the SauceCTL runner, you can do that by running
 
-To run the tests on Sauce Labs we advise you to read [this](https://github.com/DevExpress/testcafe-browser-provider-saucelabs) 
-document and follow the step to set up your local and or CI-pipeline.
+```
+npm install -g saucectl
+```
 
-To get all the browsers / emulators run the following command
+To run tests, you can then execute
 
-    npm run test.saucelabs.get.browsers
+```
+npm run test.saucelabs.eu
+```
 
-Just pick the browsers you need and add them to the TestCafe-configuration file which can be found [here](testsonfigs/saucelabs.config.js).
+to run tests against the EU data center or
 
-You can run your tests on Sauce Labs US DC with this command
+```
+npm run test.saucelabs.us
+```
 
-    npm run test.saucelabs.us
+to run tests against the US data center. Both commands use the `saucectl run` command with some additional configuration. 
 
-You can run your tests on Sauce Labs EU DC with this command
+_Special Note_: Using `saucectl` does _not_ automatically start a Sauce Connect tunnel, which may be advantageous if you want to use an existing tunnel, or if you do not require a Sauce Connect tunnel with your TestCafe tests. 
 
-    npm run test.saucelabs.eu
+If you would like to run tests with an existing Sauce Connect tunnel, use
 
-It will spin up multiple browsers.
+```
+saucectl run --tunnel-name myTunnel
+```
+
+or set the tunnel name in the [config file](https://docs.saucelabs.com/dev/cli/saucectl/#configure-saucectl-for-your-tests) of your tests.
