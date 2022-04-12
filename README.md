@@ -88,8 +88,6 @@ Node.js based automation frameworks locally and or in Sauce Labs.
     - [Examples](webdriverio/webdriver/examples)
       - [Real Devices and Sauce Labs](protractor/appium-web/examples/real-devices)
 - [Puppeteer with Jest](puppeteer)
-- [TestCafe](testcafe)
-  - [TestCafe "Best Practices"](testcafe/best-practices)
 
 > \* The connection to Sauce Labs doesn't depend on using Mocha, Jasmine or CucumberJS. Please check the
 > [frameworks](https://webdriver.io/docs/frameworks.html) page of WebdriverIO on how to implement a different framework then
