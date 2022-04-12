@@ -162,3 +162,14 @@ In this example, all tests are executed on a single chrome browser in sequential
 
 > **Note:** More options can be found in the
 > [TestCafe on Sauce Labs](https://docs.saucelabs.com/testrunner-toolkit/configuration/testcafe) documentation 
+
+### Special Note on Sauce Connect Tunnels
+Using `saucectl` does _not_ automatically start a Sauce Connect tunnel, which may be advantageous if you want to use an existing tunnel, or if you do not require a Sauce Connect tunnel with your TestCafe tests. 
+
+If you would like to run tests with an existing Sauce Connect tunnel, use the flag `--tunnel-name` like this
+
+```
+saucectl run --tunnel-name myTunnel 
+```
+
+or see the above section on the TestCafe on Sauce Labs documentation.
