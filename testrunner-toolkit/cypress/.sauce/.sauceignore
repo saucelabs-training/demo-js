@@ -1,0 +1,25 @@
+# .sauceignore
+
+# Ignore node_modules
+node_modules/
+
+# Ignore all log files
+*.log
+
+# Ignore executables/binaries
+*.exe
+*.bin
+**/*/bin
+
+# Ignore media files
+*.png
+*.jpeg
+*.jpg
+*.mp4
+
+# Ignore documentation
+*.rst
+*.md
+
+# Ignore sensitive data
+credentials.yml
