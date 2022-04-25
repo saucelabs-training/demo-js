@@ -24,8 +24,9 @@ export const config: MobileConfig = {
   bail: 0,
   baseUrl: 'http://localhost',
   waitforTimeout: 15000,
-  connectionRetryTimeout: 180000,
-  connectionRetryCount: 2,
+  // A timeout of 5 min
+  connectionRetryTimeout: 5 * 60 * 1000,
+  connectionRetryCount: 1,
   services: [],
   // Framework you want to run your specs with.
   framework: 'mocha',

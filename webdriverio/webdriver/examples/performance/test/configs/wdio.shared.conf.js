@@ -6,9 +6,7 @@ exports.config = {
   // ==================
   // Specify Test Files
   // ==================
-  specs: [
-    './test/specs/**/*.js'
-  ],
+  specs: ['./test/specs/**/*.js'],
   // ============
   // Capabilities
   // ============
@@ -21,7 +19,8 @@ exports.config = {
   bail: 0,
   baseUrl: 'https://www.saucedemo.com/',
   waitforTimeout: 10000,
-  connectionRetryTimeout: 90000,
+  // A timeout of 3 min
+  connectionRetryTimeout: 3 * 60 * 1000,
   connectionRetryCount: 3,
   framework: 'jasmine',
   reporters: ['spec'],

@@ -22,7 +22,7 @@
 	"author": "",
 	"license": "MIT",
 	"devDependencies": {
-		"cypress": "^9.3.1",
-		"saucectl": "^0.82.1"
+		"cypress": "^9.5.4",
+		"saucectl": "^0.93.0"
 	}
 }

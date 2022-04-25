@@ -3,38 +3,37 @@
  * https://webdriver.io/docs/configurationfile.html
  */
 exports.config = {
-    // ====================
-    // Runner Configuration
-    // ====================
-    runner: 'local',
+  // ====================
+  // Runner Configuration
+  // ====================
+  runner: 'local',
 
-    // ==================
-    // Specify Test Files
-    // ==================
-    specs: [
-        './test/specs/**/*.js'
-    ],
+  // ==================
+  // Specify Test Files
+  // ==================
+  specs: ['./test/specs/**/*.js'],
 
-    // ============
-    // Capabilities
-    // ============
-    // The specific capabilities can be found in the separate files
-    maxInstances: 10,
+  // ============
+  // Capabilities
+  // ============
+  // The specific capabilities can be found in the separate files
+  maxInstances: 10,
 
-    // ===================
-    // Test Configurations
-    // ===================
-    logLevel: 'silent',
-    bail: 0,
-    baseUrl: '',
-    waitforTimeout: 45000,
-    connectionRetryTimeout: 120000,
-    connectionRetryCount: 3,
-    // Empty for now, will be filled with the separate configs
-    services: [],
-    framework: 'jasmine',
-    reporters: ['spec'],
-    jasmineOpts: {
-        defaultTimeoutInterval: 90000,
-    },
-}
+  // ===================
+  // Test Configurations
+  // ===================
+  logLevel: 'silent',
+  bail: 0,
+  baseUrl: '',
+  waitforTimeout: 45000,
+  // A timeout of 5 min
+  connectionRetryTimeout: 5 * 60 * 1000,
+  connectionRetryCount: 1,
+  // Empty for now, will be filled with the separate configs
+  services: [],
+  framework: 'jasmine',
+  reporters: ['spec'],
+  jasmineOpts: {
+    defaultTimeoutInterval: 90000,
+  },
+};
