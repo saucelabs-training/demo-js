@@ -8,7 +8,7 @@ sauce:
     tags:
       - cypress
       - cross-browser
-    build: "Cypress: Sharding tests"
+    build: "config.ex5 $CURRENT_TIME"
 cypress:
   version: 9.3.1
   configFile: "cypress.json" # We determine related files based on the location of the config file.
@@ -23,7 +23,7 @@ suites:
     # This will tell the saucectl runner to shard/divide the tests
     # over multiple instances, make sure you have the `concurrency`
     # set to higher than one
-    shard: spec
+    shard: concurrency
     config:
       testFiles: ["**/*.*"]
   # Firefox
@@ -34,7 +34,7 @@ suites:
     # This will tell the saucectl runner to shard/divide the tests
     # over multiple instances, make sure you have the `concurrency`
     # set to higher than one
-    shard: spec
+    shard: concurrency
     config:
       testFiles: ["**/*.*"]
   # MicrosoftEdge
