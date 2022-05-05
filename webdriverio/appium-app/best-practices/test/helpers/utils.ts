@@ -32,6 +32,20 @@ const restartApp = async (): Promise<void> => {
 
   // Set the firstAppstart to false to say that the following test can be reset
   (driver.config as MobileConfig).firstAppStart = false;
+
+  // Wait for the app to be ready and reset the state by clicking on the header image
+  const headerImage = await $(locatorStrategy('longpress reset app'));
+  await headerImage.waitForDisplayed();
+  if (driver.isIOS) {
+    return driver.execute('mobile: touchAndHold', {
+      elementId: headerImage.elementId,
+      duration: 1,
+    });
+  }
+  await driver.execute('mobile: longClickGesture', {
+    elementId: headerImage.elementId,
+    duration: 1000,
+  });
 };
 const hideKeyboard = async (): Promise<void> => {
   // The hideKeyboard is not working on ios devices, so take a different approach

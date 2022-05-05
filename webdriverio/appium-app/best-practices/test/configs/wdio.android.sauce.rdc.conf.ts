@@ -45,11 +45,9 @@ config.capabilities = [
       // Select only phone devices
       // @ts-ignore
       phoneOnly: true,
-      // Only resign for Android if biometrics or image injection needs to be tested, otherwise don't.
-      // That will save time
-      resigningEnabled: false,
-      allowTouchIdEnroll: false,
-      sauceLabsImageInjectionEnabled: false,
+      resigningEnabled: true,
+      allowTouchIdEnroll: true,
+      sauceLabsImageInjectionEnabled: true,
     },
   },
 ];
