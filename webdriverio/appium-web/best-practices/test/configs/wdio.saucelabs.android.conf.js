@@ -1,5 +1,7 @@
-const {config} = require('./wdio.shared.sauce.mobile.conf');
-const build = `Best Practices: Android Chrome Appium '${config.appiumVersion}' build-${new Date().getTime()}`;
+const { config } = require('./wdio.shared.sauce.mobile.conf');
+const build = `Best Practices: Android Chrome Appium '${
+  config.appiumVersion
+}' build-${new Date().getTime()}`;
 
 // ============
 // Capabilities
@@ -9,8 +11,8 @@ const build = `Best Practices: Android Chrome Appium '${config.appiumVersion}' b
 //
 // For configuring an Emulator please check
 // https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/
-config.capabilities = ['7.1', '8.1', '9.0', '10.0', '11.0'].map(androidVersion => (
-  {
+config.capabilities = ['8.1', '9.0', '10.0', '11.0', '12.0'].map(
+  (androidVersion) => ({
     browserName: 'Chrome',
     deviceName: 'Android GoogleAPI Emulator',
     platformName: 'Android',
@@ -18,12 +20,12 @@ config.capabilities = ['7.1', '8.1', '9.0', '10.0', '11.0'].map(androidVersion =
     build: build,
     // Older versions of Appium give issues with sending keys, see
     // https://github.com/appium/appium/issues/12059
-    appiumVersion: '1.20.2'
-  }
-));
+    appiumVersion: '1.20.2',
+  })
+);
 
 if (config.appiumVersion !== undefined && config.appiumVersion !== 'default') {
-  config.capabilities.forEach(capability => {
+  config.capabilities.forEach((capability) => {
     capability.appiumVersion = config.appiumVersion;
   });
 }
