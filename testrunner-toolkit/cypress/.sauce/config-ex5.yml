@@ -10,7 +10,7 @@ sauce:
       - cross-browser
     build: "config.ex5 $CURRENT_TIME"
 cypress:
-  version: 9.3.1
+  version: package.json
   configFile: "cypress.json" # We determine related files based on the location of the config file.
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
@@ -20,9 +20,6 @@ suites:
     browser: "chrome"
     platformName: "Windows 10"
     screenResolution: "1400x1050"
-    # This will tell the saucectl runner to shard/divide the tests
-    # over multiple instances, make sure you have the `concurrency`
-    # set to higher than one
     shard: concurrency
     config:
       testFiles: ["**/*.*"]
@@ -42,9 +39,14 @@ suites:
     browser: "microsoftedge"
     platformName: "Windows 10"
     screenResolution: "1400x1050"
-    # This will tell the saucectl runner to shard/divide the tests
-    # over multiple instances, make sure you have the `concurrency`
-    # set to higher than one
     shard: concurrency
     config:
       testFiles: ["**/*.*"]
+  - name: "Swag Labs Login chrome latest-1"
+    browser: "chrome"
+    browserVersion: "latest-1"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    shard: concurrency
+    config:
+      testFiles: ["**/login.*"]

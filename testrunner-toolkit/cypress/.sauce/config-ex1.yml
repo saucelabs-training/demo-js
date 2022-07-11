@@ -8,7 +8,7 @@ sauce:
       - default
     build: "Cypress: Default test set"
 cypress:
-  version: 9.3.1
+  version: package.json
   configFile: "cypress.json" # We determine related files based on the location of the config file.
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
@@ -16,21 +16,7 @@ suites:
   - name: "Cypress Chrome"
     browser: "chrome"
     platformName: "Windows 10"
-    # Available resolutions on Windows:
-    # - '800x600'
-    # - '1024x768'
-    # - '1152x864'
-    # - '1280x768'
-    # - '1280x800'
-    # - '1280x960'
-    # - '1280x1024'
-    # - '1400x1050'
-    # - '1440x900'
-    # - '1600x1200'
-    # - '1680x1050'
-    # - '1920x1080'
-    # - '1920x1200'
-    # - '2560x1600'
     screenResolution: "1400x1050"
     config:
       testFiles: ["**/*.*"]
+    shard: spec
