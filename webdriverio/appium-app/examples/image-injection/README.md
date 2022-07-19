@@ -40,8 +40,8 @@ storage by doing the following from the root of this folder:
 When you've done that you will see for example the following logs
 
     ➜  scripts git:(master) ✗ ./push_apps_to_storage.sh 
-    {"username":"wim.selles","filename":"sample-app-android.apk","size":24874172,"md5":"e46219548268d3e89ada443e1ed6e351","etag":"8b037c2ad1dc2b241e605ed97569d6dd"}
-    {"username":"wim.selles","filename":"sample-app-ios-real.ipa","size":4597084,"md5":"33f82765909e4ac7fc9dd5e925b6d2ae","etag":"86e63c580c15530db573833371830323"}
+    {"username":"wim.selles","filename":"Android.MyDemoAppRN.apk","size":24874172,"md5":"e46219548268d3e89ada443e1ed6e351","etag":"8b037c2ad1dc2b241e605ed97569d6dd"}
+    {"username":"wim.selles","filename":"MyRNDemoApp.ipa","size":4597084,"md5":"33f82765909e4ac7fc9dd5e925b6d2ae","etag":"86e63c580c15530db573833371830323"}
  
 ## Run tests on Sauce Labs Android real devices in the New Sauce Labs UI
 If you want to run the tests on Sauce Labs real devices in the **New Sauce Labs UI** then you can run the Android test with
