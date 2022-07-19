@@ -12,9 +12,11 @@ export function locatorStrategy(selector) {
  * The app is opened by Appium by default, when we start a new test
  * the app needs to be reset
  */
-export async function restartApp() {
+export async function terminateAndRestartApp() {
   if (!driver.firstAppStart) {
-    await driver.reset();
+    // await driver.reset();
+    await driver.terminateApp('com.saucelabs.mydemoapp.rn');
+    await driver.launchApp();
   }
   // See the wdio.shared.conf.js file in the `before` hook for what this property does
   // Set the firstAppstart to false to say that the following test can be reset
