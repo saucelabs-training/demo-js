@@ -8,7 +8,7 @@ sauce:
     tags:
       - cypress
       - cross-browser
-    build: "config.ex5 $CURRENT_TIME"
+    build: "config-ex5 $CURRENT_TIME"
 cypress:
   version: package.json
   configFile: "cypress.json" # We determine related files based on the location of the config file.

@@ -1,12 +1,15 @@
+# https://docs.saucelabs.com/web-apps/automated-testing/cypress/
+# https://docs.saucelabs.com/web-apps/automated-testing/cypress/yaml/
 apiVersion: v1alpha
 kind: cypress
 sauce:
   region: eu-central-1 # or us-west-1
+  concurrency: 100
   metadata:
     tags:
       - cypress
       - default
-    build: "Cypress: Default test set"
+    build: "config-ex1 $CURRENT_TIME"
 cypress:
   version: package.json
   configFile: "cypress.json" # We determine related files based on the location of the config file.
@@ -19,4 +22,6 @@ suites:
     screenResolution: "1400x1050"
     config:
       testFiles: ["**/*.*"]
+      # use split by spec when you have more concurrency than specs
+      #use split by concurrency when you have more specs than available concurrency
     shard: spec
