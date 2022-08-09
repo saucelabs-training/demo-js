@@ -65,13 +65,16 @@ Node.js based automation frameworks locally and or in Sauce Labs.
       - [WebdriverIO with Deque Axe Accessibility](webdriverio/webdriver/examples/deque)
 - **SauceCTL Testrunner Toolkit**
   - [Cypress examples](testrunner-toolkit/cypress)
-    - [Cypress and a Default Test Set](testrunner-toolkit/cypress/README.md#example-1---minimal-configuration-for-all-tests)
+    - [Cypress and a Default Test Set](testrunner-toolkit/cypress/README.md#example-1---minimal-configuration-for-all-tests)\
+    ![Playwright with Jest](https://github.com/saucelabs-training/demo-js/workflows/SauceCTL%20-%20Cypress/badge.svg)
     - [Cypress and Cross Browser Testing on Sauce Labs](testrunner-toolkit/cypress/README.md#example-3---cross-browser-tests)
     - [Cypress and Cross Browser Testing browser versioning](testrunner-toolkit/cypress/README.md#example-4---cross-versions-tests)
     - [Cypress and Testing in Parallel](testrunner-toolkit/cypress/README.md#example-2---parallel-tests)
-  - [Playwright with Jest](testrunner-toolkit/playwright)
+  - [Playwright with Jest](testrunner-toolkit/playwright)\
+    ![Playwright with Jest](https://github.com/saucelabs-training/demo-js/workflows/SauceCTL%20-%20Playwright/badge.svg)
   - [Puppeteer with Jest](testrunner-toolkit/puppeteer)
-  - [TestCafe](testrunner-toolkit/testcafe)
+  - [TestCafe](testrunner-toolkit/testcafe)\
+    ![Playwright with Jest](https://github.com/saucelabs-training/demo-js/workflows/SauceCTL%20-%20TestCafe/badge.svg)
   - [Dependencies Examples](testrunner-toolkit/dependencies-example)
 - [Screener Runner (DEPRECATED!! Move to Visual E2E)](screener-runner)
 - [NightWatch](nightwatch)
