@@ -9,8 +9,8 @@
     "test.local.headfull": "npx cypress run --headed",
     "test.sauce.ex1.eu": "CURRENT_TIME=$(date +%s) saucectl run -c ./.sauce/config-ex1.yml ",
     "test.sauce.ex1.us": "CURRENT_TIME=$(date +%s) saucectl run -c ./.sauce/config-ex1.yml --region us-west-1",
-    "test.sauce.ex5.concurrency.us": "CURRENT_TIME=$(date +%s) saucectl run --region us-west-1 --ccy 25 -c ./.sauce/config-ex5.yml",
-    "test.sauce.ex5.concurrency.eu": "CURRENT_TIME=$(date +%s) saucectl run --ccy 25 -c ./.sauce/config-ex5.yml"
+    "test.sauce.ex2.concurrency.us": "CURRENT_TIME=$(date +%s) saucectl run --region us-west-1 --ccy 25 -c ./.sauce/config-ex2.yml",
+    "test.sauce.ex2.concurrency.eu": "CURRENT_TIME=$(date +%s) saucectl run --ccy 25 -c ./.sauce/config-ex2.yml"
   },
   "keywords": [],
   "author": "",
