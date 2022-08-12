@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "test.android.local.emu": "npx wdio test/configs/wdio.android.local.emu.conf.ts",
-    "test.sayucelabs.android.emu.eu": "REGION=eu npx wdio test/configs/wdio.android.sauce.emu.conf.ts",
+    "test.saucelabs.android.emu.eu": "REGION=eu npx wdio test/configs/wdio.android.sauce.emu.conf.ts",
     "test.saucelabs.android.emu.us": "npx wdio test/configs/wdio.android.sauce.emu.conf.ts",
     "test.ios.local.sim": "npx wdio test/configs/wdio.ios.local.sim.conf.ts",
     "test.saucelabs.ios.sim.eu": "npx REGION=eu npx wdio test/configs/wdio.ios.sauce.sim.conf.ts",
