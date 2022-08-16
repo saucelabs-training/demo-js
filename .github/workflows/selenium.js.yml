@@ -22,7 +22,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./selenium/
@@ -32,7 +32,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x]
+        node-version: [16.x]
 
     steps:
       - name: Checkout Repository
