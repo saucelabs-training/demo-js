@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test.sauce": "npx mocha test/**/simple.safari.spec.js --timeout 60000"
+    "test.safari.us": "npx mocha test/**/simple.safari.spec.js --timeout 60000"
   },
   "keywords": [],
   "author": "Nikolay Advolodkin - https://github.com/nadvolod",
