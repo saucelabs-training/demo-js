@@ -17,6 +17,9 @@ Node.js based automation frameworks locally and or in Sauce Labs.
 
 ## Framework examples
 
+- [selenium-webdriver with Jasmine/Mocha/CucumberJS\*](selenium)
+  - [Examples](selenium/test) [![Selenium-webdriver JS](https://github.com/saucelabs-training/demo-js/actions/workflows/selenium.js.yml/badge.svg)](https://github.com/saucelabs-training/demo-js/actions/workflows/selenium.js.yml)
+    - [Simple Safari test](selenium/test/simple.safari.spec.js)
 - [WebdriverIO with Jasmine/Mocha/CucumberJS\*](webdriverio)
   - WebdriverIO with Appium for Native/Hybrid Apps
     - [WebdriverIO Best Practices, including Emulators/Simulators/Real Devices, W3C caps, Page Objects and lots of helpers](webdriverio/appium-web/best-practices)
