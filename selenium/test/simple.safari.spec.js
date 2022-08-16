@@ -16,7 +16,7 @@ async function runTestWithCaps (capabilities) {
     await inputField.submit(); // this helps in mobile browsers
   }
   try {
-    await driver.wait(webdriver.until.titleMatches(/foobar/i), 5000);
+    await driver.wait(webdriver.until.titleMatches(/SauceLabs/i), 5000);
     console.log(await driver.getTitle());
     await driver.executeScript(
       'sauce:job-result=passed'
