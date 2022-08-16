@@ -22,7 +22,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    name: test-${{matrix.os}}-${{matrix.node-version}}
     defaults:
       run:
         working-directory: ./selenium/
@@ -33,6 +33,8 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
+        os: [windows-latest, macOS-latest, ubuntu-latest]
+    runs-on: ${{matrix.os}}
 
     steps:
       - name: Checkout Repository
