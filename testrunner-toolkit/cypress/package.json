@@ -16,8 +16,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^9.7.0",
+    "cypress": "^10.7.0",
     "eslint": "^8.15.0",
-    "saucectl": "^0.100.0"
+    "saucectl": "^0.107.1"
   }
 }
