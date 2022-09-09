@@ -1,52 +1,27 @@
+# https://docs.saucelabs.com/web-apps/automated-testing/cypress/
+# https://docs.saucelabs.com/web-apps/automated-testing/cypress/yaml/
 apiVersion: v1alpha
 kind: cypress
 sauce:
   region: eu-central-1 # or us-west-1
-  # combined with the shard:concurrency setting
   concurrency: 75
   metadata:
     tags:
       - cypress
-      - cross-browser
-    build: "config-ex5 $CURRENT_TIME"
+      - default
+    build: "config-ex2 $CURRENT_TIME"
 cypress:
   version: package.json
   configFile: "cypress.json" # We determine related files based on the location of the config file.
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
-  # Chrome
-  - name: "Swag Labs Shard Tests Chrome"
+  - name: "Cypress Chrome"
     browser: "chrome"
     platformName: "Windows 10"
     screenResolution: "1400x1050"
-    shard: concurrency
     config:
       testFiles: ["**/*.*"]
-  # Firefox
-  - name: "Swag Labs Shard Tests Firefox"
-    browser: "firefox"
-    platformName: "Windows 10"
-    screenResolution: "1400x1050"
-    # This will tell the saucectl runner to shard/divide the tests
-    # over multiple instances, make sure you have the `concurrency`
-    # set to higher than one
-    shard: concurrency
-    config:
-      testFiles: ["**/*.*"]
-  # MicrosoftEdge
-  - name: "Swag Labs Shard Tests MicrosoftEdge"
-    browser: "microsoftedge"
-    platformName: "Windows 10"
-    screenResolution: "1400x1050"
-    shard: concurrency
-    config:
-      testFiles: ["**/*.*"]
-  - name: "Swag Labs Login chrome latest-1"
-    browser: "chrome"
-    browserVersion: "latest-1"
-    platformName: "Windows 10"
-    screenResolution: "1400x1050"
-    shard: concurrency
-    config:
-      testFiles: ["**/login.*"]
+      # use split by spec when you have more concurrency than specs
+      #use split by concurrency when you have more specs than available concurrency
+    shard: spec

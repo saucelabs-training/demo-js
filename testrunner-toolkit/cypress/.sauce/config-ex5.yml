@@ -4,15 +4,18 @@ apiVersion: v1alpha
 kind: cypress
 sauce:
   region: eu-central-1 # or us-west-1
-  concurrency: 100
+  tunnel:
+    name: <your tunnel name>
+  concurrency: 75
   metadata:
     tags:
       - cypress
       - default
-    build: "config-ex1 $CURRENT_TIME"
+      - sauce connect
+    build: "config-ex5 $CURRENT_TIME"
 cypress:
   version: package.json
-  configFile: "cypress.json" # We determine related files based on the location of the config file.
+  configFile: "cypress_sc.json" # We determine related files based on the location of the config file.
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
@@ -22,3 +25,6 @@ suites:
     screenResolution: "1400x1050"
     config:
       testFiles: ["**/*.*"]
+      # use split by spec when you have more concurrency than specs
+      #use split by concurrency when you have more specs than available concurrency
+    shard: spec

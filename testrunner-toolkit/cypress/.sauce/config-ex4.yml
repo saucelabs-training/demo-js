@@ -1,0 +1,46 @@
+apiVersion: v1alpha
+kind: cypress
+sauce:
+  region: eu-central-1 # or us-west-1
+  # combined with the shard:concurrency setting
+  concurrency: 5
+  metadata:
+    tags:
+      - cypress
+      - cross-version
+    build: "config-ex4 $CURRENT_TIME"
+cypress:
+  version: package.json
+  configFile: "cypress.json" # We determine related files based on the location of the config file.
+# Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
+rootDir: ./
+suites:
+  # Chrome
+  - name: "Swag Labs Shard Tests Chrome latest"
+    browser: "chrome"
+    browserVersion: "latest"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    # This will tell the saucectl runner to shard/divide the tests
+    # over multiple instances, make sure you have the `concurrency`
+    # set to higher than one
+    shard: concurrency
+    config:
+      testFiles: ["**/*.*"]
+  # Firefox
+  - name: "Swag Labs Shard Tests Chrome latest-1"
+    browser: "chrome"
+    browserVersion: "latest-1"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    shard: concurrency
+    config:
+      testFiles: ["**/*.*"]
+  - name: "Swag Labs chrome latest-2"
+    browser: "chrome"
+    browserVersion: "latest-2"
+    platformName: "Windows 10"
+    screenResolution: "1400x1050"
+    shard: concurrency
+    config:
+      testFiles: ["**/*.*"]
