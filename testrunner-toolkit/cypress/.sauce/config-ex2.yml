@@ -1,5 +1,9 @@
-apiVersion: v1alpha
+# https://docs.saucelabs.com/web-apps/automated-testing/cypress/
+# https://docs.saucelabs.com/web-apps/automated-testing/cypress/yaml/
+apiVersion: v1
 kind: cypress
+defaults:
+  mode: sauce
 sauce:
   region: eu-central-1 # or us-west-1
   # combined with the shard:concurrency setting
@@ -11,7 +15,7 @@ sauce:
     build: "config-ex5 $CURRENT_TIME"
 cypress:
   version: package.json
-  configFile: "cypress.json" # We determine related files based on the location of the config file.
+  configFile: "cypress.config.js" # We determine related files based on the location of the config file.
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
@@ -22,7 +26,7 @@ suites:
     screenResolution: "1400x1050"
     shard: concurrency
     config:
-      testFiles: ["**/*.*"]
+      specPattern: [ "cypress/e2e/**/*.*" ] # Cypress native glob support.
   # Firefox
   - name: "Swag Labs Shard Tests Firefox"
     browser: "firefox"
@@ -33,7 +37,7 @@ suites:
     # set to higher than one
     shard: concurrency
     config:
-      testFiles: ["**/*.*"]
+      specPattern: [ "cypress/e2e/**/*.*" ] # Cypress native glob support.
   # MicrosoftEdge
   - name: "Swag Labs Shard Tests MicrosoftEdge"
     browser: "microsoftedge"
@@ -41,7 +45,7 @@ suites:
     screenResolution: "1400x1050"
     shard: concurrency
     config:
-      testFiles: ["**/*.*"]
+      specPattern: [ "cypress/e2e/**/*.*" ] # Cypress native glob support.
   - name: "Swag Labs Login chrome latest-1"
     browser: "chrome"
     browserVersion: "latest-1"
@@ -49,4 +53,4 @@ suites:
     screenResolution: "1400x1050"
     shard: concurrency
     config:
-      testFiles: ["**/login.*"]
+      specPattern: [ "cypress/e2e/**/*.*" ] # Cypress native glob support.
