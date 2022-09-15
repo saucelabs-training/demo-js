@@ -119,14 +119,14 @@ config.before = (capabilities) => {
    */
   const uploadFolders = {
     mac: `/Users/chef/${subFolder}/`,
-    windowsSauce: `C:\\Users\\sauce\\${subFolder}\\`,
+    windows: `C:\\Users\\sauce\\${subFolder}\\`,
   };
 
   // Check the platform name
   const isWindows = capabilities.platformName.toLowerCase().includes('windows');
 
   // Set the global upload folder variable
-  browser.uploadFolder = uploadFolders[isWindows ? 'windowsSauce' : 'mac'];
+  browser.uploadFolder = uploadFolders[isWindows ? 'windows' : 'mac'];
 };
 
 exports.config = config;

@@ -1,4 +1,4 @@
-const {config} = require('./wdio.shared.sauce.conf');
+const { config } = require('./wdio.shared.sauce.conf');
 const build = `Download File: Sauce Labs Desktop build-${new Date().getTime()}`;
 
 // ============
@@ -73,23 +73,14 @@ config.before = (capabilities) => {
    */
   const downloadFolders = {
     mac: `/Users/chef/${subFolder}/`,
-    windowsSauce: `C:\\Users\\sauce\\${subFolder}\\`,
-    windowsAdmin: `C:\\Users\\Administrator\\${subFolder}\\`,
+    windows: `C:\\Users\\sauce\\${subFolder}\\`,
   };
 
   // Check the platformName name to to determine the download folder
-  const isChrome = capabilities.browserName.toLowerCase().includes('chrome');
   const isWindows = capabilities.platformName.toLowerCase().includes('windows');
 
   // Add the download folder to the browser object to easily access it during tests
-  browser.downloadFolder =
-    downloadFolders[
-      isChrome && isWindows
-        ? 'windowsAdmin'
-        : isWindows
-        ? 'windowsSauce'
-        : 'mac'
-    ];
+  browser.downloadFolder = downloadFolders[isWindows ? 'windows' : 'mac'];
 };
 
 exports.config = config;
