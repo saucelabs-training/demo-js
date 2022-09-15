@@ -1,4 +1,4 @@
-const { join } = require('path');
+import { join } from 'path';
 
 describe('Sauce Chrome Upload', () => {
   it('should be able to upload a file', async () => {

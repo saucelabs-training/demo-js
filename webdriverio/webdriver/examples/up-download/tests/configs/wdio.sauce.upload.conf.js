@@ -1,12 +1,10 @@
 const { config } = require('./wdio.shared.sauce.conf');
-const build = `Upload File: Sauce Labs Desktop build-${ new Date().getTime() }`;
+const build = `Upload File: Sauce Labs Desktop build-${new Date().getTime()}`;
 
 // ============
 // Specs
 // ============
-config.specs = [
-  './tests/specs/sauce.upload.spec.js'
-];
+config.specs = ['./tests/specs/sauce.upload.spec.js'];
 
 // ============
 // Capabilities
@@ -120,20 +118,15 @@ config.before = (capabilities) => {
    * uploaded file on the VM
    */
   const uploadFolders = {
-    mac: `/Users/chef/${ subFolder }/`,
-    windowsSauce: `C:\\Users\\sauce\\${ subFolder }\\`,
-    // Windows Chrome and Edge images have a different root user
-    windowsAdmin: `C:\\Users\\Administrator\\${ subFolder }\\`,
+    mac: `/Users/chef/${subFolder}/`,
+    windowsSauce: `C:\\Users\\sauce\\${subFolder}\\`,
   };
 
   // Check the platform name
-  const isChrome = capabilities.browserName.toLowerCase().includes('chrome');
-  const isEdge = capabilities.browserName.toLowerCase().includes('microsoftedge');
   const isWindows = capabilities.platformName.toLowerCase().includes('windows');
-  // Windows Chrome and Edge images have a different root user
-  const isWindowsAdmin = isWindows && (isChrome || isEdge);
 
-  browser.uploadFolder = uploadFolders[ isWindowsAdmin ? 'windowsAdmin' : isWindows ? 'windowsSauce' : 'mac' ];
+  // Set the global upload folder variable
+  browser.uploadFolder = uploadFolders[isWindows ? 'windowsSauce' : 'mac'];
 };
 
 exports.config = config;
