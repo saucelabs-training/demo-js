@@ -3,7 +3,7 @@
  * Credits to Kevin Lamping
  */
 
-const { URL } = require('url');
+import { URL } from 'url';
 
 describe('Sauce Download', () => {
   it('should be able to download and verify the file', async () => {
@@ -51,28 +51,26 @@ describe('Sauce Download', () => {
      * 2. THE FILE CAN BE OPENED AND THE EXPECTED CONTENT IS IN THERE
      */
 
-      // Create the filename to the path where the downloads are stored
-    const filePath = `${ browser.downloadFolder }${ fileName }`;
+    // Create the filename to the path where the downloads are stored
+    const filePath = `${browser.downloadFolder}${fileName}`;
 
+    await browser.waitUntil(async () => {
+      // Load the file in the browsser
+      await browser.url(`file:///${filePath}`);
 
-    await browser.waitUntil(async() => {
-        // Load the file in the browsser
-        await browser.url(`file:///${ filePath }`);
+      // Get the text from the body element
+      const browserText = (await $('body').getText()).toLowerCase();
 
-        // Get the text from the body element
-        const browserText = (await $('body').getText()).toLowerCase();
-
-        // Check there is no loading error
-        return (
-          // For Chrome
-          !browserText.includes('err_file_not_found') &&
-          // For Firefox
-          !browserText.includes('file not found') &&
-          // For Safari
-          !browserText.includes('Can\'t find the file')
-        );
-      },
-      15000);
+      // Check there is no loading error
+      return (
+        // For Chrome
+        !browserText.includes('err_file_not_found') &&
+        // For Firefox
+        !browserText.includes('file not found') &&
+        // For Safari
+        !browserText.includes("Can't find the file")
+      );
+    }, 15000);
 
     // now for example check the content to verify if the download really succeeded
     await expect(await $('body').getText()).toContain('asdf');

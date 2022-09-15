@@ -3,9 +3,9 @@
  * Credits to Kevin Lamping
  */
 
-const { pathExistsSync, readFileSync } = require('fs-extra');
-const { join } = require('path');
-const { URL } = require('url');
+import { pathExistsSync, readFileSync } from 'fs-extra';
+import { join } from 'path';
+import { URL } from 'url';
 
 describe('Downloads', () => {
   it('should download and verify the file', async () => {
@@ -51,7 +51,7 @@ describe('Downloads', () => {
 
     // Join the filename to the path where the downloads are stored
     // based on the browser that is used
-    const filePath = join(global.downloadDir[ browserName ], fileName);
+    const filePath = join(global.downloadDir[browserName], fileName);
 
     // Wait for the file to be fully downloaded
     await browser.waitUntil(() => pathExistsSync(filePath), 10000);

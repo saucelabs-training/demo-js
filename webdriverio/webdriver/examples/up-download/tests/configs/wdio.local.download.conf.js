@@ -11,9 +11,7 @@ global.downloadDir = {
 // ============
 // Specs
 // ============
-config.specs = [
-  './tests/specs/local.download.spec.js'
-];
+config.specs = ['./tests/specs/local.download.spec.js'];
 
 // ========
 // Services
@@ -25,7 +23,7 @@ config.services = config.services.concat([
     'firefox-profile',
     {
       'browser.download.dir': global.downloadDir.firefox,
-      "browser.download.folderList": 2,
+      'browser.download.folderList': 2,
       // Check the allowed MIME types here
       // https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
       'browser.helperApps.neverAsk.saveToDisk': 'application/octet-stream',
@@ -42,9 +40,9 @@ config.capabilities = [
     // this overrides the default chrome download directory with our temporary one
     'goog:chromeOptions': {
       prefs: {
-        'download.default_directory': global.downloadDir.chrome
-      }
-    }
+        'download.default_directory': global.downloadDir.chrome,
+      },
+    },
   },
   {
     browserName: 'firefox',

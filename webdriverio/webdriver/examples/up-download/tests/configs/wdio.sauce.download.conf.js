@@ -4,9 +4,7 @@ const build = `Download File: Sauce Labs Desktop build-${new Date().getTime()}`;
 // ============
 // Specs
 // ============
-config.specs = [
-  './tests/specs/sauce.download.spec.js'
-];
+config.specs = ['./tests/specs/sauce.download.spec.js'];
 
 // ============
 // Capabilities
@@ -84,7 +82,14 @@ config.before = (capabilities) => {
   const isWindows = capabilities.platformName.toLowerCase().includes('windows');
 
   // Add the download folder to the browser object to easily access it during tests
-  browser.downloadFolder = downloadFolders[isChrome && isWindows ? 'windowsAdmin' : isWindows ? 'windowsSauce' : 'mac'];
+  browser.downloadFolder =
+    downloadFolders[
+      isChrome && isWindows
+        ? 'windowsAdmin'
+        : isWindows
+        ? 'windowsSauce'
+        : 'mac'
+    ];
 };
 
 exports.config = config;

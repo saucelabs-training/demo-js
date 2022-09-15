@@ -4,9 +4,7 @@ const build = `Chrome upload File: Sauce Labs Desktop build-${new Date().getTime
 // ============
 // Specs
 // ============
-config.specs = [
-  './tests/specs/sauce.chrome.upload.spec.js'
-];
+config.specs = ['./tests/specs/sauce.chrome.upload.spec.js'];
 
 // ============
 // Capabilities

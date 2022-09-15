@@ -1,4 +1,4 @@
-const { join } = require('path');
+import { join } from 'path';
 
 describe('Uploading files', () => {
   it('should be able to upload a file', async () => {
@@ -9,7 +9,7 @@ describe('Uploading files', () => {
     await browser.url('/upload');
 
     // 2a.  Upload the file by adding the location to the file on the machine,
-    await $('#file-upload').setValue(join(process.cwd(),'assets', fileName));
+    await $('#file-upload').setValue(join(process.cwd(), 'assets', fileName));
     // 2b.  Submit the file upload
     await $('#file-submit').click();
 
