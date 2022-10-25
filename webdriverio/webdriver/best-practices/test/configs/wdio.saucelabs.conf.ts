@@ -52,14 +52,6 @@ config.capabilities = [
   {
     browserName: 'MicrosoftEdge',
     platformName: 'Windows 10',
-    browserVersion: '18.17763',
-    'sauce:options': {
-      ...defaultBrowserSauceOptions,
-    },
-  },
-  {
-    browserName: 'MicrosoftEdge',
-    platformName: 'Windows 10',
     browserVersion: 'latest',
     'sauce:options': {
       ...defaultBrowserSauceOptions,
