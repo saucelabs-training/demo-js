@@ -1,7 +1,7 @@
-const {config} = require('./wdio.shared.conf');
+const { config } = require('./wdio.shared.conf');
 const defaultBrowserSauceOptions = {
-    build: `WDIO CucumberJS: Sauce Labs Desktop Web build-${new Date().getTime()}`,
-    screenResolution: '1600x1200',
+  build: `WDIO CucumberJS: Sauce Labs Desktop Web build-${new Date().getTime()}`,
+  screenResolution: '1600x1200',
 };
 
 // =====================
@@ -19,17 +19,17 @@ config.region = process.env.REGION || 'us';
 // Capabilities
 // ============
 config.capabilities = [
-    /**
-     * Desktop browsers
-     */
-    {
-        browserName: 'chrome',
-        platformName: 'Windows 10',
-        browserVersion: 'latest',
-        'sauce:options': {
-            ...defaultBrowserSauceOptions,
-        },
+  /**
+   * Desktop browsers
+   */
+  {
+    browserName: 'chrome',
+    platformName: 'Windows 10',
+    browserVersion: 'latest',
+    'sauce:options': {
+      ...defaultBrowserSauceOptions,
     },
+  },
 ];
 
 // ========
