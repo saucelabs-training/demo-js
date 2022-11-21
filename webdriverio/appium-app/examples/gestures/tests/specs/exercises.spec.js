@@ -10,24 +10,24 @@
 describe('Appium Gestures Exercises', () => {
   // This will be executed for every test, log in and verify that the
   // correct screen is loaded
-  beforeEach(() => {
+  beforeEach(async () => {
     // Wait for the App to be opened
-    $('~test-Login').waitForDisplayed();
+    await $('~test-Login').waitForDisplayed();
 
     // Login in and wait for the items screen is visible
-    $('~test-Username').addValue('standard_user');
-    $('~test-Password').addValue('secret_sauce');
-    $('~test-LOGIN').click();
-    $('~test-PRODUCTS').waitForDisplayed();
+    await $('~test-Username').addValue('standard_user');
+    await $('~test-Password').addValue('secret_sauce');
+    await $('~test-LOGIN').click();
+    await $('~test-PRODUCTS').waitForDisplayed();
   });
 
   // This will be executed after each test
-  afterEach(() => {
+  afterEach(async () => {
     // Restart the app after each test
-    driver.reset();
+    await driver.reset();
   });
 
-  it('should be able to do a scroll with TouchPerform', () => {
+  it('should be able to do a scroll with TouchPerform', async () => {
     // 1. Get the screen / element size (element size is explained in the touch actions)
 
     /**
@@ -58,23 +58,22 @@ describe('Appium Gestures Exercises', () => {
     // 3c. The move which will be the end position of your finger
     // 3d. Now release it
 
-
     // For demo purpose
-    driver.pause(5000);
+    await driver.pause(5000);
   });
 
-  it('should be able to do a swipe with TouchActions', () => {
+  it('should be able to do a swipe with TouchActions', async () => {
     // Prepare test by adding the first product to the cart and go to the cart
-    $$('~test-ADD TO CART')[0].click();
+    await (await $$('~test-ADD TO CART'))[0].click();
     // Open the cart
-    $('~test-Cart').click();
-    $('~test-Cart Content').waitForDisplayed();
+    await $('~test-Cart').click();
+    await $('~test-Cart Content').waitForDisplayed();
 
     /**
      * CODE THIS STEP
      */
     // 1. Get the size of the element
-    const firstItem = $$('~test-Item')[0];
+    const firstItem = (await $$('~test-Item'))[0];
 
     /**
      * CODE THIS STEP
@@ -104,12 +103,11 @@ describe('Appium Gestures Exercises', () => {
     //     starting position of the element
     // 3f. Finger lets up, off the screen
 
-
     // For demo purpose
-    driver.pause(5000);
+    await driver.pause(5000);
   });
 
-  it('should be able to scroll the easy way', () => {
+  it('should be able to scroll the easy way', async () => {
     // 2. Android and iOS have their own implementation of executing a "simple"
     //    scroll, so we ask the driver here if we are an Android or iOS device
     //    Be aware that you need to have Appium 1.19.0 on your machine!
@@ -128,18 +126,18 @@ describe('Appium Gestures Exercises', () => {
     }
 
     // For demo purpose
-    driver.pause(5000);
+    await driver.pause(5000);
   });
 
-  it('should be able to swipe the easy way', () => {
+  it('should be able to swipe the easy way', async () => {
     // Prepare test by adding the first product to the cart and go to the cart
-    $$('~test-ADD TO CART')[0].click();
+    await (await $$('~test-ADD TO CART'))[0].click();
     // Open the cart
-    $('~test-Cart').click();
-    $('~test-Cart Content').waitForDisplayed();
+    await $('~test-Cart').click();
+    await $('~test-Cart Content').waitForDisplayed();
 
     // 1. Get the swag item we want to swipe
-    const firstItemId = $$('~test-Item')[0].elementId;
+    const firstItemId = (await $$('~test-Item'))[0].elementId;
 
     // 2. Android and iOS have their own implementation of executing a "simple"
     //    swipe, so we ask the driver here if we are an Android or iOS device
@@ -159,6 +157,6 @@ describe('Appium Gestures Exercises', () => {
     }
 
     // For demo purpose
-    driver.pause(5000);
+    await driver.pause(5000);
   });
 });
