@@ -18,7 +18,7 @@ import config from './wdio.shared.sauce.conf';
 config.capabilities = [
   {
     platformName: 'Android',
-    'appium: deviceName': 'Google Pixel.*',
+    'appium:deviceName': 'Google Pixel.*',
     'appium:deviceOrientation': 'PORTRAIT',
     // This is needed to tell Appium to use the Flutter driver
     'appium:automationName': 'Flutter',
