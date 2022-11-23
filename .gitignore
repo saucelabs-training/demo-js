@@ -30,3 +30,8 @@ nightwatch/webdriver/examples/update-sauce/tests_output/
 *.xml
 v6/
 **/artifacts/
+
+# for Flutter
+!webdriverio/appium-app/examples/appium-flutter/apps
+**/*native-screenshot.png
+**/*flutter-screenshot.png
