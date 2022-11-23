@@ -1,5 +1,5 @@
 {
-  "name": "webdriverio-tests",
+  "name": "appium-flutter-webdriverio-tests",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
