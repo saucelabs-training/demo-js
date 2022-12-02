@@ -24,6 +24,8 @@ suites:
     - name: 'Playwright - default - Chrome'
       platformName: windows 10
       testMatch: ['.*.js']
+      screenResolution: '1440x900'
+      numShards: 4
       params:
           browserName: chromium
 

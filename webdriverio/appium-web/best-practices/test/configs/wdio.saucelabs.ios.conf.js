@@ -11,7 +11,7 @@ const build = `Best Practices: iOS Safari Appium '${
 //
 // For configuring a Simulator please check
 // https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/
-config.capabilities = ['13.4', '14.5', '15.4'].map((iOSVersion) => ({
+config.capabilities = ['13.4', '14.5', '15.4', '16.1'].map((iOSVersion) => ({
   // All vendor specific, in this case Appium capabilities, should be
   // put in vendor prefixed options, see
   // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
@@ -20,6 +20,7 @@ config.capabilities = ['13.4', '14.5', '15.4'].map((iOSVersion) => ({
   // should be prefixed with `appium:{capability-name}`
   'appium:platformVersion': iOSVersion,
   'appium:deviceName': 'iPhone Simulator',
+  'appium:automationName': 'XCUITest',
   // For the W3C capabilities, please check
   // https://www.w3.org/TR/webdriver1/#capabilities
   browserName: 'safari',
@@ -29,16 +30,8 @@ config.capabilities = ['13.4', '14.5', '15.4'].map((iOSVersion) => ({
   // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
   'sauce:options': {
     build: build,
+    ...(Math.floor(+iOSVersion) >= 16 && { appiumVersion: '2.0.0' }),
   },
 }));
-
-if (
-  config['appium:appiumVersion'] !== undefined &&
-  config['appium:appiumVersion'] !== 'default'
-) {
-  config.capabilities.forEach((capability) => {
-    capability['appium:appiumVersion'] = config['appium:appiumVersion'];
-  });
-}
 
 exports.config = config;
