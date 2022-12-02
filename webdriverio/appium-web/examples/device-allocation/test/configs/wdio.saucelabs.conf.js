@@ -1,4 +1,4 @@
-const {config} = require('./wdio.shared.conf');
+const { config } = require('./wdio.shared.conf');
 const build = `WebdriverIO RDC Device Allocation build-${new Date().getTime()}`;
 
 // =========================
@@ -22,45 +22,65 @@ config.capabilities = [
    * Capabilities to run on a specific device based on the deviceID
    */
   {
-    name: 'Run on deviceID iOS',
     browserName: 'safari',
-    // When you have private devices in EU and US
-    deviceName: process.env.REGION === 'eu' ? 'iPhone_XS_ws' : 'iPhone_SE_2020_POC142',
     platformName: 'iOS',
-    // Extra caps
-    cacheId: '17506a5f122', // See the capabilities url as mentioned above
-    build
+    // When you have private devices in EU and US
+    'appium:deviceName':
+      process.env.REGION === 'eu' ? 'iPhone_XS_ws' : 'iPhone_SE_2020_POC142',
+    'sauce:options': {
+      name: 'Run on deviceID iOS',
+      // Extra caps
+      cacheId: '17506a5f122', // See the capabilities url as mentioned above
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
   {
-    name: "Run on deviceID Android",
     browserName: 'chrome',
-    // When you have private devices in EU and US
-    deviceName: process.env.REGION === 'eu' ? 'Samsung_Galaxy_S10_ws' : 'Google_Pixel_3_XL_ws_us',
     platformName: 'Android',
-    // Extra caps
-    cacheId: '58vi9zm82i', // See the capabilities url as mentioned above
-    build
+    // When you have private devices in EU and US
+    'appium:deviceName':
+      process.env.REGION === 'eu'
+        ? 'Samsung_Galaxy_S10_ws'
+        : 'Google_Pixel_3_XL_ws_us',
+    'sauce:options': {
+      name: 'Run on deviceID Android',
+      // Extra caps
+      cacheId: '58vi9zm82i', // See the capabilities url as mentioned above
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
   /**
    * Capabilities to run on a specific device based on its name
    */
   {
-    name: 'Run on device description for iOS',
     browserName: 'safari',
-    deviceName: 'iPhone XS',
     platformName: 'iOS',
-    // Extra caps
-    cacheId: 'e7s54tyw5g', // See the capabilities url as mentioned above
-    build
+    'appium: deviceName': 'iPhone XS',
+    'sauce:options': {
+      name: 'Run on device description for iOS',
+      // Extra caps
+      cacheId: 'e7s54tyw5g', // See the capabilities url as mentioned above
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
   {
-    name: "Run on device description for Android",
-    browserName: 'chrome',
-    deviceName: 'Samsung Galaxy S10',
     platformName: 'Android',
-    // Extra caps
-    cacheId: 'tl5lps3go1', // See the capabilities url as mentioned above
-    build
+    browserName: 'chrome',
+    'appium: deviceName': 'Samsung Galaxy S10',
+    'sauce:options': {
+      name: 'Run on device description for Android',
+      // Extra caps
+      cacheId: 'tl5lps3go1', // See the capabilities url as mentioned above
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
   /**
    * Capabilities to run on a 'random' device based on a regular expression
@@ -69,113 +89,153 @@ config.capabilities = [
    * - direct availability
    */
   {
-    name: 'Run on deviceName regex iOS - iPhone [678]?.*',
     browserName: 'safari',
-    deviceName: 'iPhone [678]?.*',
     platformName: 'iOS',
-    // Extra caps
-    cacheId: 'vvqb5g7lr3', // See the capabilities url as mentioned above
-    // Specs are not mentioned here so it will run all tests
-    // from ./test/specs/
-    build
+    'appium: deviceName': 'iPhone [678]?.*',
+    'sauce:options': {
+      name: 'Run on deviceName regex iOS - iPhone [678]?.*',
+      // Extra caps
+      cacheId: 'vvqb5g7lr3', // See the capabilities url as mentioned above
+      // Specs are not mentioned here so it will run all tests
+      // from ./test/specs/
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
   {
-    name: "Run on deviceName regex Android - Samsung Galaxy S?.*",
     browserName: 'chrome',
-    deviceName: 'Samsung Galaxy S?.*',
+    'appium: deviceName': 'Samsung Galaxy S?.*',
     platformName: 'Android',
-    // Extra caps
-    cacheId: '4hn1znudgm', // See the capabilities url as mentioned above
-    // Specs are not mentioned here so it will run all tests
-    // from ./test/specs/
-    build
+    'sauce:options': {
+      name: 'Run on deviceName regex Android - Samsung Galaxy S?.*',
+      // Extra caps
+      cacheId: '4hn1znudgm', // See the capabilities url as mentioned above
+      // Specs are not mentioned here so it will run all tests
+      // from ./test/specs/
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
   /**
    * Capabilities to run on a major version of the OS
    */
   {
-    name: 'Run on major iOS version - 13',
     browserName: 'safari',
     platformName: 'iOS',
-    platformVersion: '13',
-    // Extra caps
-    cacheId: 'bq9jvoctq7', // See the capabilities url as mentioned above
-    build
+    'appium: platformVersion': '13',
+    'sauce:options': {
+      name: 'Run on major iOS version - 13',
+      // Extra caps
+      cacheId: 'bq9jvoctq7', // See the capabilities url as mentioned above
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
   {
-    name: 'Run on major Android version - 7',
     browserName: 'chrome',
     platformName: 'Android',
-    platformVersion: '7',
-    // Extra caps
-    cacheId: 'cvtjmvawq8', // See the capabilities url as mentioned above
-    build
+    'appium: platformVersion': '7',
+    'sauce:options': {
+      name: 'Run on major Android version - 7',
+      // Extra caps
+      cacheId: 'cvtjmvawq8', // See the capabilities url as mentioned above
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
   /**
    * Capabilities to run on a minor version of the OS
    */
   {
-    name: 'Run on minor iOS version - 14.7',
     browserName: 'safari',
     platformName: 'iOS',
-    platformVersion: '14.7',
-    // Extra caps
-    cacheId: 'em1pf4ab20', // See the capabilities url as mentioned above
-    build
+    'appium: platformVersion': '14.7',
+    'sauce:options': {
+      name: 'Run on minor iOS version - 14.7',
+      // Extra caps
+      cacheId: 'em1pf4ab20', // See the capabilities url as mentioned above
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
   {
-    name: 'Run on minor Android version - 7.1',
-    browserName: 'chrome',
     platformName: 'Android',
-    platformVersion: '7.1',
-    // Extra caps
-    cacheId: 'cegc4zom7n', // See the capabilities url as mentioned above
-    build
+    browserName: 'chrome',
+    'appium: platformVersion': '7.1',
+    'sauce:options': {
+      name: 'Run on minor Android version - 7.1',
+      // Extra caps
+      cacheId: 'cegc4zom7n', // See the capabilities url as mentioned above
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
   /**
    * Capabilities to run on a patch version of the OS
    */
   {
-    name: 'Run on patch iOS version - 14.7.1',
     browserName: 'safari',
     platformName: 'iOS',
-    platformVersion: '14.7.1',
-    // Extra caps
-    cacheId: 'dn7zr1irmc', // See the capabilities url as mentioned above
-    build
+    'appium: platformVersion': '14.7.1',
+    'sauce:options': {
+      name: 'Run on patch iOS version - 14.7.1',
+      // Extra caps
+      cacheId: 'dn7zr1irmc', // See the capabilities url as mentioned above
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
   {
-    name: 'Run on patch Android version - 6.0.1',
     browserName: 'chrome',
     platformName: 'Android',
-    platformVersion: '6.0.1',
-    // Extra caps
-    cacheId: 'itfdqgn5mp', // See the capabilities url as mentioned above
-    build
+    'appium: platformVersion': '6.0.1',
+    'sauce:options': {
+      name: 'Run on patch Android version - 6.0.1',
+      // Extra caps
+      cacheId: 'itfdqgn5mp', // See the capabilities url as mentioned above
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
   /**
    * Capabilities to run on a phone only (works for iOS and Android the same)
    */
   {
-    name: 'Run iOS phone only',
     browserName: 'safari',
     platformName: 'iOS',
-    phoneOnly: true,
-    // Extra caps
-    cacheId: 'q96a2zipwp', // See the capabilities url as mentioned above
-    build
+    'sauce:options': {
+      name: 'Run iOS phone only',
+      phoneOnly: true,
+      // Extra caps
+      cacheId: 'q96a2zipwp', // See the capabilities url as mentioned above
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
   /**
    * Capabilities to run on a tablet only (works for iOS and Android the same)
    */
   {
-    name: 'Run Android tablet only',
     browserName: 'chrome',
     platformName: 'Android',
-    tabletOnly: true,
-    // Extra caps
-    cacheId: 'nn7g8kq8m8', // See the capabilities url as mentioned above
-    build
+    'sauce:options': {
+      name: 'Run Android tablet only',
+      tabletOnly: true,
+      // Extra caps
+      cacheId: 'nn7g8kq8m8', // See the capabilities url as mentioned above
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
   /**
    * Capabilities to run on private devices only
@@ -184,19 +244,27 @@ config.capabilities = [
     name: 'Run iOS private devices only',
     browserName: 'safari',
     platformName: 'iOS',
-    privateDevicesOnly: true,
-    // Extra caps
-    cacheId: 'zr6g2phl4w', // See the capabilities url as mentioned above
-    build
+    'sauce:options': {
+      privateDevicesOnly: true,
+      // Extra caps
+      cacheId: 'zr6g2phl4w', // See the capabilities url as mentioned above
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
   {
-    name: 'Run Android private devices only',
     browserName: 'chrome',
     platformName: 'Android',
-    privateDevicesOnly: true,
-    // Extra caps
-    cacheId: 'edvxh39cnd', // See the capabilities url as mentioned above
-    build
+    'sauce:options': {
+      name: 'Run Android private devices only',
+      privateDevicesOnly: true,
+      // Extra caps
+      cacheId: 'edvxh39cnd', // See the capabilities url as mentioned above
+      build,
+    },
+    // WDIO capability. This is to validate the cacheId works
+    maxInstances: 1,
   },
 ];
 
