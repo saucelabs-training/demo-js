@@ -1,10 +1,10 @@
-import {config} from './wdio.shared.conf';
-import {SauceRegions} from '@wdio/types/build/Options';
-import SauceLabs, {Job} from 'saucelabs';
+import { config } from './wdio.shared.conf';
+import { SauceRegions } from '@wdio/types/build/Options';
+import SauceLabs, { Job } from 'saucelabs';
 
 const defaultBrowserSauceOptions = {
   build: `WebdriverIO Async Best Practices: Sauce Labs Desktop Web build-${new Date().getTime()}`,
-  screenResolution: '1600x1200'
+  screenResolution: '1600x1200',
 };
 
 // =====================
@@ -26,7 +26,7 @@ config.capabilities = [
    * Desktop browsers
    */
   {
-    browserName: 'googlechrome',
+    browserName: 'chrome',
     platformName: 'Windows 10',
     browserVersion: 'latest',
     'sauce:options': {
@@ -49,37 +49,42 @@ config.capabilities = [
       ...defaultBrowserSauceOptions,
     },
   },
-  // Safari 11 is not W3C compliant,
-  // see https://developer.apple.com/documentation/webkit/macos_webdriver_commands_for_safari_11_1_and_earlier
-  {
-    browserName: 'safari',
-    platform: 'macOS 10.13',
-    version: '11.1',
-    ...defaultBrowserSauceOptions,
-  },
-  // Safari 12
   {
     browserName: 'safari',
     platformName: 'macOS 10.14',
-    browserVersion: 'latest',
+    browserVersion: '12',
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },
   },
-  // Safari 13
   {
     browserName: 'safari',
     platformName: 'macOS 10.15',
-    browserVersion: 'latest',
+    browserVersion: '13',
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },
   },
-  // Safari 14
   {
     browserName: 'safari',
-    platformName: 'macOS 11',
-    browserVersion: 'latest',
+    platformName: 'macOS 11.00',
+    browserVersion: '14',
+    'sauce:options': {
+      ...defaultBrowserSauceOptions,
+    },
+  },
+  {
+    browserName: 'safari',
+    platformName: 'macOS 12',
+    browserVersion: '15',
+    'sauce:options': {
+      ...defaultBrowserSauceOptions,
+    },
+  },
+  {
+    browserName: 'safari',
+    platformName: 'macOS 12',
+    browserVersion: '16',
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },
@@ -114,26 +119,32 @@ config.after = async (result, capabilities, specs) => {
 
   // If the retriedSpecs array was not already created, then create it
   if (!browser.sharedStore.get(RETRIED_SPECS_KEY)) {
-    browser.sharedStore.set(RETRIED_SPECS_KEY, [])
+    browser.sharedStore.set(RETRIED_SPECS_KEY, []);
   }
 
   // The test failed and should be retried
   // Store the retry spec on the global scope
-  if ('specFileRetries' in browser.config && browser.config.specFileRetries > 0 && result === 1) {
-    const retriedSpecs = browser.sharedStore.get(RETRIED_SPECS_KEY) as RetriedSpecsType;
+  if (
+    'specFileRetries' in browser.config &&
+    browser.config.specFileRetries > 0 &&
+    result === 1
+  ) {
+    const retriedSpecs = browser.sharedStore.get(
+      RETRIED_SPECS_KEY
+    ) as RetriedSpecsType;
     retriedSpecs.push({
       sessionId: browser.sessionId,
       specFileNamePath,
-    })
-    browser.sharedStore.set(RETRIED_SPECS_KEY, retriedSpecs)
+    });
+    browser.sharedStore.set(RETRIED_SPECS_KEY, retriedSpecs);
   }
 
   // When the test succeeds
   if (result === 0) {
     // Find the test that failed before
-    const matchingSession = (browser.sharedStore.get(RETRIED_SPECS_KEY) as RetriedSpecsType).find(
-      retriedSpec => retriedSpec.specFileNamePath === specFileNamePath
-    );
+    const matchingSession = (
+      browser.sharedStore.get(RETRIED_SPECS_KEY) as RetriedSpecsType
+    ).find((retriedSpec) => retriedSpec.specFileNamePath === specFileNamePath);
     // If there is a matching session
     if (matchingSession) {
       // Then update the test in Sauce Labs with the API
@@ -143,7 +154,10 @@ config.after = async (result, capabilities, specs) => {
         region: browser.config.region,
       });
       // We need to get the name of the job to be able to pre and post fix it
-      const jobData = await api.getJob(process.env.SAUCE_USERNAME, matchingSession.sessionId);
+      const jobData = await api.getJob(
+        process.env.SAUCE_USERNAME,
+        matchingSession.sessionId
+      );
 
       // Only update the job name and status if it hasn't been updated previously
       // The change that this will happen is very small, but this is a fail save

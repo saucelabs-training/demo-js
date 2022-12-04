@@ -24,10 +24,13 @@ config.capabilities = [
   {
     browserName: 'safari',
     platformName: 'iOS',
+    'appium:automationName': 'XCUITest',
     // When you have private devices in EU and US
     'appium:deviceName':
       process.env.REGION === 'eu' ? 'iPhone_XS_ws' : 'iPhone_SE_2020_POC142',
     'sauce:options': {
+      // We are using Appium 2.0, so we need to set the appiumVersion
+      appiumVersion: '2.0.0',
       name: 'Run on deviceID iOS',
       // Extra caps
       cacheId: '17506a5f122', // See the capabilities url as mentioned above
@@ -39,12 +42,15 @@ config.capabilities = [
   {
     browserName: 'chrome',
     platformName: 'Android',
+    'appium:automationName': 'UiAutomator2',
     // When you have private devices in EU and US
     'appium:deviceName':
       process.env.REGION === 'eu'
         ? 'Samsung_Galaxy_S10_ws'
         : 'Google_Pixel_3_XL_ws_us',
     'sauce:options': {
+      // We are using Appium 2.0, so we need to set the appiumVersion
+      appiumVersion: '2.0.0',
       name: 'Run on deviceID Android',
       // Extra caps
       cacheId: '58vi9zm82i', // See the capabilities url as mentioned above
@@ -59,8 +65,11 @@ config.capabilities = [
   {
     browserName: 'safari',
     platformName: 'iOS',
+    'appium:automationName': 'XCUITest',
     'appium: deviceName': 'iPhone XS',
     'sauce:options': {
+      // We are using Appium 2.0, so we need to set the appiumVersion
+      appiumVersion: '2.0.0',
       name: 'Run on device description for iOS',
       // Extra caps
       cacheId: 'e7s54tyw5g', // See the capabilities url as mentioned above
@@ -70,10 +79,13 @@ config.capabilities = [
     maxInstances: 1,
   },
   {
-    platformName: 'Android',
     browserName: 'chrome',
+    platformName: 'Android',
+    'appium:automationName': 'UiAutomator2',
     'appium: deviceName': 'Samsung Galaxy S10',
     'sauce:options': {
+      // We are using Appium 2.0, so we need to set the appiumVersion
+      appiumVersion: '2.0.0',
       name: 'Run on device description for Android',
       // Extra caps
       cacheId: 'tl5lps3go1', // See the capabilities url as mentioned above
@@ -91,8 +103,11 @@ config.capabilities = [
   {
     browserName: 'safari',
     platformName: 'iOS',
+    'appium:automationName': 'XCUITest',
     'appium: deviceName': 'iPhone [678]?.*',
     'sauce:options': {
+      // We are using Appium 2.0, so we need to set the appiumVersion
+      appiumVersion: '2.0.0',
       name: 'Run on deviceName regex iOS - iPhone [678]?.*',
       // Extra caps
       cacheId: 'vvqb5g7lr3', // See the capabilities url as mentioned above
@@ -105,9 +120,12 @@ config.capabilities = [
   },
   {
     browserName: 'chrome',
-    'appium: deviceName': 'Samsung Galaxy S?.*',
     platformName: 'Android',
+    'appium:automationName': 'UiAutomator2',
+    'appium: deviceName': 'Samsung Galaxy S?.*',
     'sauce:options': {
+      // We are using Appium 2.0, so we need to set the appiumVersion
+      appiumVersion: '2.0.0',
       name: 'Run on deviceName regex Android - Samsung Galaxy S?.*',
       // Extra caps
       cacheId: '4hn1znudgm', // See the capabilities url as mentioned above
@@ -124,8 +142,11 @@ config.capabilities = [
   {
     browserName: 'safari',
     platformName: 'iOS',
+    'appium:automationName': 'XCUITest',
     'appium: platformVersion': '13',
     'sauce:options': {
+      // We are using Appium 2.0, so we need to set the appiumVersion
+      appiumVersion: '2.0.0',
       name: 'Run on major iOS version - 13',
       // Extra caps
       cacheId: 'bq9jvoctq7', // See the capabilities url as mentioned above
@@ -138,7 +159,10 @@ config.capabilities = [
     browserName: 'chrome',
     platformName: 'Android',
     'appium: platformVersion': '7',
+    'appium:automationName': 'UiAutomator2',
     'sauce:options': {
+      // We are using Appium 2.0, so we need to set the appiumVersion
+      appiumVersion: '2.0.0',
       name: 'Run on major Android version - 7',
       // Extra caps
       cacheId: 'cvtjmvawq8', // See the capabilities url as mentioned above
@@ -154,7 +178,10 @@ config.capabilities = [
     browserName: 'safari',
     platformName: 'iOS',
     'appium: platformVersion': '14.7',
+    'appium:automationName': 'XCUITest',
     'sauce:options': {
+      // We are using Appium 2.0, so we need to set the appiumVersion
+      appiumVersion: '2.0.0',
       name: 'Run on minor iOS version - 14.7',
       // Extra caps
       cacheId: 'em1pf4ab20', // See the capabilities url as mentioned above
@@ -164,10 +191,13 @@ config.capabilities = [
     maxInstances: 1,
   },
   {
-    platformName: 'Android',
     browserName: 'chrome',
+    platformName: 'Android',
     'appium: platformVersion': '7.1',
+    'appium:automationName': 'UiAutomator2',
     'sauce:options': {
+      // We are using Appium 2.0, so we need to set the appiumVersion
+      appiumVersion: '2.0.0',
       name: 'Run on minor Android version - 7.1',
       // Extra caps
       cacheId: 'cegc4zom7n', // See the capabilities url as mentioned above
@@ -183,7 +213,10 @@ config.capabilities = [
     browserName: 'safari',
     platformName: 'iOS',
     'appium: platformVersion': '14.7.1',
+    'appium:automationName': 'XCUITest',
     'sauce:options': {
+      // We are using Appium 2.0, so we need to set the appiumVersion
+      appiumVersion: '2.0.0',
       name: 'Run on patch iOS version - 14.7.1',
       // Extra caps
       cacheId: 'dn7zr1irmc', // See the capabilities url as mentioned above
@@ -196,7 +229,10 @@ config.capabilities = [
     browserName: 'chrome',
     platformName: 'Android',
     'appium: platformVersion': '6.0.1',
+    'appium:automationName': 'UiAutomator2',
     'sauce:options': {
+      // We are using Appium 2.0, so we need to set the appiumVersion
+      appiumVersion: '2.0.0',
       name: 'Run on patch Android version - 6.0.1',
       // Extra caps
       cacheId: 'itfdqgn5mp', // See the capabilities url as mentioned above
@@ -227,7 +263,10 @@ config.capabilities = [
   {
     browserName: 'chrome',
     platformName: 'Android',
+    'appium:automationName': 'UiAutomator2',
     'sauce:options': {
+      // We are using Appium 2.0, so we need to set the appiumVersion
+      appiumVersion: '2.0.0',
       name: 'Run Android tablet only',
       tabletOnly: true,
       // Extra caps
@@ -241,10 +280,13 @@ config.capabilities = [
    * Capabilities to run on private devices only
    */
   {
-    name: 'Run iOS private devices only',
     browserName: 'safari',
     platformName: 'iOS',
+    'appium:automationName': 'XCUITest',
     'sauce:options': {
+      // We are using Appium 2.0, so we need to set the appiumVersion
+      appiumVersion: '2.0.0',
+      name: 'Run iOS private devices only',
       privateDevicesOnly: true,
       // Extra caps
       cacheId: 'zr6g2phl4w', // See the capabilities url as mentioned above
@@ -256,7 +298,10 @@ config.capabilities = [
   {
     browserName: 'chrome',
     platformName: 'Android',
+    'appium:automationName': 'UiAutomator2',
     'sauce:options': {
+      // We are using Appium 2.0, so we need to set the appiumVersion
+      appiumVersion: '2.0.0',
       name: 'Run Android private devices only',
       privateDevicesOnly: true,
       // Extra caps
