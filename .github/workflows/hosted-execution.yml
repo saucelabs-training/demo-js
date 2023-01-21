@@ -45,8 +45,7 @@ jobs:
       env:
         SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
         SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
-      run:
-      - pushd ./webdriverio/webdriver/best-practices
-      - npm install
-      - npm run test.saucelabs.us
-      - popd
+      run: pushd ./webdriverio/webdriver/best-practices
+      run: npm install
+      run: npm run test.saucelabs.us
+      run: popd
