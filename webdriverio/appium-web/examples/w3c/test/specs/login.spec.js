@@ -1,19 +1,33 @@
-describe('LoginPage', () => {
-    beforeEach(async () => {
-        await browser.url('');
-        await $('#login_button_container').waitForDisplayed();
-    });
+const wd = require('webdriverio');
 
-    it('should be able to login with a standard user', async () => {
-        await $('#user-name').addValue('standard_user');
-        await $('#password').addValue('secret_sauce');
-        // For some reason Android is not clicking properly
-        driver.isAndroid
-          ? await browser.execute('document.querySelector(\'.btn_action\').click()')
-          : await $('.btn_action').click();
+(async function main() {
+    caps = {};
+caps['browserName'] = 'chrome';
+caps['platform'] = 'Windows 10';
+caps['version'] = 'latest';
+caps['pageLoadStrategy'] = 'eager';
+caps['unhandledPromptBehavior'] = 'dismiss';
+caps['maxDuration'] = 4;
+caps['commandTimeout'] = 5;
+caps['idleTimeout'] = 6;
+caps['timeZone'] = 'Banjul';
+caps['extendedDebugging'] = true;
+caps['capturePerformance'] = true;
+caps['public'] = 'public restricted';
+caps['build'] = "<your build id>";
+caps['name'] = "<your test name>";
 
-        // We will not execute an assertion here because if the page is not displayed it will
-        // already throw an error
-        await $('.inventory_list').waitForDisplayed();
-    });
+const browser = await wd.remote({
+  user: 'dangr',
+  key: '4dc4ce48-eac8-4d05-b5dc-15cfd2937615',
+  hostname: 'ondemand.us-west-1.saucelabs.com',
+  port: 443,
+  baseUrl: 'wd/hub',
+  capabilities: caps
 });
+await browser.setTimeout({
+  'implicit': 1,
+  'script': 2,
+  'pageLoad': 3,
+});
+})();
