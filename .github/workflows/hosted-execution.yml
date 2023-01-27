@@ -52,6 +52,3 @@ jobs:
         DOCKER_TAG: ${{ needs.push_to_registry.outputs.tag }}
       run: |
         echo ${{ needs.push_to_registry.outputs.tag }}
-        echo ${{ needs.push_to_registry.outputs.label }}
-        echo ${{ needs.push_to_registry.outputs.hello }}
-        echo "TODO: run saucectl with Docker container ${{ secrets.DOCKER_USERNAME }}/js-hosted-execution:$DOCKER_TAG"
