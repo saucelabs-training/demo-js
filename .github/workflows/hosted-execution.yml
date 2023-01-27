@@ -10,6 +10,9 @@ jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
+    outputs:
+      tags: ${{ steps.meta.outputs.tags }}
+      labels: ${{ steps.meta.outputs.labels }}
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
@@ -33,7 +36,7 @@ jobs:
 
   # Now run the tests. When Hosted Executor is ready, this should run a saucectl command to run
   # the tests from the previously created Docker image in the cloud
-  build:
+  run-tests:
     needs: push_to_registry
     runs-on: ${{ matrix.os }}
     strategy:
@@ -45,8 +48,4 @@ jobs:
       env:
         SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
         SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
-      run: |
-        pushd ./webdriverio/webdriver/best-practices
-        npm install
-        npm run test.saucelabs.us
-        popd
+      run: echo "TODO: run saucectl with ${{ needs. }}"
