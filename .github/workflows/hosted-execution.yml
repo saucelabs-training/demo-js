@@ -11,7 +11,7 @@ jobs:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     outputs:
-      tag: ${{ steps.meta.outputs.tags }}
+      tag: ${{ steps.meta.output-tags.tags }}
       label: ${{ steps.meta.outputs.labels }}
       hello: World
     steps:
@@ -34,6 +34,9 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      - name: Save Tags to Outputs
+        id: output-tags
+        run: echo "tags=${{ steps.meta.outputs.tags }}" >> $GITHUB_OUTPUT
 
   # Now run the tests. When Hosted Executor is ready, this should run a saucectl command to run
   # the tests from the previously created Docker image in the cloud
@@ -49,5 +52,6 @@ jobs:
         DOCKER_TAG: ${{ needs.push_to_registry.outputs.tag }}
       run: |
         echo ${{ needs.push_to_registry.outputs.tag }}
+        echo ${{ needs.push_to_registry.outputs.label }}
         echo ${{ needs.push_to_registry.outputs.hello }}
         echo "TODO: run saucectl with Docker container ${{ secrets.DOCKER_USERNAME }}/js-hosted-execution:$DOCKER_TAG"
