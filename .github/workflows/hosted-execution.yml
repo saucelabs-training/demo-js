@@ -48,5 +48,6 @@ jobs:
       env:
         SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
         SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+        DOCKER_TAG: ${{ needs.push_to_registry.outputs.tags }}
       run: |
-        echo "TODO: run saucectl with Docker container ${{ secrets.DOCKER_USERNAME }}/js-hosted-execution:${{ needs.push_to_registry.outputs.tags }}"
+        echo "TODO: run saucectl with Docker container ${{ secrets.DOCKER_USERNAME }}/js-hosted-execution:$DOCKER_TAG"
