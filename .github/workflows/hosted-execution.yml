@@ -11,8 +11,8 @@ jobs:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     outputs:
-      tags: ${{ steps.meta.outputs.tags }}
-      labels: ${{ steps.meta.outputs.labels }}
+      docker-tag: ${{ steps.meta.outputs.tags }}
+      docker-slabels: ${{ steps.meta.outputs.labels }}
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
@@ -38,16 +38,13 @@ jobs:
   # the tests from the previously created Docker image in the cloud
   run-tests:
     needs: push_to_registry
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Run tests
       env:
         SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
         SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
-        DOCKER_TAG: ${{ needs.push_to_registry.outputs.tags }}
+        DOCKER_TAG: ${{ needs.push_to_registry.outputs.docker-tag }}
       run: |
         echo "TODO: run saucectl with Docker container ${{ secrets.DOCKER_USERNAME }}/js-hosted-execution:$DOCKER_TAG"
