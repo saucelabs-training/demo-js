@@ -11,7 +11,7 @@ jobs:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     outputs:
-      tag: ${{ steps.meta.output-tags.tags }}
+      tag: ${{ steps.output-tags.outputs.tags }}
       label: ${{ steps.meta.outputs.labels }}
       hello: World
     steps:
