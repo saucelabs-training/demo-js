@@ -13,6 +13,7 @@ jobs:
     outputs:
       docker-tag: ${{ steps.meta.outputs.tags }}
       docker-slabels: ${{ steps.meta.outputs.labels }}
+      hello: World
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
@@ -48,4 +49,5 @@ jobs:
         DOCKER_TAG: ${{ needs.push_to_registry.outputs.docker-tag }}
       run: |
         echo ${{ needs.push_to_registry.outputs.docker-tag }}
+        echo ${{ needs.push_to_registry.outputs.hello }}
         echo "TODO: run saucectl with Docker container ${{ secrets.DOCKER_USERNAME }}/js-hosted-execution:$DOCKER_TAG"
