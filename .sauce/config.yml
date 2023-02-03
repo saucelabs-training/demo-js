@@ -1,0 +1,11 @@
+apiVersion: v1alpha
+kind: imagerunner
+sauce:
+  region: us-west-1
+suites:
+  - name: Desktop Tests
+    image: danielpatrickgraham/js-hosted-execution:pr-2 
+    imagePullAuth:
+      user: hello
+      token: hello
+    entrypoint: npm run test.saucelabs.us
