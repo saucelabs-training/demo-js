@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:18
 WORKDIR /demo-js
 COPY ./webdriverio/webdriver/best-practices/package.json /demo-js
 RUN npm install
