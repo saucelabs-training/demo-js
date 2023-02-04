@@ -6,6 +6,6 @@ suites:
   - name: Desktop Tests
     image: danielpatrickgraham/js-hosted-execution:pr-2
     imagePullAuth:
-      user: danielpatrickgraham
-      token: gxm!ekz3VHZ5wbe*mbv
+      user: helloworld
+      token: helloworld
     entrypoint: npm run test.saucelabs.us

@@ -25,7 +25,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ vars.DOCKER_USERNAME }}/js-hosted-execution
+          images: ${{ vars.DOCKER_USERNAME }}/demo-js
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
