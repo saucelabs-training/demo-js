@@ -4,8 +4,8 @@ sauce:
   region: us-west-1
 suites:
   - name: Desktop Tests
-    image: danielpatrickgraham/js-hosted-execution:pr-2 
+    image: danielpatrickgraham/js-hosted-execution:pr-2
     imagePullAuth:
-      user: hello
-      token: hello
+      user: danielpatrickgraham
+      token: gxm!ekz3VHZ5wbe*mbv
     entrypoint: npm run test.saucelabs.us
