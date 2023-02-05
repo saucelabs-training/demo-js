@@ -17,6 +17,8 @@ config.key = process.env.SAUCE_ACCESS_KEY;
 // These regions are used for the Sauce Labs VM cloud and the Sauce Labs Real Device Cloud.
 // If you don't provide the region, it defaults to `us`.
 config.region = (process.env.REGION || 'us') as SauceRegions;
+config.hostname = 'ondemand.us-west-4-i3er.saucelabs.com';
+config.port = 443;
 
 config.logLevel = 'debug';
 
