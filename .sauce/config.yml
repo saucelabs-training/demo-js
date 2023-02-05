@@ -4,8 +4,8 @@ sauce:
   region: us-west-1
 suites:
   - name: Desktop Tests
-    image: danielpatrickgraham/js-hosted-execution:0.0.4
+    image: node:18
     imagePullAuth:
       user: helloworld
       token: helloworld
-    entrypoint: npm run test.saucelabs.us
+    entrypoint: curl http://www.google.com

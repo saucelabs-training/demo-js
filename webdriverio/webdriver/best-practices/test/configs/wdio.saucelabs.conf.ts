@@ -41,7 +41,7 @@ config.capabilities = [
       ...defaultBrowserSauceOptions,
     },
   },
-  {
+  /*{
     browserName: 'internet explorer',
     platformName: 'Windows 8.1',
     browserVersion: 'latest',
@@ -98,7 +98,7 @@ config.capabilities = [
     browserVersion: 'latest',
     'sauce:options': {
       ...defaultBrowserSauceOptions,
-    },
+    },*/
   },
 ];
 

@@ -6,7 +6,7 @@
   "scripts": {
     "test.local": "wdio test/configs/wdio.local.chrome.conf.ts",
     "test.saucelabs.eu": "REGION=eu wdio test/configs/wdio.saucelabs.conf.ts",
-    "test.saucelabs.us": "wdio test/configs/wdio.saucelabs.conf.ts"
+    "test.saucelabs.us": "wdio --verbose test/configs/wdio.saucelabs.conf.ts"
   },
   "keywords": [],
   "author": "",
@@ -22,5 +22,8 @@
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4",
     "wdio-chromedriver-service": "^7.2.2"
+  },
+  "dependencies": {
+    "appium": "^1.22.3"
   }
 }
