@@ -8,4 +8,4 @@ suites:
     imagePullAuth:
       user: helloworld
       token: helloworld
-    entrypoint: npm run test.saucelabs.us
+    entrypoint: cat test/configs/wdio.saucelabs.conf.ts
