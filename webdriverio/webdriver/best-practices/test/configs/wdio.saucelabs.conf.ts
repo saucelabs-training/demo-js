@@ -18,6 +18,8 @@ config.key = process.env.SAUCE_ACCESS_KEY;
 // If you don't provide the region, it defaults to `us`.
 config.region = (process.env.REGION || 'us') as SauceRegions;
 
+config.logLevel = 'debug';
+
 // ============
 // Capabilities
 // ============
@@ -26,21 +28,21 @@ config.capabilities = [
    * Desktop browsers
    */
   {
-    browserName: 'googlechrome',
+    browserName: 'googlechromeeee', // TODO: Testing for failure
     platformName: 'Windows 10',
     browserVersion: 'latest',
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },
   },
-  {
+  /*{
     browserName: 'firefox',
     platformName: 'Windows 10',
     browserVersion: 'latest',
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },
-  },
+  },*/
   /*{
     browserName: 'internet explorer',
     platformName: 'Windows 8.1',
@@ -99,7 +101,7 @@ config.capabilities = [
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },*/
-  },
+  //},
 ];
 
 // ========
