@@ -22,6 +22,3 @@ suites:
     screenResolution: "1400x1050"
     config:
       testFiles: ["**/*.*"]
-      # use split by spec when you have more concurrency than specs
-      #use split by concurrency when you have more specs than available concurrency
-    shard: spec

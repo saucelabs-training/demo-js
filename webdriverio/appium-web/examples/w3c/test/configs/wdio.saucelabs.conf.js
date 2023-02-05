@@ -1,4 +1,4 @@
-const {config} = require('./wdio.shared.conf');
+const { config } = require('./wdio.shared.conf');
 
 // =====================
 // Sauce specific config
@@ -32,6 +32,7 @@ config.capabilities = [
     // should be prefixed with `appium:{capability-name}`
     'appium:deviceName': 'Google Pixel 3 GoogleAPI Emulator',
     'appium:platformVersion': '10.0',
+    'appium:automationName': 'UiAutomator2',
     // For the W3C capabilities, please check
     // https://www.w3.org/TR/webdriver1/#capabilities
     browserName: 'chrome',
@@ -41,7 +42,7 @@ config.capabilities = [
     // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
     'sauce:options': {
       build: `Sauce Labs W3C Mobile Web build-${new Date().getTime()}`,
-      appiumVersion: '1.18.1'
+      appiumVersion: '1.18.1',
     },
   },
   /**
@@ -56,6 +57,7 @@ config.capabilities = [
     // should be prefixed with `appium:{capability-name}`
     'appium:deviceName': 'iPhone 11 Simulator',
     'appium:platformVersion': '14.0',
+    'appium:automationName': 'XCUITest',
     // For the W3C capabilities, please check
     // https://www.w3.org/TR/webdriver1/#capabilities
     browserName: 'safari',
@@ -65,7 +67,7 @@ config.capabilities = [
     // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
     'sauce:options': {
       build: `Sauce Labs W3C Mobile Web build-${new Date().getTime()}`,
-      appiumVersion: '1.19.1'
+      appiumVersion: '1.19.1',
     },
   },
 ];

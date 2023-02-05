@@ -74,8 +74,22 @@ In this example, all tests are executed on a single chrome browser in sequential
 
 ### Example 2 - Automatically sharding the tests
 
-[`config-ex2.yml`](./.sauce/config-ex2.yml) run all tests on 3 different types of browsers where saucectl automatically
-splits the tests (e.g. by spec) so that they can easily run in parallel.
+[`config-ex2.yml`](./.sauce/config-ex2.yml) run all tests on chrome. saucectl automatically
+splits the tests by using "shard" property with the value "spec" so that they can easily run in parallel.
+
+### Example 3 - Cross Browser tests
+
+[`config-ex3.yml`](./.sauce/config-ex3.yml) run the login and the checkout tests on 3 different types of browsers where saucectl automatically splits the tests by using "shard" property with the value "spec" so that they can easily run in parallel.
+
+### Example 4 - Cross Versions tests
+
+[`config-ex4.yml`](./.sauce/config-ex4.yml) run all tests on different Chrome versions where saucectl automatically
+splits the tests by using "shard" property with the value "concurrency" so that they can easily run in parallel.
+Note: The configured concurrency is 5 and the number of specs are 8. Using "shard: concurrency" will split the 8 specs into 5 jobs.
+
+### Example 5 - Using Sauce Connect
+
+[`config-ex5.yml`](./.sauce/config-ex5.yml) Similar to config-ex2 but the web site is local. You can download and run local saucedemo.com web site from [here](https://github.com/saucelabs/sample-app-web. You need to add the tunnel name to the tunnel parameter in the config file
 
 ### Example about using extra dependencies
 

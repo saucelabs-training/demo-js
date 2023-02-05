@@ -2,9 +2,6 @@
 This folder contains an example on how to run WebdriverIO tests in the Sauce Labs Emulator/Simulator cloud with W3C 
 capabilities.
 
-> **NOTE:** Sauce Labs Real Device cloud is currently not W3C compliant, only the Sauce Labs Emulators and Simulators
-> are. All examples in this repository are focussed on those Emulators and Simulators.
-
 ## W3C capabilities
 More information about the W3C capabilities and Sauce Labs can be found
 [here](https://wiki.saucelabs.com/display/DOCS/W3C+Capabilities+Support). An example configuration on how to use this

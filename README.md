@@ -24,6 +24,7 @@ Node.js based automation frameworks locally and or in Sauce Labs.
   - WebdriverIO with Appium for Native/Hybrid Apps
     - [WebdriverIO Best Practices, including Emulators/Simulators/Real Devices, W3C caps, Page Objects and lots of helpers](webdriverio/appium-web/best-practices)
     - [Examples](webdriverio/appium-app/examples)
+      - [Appium Flutter Example](webdriverio/appium-app/examples/appium-flutter)
       - [Simple Example](webdriverio/appium-app/examples/simple-example)
       - [Native App Gestures](webdriverio/appium-app/examples/gestures)
       - [Using Biometric Login on Sauce Labs](webdriverio/appium-app/examples/biometric-login)
@@ -55,8 +56,6 @@ Node.js based automation frameworks locally and or in Sauce Labs.
         ![WebdriverIO - Webdriver - Examples - Extended Debugging](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Extended%20Debugging/badge.svg)
       - [WebdriverIO and Sauce Connect](webdriverio/webdriver/examples/sc)\
         ![WebdriverIO - Webdriver - Examples - Sauce Connect](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Sauce%20Connect/badge.svg)
-      - [WebdriverIO and Sauce Labs Headless](webdriverio/webdriver/examples/headless)\
-        ![WebdriverIO - Webdriver - Examples - Headless](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Headless/badge.svg)
       - [WebdriverIO and Sauce Labs Front-End Performance](webdriverio/webdriver/examples/performance)\
         ![WebdriverIO - Webdriver - Examples - Front-End Performance](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Front-End%20Performance/badge.svg)
       - [WebdriverIO with Up and Downloading Files](webdriverio/webdriver/examples/up-download)\

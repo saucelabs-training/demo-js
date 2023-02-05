@@ -21,9 +21,7 @@ config.capabilities = ['8.1', '9.0', '10.0', '11.0', '12.0'].map(
     // should be prefixed with `appium:{capability-name}`
     'appium:platformVersion': androidVersion,
     'appium:deviceName': 'Android GoogleAPI Emulator',
-    // Older versions of Appium give issues with sending keys, see
-    // https://github.com/appium/appium/issues/12059
-    'appium:appiumVersion': '1.20.2',
+    'appium:automationName': 'UiAutomator2',
     // For the W3C capabilities, please check
     // https://www.w3.org/TR/webdriver1/#capabilities
     browserName: 'Chrome',
@@ -33,17 +31,11 @@ config.capabilities = ['8.1', '9.0', '10.0', '11.0', '12.0'].map(
     // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
     'sauce:options': {
       build: build,
+      // Older versions of Appium give issues with sending keys, see
+      // https://github.com/appium/appium/issues/12059
+      'appium:appiumVersion': '1.20.2',
     },
   })
 );
-
-if (
-  config['appium:appiumVersion'] !== undefined &&
-  config['appium:appiumVersion'] !== 'default'
-) {
-  config.capabilities.forEach((capability) => {
-    capability['appium:appiumVersion'] = config['appium:appiumVersion'];
-  });
-}
 
 exports.config = config;

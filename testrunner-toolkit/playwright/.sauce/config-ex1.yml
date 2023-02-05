@@ -16,7 +16,7 @@ sauce:
 
 # Playwright specific information
 playwright:
-    version: 1.17.1
+    version: 1.27.1
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: .
 
@@ -24,6 +24,8 @@ suites:
     - name: 'Playwright - default - Chrome'
       platformName: windows 10
       testMatch: ['.*.js']
+      screenResolution: '1440x900'
+      numShards: 4
       params:
           browserName: chromium
 
