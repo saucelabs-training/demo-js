@@ -92,7 +92,7 @@ config.capabilities = [
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },
-  //},
+  },
 ];
 
 // ========
