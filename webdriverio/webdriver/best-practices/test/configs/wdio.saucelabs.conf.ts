@@ -37,7 +37,7 @@ config.capabilities = [
       ...defaultBrowserSauceOptions,
     },
   },
-  /*{
+  {
     browserName: 'firefox',
     platformName: 'Windows 10',
     browserVersion: 'latest',
@@ -91,7 +91,7 @@ config.capabilities = [
     browserVersion: '16',
     'sauce:options': {
       ...defaultBrowserSauceOptions,
-    },*/
+    },
   //},
 ];
 
