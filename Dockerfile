@@ -1,5 +1,5 @@
-FROM node:18-alpine
+FROM node:10
 WORKDIR /demo-js
-COPY ./webdriverio/webdriver/best-practices/package.json /demo-js
+COPY . /demo-js
 RUN npm install
-COPY ./webdriverio/webdriver/best-practices/ /demo-js
+EXPOSE 8081

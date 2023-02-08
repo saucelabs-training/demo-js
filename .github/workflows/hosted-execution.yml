@@ -8,7 +8,7 @@ on:
 jobs:
   # Build the project as a Docker image and push it to Docker Hub
   push_to_registry:
-    name: Push Docker image to Docker Hub
+    name: Build and push Docker image to Docker Hub
     runs-on: ubuntu-latest
     outputs:
       tag: ${{ steps.meta.outputs.tags }}
@@ -30,9 +30,11 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          push: true
+          push: true  
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          file: ./Dockerfile.hosted-execution
+
 
   run-tests:
     name: Run Tests in Sauce Labs hosted execution environment
