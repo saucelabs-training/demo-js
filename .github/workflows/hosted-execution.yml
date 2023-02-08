@@ -39,6 +39,7 @@ jobs:
   run-tests:
     needs: push_to_registry
     runs-on: ubuntu-latest
+    container: saucelabs/saucectl:latest
     steps:
     - uses: actions/checkout@v2
     - name: Run tests
@@ -46,7 +47,5 @@ jobs:
         SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
         SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
         DOCKER_TAG: ${{ needs.push_to_registry.outputs.tag }}
-      run: |
-        npm install -g saucectl
-        saucectl run
+      run: saucectl run
 
