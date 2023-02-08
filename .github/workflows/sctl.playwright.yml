@@ -1,0 +1,50 @@
+name: SauceCTL - Playwright
+
+on:
+  push:
+  # Only trigger if files in this path changed
+    paths:
+    - 'testrunner-toolkit/playwright/**'
+    - '.github/workflows/sctl.playwright.yml'
+    # Don't run on Markdown changes
+    - '!**.md'
+    branches: [ main ]
+  pull_request:
+  # Only trigger if files in this path changed
+    paths:
+    - 'testrunner-toolkit/playwright/**'
+    - '.github/workflows/sctl.playwright.yml'
+    # Don't run on Markdown changes
+    - '!**.md'
+    branches: [ main ]
+  schedule:
+    - cron:  '0 0 * * 0'
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: ./testrunner-toolkit/playwright/
+    env:
+      SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+      SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm run test.sauce.ex1.us
