@@ -45,7 +45,7 @@ jobs:
       fail-fast: false
       matrix:
         entrypoint: [
-          "sh -c 'cd appium-web/best-practices; npm run test.saucelabs.ios.us'",
+          "sh -c 'cd appium-web/best-practices; npm run test.saucelabs.android.us'",
           "sh -c 'cd webdriver/best-practices; npm run test.saucelabs.us'"
         ]
     steps:
