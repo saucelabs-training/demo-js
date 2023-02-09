@@ -4,7 +4,7 @@ sauce:
   region: us-west-1
 suites:
   - name: Desktop Tests
-    image: danielpatrickgraham/demo-js-2:pr-2
+    image: ${DOCKER_TAG}
     imagePullAuth:
       user: helloworld
       token: helloworld
