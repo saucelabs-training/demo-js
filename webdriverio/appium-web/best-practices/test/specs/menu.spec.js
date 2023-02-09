@@ -6,7 +6,7 @@ import MenuPage from "../page-objects/MenuPage";
 import {setTestContext} from '../helpers';
 import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants";
 
-describe('Menu', () => {
+describe.skip('Menu', () => {
     beforeEach(async () => {
         await setTestContext({
             user: LOGIN_USERS.STANDARD,

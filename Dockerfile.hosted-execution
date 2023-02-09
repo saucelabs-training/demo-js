@@ -2,9 +2,9 @@ FROM node:18-alpine
 WORKDIR /demo-js/
 
 # Best practices
-COPY ./webdriverio/webdriver/best-practices/package.json /demo-js/webdriver/best-practices/
-RUN cd /demo-js/webdriver/best-practices/ && npm install
-COPY ./webdriverio/webdriver/best-practices /demo-js/webdriver/best-practices/
+COPY ./selenium/package.json /demo-js/selenium/
+RUN cd /demo-js/selenium/ && npm install
+COPY ./selenium /demo-js/selenium/
 
 # Appium app
 COPY ./webdriverio/appium-app/best-practices/package.json /demo-js/appium-app/best-practices/
