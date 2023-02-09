@@ -6,6 +6,6 @@ suites:
   - name: Desktop Tests
     image: ${DOCKER_TAG}
     imagePullAuth:
-      user: helloworld
-      token: helloworld
+      user: ${DOCKER_USERNAME}
+      token: ${DOCKER_PASSWORD}
     entrypoint: npm run test.saucelabs.us
