@@ -55,7 +55,7 @@ jobs:
       env:
         SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
         SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_USERNAME: danielpatrickgraham # TODO: Unhardcode this when merge to saucelabs-training
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         DOCKER_TAG: ${{ needs.push_to_registry.outputs.tag }}
         ENTRYPOINT: ${{ matrix.entrypoint }}
