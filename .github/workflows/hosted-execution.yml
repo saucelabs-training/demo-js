@@ -35,12 +35,19 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           file: ./Dockerfile.hosted-execution
 
-
   run-tests:
     name: Run Tests in Sauce Labs hosted execution environment
     needs: push_to_registry
     runs-on: ubuntu-latest
     container: saucelabs/saucectl:latest
+    strategy:
+      fail-fast: false
+      matrix:
+        entrypoint: [
+          "sh -c 'cd appium-app/best-practices; npm run test.saucelabs.ios.sim.us'",
+          "sh -c 'cd appium-web/best-practices; npm run test.saucelabs.ios.us'",
+          "sh -c 'cd webdriver/best-practices; npm run test.saucelabs.us'"
+        ]
     steps:
     - uses: actions/checkout@v2
     - name: Run tests
@@ -50,5 +57,6 @@ jobs:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         DOCKER_TAG: ${{ needs.push_to_registry.outputs.tag }}
+        ENTRYPOINT: ${{ matrix.entrypoint }}
       run: saucectl run
 

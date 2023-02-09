@@ -8,4 +8,4 @@ suites:
     imagePullAuth:
       user: ${DOCKER_USERNAME}
       token: ${DOCKER_PASSWORD}
-    entrypoint: npm run test.saucelabs.us
+    entrypoint: ${ENTRYPOINT}
