@@ -26,7 +26,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           #images: ${{ vars.DOCKER_REPO }}/demo-js-2
-          images: danielpatrickgraham/demo-js-2 # TODO: Do not merge this into saucelabs-training -- no hardcoding
+          images: danielpatrickgraham/demo-js-3 # TODO: Do not merge this into saucelabs-training -- no hardcoding
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
