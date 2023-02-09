@@ -19,14 +19,14 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: danielpatrickgraham
+          username: danielpatrickgraham # TODO: Do not merge this into saucelaabs-training -- no hardcoding
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v4
         with:
           #images: ${{ vars.DOCKER_REPO }}/demo-js-2
-          images: danielpatrickgraham/demo-js-2 # TODO: Do not merge this into saucelabs-training
+          images: danielpatrickgraham/demo-js-2 # TODO: Do not merge this into saucelabs-training -- no hardcoding
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
