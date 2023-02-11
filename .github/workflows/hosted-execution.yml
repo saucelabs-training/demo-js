@@ -3,7 +3,8 @@ name: Hosted Execution
 on:
   push:
     branches: [ main ]
-  pull_request:
+  pull_request_target:
+    branches: [ main ]
 
 jobs:
   # Build the project as a Docker image and push it to Docker Hub
