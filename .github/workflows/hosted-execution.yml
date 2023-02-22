@@ -57,5 +57,5 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         DOCKER_TAG: ${{ needs.push_to_registry.outputs.tag }}
         ENTRYPOINT: ${{ matrix.entrypoint }}
-      run: saucectl run
+      run: echo $DOCKER_TAG && saucectl run
 
