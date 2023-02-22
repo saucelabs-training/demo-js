@@ -16,3 +16,8 @@ COPY ./webdriverio/appium-web/best-practices/package.json /demo-js/appium-web/be
 RUN cd /demo-js/appium-web/best-practices/ && npm install
 COPY ./webdriverio/appium-web/best-practices /demo-js/appium-web/best-practices/
 
+# Webdriver
+COPY ./webdriverio/webdriver/best-practices/package.json /demo-js/webdriver/best-practices/
+RUN cd /demo-js/webdriver/best-practices/ && npm install
+COPY ./webdriverio/webdriver/best-practices /demo-js/webdriver/best-practices/
+
