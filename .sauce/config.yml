@@ -4,7 +4,8 @@ sauce:
   region: us-west-1
 suites:
   - name: Desktop Tests
-    image: $DOCKER_TAG
+    container:
+      name: $DOCKER_TAG
     imagePullAuth:
       user: $DOCKER_USERNAME
       token: $DOCKER_PASSWORD
