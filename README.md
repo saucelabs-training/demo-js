@@ -18,7 +18,7 @@ Node.js based automation frameworks locally and or in Sauce Labs.
 ## Framework examples
 
 - [selenium-webdriver with Jasmine/Mocha/CucumberJS\*](selenium)
-  - [Examples](selenium/test) [![Selenium-webdriver JS](https://github.com/saucelabs-training/demo-js/actions/workflows/selenium.js.yml/badge.svg)](https://github.com/saucelabs-training/demo-js/actions/workflows/selenium.js.yml)
+  - [Examples](selenium/test)
     - [Simple Safari test](selenium/test/simple.safari.spec.js)
 - [WebdriverIO with Jasmine/Mocha/CucumberJS\*](webdriverio)
   - WebdriverIO with Appium for Native/Hybrid Apps
@@ -29,54 +29,36 @@ Node.js based automation frameworks locally and or in Sauce Labs.
       - [Native App Gestures](webdriverio/appium-app/examples/gestures)
       - [Using Biometric Login on Sauce Labs](webdriverio/appium-app/examples/biometric-login)
       - [Using Image Injection on Sauce Labs Real Devices](webdriverio/appium-app/examples/image-injection)
-      - [Using Uploading and Downloading Files from Sauce Labs Android Emulators, iOS Simulators and Android Real Devices](webdriverio/appium-app/examples/up-download-file)\
-        [![WebdriverIO - Appium App - UpDownload files](https://github.com/saucelabs-training/demo-js/actions/workflows/wdio.appium.app.up.download.files.yml/badge.svg)](https://github.com/saucelabs-training/demo-js/actions/workflows/wdio.appium.app.up.download.files.yml)
+      - [Using Uploading and Downloading Files from Sauce Labs Android Emulators, iOS Simulators and Android Real Devices](webdriverio/appium-app/examples/up-download-file)
   - WebdriverIO with Appium for Mobile Web (Chrome/Safari)
-    - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/appium-web/best-practices)\
-      ![WebdriverIO - Appium Web - Best Practices](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Appium%20Web%20-%20Best%20Practices/badge.svg)
+    - [WebdriverIO Best Practices, including the use of Page Objects](webdriverio/appium-web/best-practices)
     - [Examples](webdriverio/appium-web/examples)
       - [WebdriverIO - Appium Web - Real Device Offline Mode](webdriverio/appium-web/examples/offline-testing)
-      - [WebdriverIO - Appium Web - Real Device Allocation](webdriverio/appium-web/examples/device-allocation)\
-        ![WebdriverIO - Appium Web - Real Device Allocation](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Appium%20Web%20-%20Real%20Device%20Allocation/badge.svg)
-      - [Sauce Labs Mobile Web and W3C](webdriverio/appium-web/examples/w3c)\
-        ![WebdriverIO - Appium Web - W3C on EMUSIM](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Appium%20Web%20-%20W3C%20on%20EMUSIM/badge.svg)
+      - [WebdriverIO - Appium Web - Real Device Allocation](webdriverio/appium-web/examples/device-allocation)
+      - [Sauce Labs Mobile Web and W3C](webdriverio/appium-web/examples/w3c)
   - WebdriverIO for Desktop Web (Selenium, but officially WebDriver)
-    - [WebdriverIO Async Mode and TypeScript with Best Practices, including the use of Page Objects](webdriverio/webdriver/best-practices)\
-      ![WebdriverIO - Webdriver - Best Practices](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Async%20Best%20Practices/badge.svg)
+    - [WebdriverIO Async Mode and TypeScript with Best Practices, including the use of Page Objects](webdriverio/webdriver/best-practices)
     - [Examples](webdriverio/webdriver/examples)
-      - [WebdriverIO and Sync Mode with Best Practices](webdriverio/webdriver/examples/sync-mode)\
-        ![WebdriverIO - Webdriver - Examples - Sync Mode](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Sync%20Mode/badge.svg)
-      - [WebdriverIO and Chrome Extensions](webdriverio/webdriver/examples/chrome-extension)\
-        ![WebdriverIO - Webdriver - Examples - Chrome Extension](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Chrome%20Extensions/badge.svg)
-      - [WebdriverIO and CucumberJS](webdriverio/webdriver/examples/cucumberjs)\
-        ![WebdriverIO - Webdriver - Examples - CucumberJS](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20CucumberJS/badge.svg)
-      - [WebdriverIO Visual E2E](webdriverio/webdriver/examples/visual-e2e/README.md)\
-        [![VisualE2E](https://github.com/saucelabs-training/demo-js/actions/workflows/wdio.webdriver.examples.visuale2e.yml/badge.svg)](https://github.com/saucelabs-training/demo-js/actions/workflows/wdio.webdriver.examples.visuale2e.yml)
-      - [WebdriverIO and extendedDebugging](webdriverio/webdriver/examples/extended-debugging)\
-        ![WebdriverIO - Webdriver - Examples - Extended Debugging](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Extended%20Debugging/badge.svg)
-      - [WebdriverIO and Sauce Connect](webdriverio/webdriver/examples/sc)\
-        ![WebdriverIO - Webdriver - Examples - Sauce Connect](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Sauce%20Connect/badge.svg)
-      - [WebdriverIO and Sauce Labs Front-End Performance](webdriverio/webdriver/examples/performance)\
-        ![WebdriverIO - Webdriver - Examples - Front-End Performance](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20Front-End%20Performance/badge.svg)
-      - [WebdriverIO with Up and Downloading Files](webdriverio/webdriver/examples/up-download)\
-        ![WebdriverIO - Webdriver - Examples - Up and Downloading Files](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20UpDownload/badge.svg)
-      - [WebdriverIO, Sauce Labs and W3C](webdriverio/webdriver/examples/w3c)\
-        ![WebdriverIO - Webdriver - Examples - W3C](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20W3C/badge.svg)
-      - [WebdriverIO with Typescript](webdriverio/webdriver/examples/typescript)\
-        ![WebdriverIO - Webdriver - Examples - TS](https://github.com/saucelabs-training/demo-js/workflows/WebdriverIO%20-%20Webdriver%20-%20Examples%20-%20TS/badge.svg)
+      - [WebdriverIO and Sync Mode with Best Practices](webdriverio/webdriver/examples/sync-mode)
+      - [WebdriverIO and Chrome Extensions](webdriverio/webdriver/examples/chrome-extension)
+      - [WebdriverIO and CucumberJS](webdriverio/webdriver/examples/cucumberjs)
+      - [WebdriverIO Visual E2E](webdriverio/webdriver/examples/visual-e2e/README.md)
+      - [WebdriverIO and extendedDebugging](webdriverio/webdriver/examples/extended-debugging)
+      - [WebdriverIO and Sauce Connect](webdriverio/webdriver/examples/sc)
+      - [WebdriverIO and Sauce Labs Front-End Performance](webdriverio/webdriver/examples/performance)
+      - [WebdriverIO with Up and Downloading Files](webdriverio/webdriver/examples/up-download)
+      - [WebdriverIO, Sauce Labs and W3C](webdriverio/webdriver/examples/w3c)
+      - [WebdriverIO with Typescript](webdriverio/webdriver/examples/typescript)
       - [WebdriverIO with Deque Axe Accessibility](webdriverio/webdriver/examples/deque)
 - **SauceCTL Testrunner Toolkit**
   - [Cypress examples](testrunner-toolkit/cypress)
-    - [Cypress and a Default Test Set](testrunner-toolkit/cypress/README.md#example-1---minimal-configuration-for-all-tests)\
-    ![Playwright with Jest](https://github.com/saucelabs-training/demo-js/workflows/SauceCTL%20-%20Cypress/badge.svg)
+    - [Cypress and a Default Test Set](testrunner-toolkit/cypress/README.md#example-1---minimal-configuration-for-all-tests)
     - [Cypress and Cross Browser Testing on Sauce Labs](testrunner-toolkit/cypress/README.md#example-3---cross-browser-tests)
     - [Cypress and Cross Browser Testing browser versioning](testrunner-toolkit/cypress/README.md#example-4---cross-versions-tests)
     - [Cypress and Testing in Parallel](testrunner-toolkit/cypress/README.md#example-2---parallel-tests)
-  - [Playwright with Jest](testrunner-toolkit/playwright)\
-    ![Playwright with Jest](https://github.com/saucelabs-training/demo-js/workflows/SauceCTL%20-%20Playwright/badge.svg)
+  - [Playwright with Jest](testrunner-toolkit/playwright)
   - [Puppeteer with Jest](testrunner-toolkit/puppeteer)
-  - [TestCafe](testrunner-toolkit/testcafe)\
-    ![Playwright with Jest](https://github.com/saucelabs-training/demo-js/workflows/SauceCTL%20-%20TestCafe/badge.svg)
+  - [TestCafe](testrunner-toolkit/testcafe)
   - [Dependencies Examples](testrunner-toolkit/dependencies-example)
 - [Screener Runner (DEPRECATED!! Move to Visual E2E)](screener-runner)
 - [NightWatch](nightwatch)
