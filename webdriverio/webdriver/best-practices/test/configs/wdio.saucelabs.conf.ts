@@ -3,7 +3,7 @@ import { SauceRegions } from '@wdio/types/build/Options';
 import SauceLabs, { Job } from 'saucelabs';
 
 const defaultBrowserSauceOptions = {
-  build: `WebdriverIO Async Best Practices: Sauce Labs Desktop Web build-${new Date().getTime()}`,
+  build: process.env.BUILD || `WebdriverIO Async Best Practices: Sauce Labs Desktop Web build-${new Date().getTime()}`,
   screenResolution: '1600x1200',
 };
 
@@ -90,6 +90,17 @@ config.capabilities = [
     },
   },
 ];
+
+if (process.env.GITPOD_WORKSPACE_ID) {
+  config.capabilities = [{
+    browserName: process.env.BROWSER_NAME || 'chrome',
+    platformName: 'windows 11',
+    browserVersion: 'latest',
+    'sauce:options': {
+      build: process.env.BUILD,
+    },
+  }];
+}
 
 // ========
 // Services
