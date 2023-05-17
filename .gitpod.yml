@@ -2,4 +2,4 @@
 tasks:
   - name: WDIO
     init: echo "Running WDIO Tests in Sauce Labs"
-    command: cd webdriverio/webdriver/best-practices && npm run test.saucelabs.us
+    command: cd webdriverio/webdriver/best-practices && npm ci && npm run test.saucelabs.us
