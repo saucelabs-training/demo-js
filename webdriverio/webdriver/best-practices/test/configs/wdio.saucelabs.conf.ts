@@ -94,8 +94,8 @@ config.capabilities = [
 if (process.env.GITPOD_WORKSPACE_ID) {
   config.capabilities = [{
     browserName: process.env.BROWSER_NAME || 'chrome',
-    platformName: 'windows 11',
-    browserVersion: 'latest',
+    platformName: process.env.PLATFORM_NAME || 'windows 11',
+    browserVersion: process.env.BROWSER_VERSION || 'latest',
     'sauce:options': {
       build: process.env.BUILD,
     },
