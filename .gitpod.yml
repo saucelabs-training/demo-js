@@ -1,0 +1,5 @@
+# List the start up tasks. Learn more: https://www.gitpod.io/docs/configure/workspaces/tasks
+tasks:
+  - name: WDIO
+    init: echo "Running WDIO Tests in Sauce Labs"
+    command: cd webdriverio/webdriver/best-practices && npm ci && npm run test.saucelabs.us
