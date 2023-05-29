@@ -97,7 +97,8 @@ if (process.env.GITPOD_WORKSPACE_ID) {
     platformName: process.env.PLATFORM_NAME || 'windows 11',
     browserVersion: process.env.BROWSER_VERSION || 'latest',
     'sauce:options': {
-      build: `Gitpod: ${process.env.BUILD}` || 'Gitpod build',
+      build: process.env.BUILD || 'Gitpod build',
+      tags: ['Gitpod'],
     },
   }];
 }
