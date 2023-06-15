@@ -15,26 +15,26 @@ sauce:
 
 # Playwright specific information
 playwright:
-    version: 1.27.1
+    version: 1.33.0
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: .
 
 suites:
     - name: 'Swag Labs Login Chrome'
-      platformName: Windows 10
+      platformName: Windows 11
       params:
-          browserName: chromium
-      testMatch: '.*/login.*'
+          browserName: chrome
+      testMatch: ['.*/login.*']
     - name: 'Swag Labs Login Firefox'
-      platformName: Windows 10
+      platformName: macOS 12
       params:
           browserName: firefox
-      testMatch: '.*/login.*'
+      testMatch: ['.*/login.*']
     - name: 'Swag Labs Login Webkit'
       platformName: Windows 10
       params:
           browserName: webkit
-      testMatch: '.*/login.*'
+      testMatch: ['.*/login.*']
 
 artifacts:
     download:
