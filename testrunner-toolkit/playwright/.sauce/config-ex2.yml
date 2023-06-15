@@ -7,7 +7,6 @@ sauce:
     region: eu-central-1 # or us-west-1
     concurrency: 10 # Controls how many suites are executed at the same time.
     metadata:
-        name: Parallel Playwright with SauceCTL
         tags:
             - playwright
             - Parallel
@@ -22,27 +21,27 @@ rootDir: .
 
 suites:
     - name: 'Swag Labs Login'
-      platformName: windows 10
+      platformName: Windows 10
       params:
           browserName: chromium
       testMatch: '.*/login.*'
     - name: 'Swag Labs Swag Items'
-      platformName: windows 10
+      platformName: Windows 10
       params:
           browserName: chromium
       testMatch: '.*/swag.item.*'
     - name: 'Swag Labs Checkout'
-      platformName: windows 10
+      platformName: Windows 10
       params:
           browserName: chromium
       testMatch: '.*/checkout.*'
     - name: 'Swag Labs Cart'
-      platformName: windows 10
+      platformName: Windows 10
       params:
           browserName: chromium
       testMatch: '.*/cart.*'
     - name: 'Swag Labs Menu'
-      platformName: windows 10
+      platformName: Windows 10
       params:
           browserName: chromium
       testMatch: '.*/menu.*'
