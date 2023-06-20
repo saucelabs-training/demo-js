@@ -2,5 +2,6 @@
 tasks:
   - name: WDIO
     init: |
+      cd ./gitpod
       npm ci
-    command: cd $TEST_PATH && $TEST_COMMAND
+    command: $TEST_COMMAND
