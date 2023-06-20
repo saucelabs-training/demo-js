@@ -69,7 +69,7 @@ exports.config = {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        browserName: process.env.BROWSER_NAME,
+        browserName: process.env.BROWSER_NAME || (!!process.env.APP_NAME ? null : 'Chrome'),
         browserVersion: process.env.BROWSER_VERSION,
         platformName: process.env.PLATFORM_NAME,
         'appium:app': process.env.APP_NAME ? "storage:filename=" + process.env.APP_NAME : null,
