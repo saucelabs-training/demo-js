@@ -2,6 +2,5 @@
 tasks:
   - name: WDIO
     init: |
-      cd webdriverio/webdriver/best-practices
       npm ci
-    command: npm run test.saucelabs
+    command: cd $TEST_PATH && $TEST_COMMAND
