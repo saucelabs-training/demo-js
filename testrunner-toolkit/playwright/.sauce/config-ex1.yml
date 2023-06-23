@@ -7,7 +7,6 @@ sauce:
     region: eu-central-1 # or us-west-1
     concurrency: 10 # Controls how many suites are executed at the same time.
     metadata:
-        name: Default Playwright with SauceCTL
         tags:
             - playwright
             - default
@@ -16,13 +15,13 @@ sauce:
 
 # Playwright specific information
 playwright:
-    version: 1.27.1
+    version: 1.33.0
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: .
 
 suites:
     - name: 'Playwright - default - Chrome'
-      platformName: windows 10
+      platformName: Windows 10
       testMatch: ['.*.js']
       screenResolution: '1440x900'
       numShards: 4
