@@ -1,7 +1,7 @@
 import config from './wdio.shared.sauce.conf';
 
 const buildName = `iOS Native App Best Practices build-${new Date().getTime()}`;
-const osVersions = ['13', '14'];
+const osVersions = ['13', '14', '15', '16'];
 const getRandomOsVersion = (versions: string[]): string =>
   versions[Math.floor(Math.random() * versions.length)];
 
