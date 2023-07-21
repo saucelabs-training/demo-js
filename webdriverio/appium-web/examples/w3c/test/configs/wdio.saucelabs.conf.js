@@ -19,58 +19,87 @@ config.region = process.env.REGION || 'us';
 // To read more about W3C and Sauce Labs please check
 // https://wiki.saucelabs.com/display/DOCS/W3C+Capabilities+Support
 // ===================================================================================
-config.capabilities = [
-  /**
-   * Android
-   */
-  {
-    // All vendor specific, in this case Appium capabilities, should be
-    // put in vendor prefixed options, see
-    // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
-    // All Appium capabilities, see
-    // http://appium.io/docs/en/writing-running-appium/caps/
-    // should be prefixed with `appium:{capability-name}`
-    'appium:deviceName': 'Google Pixel 3 GoogleAPI Emulator',
-    'appium:platformVersion': '10.0',
-    'appium:automationName': 'UiAutomator2',
-    // For the W3C capabilities, please check
-    // https://www.w3.org/TR/webdriver1/#capabilities
-    browserName: 'chrome',
-    platformName: 'Android',
-    // All vendor specific, in this case Sauce specific capabilities, should be
-    // put in vendor prefixed options, see
-    // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
-    'sauce:options': {
-      build: `Sauce Labs W3C Mobile Web build-${new Date().getTime()}`,
-      appiumVersion: '1.18.1',
-    },
+// config.capabilities = [
+//   /**
+//    * Android
+//    */
+//   {
+//     // All vendor specific, in this case Appium capabilities, should be
+//     // put in vendor prefixed options, see
+//     // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
+//     // All Appium capabilities, see
+//     // http://appium.io/docs/en/writing-running-appium/caps/
+//     // should be prefixed with `appium:{capability-name}`
+//     'appium:deviceName': 'Google Pixel 3 GoogleAPI Emulator',
+//     'appium:platformVersion': '10.0',
+//     'appium:automationName': 'UiAutomator2',
+//     // For the W3C capabilities, please check
+//     // https://www.w3.org/TR/webdriver1/#capabilities
+//     browserName: 'chrome',
+//     platformName: 'Android',
+//     // All vendor specific, in this case Sauce specific capabilities, should be
+//     // put in vendor prefixed options, see
+//     // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
+//     'sauce:options': {
+//       build: `Sauce Labs W3C Mobile Web build-${new Date().getTime()}`,
+//       appiumVersion: '1.18.1',
+//     },
+//   },
+//   /**
+//    * iOS
+//    */
+//   {
+//     // All vendor specific, in this case Appium capabilities, should be
+//     // put in vendor prefixed options, see
+//     // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
+//     // All Appium capabilities, see
+//     // http://appium.io/docs/en/writing-running-appium/caps/
+//     // should be prefixed with `appium:{capability-name}`
+//     'appium:deviceName': 'iPhone 11 Simulator',
+//     'appium:platformVersion': '14.0',
+//     'appium:automationName': 'XCUITest',
+//     // For the W3C capabilities, please check
+//     // https://www.w3.org/TR/webdriver1/#capabilities
+//     browserName: 'safari',
+//     platformName: 'iOS',
+//     // All vendor specific, in this case Sauce specific capabilities, should be
+//     // put in vendor prefixed options, see
+//     // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
+//     'sauce:options': {
+//       build: `Sauce Labs W3C Mobile Web build-${new Date().getTime()}`,
+//       appiumVersion: '1.19.1',
+//     },
+//   },
+// ];
+const build = `Instant-${new Date().getTime()}`;
+// config.capabilities = Array.from({length: 1, ()=>( {
+//       'appium:deviceName': 'iPhone Instant Simulator',
+//       'appium:platformVersion': 'current_major',
+//       'appium:automationName': 'XCUITest',
+//       browserName: 'safari',
+//       platformName: 'iOS',
+//       'sauce:options': {
+//         build,
+//         appiumVersion: '2.0.0',
+//       },
+//     }));
+const obj = {
+  'appium:deviceName': 'iPhone Instant Simulator',
+  'appium:platformVersion': 'previous_major',
+  'appium:automationName': 'XCUITest',
+  'appium:safariAllowPopups': true,
+  'appium:autoAcceptAlerts': true,
+  'appium:safariOpenLinksInBackground': true,
+  'appium:safariIgnoreFraudWarning': true,
+
+  browserName: 'safari',
+  platformName: 'iOS',
+  'sauce:options': {
+    build: 'Especially for you Nicole',
+    appiumVersion: '2.0.0',
   },
-  /**
-   * iOS
-   */
-  {
-    // All vendor specific, in this case Appium capabilities, should be
-    // put in vendor prefixed options, see
-    // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
-    // All Appium capabilities, see
-    // http://appium.io/docs/en/writing-running-appium/caps/
-    // should be prefixed with `appium:{capability-name}`
-    'appium:deviceName': 'iPhone 11 Simulator',
-    'appium:platformVersion': '14.0',
-    'appium:automationName': 'XCUITest',
-    // For the W3C capabilities, please check
-    // https://www.w3.org/TR/webdriver1/#capabilities
-    browserName: 'safari',
-    platformName: 'iOS',
-    // All vendor specific, in this case Sauce specific capabilities, should be
-    // put in vendor prefixed options, see
-    // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
-    'sauce:options': {
-      build: `Sauce Labs W3C Mobile Web build-${new Date().getTime()}`,
-      appiumVersion: '1.19.1',
-    },
-  },
-];
+};
+config.capabilities = Array.from({ length: 1 }, () => ({ ...obj }));
 
 config.services = config.services.concat('sauce');
 

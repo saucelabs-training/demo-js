@@ -16,7 +16,7 @@ config.specs = ['./test/specs/biometrics.emusim.spec.ts'];
 // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
 // The capabilities for different Android versions are the same, only the platform version needs to be different.
 // That's why we are going to walk through all versions
-config.capabilities = ['7.1', '8.1', '9.0', '10.0', '11.0'].map((platformVersion) => ({
+config.capabilities = ['11.0'].map((platformVersion) => ({
   // The defaults you need to have in your config
   platformName: 'Android',
   // For W3C the appium capabilities need to have an extension prefix
@@ -35,7 +35,7 @@ config.capabilities = ['7.1', '8.1', '9.0', '10.0', '11.0'].map((platformVersion
   'sauce:options': {
     // Group builds by build name
     build: buildName,
-  }
+  },
 }));
 
 exports.config = config;

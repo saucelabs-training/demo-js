@@ -12,7 +12,7 @@ exports.config = {
   // ============
   // Capabilities
   // ============
-  maxInstances: 10,
+  maxInstances: 100,
   // capabilities can be found in the `wdio.saucelabs.conf.js`
   // ===================
   // Test Configurations
@@ -23,7 +23,7 @@ exports.config = {
   waitforTimeout: 10000,
   // A timeout of 5 min
   connectionRetryTimeout: 5 * 60 * 1000,
-  connectionRetryCount: 3,
+  connectionRetryCount: 0,
   framework: 'jasmine',
   reporters: ['spec'],
   jasmineOpts: {
