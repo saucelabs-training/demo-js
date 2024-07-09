@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "extends": "@appium/tsconfig/tsconfig.json",
+    "compilerOptions": {
+        "sourceMap": false,
+        "target": "es2020",
+        "module": "NodeNext",
+        "removeComments": true,
+        "noImplicitAny": true,
+        "strictPropertyInitialization": true,
+        "strictNullChecks": true,
+        "outDir": "build",
+        "types": [
+            "jest",
+            "node",
+            "@wdio/globals/types",
+            "@wdio/mocha-framework",
+            "expect-webdriverio",
+            "@wdio/types"
+        ],
+        "checkJs": true,
+        "resolvePackageJsonExports": true
+    },
+    "include": [
+        "./test/configs/**/*.ts",
+        "./test/specs/**/*.ts"
+    ]
+}

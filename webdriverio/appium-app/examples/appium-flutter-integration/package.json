@@ -1,0 +1,33 @@
+{
+  "name": "appium-flutter-integration-webdriverio-tests",
+  "version": "0.1.0",
+  "private": true,
+  "description": "1st of appium flutter integration driver using webdriverio to test on SauceLabs",
+  "type": "module",
+  "devDependencies": {
+    "@wdio/cli": "^8.36.1",
+    "@wdio/globals": "^8.36.1",
+    "@wdio/local-runner": "^8.36.1",
+    "@wdio/mocha-framework": "^8.36.1",
+    "@wdio/sauce-service": "^8.36.1",
+    "@wdio/spec-reporter": "^8.36.1",
+    "@wdio/utils": "^8.36.1",
+    "@appium/types": "^0.20.3",
+    "@testing-library/webdriverio": "^3.2.1",
+    "@types/jest": "^28.1.1",
+    "@types/node": "^20.14.10",
+    "@wdio/types": "^8.37.0",
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "wdio-flutter-by-service": "^1.0.11",
+    "webdriverio": "^8.36.1"
+  },
+  "scripts": {
+    "android.flutter.sauce.rdc.app.us": "REGION=us wdio run test/configs/android.sauce.conf.ts",
+    "ios.flutter.sauce.rdc.app.us": "REGION=us wdio run test/configs/ios.sauce.conf.ts",
+    "android.flutter.sauce.rdc.app.eu": "REGION=eu wdio run test/configs/android.sauce.conf.ts",
+    "ios.flutter.sauce.rdc.app.eu": "REGION=eu wdio run test/configs/ios.sauce.conf.ts"
+  }
+}
