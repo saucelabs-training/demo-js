@@ -34,7 +34,7 @@ The tests can be found [here](./test/specs/flutter.spec.js). Be aware of the fac
 
 ## Run tests on Sauce Labs
 
-To run the test on SauceLabs, execute the following commands to make it work
+To run the test on Sauce Labs, execute the following commands to make it work
 
 | **REGION** | **OS**  | **App**                    | **Driver**                 | **Command**                                |
 |------------|---------|----------------------------|----------------------------|--------------------------------------------|
