@@ -16,7 +16,7 @@ export const config: WebdriverIO.Config = {
     // Service Providers
     // =================
     user: process.env.SAUCE_USERNAME,
-    key: process.env.ACCESS_KEY,
+    key: process.env.SAUCE_ACCESS_KEY,
     port: 443,
     // @ts-ignore
     region: process.env.REGION || 'eu', // eu or us
