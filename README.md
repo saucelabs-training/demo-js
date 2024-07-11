@@ -25,6 +25,7 @@ Node.js based automation frameworks locally and or in Sauce Labs.
     - [WebdriverIO Best Practices, including Emulators/Simulators/Real Devices, W3C caps, Page Objects and lots of helpers](webdriverio/appium-web/best-practices)
     - [Examples](webdriverio/appium-app/examples)
       - [Appium Flutter Example](webdriverio/appium-app/examples/appium-flutter)
+      - [Appium Flutter Integration Driver Example](webdriverio/appium-app/examples/appium-flutter-integration)
       - [Simple Example](webdriverio/appium-app/examples/simple-example)
       - [Native App Gestures](webdriverio/appium-app/examples/gestures)
       - [Using Biometric Login on Sauce Labs](webdriverio/appium-app/examples/biometric-login)
