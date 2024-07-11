@@ -1,8 +1,8 @@
 # WebdriverIO Native App Appium Flutter Integration Driver
 
-This folder contains an example on how to run Flutter tests with Appium, the [`appium-flutter-driver`](https://github.com/appium-userland/appium-flutter-driver) and WebdriverIO.
+This folder contains an example on how to run Flutter tests with Appium, the [`appium-flutter-integration-driver`](https://github.com/AppiumTestDistribution/appium-flutter-integration-driver) and WebdriverIO.
 
-> **NOTE:** The demo apps, which can be found [here](./apps), have been build with Flutter 3, which needs Appium 2 to run. 
+> **NOTE:** The demo apps, which can be found [here](https://github.com/saucelabs/my-demo-app-flutter/releases/tag/v1.0.0), have been build with Flutter 3, which needs Appium 2 to run. 
 If you want to run the tests with Appium 1, you need to have a demo app that has been build with Flutter 2.\
 > We assume you are familiar with creating and building Flutter apps. If not, please check out the [Flutter Android](https://docs.flutter.dev/deployment/android) or [Flutter iOS](https://docs.flutter.dev/deployment/ios) documentation.
 
