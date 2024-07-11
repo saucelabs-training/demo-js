@@ -2,10 +2,6 @@
 import { browser, expect } from '@wdio/globals';
 import "jest"
 
-// @ts-ignore
-import FlutterIntergrationDriverService from 'wdio-flutter-by-service';
-
-
 describe('1st AppiumFlutterIntegrationDriver test using appium latest', () => {
   it('Flutter counter demo app', async () => {
     const incrementButton = await browser
