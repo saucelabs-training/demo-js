@@ -1,0 +1,11 @@
+apiVersion: v1alpha
+kind: imagerunner
+sauce:
+  region: us-west-1
+suites:
+  - name: Desktop Tests
+    image: $DOCKER_TAG
+    imagePullAuth:
+      user: $DOCKER_USERNAME
+      token: $DOCKER_PASSWORD
+    entrypoint: $ENTRYPOINT
