@@ -1,0 +1,23 @@
+FROM node:18-alpine
+WORKDIR /demo-js/
+
+# Best practices
+COPY ./selenium/package.json /demo-js/selenium/
+RUN cd /demo-js/selenium/ && npm install
+COPY ./selenium /demo-js/selenium/
+
+# Appium app
+COPY ./webdriverio/appium-app/best-practices/package.json /demo-js/appium-app/best-practices/
+RUN cd /demo-js/appium-app/best-practices/ && npm install
+COPY ./webdriverio/appium-app/best-practices /demo-js/appium-app/best-practices/
+
+# Appium web
+COPY ./webdriverio/appium-web/best-practices/package.json /demo-js/appium-web/best-practices/
+RUN cd /demo-js/appium-web/best-practices/ && npm install
+COPY ./webdriverio/appium-web/best-practices /demo-js/appium-web/best-practices/
+
+# Webdriver
+COPY ./webdriverio/webdriver/best-practices/package.json /demo-js/webdriver/best-practices/
+RUN cd /demo-js/webdriver/best-practices/ && npm install
+COPY ./webdriverio/webdriver/best-practices /demo-js/webdriver/best-practices/
+

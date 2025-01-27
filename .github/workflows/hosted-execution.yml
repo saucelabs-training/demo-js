@@ -1,0 +1,61 @@
+name: Hosted Execution
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  # Build the project as a Docker image and push it to Docker Hub
+  push_to_registry:
+    name: Build and push Docker image to Docker Hub
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.meta.outputs.tags }}
+      label: ${{ steps.meta.outputs.labels }}
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: danielpatrickgraham
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: danielpatrickgraham/demo-js # TODO: unhardcode this when merge to saucelabs-training
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true  
+          tags: ${{ steps.meta.outputs.tags }}-1
+          labels: ${{ steps.meta.outputs.labels }}
+          file: ./Dockerfile.hosted-execution
+
+  run-tests:
+    name: Run Tests in Sauce Labs hosted execution environment
+    needs: push_to_registry
+    runs-on: ubuntu-latest
+    container: saucelabs/saucectl:latest
+    strategy:
+      fail-fast: false
+      matrix:
+        entrypoint: [
+          "sh -c 'cd appium-web/best-practices; npm run test.saucelabs.android.us'",
+          "sh -c 'cd webdriver/best-practices; npm run test.saucelabs.us'"
+        ]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run tests
+      env:
+        SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+        SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+        DOCKER_USERNAME: danielpatrickgraham # TODO: Unhardcode this when merge to saucelabs-training
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_TAG: ${{ needs.push_to_registry.outputs.tag }}-1
+        ENTRYPOINT: ${{ matrix.entrypoint }}
+      run: saucectl run
+
