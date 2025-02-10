@@ -1,4 +1,4 @@
-const { test: base, expect, chromium, request } = require('@playwright/test');
+const { test: base, chromium, request } = require('@playwright/test');
 
 const SAUCE_USERNAME = process.env.SAUCE_USERNAME;
 const SAUCE_ACCESS_KEY = process.env.SAUCE_ACCESS_KEY;
@@ -16,7 +16,7 @@ const test = base.extend({
             await use(page);
         }
     },
-});
+}, { timeout: 60000 });
 
 async function getSessionPayload(testName) {
     return {
@@ -37,8 +37,8 @@ async function getSessionPayload(testName) {
     };
 }
 
-async function createSession(requestContext, testName, buildName) {
-    const payload = await getSessionPayload(testName, buildName);
+async function createSession(requestContext, testName) {
+    const payload = await getSessionPayload(testName);
     const response = await requestContext.post(`${SAUCE_URL}session`, {
         data: payload
     });
@@ -64,7 +64,6 @@ async function remoteTeardown(page, status) {
     const context = page.context();
     const browser = context.browser();
     const sessionId = process.env.SAUCE_SESSION_ID;
-    const SAUCE_URL = 'https://ondemand.us-west-1.saucelabs.com/wd/hub/';
 
     await page.close();
     await browser.close();
@@ -79,8 +78,8 @@ async function remoteTeardown(page, status) {
 }
 
 async function updateJobStatus(sessionId, status) {
-    const url = `https://api.us-west-1.saucelabs.com/rest/v1/${process.env.SAUCE_USERNAME}/jobs/${sessionId}`;
-    const auth = Buffer.from(`${process.env.SAUCE_USERNAME}:${process.env.SAUCE_ACCESS_KEY}`).toString('base64');
+    const url = `https://api.us-west-1.saucelabs.com/rest/v1/${SAUCE_USERNAME}/jobs/${sessionId}`;
+    const auth = Buffer.from(`${SAUCE_USERNAME}:${SAUCE_ACCESS_KEY}`).toString('base64');
 
     const requestContext = await request.newContext();
     await requestContext.put(url, {

@@ -60,6 +60,7 @@ const config = {
     },
     {
       name: 'remote',
+      timeout: 60000,
       use: {
         ...devices['Desktop Chrome'],
         launchOptions: {
