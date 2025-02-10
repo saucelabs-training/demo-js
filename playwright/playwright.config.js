@@ -57,7 +57,7 @@ const config = {
       use: { ...devices['Desktop Chrome'] },
     },
     {
-      name: 'remote',
+      name: 'grid',
       timeout: 120000,
       use: {
         ...devices['Desktop Chrome'],

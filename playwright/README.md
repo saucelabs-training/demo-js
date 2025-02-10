@@ -33,7 +33,7 @@ For a more thorough demonstration of ways to use playwright with saucectl, take 
 
 To execute Playwright with saucectl from this directory, run: 
 ```bash
-npm run test.sauce 
+npm run test.saucectl 
 ```
 
 ### Remote Grid
@@ -46,7 +46,7 @@ and seeking detailed command execution logs. This solution is limited to testing
 
 To execute Playwright with a remote grid from this directory, run:
 ```bash
-npm run test.remote 
+npm run test.grid 
 ```
 
 ### Playwright Reporter
@@ -57,5 +57,5 @@ npm run test.remote
 
 To execute Playwright with the playwright reporter from this directory, run:
 ```bash
-npm run test.local 
+npm run test.reporter 
 ```

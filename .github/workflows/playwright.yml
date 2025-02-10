@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        target: [ local, remote, sauce ]
+        target: [ reporter, grid, saucectl ]
     steps:
       - name: Checkout
         uses: actions/checkout@v4

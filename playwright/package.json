@@ -8,9 +8,9 @@
   },
   "scripts": {
     "postinstall": "npx playwright install",
-    "test.local": "npx playwright test --project=\"Playwright Reporter\"",
-    "test.remote": "npx playwright test --project=remote --reporter=list",
-    "test.sauce": "saucectl run"
+    "test.reporter": "npx playwright test --project=\"Playwright Reporter\"",
+    "test.grid": "npx playwright test --project=grid --reporter=list",
+    "test.saucectl": "saucectl run"
   },
   "repository": {
     "type": "git",

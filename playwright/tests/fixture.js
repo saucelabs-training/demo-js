@@ -7,7 +7,7 @@ const START_TIME = Date.now();
 
 const test = base.extend({
     page: async ({page}, use, testInfo) => {
-        if (testInfo.project.name === 'remote') {
+        if (testInfo.project.name === 'grid') {
             process.env.SAUCE_BUILD_NAME = process.env.SAUCE_BUILD_NAME || `Playwright Grid: ${START_TIME}`;
             const remotePage = await remoteSetup(testInfo.title);
             await use(remotePage);
