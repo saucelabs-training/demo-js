@@ -7,6 +7,7 @@
     "test": "tests"
   },
   "scripts": {
+    "postinstall": "npx playwright install",
     "test.local": "npx playwright test --project=\"Playwright Reporter\"",
     "test.remote": "npx playwright test --project=remote --reporter=list",
     "test.sauce": "saucectl run"
