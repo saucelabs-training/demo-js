@@ -6,4 +6,4 @@ sauce-app-payload*
 /playwright/.cache/
 /__assets__
 .DS_Store
-
+/.env

@@ -10,7 +10,9 @@
     "postinstall": "npx playwright install",
     "test.reporter": "npx playwright test --project=\"Playwright Reporter\"",
     "test.grid": "npx playwright test --project=grid --reporter=list",
-    "test.saucectl": "saucectl run"
+    "test.saucectl": "saucectl run",
+    "test.currents": "USE_CURRENTS=true npx playwright test --project=currents"
+
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,7 @@
     "saucectl": "^0.186.4"
   },
   "dependencies": {
-    "@saucelabs/playwright-reporter": "^1.5.0"
+    "@saucelabs/playwright-reporter": "^1.5.0",
+    "@currents/playwright": "^1.9.3"
   }
 }
