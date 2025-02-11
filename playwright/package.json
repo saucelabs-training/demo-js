@@ -1,0 +1,33 @@
+{
+  "name": "playwright-examples",
+  "version": "1.0.0",
+  "description": "Example running saucectl with playwright.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "postinstall": "npx playwright install",
+    "test.reporter": "npx playwright test --project=\"Playwright Reporter\"",
+    "test.grid": "npx playwright test --project=grid --reporter=list",
+    "test.saucectl": "saucectl run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saucelabs-training/demo-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saucelabs-training/demo-js/issues"
+  },
+  "homepage": "https://github.com/saucelabs-training/demo-js#readme",
+  "devDependencies": {
+    "@playwright/test": "1.49.0",
+    "saucectl": "^0.186.4"
+  },
+  "dependencies": {
+    "@saucelabs/playwright-reporter": "^1.5.0"
+  }
+}

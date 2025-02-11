@@ -1,0 +1,38 @@
+name: Playwright
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/playwright/**'
+  pull_request:
+    paths:
+      - '**/playwright/**'
+  workflow_dispatch:
+
+env:
+  SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+  SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+  GITHUB_TOKEN: ${{ github.token }}
+
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target: [ reporter, grid, saucectl ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        working-directory: playwright
+        run: npm install
+      - name: Run ${{matrix.target}} tests
+        working-directory: playwright
+        run: npm run test.${{matrix.target}}
