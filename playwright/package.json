@@ -9,7 +9,7 @@
   "scripts": {
     "postinstall": "npx playwright install",
     "test.reporter": "npx playwright test --project=\"Playwright Reporter\"",
-    "test.grid": "npx playwright test --project=grid --reporter=list",
+    "test.grid": "SAUCE_BUILD_NAME=\"Playwright Grid: $(date +%s)\" npx playwright test --project=grid --reporter=list",
     "test.saucectl": "saucectl run"
   },
   "repository": {

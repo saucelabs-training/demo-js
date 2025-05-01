@@ -28,7 +28,8 @@ const config = {
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
-  workers: process.env.CI ? 6 : undefined, // Control parallelism; GitHub runners typically handle 4 well
+  /* Allow CI to run in parallel */
+  workers: process.env.CI ? 6 : undefined,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
