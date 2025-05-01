@@ -3,12 +3,11 @@ const { test: base, chromium, request } = require('@playwright/test');
 const SAUCE_USERNAME = process.env.SAUCE_USERNAME;
 const SAUCE_ACCESS_KEY = process.env.SAUCE_ACCESS_KEY;
 const SAUCE_URL = 'https://ondemand.us-west-1.saucelabs.com/wd/hub/';
-const START_TIME = Date.now();
+const SAUCE_BUILD_NAME = process.env.SAUCE_BUILD_NAME || 'Local Playwright Grid' + Date.now();
 
 const test = base.extend({
     page: async ({page}, use, testInfo) => {
         if (testInfo.project.name === 'grid') {
-            process.env.SAUCE_BUILD_NAME = process.env.SAUCE_BUILD_NAME || `Playwright Grid: ${START_TIME}`;
             const remotePage = await remoteSetup(testInfo.title);
             await use(remotePage);
             await remoteTeardown(remotePage, testInfo.status);
@@ -30,7 +29,7 @@ async function getSessionPayload(testName) {
                     devTools: true,
                     _tptCommanderVersion: 'stable',
                     name: testName,
-                    build: process.env.SAUCE_BUILD_NAME,
+                    build: SAUCE_BUILD_NAME,
                 }
             }
         }
