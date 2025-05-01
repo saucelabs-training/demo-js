@@ -40,12 +40,17 @@ const config = {
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     screenshot: 'on',
+    video: 'on',
   },
 
   /* Use Playwright reporter when not executing with saucectl */
   reporter: isRunningInSauceLabs
       ? [['html', { open: 'never', outputFolder: '__assets__/html-report/', attachmentsBaseURL: './'}]]
-      : [['@saucelabs/playwright-reporter'], ['list']],
+      : [['@saucelabs/playwright-reporter', {
+        mergeVideos: true,
+        upload: true,
+        outputFile: 'sauce-report.json',
+      }], ['list']],
 
   projects: [
     {
