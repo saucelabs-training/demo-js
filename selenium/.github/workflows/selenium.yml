@@ -1,0 +1,20 @@
+name: Selenium Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  simple-safari:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install
+        working-directory: selenium/test
+      - name: Run Safari tests
+        run: npm test
+        working-directory: selenium/test

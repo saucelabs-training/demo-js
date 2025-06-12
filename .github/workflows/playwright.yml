@@ -9,6 +9,8 @@ on:
   pull_request:
     paths:
       - '**/playwright/**'
+  schedule:
+    - cron: '0 4 * * *'
   workflow_dispatch:
 
 env:
@@ -29,7 +31,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22'
       - name: Install dependencies
         working-directory: playwright
         run: npm install

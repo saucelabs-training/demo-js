@@ -1,0 +1,51 @@
+name: Nightwatch Tests
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/nightwatch/**'
+  pull_request:
+    paths:
+      - '**/nightwatch/**'
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+env:
+  SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+  SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+
+jobs:
+  webdriver:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+        working-directory: nightwatch/webdriver/examples/update-sauce
+      - name: Run WebDriver tests
+        run: npm test
+        working-directory: nightwatch/webdriver/examples/update-sauce
+
+  appium-web:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+        working-directory: nightwatch/appium-web/examples/update-sauce-real-devices
+      - name: Run Appium Web tests
+        run: npm test
+        working-directory: nightwatch/appium-web/examples/update-sauce-real-devices
