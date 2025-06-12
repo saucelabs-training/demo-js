@@ -61,7 +61,6 @@ Node.js based automation frameworks locally and or in Sauce Labs.
   - [Puppeteer with Jest](testrunner-toolkit/puppeteer)
   - [TestCafe](testrunner-toolkit/testcafe)
   - [Dependencies Examples](testrunner-toolkit/dependencies-example)
-- [Screener Runner (DEPRECATED!! Move to Visual E2E)](screener-runner)
 - [NightWatch](nightwatch)
   - NightWatch for Desktop Web (Selenium, but officially WebDriver)
     - [Examples](nightwatch/webdriver/examples)
