@@ -5,7 +5,7 @@ const swagOverviewCommands = {
      * @returns {void}
      */
     waitForDisplayed: function () {
-        return this.waitForElementVisible('@screen', 15000);
+        return this.waitForElementPresent('@screen', 15000);
     },
 
     /**

@@ -2,12 +2,12 @@ const {DEFAULT_TIMEOUT} = require('../configs/e2eConstants');
 
 const loginCommands = {
     /**
-     * Wait for page to be visible
+     * Wait for page to be present
      *
      * @returns {void}
      */
     waitForDisplayed: function () {
-        return this.waitForElementVisible('@screen', 15000);
+        return this.waitForElementPresent('@screen', 15000);
     },
 
     /**
@@ -31,7 +31,7 @@ const loginCommands = {
     signIn: function (userDetails) {
         const {password, username} = userDetails;
 
-        return this.waitForElementVisible('@screen', DEFAULT_TIMEOUT)
+        return this.waitForElementPresent('@screen', DEFAULT_TIMEOUT)
             .setValue('@username', username)
             .setValue('@password', password)
             .click('@loginButton');
@@ -45,7 +45,7 @@ const loginCommands = {
      * @returns{string}
      */
     containsErrorMessage: function (errorMessage) {
-        return this.waitForElementVisible('@errorMessage', DEFAULT_TIMEOUT)
+        return this.waitForElementPresent('@errorMessage', DEFAULT_TIMEOUT)
             .assert.containsText('@errorMessage', errorMessage);
     },
 };
