@@ -61,7 +61,6 @@ Node.js based automation frameworks locally and or in Sauce Labs.
   - [Puppeteer with Jest](testrunner-toolkit/puppeteer)
   - [TestCafe](testrunner-toolkit/testcafe)
   - [Dependencies Examples](testrunner-toolkit/dependencies-example)
-- [Screener Runner (DEPRECATED!! Move to Visual E2E)](screener-runner)
 - [NightWatch](nightwatch)
   - NightWatch for Desktop Web (Selenium, but officially WebDriver)
     - [Examples](nightwatch/webdriver/examples)
@@ -69,12 +68,6 @@ Node.js based automation frameworks locally and or in Sauce Labs.
   - NightWatch for Mobile Web (Chrome/Safari)
     - [Examples](nightwatch/appium-web/examples)
       - [Nightwatch Mobile Web: Update Sauce Status Real Devices](nightwatch/appium-web/examples/update-sauce-real-devices)
-- [Protractor with Jasmine](protractor)
-  - Protractor for Desktop Web (Selenium)
-    - [Protractor "Best Practices"](protractor/selenium/best-practices)
-  - Protractor for Mobile Web (Appium)
-    - [Examples](webdriverio/webdriver/examples)
-      - [Real Devices and Sauce Labs](protractor/appium-web/examples/real-devices)
 - [Puppeteer with Jest](puppeteer)
 
 > \* The connection to Sauce Labs doesn't depend on using Mocha, Jasmine or CucumberJS. Please check the

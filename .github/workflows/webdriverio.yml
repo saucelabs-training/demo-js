@@ -1,0 +1,67 @@
+name: WebdriverIO Tests
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/webdriverio/**'
+  pull_request:
+    paths:
+      - '**/webdriverio/**'
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+env:
+  SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+  SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+
+jobs:
+  webdriver:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+        working-directory: webdriverio/webdriver/examples
+      - name: Run WebDriver tests
+        run: npm test
+        working-directory: webdriverio/webdriver/examples
+
+  appium-web:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+        working-directory: webdriverio/appium-web/examples
+      - name: Run Appium Web tests
+        run: npm test
+        working-directory: webdriverio/appium-web/examples
+
+  appium-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+        working-directory: webdriverio/appium-app/examples
+      - name: Run Appium App tests
+        run: npm test
+        working-directory: webdriverio/appium-app/examples

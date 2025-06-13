@@ -1,0 +1,9 @@
+node_modules/
+artifacts/
+sauce-app-payload*
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/__assets__
+.DS_Store
+

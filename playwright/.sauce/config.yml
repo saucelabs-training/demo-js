@@ -1,0 +1,22 @@
+apiVersion: v1alpha
+kind: playwright
+sauce:
+  region: us-west-1
+  concurrency: 10 # Controls how many suites are executed at the same time.
+playwright:
+  version: package.json # See https://docs.saucelabs.com/web-apps/automated-testing/playwright/#supported-testing-platforms for a list of supported versions.
+  configFile: playwright.config.js # See https://docs.saucelabs.com/web-apps/automated-testing/playwright/yaml/#configfile for a list of supported configuration files.
+# Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
+rootDir: ./
+suites:
+  - name: "Playwright Saucectl"
+    platformName: "macOS 13"
+    screenResolution: "1440x900"
+    testMatch: [".*.js"]
+    params:
+      browserName: "chromium"
+      project: "saucectl"
+
+reporters:
+  spotlight: # Prints an overview of failed or otherwise interesting jobs.
+    enabled: true
