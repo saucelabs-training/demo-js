@@ -41,7 +41,6 @@ module.exports = {
                     args: [
                         '--no-sandbox',
                         '--disable-infobars',
-                        '--headless',
                         '--disable-features=SafeBrowsing,PasswordLeakToggleMove',
                     ],
                 },

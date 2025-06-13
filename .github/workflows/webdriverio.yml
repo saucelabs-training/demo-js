@@ -18,8 +18,19 @@ env:
   SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
 
 jobs:
-  webdriver:
+  desktop:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        directory: [
+          'webdriverio/desktop/best-practices',
+          'webdriverio/desktop/examples/w3c',
+          'webdriverio/desktop/examples/deque',
+          'webdriverio/desktop/examples/cucumberjs',
+          'webdriverio/desktop/examples/typescript',
+          'webdriverio/desktop/examples/performance',
+          'webdriverio/desktop/examples/extended-debugging'
+        ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -29,10 +40,10 @@ jobs:
           node-version: '22'
       - name: Install dependencies
         run: npm install
-        working-directory: webdriverio/webdriver/examples
+        working-directory: ${{ matrix.directory }}
       - name: Run WebDriver tests
-        run: npm test
-        working-directory: webdriverio/webdriver/examples
+        run: npm run test.saucelabs.us
+        working-directory: ${{ matrix.directory }}
 
   appium-web:
     runs-on: ubuntu-latest
