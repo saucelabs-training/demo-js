@@ -30,28 +30,6 @@ module.exports = {
                 seleniumVersion: '3.141.59',
             },
         },
-        localChrome: {
-            desiredCapabilities: {
-                browserName: 'chrome',
-                alwaysMatch: {
-                    'goog:chromeOptions': {
-                        args: [
-                            '--no-sandbox',
-                            '--disable-infobars',
-                            '--headless',
-                            '--disable-features=SafeBrowsing,PasswordLeakToggleMove',
-                        ],
-                    },
-                },
-            },
-
-            webdriver: {
-                start_process: true,
-                port: 9515,
-                server_path: require('chromedriver').path,
-            },
-        },
-
         // Sauce Labs capabilities
         sauceChrome: {
             extends: 'sauceLabs',
