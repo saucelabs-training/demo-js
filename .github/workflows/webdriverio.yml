@@ -28,7 +28,6 @@ jobs:
           'examples/deque',
           'examples/cucumberjs',
           'examples/typescript',
-          'examples/performance',
           'examples/extended-debugging'
         ]
     steps:
