@@ -39,6 +39,7 @@ module.exports = {
                             '--no-sandbox',
                             '--disable-infobars',
                             '--headless',
+                            '--disable-features=SafeBrowsing,PasswordLeakToggleMove',
                         ],
                     },
                 },
@@ -58,6 +59,14 @@ module.exports = {
                 browserName: 'chrome',
                 platform: 'Windows 10',
                 version: 'latest',
+                'goog:chromeOptions': {
+                    args: [
+                        '--no-sandbox',
+                        '--disable-infobars',
+                        '--headless',
+                        '--disable-features=SafeBrowsing,PasswordLeakToggleMove',
+                    ],
+                },
             },
         },
         sauceFirefox: {
