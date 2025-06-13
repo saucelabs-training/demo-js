@@ -12,7 +12,8 @@ suites:
   - name: "Playwright Saucectl"
     platformName: "macOS 13"
     screenResolution: "1440x900"
-    testMatch: [".*.js"]
+    testMatch: [".*.spec.js"]
+    shard: spec
     params:
       browserName: "chromium"
       project: "saucectl"
