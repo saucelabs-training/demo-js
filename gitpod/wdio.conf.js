@@ -70,7 +70,7 @@ exports.config = {
     capabilities: [{
         // capabilities for Chrome on Windows
         browserName: 'chrome',
-        platformName: 'Windows 10',
+        platformName: 'Windows 11',
         'sauce:options': {
             build: process.env.BUILD,
             tags: process.env.GITPOD_WORKSPACE_ID ? ['gitpod'] : [],
