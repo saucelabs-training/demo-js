@@ -29,6 +29,13 @@ config.capabilities = [
     browserName: 'chrome',
     platformName: 'Windows 10',
     browserVersion: 'latest',
+    'goog:chromeOptions': {
+      args: [
+        '--no-sandbox',
+        '--disable-infobars',
+        '--disable-features=SafeBrowsing,PasswordLeakToggleMove',
+      ],
+    },
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },
@@ -51,40 +58,8 @@ config.capabilities = [
   },
   {
     browserName: 'safari',
-    platformName: 'macOS 10.14',
-    browserVersion: '12',
-    'sauce:options': {
-      ...defaultBrowserSauceOptions,
-    },
-  },
-  {
-    browserName: 'safari',
-    platformName: 'macOS 10.15',
-    browserVersion: '13',
-    'sauce:options': {
-      ...defaultBrowserSauceOptions,
-    },
-  },
-  {
-    browserName: 'safari',
-    platformName: 'macOS 11.00',
-    browserVersion: '14',
-    'sauce:options': {
-      ...defaultBrowserSauceOptions,
-    },
-  },
-  {
-    browserName: 'safari',
-    platformName: 'macOS 12',
-    browserVersion: '15',
-    'sauce:options': {
-      ...defaultBrowserSauceOptions,
-    },
-  },
-  {
-    browserName: 'safari',
-    platformName: 'macOS 12',
-    browserVersion: '16',
+    platformName: 'macOS 13',
+    browserVersion: 'latest',
     'sauce:options': {
       ...defaultBrowserSauceOptions,
     },
@@ -96,6 +71,13 @@ if (process.env.GITPOD_WORKSPACE_ID) {
     browserName: process.env.BROWSER_NAME || 'chrome',
     platformName: process.env.PLATFORM_NAME || 'windows 11',
     browserVersion: process.env.BROWSER_VERSION || 'latest',
+    'goog:chromeOptions': {
+      args: [
+        '--no-sandbox',
+        '--disable-infobars',
+        '--disable-features=SafeBrowsing,PasswordLeakToggleMove',
+      ],
+    },
     'sauce:options': {
       build: process.env.BUILD || 'Gitpod build',
       tags: ['Gitpod'],

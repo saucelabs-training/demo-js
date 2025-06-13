@@ -26,6 +26,13 @@ config.capabilities = [
     browserName: 'chrome',
     platformName: 'Windows 10',
     browserVersion: 'latest',
+    'goog:chromeOptions': {
+      args: [
+        '--no-sandbox',
+        '--disable-infobars',
+        '--disable-features=SafeBrowsing,PasswordLeakToggleMove',
+      ],
+    },
     // All vendor specific, in this case Sauce specific capabilities, should be
     // put in vendor prefixed options, see
     // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
