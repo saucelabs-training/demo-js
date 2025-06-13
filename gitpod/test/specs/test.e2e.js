@@ -1,6 +1,5 @@
-// see ./wdio.saucelabs.conf.ts for configuration
 
-describe('Gitpod Selenium Test', () => {
+describe('Test using Gitpod ', () => {
     it('should visit a page and get the title', async () => {
         await browser.url('https://saucedemo.com');
         const title = await browser.getTitle();

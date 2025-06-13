@@ -39,7 +39,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        !!process.env.APP_NAME ? './test/specs/appium/**/*.js' : './test/specs/selenium/**/*.js'
+        './test/specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -68,19 +68,9 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        // capabilities for local browser web tests
-        browserName: process.env.BROWSER_NAME || (!!process.env.APP_NAME ? null : 'Chrome'),
-        browserVersion: process.env.BROWSER_VERSION,
-        platformName: process.env.PLATFORM_NAME,
-        'appium:app': process.env.APP_NAME ? "storage:filename=" + process.env.APP_NAME : null,
-        'appium:platformVersion': process.env.PLATFORM_VERSION,
-        'appium:deviceName': process.env.DEVICE_NAME,
-        'appium:automationName': (() => {
-            if (process.env.PLATFORM_NAME?.toLowerCase() === 'android')
-                return 'uiautomator2';
-            else if (process.env.PLATFORM_NAME?.toLowerCase() === 'ios')
-                return 'xcuitest';
-        })(),
+        // capabilities for Chrome on Windows
+        browserName: 'chrome',
+        platformName: 'Windows 10',
         'sauce:options': {
             build: process.env.BUILD,
             tags: process.env.GITPOD_WORKSPACE_ID ? ['gitpod'] : [],
