@@ -21,7 +21,7 @@ module.exports = {
         // Our Sauce Labs object
         sauceLabs: {
             selenium_host: `ondemand.${process.env.REGION === 'eu' ? 'eu-central-1' : 'us-west-1'}.saucelabs.com`,
-            selenium_port: 80,
+            selenium_port: 443,
             username: process.env.SAUCE_USERNAME,
             access_key: process.env.SAUCE_ACCESS_KEY,
             desiredCapabilities: {
@@ -64,14 +64,6 @@ module.exports = {
             extends: 'sauceLabs',
             desiredCapabilities: {
                 browserName: 'firefox',
-                platform: 'Windows 10',
-                version: 'latest',
-            },
-        },
-        sauceIE: {
-            extends: 'sauceLabs',
-            desiredCapabilities: {
-                browserName: 'internet explorer',
                 platform: 'Windows 10',
                 version: 'latest',
             },

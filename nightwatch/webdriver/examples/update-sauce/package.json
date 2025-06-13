@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test.local": "nightwatch --config tests/configs/nightwatch.conf.js --env localChrome",
-    "test.saucelabs.us": "env DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env sauceChrome,sauceFirefox,sauceIE,sauceEdge",
-    "test.saucelabs.eu": "env REGION=eu env DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env sauceChrome,sauceFirefox,sauceIE,sauceEdge",
+    "test.saucelabs.us": "env DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env sauceChrome,sauceFirefox,sauceEdge",
+    "test.saucelabs.eu": "env REGION=eu env DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env sauceChrome,sauceFirefox,sauceEdge",
     "lint": "eslint ../../.. --ext .js"
   },
   "keywords": [],
