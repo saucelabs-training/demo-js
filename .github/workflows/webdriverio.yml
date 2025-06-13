@@ -23,13 +23,13 @@ jobs:
     strategy:
       matrix:
         directory: [
-          'webdriverio/desktop/best-practices',
-          'webdriverio/desktop/examples/w3c',
-          'webdriverio/desktop/examples/deque',
-          'webdriverio/desktop/examples/cucumberjs',
-          'webdriverio/desktop/examples/typescript',
-          'webdriverio/desktop/examples/performance',
-          'webdriverio/desktop/examples/extended-debugging'
+          'best-practices',
+          'examples/w3c',
+          'examples/deque',
+          'examples/cucumberjs',
+          'examples/typescript',
+          'examples/performance',
+          'examples/extended-debugging'
         ]
     steps:
       - name: Checkout code
@@ -40,10 +40,10 @@ jobs:
           node-version: '22'
       - name: Install dependencies
         run: npm install
-        working-directory: ${{ matrix.directory }}
+        working-directory: webdriverio/desktop/${{ matrix.directory }}
       - name: Run WebDriver tests
         run: npm run test.saucelabs.us
-        working-directory: ${{ matrix.directory }}
+        working-directory: webdriverio/desktop/${{ matrix.directory }}
 
   appium-web:
     runs-on: ubuntu-latest
