@@ -68,7 +68,6 @@ Node.js based automation frameworks locally and or in Sauce Labs.
   - NightWatch for Mobile Web (Chrome/Safari)
     - [Examples](nightwatch/appium-web/examples)
       - [Nightwatch Mobile Web: Update Sauce Status Real Devices](nightwatch/appium-web/examples/update-sauce-real-devices)
-- [Puppeteer with Jest](puppeteer)
 
 > \* The connection to Sauce Labs doesn't depend on using Mocha, Jasmine or CucumberJS. Please check the
 > [frameworks](https://webdriver.io/docs/frameworks.html) page of WebdriverIO on how to implement a different framework then
