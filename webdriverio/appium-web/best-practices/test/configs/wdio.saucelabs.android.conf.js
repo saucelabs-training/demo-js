@@ -11,7 +11,7 @@ const build = `Best Practices: Android Chrome Appium '${
 //
 // For configuring an Emulator please check
 // https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/
-config.capabilities = ['8.1', '9.0', '10.0', '11.0', '12.0'].map(
+config.capabilities = ['14.0', '15.0'].map(
   (androidVersion) => ({
     // All vendor specific, in this case Appium capabilities, should be
     // put in vendor prefixed options, see
