@@ -31,5 +31,5 @@ jobs:
         run: npm install
         working-directory: selenium/test
       - name: Run Safari tests
-        run: npm test
+        run: npm run test.safari.us
         working-directory: selenium/test

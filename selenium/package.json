@@ -7,7 +7,6 @@
     "test.safari.us": "npx mocha test/**/simple.safari.spec.js"
   },
   "keywords": [],
-  "author": "Nikolay Advolodkin - https://github.com/nadvolod",
   "license": "ISC",
   "devDependencies": {
     "assert": "^2.0.0",
