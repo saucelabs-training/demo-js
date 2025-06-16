@@ -60,6 +60,15 @@ class CheckoutPersonalInfoPage extends BasePage {
     if (zip) {
       await this.#postalCode.addValue(zip);
     }
+    
+    // Try to hide keyboard if it's visible (for Android)
+    const platform = await browser.capabilities.platformName;
+    if (platform && platform.toLowerCase() === 'android') {
+      // If driver supports hideKeyboard, use it
+      if (typeof browser.hideKeyboard === 'function') {
+        await browser.hideKeyboard();
+      }
+    }
     await this.#continueCheckoutButton.click();
   }
 
