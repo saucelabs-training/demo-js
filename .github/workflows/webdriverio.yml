@@ -89,6 +89,14 @@ jobs:
             variant: 'test.sauce.android.emulator.us'
           - directory: 'examples/up-download-file'
             variant: 'test.sauce.ios.simulator.us'
+          - directory: 'examples/simple-example'
+            variant: 'test.saucelabs.android.emu.us'
+          - directory: 'examples/simple-example'
+            variant: 'test.saucelabs.ios.sim.us'
+          - directory: 'examples/appium-flutter-integration'
+            variant: 'android.flutter.sauce.rdc.app.us'
+          - directory: 'examples/appium-flutter-integration'
+            variant: 'ios.flutter.sauce.rdc.app.us'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3

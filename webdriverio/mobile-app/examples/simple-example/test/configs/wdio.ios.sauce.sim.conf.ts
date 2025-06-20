@@ -8,7 +8,7 @@ config.capabilities = [{
    'appium:automationName': 'XCUITest',
    // The name of the App in the Sauce Labs storage, for more info see
    // https://docs.saucelabs.com/mobile-apps/app-storage/
-   'appium:app': 'storage:filename=MyRNDemoApp.zip',
+   'appium:app': 'storage:filename=iOS.MyDemoAppRN.zip',
    'appium:noReset': true,
    'appium:shouldTerminateApp': true,
    'appium:newCommandTimeout': 240,

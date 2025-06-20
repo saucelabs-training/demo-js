@@ -19,13 +19,13 @@ export const config: WebdriverIO.Config = {
             platformName: 'iOS',
             'appium:deviceName': process.env.DEVICE_NAME || 'iPhone.*',
             'appium:automationName': 'FlutterIntegration',
-            'appium:app': 'storage:filename=sl_my_demo_flutter_app.ipa',
+            'appium:app': 'https://github.com/saucelabs/my-demo-app-flutter/releases/download/v1.0.0/sl_my_demo_flutter_app.ipa',
             'appium:newCommandTimeout': 240,
             'appium:platformVersion': '^1(4.[3-9]|[5-9]).*',
             'sauce:options': {
                 name: "1st AppiumFlutterIntegrationDriver test using appium latest",
                 resigningEnabled: true,
-                appiumVersion: "appium2-20240701",
+                appiumVersion: "latest",
             },
         }
     ],
