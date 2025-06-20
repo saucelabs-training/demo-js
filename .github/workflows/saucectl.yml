@@ -26,6 +26,8 @@ jobs:
         include:
           - directory: 'cypress'
             variant: 'test.sauce.ex1.us'
+          - directory: 'dependencies-example'
+            variant: 'test.sauce.us'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
