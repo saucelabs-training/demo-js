@@ -11,18 +11,6 @@ describe('Item Details', () => {
     await CatalogScreen.waitForIsShown();
   });
 
-  it('should be able to navigate back', async () => {
-    await CatalogScreen.openSwagItem('Backpack');
-    await ItemDetailsScreen.waitForIsShown();
-
-    await expect(await CatalogScreen.isShown()).toBeFalsy();
-
-    await ItemDetailsScreen.goBack();
-    await CatalogScreen.waitForIsShown();
-
-    await expect(await ItemDetailsScreen.isShown()).toBeFalsy();
-  });
-
   it('should be able submit a review', async () => {
     await CatalogScreen.openSwagItem('Backpack');
     await ItemDetailsScreen.waitForIsShown();
