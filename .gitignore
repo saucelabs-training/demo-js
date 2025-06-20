@@ -32,6 +32,6 @@ v6/
 **/artifacts/
 
 # for Flutter
-!webdriverio/appium-app/examples/appium-flutter/apps
+!webdriverio/mobile-app/examples/appium-flutter/apps
 **/*native-screenshot.png
 **/*flutter-screenshot.png
