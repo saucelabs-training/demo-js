@@ -23,6 +23,7 @@ jobs:
     name: Tests
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         target: [ reporter, grid, saucectl ]
     steps:
