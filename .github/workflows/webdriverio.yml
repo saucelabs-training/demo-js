@@ -21,6 +21,7 @@ jobs:
   desktop:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         directory: [
           'best-practices',
@@ -47,6 +48,7 @@ jobs:
   mobile-web:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         include:
           - directory: 'examples'
@@ -72,6 +74,7 @@ jobs:
   mobile-app:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         include:
           - directory: 'best-practices'
@@ -80,6 +83,12 @@ jobs:
             variant: 'test.saucelabs.ios.sim.us'
           - directory: 'best-practices'
             variant: 'test.saucelabs.android.rdc.us'
+          - directory: 'best-practices'
+            variant: 'test.saucelabs.ios.rdc.us'
+          - directory: 'examples/up-download-file'
+            variant: 'test.sauce.android.emulator.us'
+          - directory: 'examples/up-download-file'
+            variant: 'test.sauce.ios.simulator.us'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3

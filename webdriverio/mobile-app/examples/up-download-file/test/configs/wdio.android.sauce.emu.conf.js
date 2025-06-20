@@ -19,7 +19,7 @@ config.specs = [
 // https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/
 // The caps are the same for 10/9/8.1, only the platform version differs, that's why we use a map
 // function to construct a capability object for each platform version.
-config.capabilities = ['10.0', '9.0', '8.1'].map((platformVersion) => (
+config.capabilities = ['10.0'].map((platformVersion) => (
   {
     // The defaults you need to have in your config
     deviceName: 'Android GoogleAPI Emulator',
