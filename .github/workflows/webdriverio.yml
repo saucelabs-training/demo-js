@@ -97,6 +97,10 @@ jobs:
             variant: 'android.flutter.sauce.rdc.app.us'
           - directory: 'examples/appium-flutter-integration'
             variant: 'ios.flutter.sauce.rdc.app.us'
+          - directory: 'examples/appium-flutter'
+            variant: 'test.sauce.real.android.us'
+          - directory: 'examples/appium-flutter'
+            variant: 'test.sauce.real.ios.us'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3

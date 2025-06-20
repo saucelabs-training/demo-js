@@ -23,12 +23,12 @@ config.capabilities = [
     // This is needed to tell Appium to use the Flutter driver
     'appium:automationName': 'Flutter',
     'appium:retryBackoffTime': 500,
-    'appium:app': 'storage:filename=flutter-counter-debug.ipa',
+    'appium:app': 'https://raw.githubusercontent.com/saucelabs-training/demo-js/refs/heads/main/webdriverio/mobile-app/examples/appium-flutter/apps/flutter-counter-debug.ipa',
     'appium:newCommandTimeout': 240,
     'sauce:options': {
       // @ts-ignore
       // Flutter 3 apps can only be automated with Appium 2
-      appiumVersion: '2.0.0',
+      appiumVersion: 'latest',
       name: 'Appium 2 - Flutter - iOS',
     },
     'appium:autoAcceptAlerts': true,

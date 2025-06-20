@@ -23,7 +23,7 @@ config.capabilities = [
     // This is needed to tell Appium to use the Flutter driver
     'appium:automationName': 'Flutter',
     'appium:retryBackoffTime': 500,
-    'appium:app': 'storage:filename=flutter-counter-debug.apk',
+    'appium:app': 'https://raw.githubusercontent.com/saucelabs-training/demo-js/refs/heads/main/webdriverio/mobile-app/examples/appium-flutter/apps/flutter-counter-debug.apk',
     'appium:newCommandTimeout': 240,
     'sauce:options': {
       // @ts-ignore
