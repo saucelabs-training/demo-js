@@ -25,8 +25,7 @@ jobs:
       matrix:
         include:
           - directory: 'cypress'
-            variant: 'test.saucelabs.us'
-          - directory: 'test.sauce.ex1.us'
+            variant: 'test.sauce.ex1.us'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
