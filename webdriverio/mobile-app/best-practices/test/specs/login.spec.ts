@@ -10,6 +10,10 @@ describe('Login', () => {
     // Restart the app before each session, only not for the first session
     await restartApp();
     await CatalogScreen.waitForIsShown();
+    await Menu.openMenu();
+    await Menu.logout();
+    // Add an item to the cart to be able to open the login screen
+    await openDeepLinkUrl('cart/id=1&amount=1&color=black');
     // Now open the login screen
     await openDeepLinkUrl('login');
     await LoginScreen.waitForIsShown();
