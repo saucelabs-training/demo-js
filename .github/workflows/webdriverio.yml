@@ -78,6 +78,8 @@ jobs:
             variant: 'test.saucelabs.android.emu.us'
           - directory: 'best-practices'
             variant: 'test.saucelabs.ios.sim.us'
+          - directory: 'best-practices'
+            variant: 'test.saucelabs.android.rdc.us'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3

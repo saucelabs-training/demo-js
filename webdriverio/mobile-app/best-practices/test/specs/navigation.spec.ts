@@ -52,7 +52,7 @@ describe('Navigation', () => {
     await CheckoutPaymentScreen.fillCardData({
       fullName: 'Foo',
       cardNumber: 5555555555554444,
-      expirationDate: '0325',
+      expirationDate: '0330',
       securityCode: 123,
     });
     await CheckoutPaymentScreen.tapOnReviewOrderButton();

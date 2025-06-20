@@ -1,7 +1,7 @@
 import config from './wdio.shared.sauce.conf';
 
 const buildName = `iOS Native App Best Practices build-${new Date().getTime()}`;
-const osVersions = ['13', '14', '15', '16'];
+const osVersions = ['17', '18'];
 const getRandomOsVersion = (versions: string[]): string =>
   versions[Math.floor(Math.random() * versions.length)];
 
@@ -26,11 +26,11 @@ config.capabilities = [
     'appium:platformVersion': getRandomOsVersion(osVersions),
     // We're using dynamic device allocation
     // See https://docs.saucelabs.com/mobile-apps/automated-testing/appium/real-devices/#dynamic-device-allocation
-    'appium:deviceName': 'iPhone .*',
+    'appium:deviceName': 'iPhone.*',
     'appium:automationName': 'XCUITest',
     // The name of the App in the Sauce Labs storage, for more info see
     // https://docs.saucelabs.com/mobile-apps/app-storage/
-    'appium:app': 'storage:filename=MyRNDemoApp.ipa',
+    'appium:app': 'storage:filename=iOS.MyDemoAppRN.ipa',
     'appium:noReset': true,
     // There is an issue with noReset: true and driver.reset(). This cap fixes that
     'appium:shouldTerminateApp': true,
@@ -44,6 +44,7 @@ config.capabilities = [
       allowTouchIdEnroll: false,
       // @ts-ignore
       sauceLabsImageInjectionEnabled: false,
+      appiumVersion: 'stable',
     },
   },
 ];

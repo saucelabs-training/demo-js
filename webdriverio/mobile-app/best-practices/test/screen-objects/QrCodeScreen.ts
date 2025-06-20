@@ -8,7 +8,7 @@ class QrCodeScreen extends AppScreen {
 
   get acceptCameraButton() {
     const iosSelector =
-      '-ios class chain:**/XCUIElementTypeButton[`name == "OK"`]';
+      '-ios class chain:**/XCUIElementTypeButton[`name == "Allow" OR name == "OK"`]';
     const androidSelector =
       '//*[@resource-id="com.android.permissioncontroller:id/permission_allow_button" or @resource-id="com.android.packageinstaller:id/permission_allow_button" or contains(@text,"Only") or contains(@text,"ONLY")]';
 

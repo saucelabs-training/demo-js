@@ -29,8 +29,15 @@ const restartApp = async (): Promise<void> => {
   if (!(driver.config as MobileConfig).firstAppStart) {
     // Use clearApp to reset app data, then activate
     if (driver.isIOS) {
-      await driver.execute('mobile: clearApp', { bundleId: 'com.saucelabs.mydemoapp.rn' });
-      await driver.execute('mobile: activateApp', { bundleId: 'com.saucelabs.mydemoapp.rn' });
+      try {
+        // Try clearApp first (works on simulators)
+        await driver.execute('mobile: clearApp', { bundleId: 'com.saucelabs.mydemoapp.rn' });
+        await driver.execute('mobile: activateApp', { bundleId: 'com.saucelabs.mydemoapp.rn' });
+      } catch (e) {
+        // Fallback for real devices (clearApp not supported)
+        await driver.execute('mobile: terminateApp', { bundleId: 'com.saucelabs.mydemoapp.rn' });
+        await driver.execute('mobile: activateApp', { bundleId: 'com.saucelabs.mydemoapp.rn' });
+      }
     } else {
       await driver.execute('mobile: clearApp', { appId: 'com.saucelabs.mydemoapp.rn' });
       try {
@@ -47,6 +54,18 @@ const restartApp = async (): Promise<void> => {
 
   // Set the firstAppstart to false to say that the following test can be reset
   (driver.config as MobileConfig).firstAppStart = false;
+
+  if (driver.isIOS) {
+    // Open menu to reset the app state
+    await $(locatorStrategy('tab bar option menu')).click();
+    await $(locatorStrategy('menu item reset app')).click();
+    const iosResetAppSelector = '-ios class chain:**/XCUIElementTypeButton[`name == "Reset App"`]';
+    await $(iosResetAppSelector).click();
+    const iosResetAppOKSelector = '-ios class chain:**/XCUIElementTypeButton[`name == "OK"`]';
+    await $(iosResetAppOKSelector).click();
+    // Wait for the menu to close
+    await $(locatorStrategy('close menu')).click();
+  }
 
   // Wait for the app to be ready and reset the state by clicking on the header image
   const headerImage = await $(locatorStrategy('longpress reset app'));
