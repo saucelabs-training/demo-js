@@ -33,7 +33,15 @@ const restartApp = async (): Promise<void> => {
       await driver.execute('mobile: activateApp', { bundleId: 'com.saucelabs.mydemoapp.rn' });
     } else {
       await driver.execute('mobile: clearApp', { appId: 'com.saucelabs.mydemoapp.rn' });
-      await driver.execute('mobile: activateApp', { appId: 'com.saucelabs.mydemoapp.rn' });
+      try {
+        // Try activateApp first (works on emulators)
+        await driver.execute('mobile: activateApp', { appId: 'com.saucelabs.mydemoapp.rn' });
+      } catch (e) {
+        // Fallback to startActivity (works on real devices)
+        await driver.execute('mobile: startActivity', { 
+          component: 'com.saucelabs.mydemoapp.rn/.MainActivity'
+        });
+      }
     }
   }
 

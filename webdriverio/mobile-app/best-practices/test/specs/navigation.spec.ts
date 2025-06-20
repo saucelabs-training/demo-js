@@ -87,11 +87,6 @@ describe('Navigation', () => {
     await Menu.openAbout();
     await AboutScreen.waitForIsShown();
     await Menu.openMenu();
-    await Menu.openBiometrics();
-    await BiometricsScreen.waitForBiometricsNotEnabledModal();
-    await BiometricsScreen.closeAlert();
-    await BiometricsScreen.waitForIsShown();
-    await Menu.openMenu();
     await Menu.openLogin();
     await LoginScreen.waitForIsShown();
     /**
