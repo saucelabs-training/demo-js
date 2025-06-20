@@ -15,7 +15,7 @@ const buildName = `Android Emulator Native App Best Practices build-${new Date()
 // ===================================================================================
 // This piece of code will run the tests on all Android versions as mentioned
 // in this array.
-config.capabilities = ['13', '14', '15'].map((osVersion: string) => ({
+config.capabilities = ['14', '15'].map((osVersion: string) => ({
   // For the W3C capabilities, please check
   // https://www.w3.org/TR/webdriver1/#capabilities
   platformName: 'Android',

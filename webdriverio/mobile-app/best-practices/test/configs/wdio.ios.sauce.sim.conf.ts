@@ -15,7 +15,7 @@ const buildName = `iOS Simulator Native App Best Practices build-${new Date().ge
 // ===================================================================================
 // This piece of code will run the tests on all iOS versions as mentioned
 // in this array.
-config.capabilities = ['16.2', '17.0'].map(
+config.capabilities = ['17.0'].map(
   (osVersion: string) => ({
     // For the W3C capabilities, please check
     // https://www.w3.org/TR/webdriver1/#capabilities
