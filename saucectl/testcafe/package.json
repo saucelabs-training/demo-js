@@ -19,6 +19,6 @@
   "license": "MIT",
   "devDependencies": {
     "saucectl": "^0.195.0",
-    "testcafe": "^1.18.4"
+    "testcafe": "^3.0.0"
   }
 }
