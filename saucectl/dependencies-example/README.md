@@ -97,7 +97,7 @@ Opening Cypress...
   1) Axe Login test
        should be able to test loading of login page:
      AssertionError: 6 accessibility violations were detected: expected 6 to equal 0
-      at Context.eval (https://www.saucedemo.com/__cypress/tests?p=cypress/support/index.js:37605:20)
+      at Context.eval (https://www.saucedemo.com/__cypress/tests?p=cypress/support/e2e.js:37605:20)
 
 
 
