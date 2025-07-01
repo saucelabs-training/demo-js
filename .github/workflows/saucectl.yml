@@ -26,8 +26,6 @@ jobs:
         include:
           - directory: 'cypress-js'
             variant: 'test.sauce.ex1.us'
-          - directory: 'dependencies-example'
-            variant: 'test.sauce.us'
           - directory: 'playwright'
             variant: 'test.sauce.ex1.us'
           - directory: 'testcafe'
