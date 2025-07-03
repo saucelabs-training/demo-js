@@ -16,6 +16,7 @@ createTestCafe('localhost', 1337, 1338)
                 takeOnFails: true,
             })
             .concurrency(4)
+            .reporter('spec')
             .run();
     })
     .then(failedCount => {

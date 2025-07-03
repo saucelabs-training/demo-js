@@ -13,9 +13,8 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/eslint-parser": "^7.11.0",
-    "eslint": "^8.6.0",
+    "eslint": "^9.0.0",
     "eslint-plugin-import": "^2.25.4",
-    "nightwatch": "^1.7.13",
-    "saucelabs": "^7.1.3"
+    "nightwatch": "^3.0.0"
   }
 }

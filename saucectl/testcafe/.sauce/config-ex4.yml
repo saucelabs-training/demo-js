@@ -6,7 +6,6 @@ sauce:
   region: eu-central-1 # or us-west-1
   concurrency: 10 # Controls how many suites are executed at the same time.
   metadata:
-    name: TestCafe on iOS Simulators with SauceCTL
     tags:
       - testcafe
       - ios simulators
@@ -14,7 +13,7 @@ sauce:
 
 # Testcafe specific info
 testcafe:
-  version: 1.18.3
+  version: 3.7.2
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 
