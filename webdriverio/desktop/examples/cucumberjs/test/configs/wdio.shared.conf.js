@@ -31,6 +31,17 @@ exports.config = {
   // A timeout of 3 min
   connectionRetryTimeout: 3 * 60 * 1000,
   connectionRetryCount: 3,
+
+  // ===================
+  // Retry Configuration
+  // ===================
+  // Retry failed tests up to 2 times
+  specFileRetries: 2,
+  // Retry failed tests immediately (no delay)
+  specFileRetriesDelay: 0,
+  // Only retry tests that failed due to issues in your test code
+  specFileRetriesDeferred: false,
+
   framework: 'cucumber',
   // Added the `cucumberjs-json`, see
   // https://github.com/wswebcreation/wdio-cucumberjs-json-reporter
