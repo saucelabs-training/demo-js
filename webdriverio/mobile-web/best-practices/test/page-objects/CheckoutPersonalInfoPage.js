@@ -1,6 +1,5 @@
 import BasePage from './BasePage';
 import {DEFAULT_TIMEOUT} from '../configs/e2eConstants';
-import {triggerOnChange} from "../helpers";
 
 const SCREEN_SELECTOR = '#checkout_info_container';
 
