@@ -1,10 +1,12 @@
+import type { Options } from '@wdio/types';
+
 /**
  * This file holds all the shared config options
  * The rest of the files will extend options
  * More information about the config can be found
  * here https://webdriver.io/docs/configurationfile.html
  */
-export const config: WebdriverIO.Config = {
+export const config: Options.Testrunner = {
   // ====================
   // Runner Configuration
   // ====================
@@ -12,7 +14,7 @@ export const config: WebdriverIO.Config = {
   // ==================
   // Specify Test Files
   // ==================
-  specs: ['./test/specs/**/*.ts'],
+  specs: ['../../test/specs/**/*.ts'],
   // ============
   // Capabilities
   // ============

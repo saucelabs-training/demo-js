@@ -1,4 +1,6 @@
-export interface MobileConfig extends WebdriverIO.Config {
+import type { Options } from '@wdio/types';
+
+export interface MobileConfig extends Options.Testrunner {
   firstAppStart: boolean;
 }
 
@@ -7,7 +9,7 @@ export const config: MobileConfig = {
   // Specify Test Files
   // ==================
   //
-  specs: ['./test/specs/*.spec.ts'],
+  specs: ['../../test/specs/*.spec.ts'],
 
   // ============
   // Capabilities
