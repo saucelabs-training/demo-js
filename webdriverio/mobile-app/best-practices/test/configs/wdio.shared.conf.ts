@@ -1,10 +1,6 @@
 import type { Options } from '@wdio/types';
 
-export interface MobileConfig extends Options.Testrunner {
-  firstAppStart: boolean;
-}
-
-export const config: Options.Testrunner & { firstAppStart: boolean } = {
+export const config: Options.Testrunner = {
   // ==================
   // Specify Test Files
   // ==================
@@ -64,4 +60,4 @@ export const config: Options.Testrunner & { firstAppStart: boolean } = {
   // Hooks
   // =====
   //
-} as MobileConfig;
+} as Options.Testrunner & { firstAppStart: boolean };
