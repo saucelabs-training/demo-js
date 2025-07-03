@@ -26,7 +26,8 @@ const locatorStrategy = (selector: string): string => {
   return driver.isIOS ? `id=${selector}` : `//*[@content-desc="${selector}"]`;
 };
 const restartApp = async (): Promise<void> => {
-  if (!(driver.config as MobileConfig).firstAppStart) {
+  const config = driver.config as MobileConfig;
+  if (!config || config.firstAppStart !== false) {
     // Use clearApp to reset app data, then activate
     if (driver.isIOS) {
       try {
@@ -52,8 +53,10 @@ const restartApp = async (): Promise<void> => {
     }
   }
 
-  // Set the firstAppstart to false to say that the following test can be reset
-  (driver.config as MobileConfig).firstAppStart = false;
+  // Mark that we've completed the first app start
+  if (config) {
+    config.firstAppStart = false;
+  }
 
   if (driver.isIOS) {
     // Open menu to reset the app state

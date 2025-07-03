@@ -20,10 +20,24 @@ module.exports = {
         },
         // Our Sauce Labs object
         sauceLabs: {
-            selenium_host: `ondemand.${process.env.REGION === 'eu' ? 'eu-central-1' : 'us-west-1'}.saucelabs.com`,
-            selenium_port: 443,
-            username: process.env.SAUCE_USERNAME,
-            access_key: process.env.SAUCE_ACCESS_KEY,
+            selenium: {
+                host: `ondemand.${process.env.REGION === 'eu' ? 'eu-central-1' : 'us-west-1'}.saucelabs.com`,
+                port: 443,
+            },
+            desiredCapabilities: {
+                'sauce:options': {
+                    userName: process.env.SAUCE_USERNAME,
+                    accessKey: process.env.SAUCE_ACCESS_KEY,
+                    build: build,
+                },
+            },
+            webdriver: {
+                timeout_options: {
+                    timeout: 90000,
+                    retry_attempts: 3
+                },
+                start_process: false
+            }
         },
         // Sauce Labs capabilities
         androidChrome: {
@@ -31,21 +45,14 @@ module.exports = {
             desiredCapabilities: {
                 browserName: 'chrome',
                 platformName: 'Android',
-                deviceName: 'Samsung Galaxy S[12789]?.*',
-                automationName: 'UiAutomator2',
-                phoneOnly: true,
-                build,
-                // Some default settings
-                // You can find more info in the TO Appium Basic Setup section
-                idleTimeout: 180,
-                cacheId: '1234klq1',
-                noReset: true,
-                orientation: 'PORTRAIT',
-                newCommandTimeout: 180,
-                // Always default the language to a language you prefer so you know the app language is always as expected
-                language: 'en',
-                locale: 'en',
-                autoAcceptAlerts: true,
+                'appium:options': {
+                    deviceName: 'Samsung Galaxy S[12789]?.*',
+                    automationName: 'UiAutomator2',
+                    newCommandTimeout: 180,
+                    language: 'en',
+                    locale: 'en',
+                    autoAcceptAlerts: true,
+                },
             },
         },
         iosSafari: {
@@ -53,19 +60,15 @@ module.exports = {
             desiredCapabilities: {
                 browserName: 'safari',
                 platformName: 'iOS',
-                deviceName: 'iPhone [12678X]?.*',
-                automationName: 'XCUITEST',
-                build,
-                // Some default settings
-                // You can find more info in the TO Appium Basic Setup section
-                idleTimeout: 180,
-                cacheId: '1234klq2',
-                noReset: true,
-                orientation: 'PORTRAIT',
-                newCommandTimeout: 180,
-                // Always default the language to a language you prefer so you know the app language is always as expected
-                language: 'en',
-                locale: 'en',
+                'safari:deviceUDID': process.env.RDC_DEVICE_ID || '00008030-00024C2C3453402E',
+                'appium:options': {
+                    browserName: 'safari',
+                    deviceName: 'iPhone .*',
+                    automationName: 'XCUITest',
+                    newCommandTimeout: 180,
+                    language: 'en',
+                    locale: 'en',
+                },
             },
         },
     },

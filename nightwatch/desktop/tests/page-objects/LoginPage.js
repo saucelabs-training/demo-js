@@ -46,7 +46,7 @@ const loginCommands = {
      */
     containsErrorMessage: function (errorMessage) {
         return this.waitForElementVisible('@errorMessage', DEFAULT_TIMEOUT)
-            .assert.containsText('@errorMessage', errorMessage);
+            .assert.textContains('@errorMessage', errorMessage);
     },
 };
 

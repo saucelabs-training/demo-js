@@ -35,6 +35,9 @@ config.capabilities = [
         '--disable-infobars',
         '--disable-features=SafeBrowsing,PasswordLeakToggleMove',
       ],
+      prefs: {
+        'profile.password_manager_leak_detection': false,
+      }
     },
     'sauce:options': {
       ...defaultBrowserSauceOptions,
@@ -77,6 +80,9 @@ if (process.env.GITPOD_WORKSPACE_ID) {
         '--disable-infobars',
         '--disable-features=SafeBrowsing,PasswordLeakToggleMove',
       ],
+      prefs: {
+        'profile.password_manager_leak_detection': false,
+      }
     },
     'sauce:options': {
       build: process.env.BUILD || 'Gitpod build',

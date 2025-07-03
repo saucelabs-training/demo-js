@@ -32,6 +32,9 @@ config.capabilities = [
         '--disable-infobars',
         '--disable-features=SafeBrowsing,PasswordLeakToggleMove',
       ],
+      prefs: {
+        'profile.password_manager_leak_detection': false,
+      }
     },
     // All vendor specific, in this case Sauce specific capabilities, should be
     // put in vendor prefixed options, see

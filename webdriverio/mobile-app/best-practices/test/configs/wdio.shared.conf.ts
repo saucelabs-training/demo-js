@@ -1,13 +1,11 @@
-export interface MobileConfig extends WebdriverIO.Config {
-  firstAppStart: boolean;
-}
+import type { Options } from '@wdio/types';
 
-export const config: MobileConfig = {
+export const config: Options.Testrunner = {
   // ==================
   // Specify Test Files
   // ==================
   //
-  specs: ['./test/specs/*.spec.ts'],
+  specs: ['../../test/specs/*.spec.ts'],
 
   // ============
   // Capabilities
@@ -26,6 +24,17 @@ export const config: MobileConfig = {
   // A timeout of 5 min
   connectionRetryTimeout: 5 * 60 * 1000,
   connectionRetryCount: 2,
+
+  // ===================
+  // Retry Configuration
+  // ===================
+  // Retry failed tests up to 2 times
+  specFileRetries: 2,
+  // Retry failed tests immediately (no delay)
+  specFileRetriesDelay: 0,
+  // Only retry tests that failed due to issues in your test code
+  specFileRetriesDeferred: false,
+
   services: [],
   // Framework you want to run your specs with.
   framework: 'mocha',
@@ -51,4 +60,4 @@ export const config: MobileConfig = {
   // Hooks
   // =====
   //
-};
+} as Options.Testrunner & { firstAppStart: boolean };

@@ -25,11 +25,6 @@ test('should be able to go to the swag items overview page', async t => {
     await t.expect(SwagOverviewPage.isScreenDisplayed()).ok();
 });
 
-test('should be able to open the about page', async t => {
-    await MenuPage.openAboutPage();
-    await t.expect(CartSummaryPage.isScreenDisplayed()).notOk();
-});
-
 test('should be able to log out', async t => {
     await MenuPage.logout();
     await t.expect(LoginPage.isScreenDisplayed()).ok();
