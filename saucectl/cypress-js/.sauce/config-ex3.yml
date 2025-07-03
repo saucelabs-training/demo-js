@@ -1,4 +1,4 @@
-apiVersion: v1alpha
+apiVersion: v1
 kind: cypress
 sauce:
   region: eu-central-1 # or us-west-1
@@ -11,7 +11,7 @@ sauce:
     build: "config-ex3 $CURRENT_TIME"
 cypress:
   version: package.json
-  configFile: "cypress.json" # We determine related files based on the location of the config file.
+  configFile: "cypress.config.js" # We determine related files based on the location of the config file.
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 suites:
@@ -22,7 +22,7 @@ suites:
     screenResolution: "1400x1050"
     shard: spec
     config:
-      testFiles: ["**/login.*", "**/checkout.*"]
+      specPattern: ["**/login.*", "**/checkout.*"]
   # Firefox
   - name: "Swag Labs Shard Tests Firefox"
     browser: "firefox"
