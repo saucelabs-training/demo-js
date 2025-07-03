@@ -23,6 +23,15 @@ describe('Menu', () => {
         await expect(await SwagOverviewPage.waitForIsShown()).toBeTruthy();
     });
 
+    // Don't execute this test on the EU DC, the saucelabs.com url is not working there making this test fail
+    if(!process.env.REGION) {
+        it('should be able to open the about page', async () => {
+            await MenuPage.openAboutPage();
+
+            await expect(await CartSummaryPage.waitForIsShown(false)).toBeTruthy();
+        });
+    }
+
     it('should be able to log out', async () => {
         await MenuPage.logout();
 
