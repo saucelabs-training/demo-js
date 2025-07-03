@@ -4,7 +4,7 @@ export interface MobileConfig extends Options.Testrunner {
   firstAppStart: boolean;
 }
 
-export const config: MobileConfig = {
+export const config: Options.Testrunner & { firstAppStart: boolean } = {
   // ==================
   // Specify Test Files
   // ==================
@@ -28,6 +28,17 @@ export const config: MobileConfig = {
   // A timeout of 5 min
   connectionRetryTimeout: 5 * 60 * 1000,
   connectionRetryCount: 2,
+
+  // ===================
+  // Retry Configuration
+  // ===================
+  // Retry failed tests up to 2 times
+  specFileRetries: 2,
+  // Retry failed tests immediately (no delay)
+  specFileRetriesDelay: 0,
+  // Only retry tests that failed due to issues in your test code
+  specFileRetriesDeferred: false,
+
   services: [],
   // Framework you want to run your specs with.
   framework: 'mocha',
@@ -53,4 +64,4 @@ export const config: MobileConfig = {
   // Hooks
   // =====
   //
-};
+} as MobileConfig;
