@@ -16,6 +16,6 @@
     "eslint": "^9.0.0",
     "eslint-plugin-import": "^2.25.4",
     "nightwatch": "^3.0.0",
-    "saucelabs": "^7.1.3"
+    "saucelabs": "^9.0.0"
   }
 }
