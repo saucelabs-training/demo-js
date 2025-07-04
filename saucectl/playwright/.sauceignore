@@ -12,4 +12,4 @@
 *.gif
 # Remove this to have node_modules uploaded with code
 node_modules/
-package-lock.json
+artifacts/
