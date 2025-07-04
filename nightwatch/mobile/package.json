@@ -1,0 +1,22 @@
+{
+  "name": "nightwatch-mobile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test.saucelabs.android.eu": "REGION=eu DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env androidChrome",
+    "test.saucelabs.android.us": "DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env androidChrome",
+    "test.saucelabs.ios.eu": "REGION=eu DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env iosSafari",
+    "test.saucelabs.ios.us": "DATE=\"$(date)\" nightwatch --config tests/configs/nightwatch.conf.js --env iosSafari",
+    "lint": "eslint ../.. --ext .js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.11.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "nightwatch": "^3.0.0"
+  }
+}

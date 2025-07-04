@@ -1,0 +1,116 @@
+name: WebdriverIO Tests
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/webdriverio/**'
+  pull_request:
+    paths:
+      - '**/webdriverio/**'
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+env:
+  SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+  SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+
+jobs:
+  desktop:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        directory: [
+          'best-practices',
+          'examples/w3c',
+          'examples/deque',
+          'examples/cucumberjs',
+          'examples/typescript',
+          'examples/extended-debugging'
+        ]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+        working-directory: webdriverio/desktop/${{ matrix.directory }}
+      - name: Run WebDriver tests
+        run: npm run test.saucelabs.us
+        working-directory: webdriverio/desktop/${{ matrix.directory }}
+
+  mobile-web:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - directory: 'examples'
+            variant: 'test.saucelabs.us'
+          - directory: 'best-practices'
+            variant: 'test.saucelabs.android.us'
+          - directory: 'best-practices'
+            variant: 'test.saucelabs.ios.us'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+        working-directory: webdriverio/mobile-web/${{ matrix.directory }}
+      - name: Run Appium Web tests
+        run: npm run ${{ matrix.variant }}
+        working-directory: webdriverio/mobile-web/${{ matrix.directory }}
+
+  mobile-app:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - directory: 'best-practices'
+            variant: 'test.saucelabs.android.emu.us'
+          - directory: 'best-practices'
+            variant: 'test.saucelabs.ios.sim.us'
+          - directory: 'best-practices'
+            variant: 'test.saucelabs.android.rdc.us'
+          - directory: 'best-practices'
+            variant: 'test.saucelabs.ios.rdc.us'
+          - directory: 'examples/up-download-file'
+            variant: 'test.sauce.android.emulator.us'
+          - directory: 'examples/up-download-file'
+            variant: 'test.sauce.ios.simulator.us'
+          - directory: 'examples/simple-example'
+            variant: 'test.saucelabs.android.emu.us'
+          - directory: 'examples/simple-example'
+            variant: 'test.saucelabs.ios.sim.us'
+          - directory: 'examples/appium-flutter-integration'
+            variant: 'android.flutter.sauce.rdc.app.us'
+          - directory: 'examples/appium-flutter-integration'
+            variant: 'ios.flutter.sauce.rdc.app.us'
+          - directory: 'examples/appium-flutter'
+            variant: 'test.sauce.real.android.us'
+          - directory: 'examples/appium-flutter'
+            variant: 'test.sauce.real.ios.us'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+        working-directory: webdriverio/mobile-app/${{ matrix.directory }}
+      - name: Run Appium App tests
+        run: npm run ${{ matrix.variant }}
+        working-directory: webdriverio/mobile-app/${{ matrix.directory }}

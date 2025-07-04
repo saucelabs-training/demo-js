@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/saucelabs-training/demo-js#readme",
   "devDependencies": {
-    "@playwright/test": "1.49.0",
-    "saucectl": "^0.186.4"
+    "@playwright/test": "1.52.0",
+    "saucectl": "^0.195.0"
   },
   "dependencies": {
     "@saucelabs/playwright-reporter": "^1.5.0"

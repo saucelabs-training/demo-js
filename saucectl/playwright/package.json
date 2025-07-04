@@ -1,0 +1,27 @@
+{
+  "name": "jest-playwright-examples",
+  "version": "1.0.0",
+  "description": "This folder contains a simple set up for Jest and Playwright.",
+  "main": "index.js",
+  "scripts": {
+    "test.local": "npx playwright test --browser chromium --reporter list",
+    "test.local.headful": "npm run test.local -- --headed",
+    "test.sauce.ex1.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml",
+    "test.sauce.ex1.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex1.yml --region us-west-1",
+    "test.sauce.ex2.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex2.yml",
+    "test.sauce.ex2.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex2.yml --region us-west-1",
+    "test.sauce.ex3.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex3.yml",
+    "test.sauce.ex3.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex3.yml --region us-west-1",
+    "test.sauce.ex4.init.eu": "npx saucectl init playwright --version \"1.52.0\" --region \"eu-central-1\" --platform \"Windows 10\" --browser \"chromium\" --test-match \"specs/cart.summary.spec.js,specs/menu.spec.js\" --artifacts-when \"always\" --no-prompt\n",
+    "test.sauce.ex4.init.us": "npx saucectl init playwright --version \"1.52.0\" --region \"us-west-1\" --platform \"Windows 10\" --browser \"chromium\" --test-match \"specs/cart.summary.spec.js,specs/menu.spec.js\" --artifacts-when \"always\" --no-prompt\n",
+    "test.sauce.ex4": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config.yml"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "1.52.0",
+    "playwright": "1.52.0",
+    "saucectl": "^0.195.0"
+  }
+}

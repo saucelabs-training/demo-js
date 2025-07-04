@@ -1,0 +1,46 @@
+name: SauceCTL Tests
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/saucectl/**'
+  pull_request:
+    paths:
+      - '**/saucectl/**'
+  schedule:
+    - cron: '30 1 * * *'
+  workflow_dispatch:
+
+env:
+  SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+  SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - directory: 'cypress-js'
+            variant: 'test.sauce.ex1.us'
+          - directory: 'playwright'
+            variant: 'test.sauce.ex1.us'
+          - directory: 'testcafe'
+            variant: 'test.sauce.ex1.us'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+        working-directory: saucectl/${{ matrix.directory }}
+      - name: Run Appium Web tests
+        run: npm run ${{ matrix.variant }}
+        working-directory: saucectl/${{ matrix.directory }}
+

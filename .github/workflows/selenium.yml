@@ -1,0 +1,35 @@
+name: Selenium Tests
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/selenium/**'
+  pull_request:
+    paths:
+      - '**/selenium/**'
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+env:
+  SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+  SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+
+jobs:
+  simple-safari:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+        working-directory: selenium/test
+      - name: Run Safari tests
+        run: npm run test.safari.us
+        working-directory: selenium/test

@@ -1,0 +1,67 @@
+name: Nightwatch Tests
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/nightwatch/**'
+  pull_request:
+    paths:
+      - '**/nightwatch/**'
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+env:
+  SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+  SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+
+jobs:
+  desktop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+        working-directory: nightwatch/desktop
+      - name: Run WebDriver tests
+        run: npm run test.saucelabs.us
+        working-directory: nightwatch/desktop
+
+  mobile-ios:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+        working-directory: nightwatch/mobile
+      - name: Run Appium Web tests
+        run: npm run test.saucelabs.ios.us
+        working-directory: nightwatch/mobile
+
+  mobile-android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+        working-directory: nightwatch/mobile
+      - name: Run Appium Web tests
+        run: npm run test.saucelabs.android.us
+        working-directory: nightwatch/mobile

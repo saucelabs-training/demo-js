@@ -4,15 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test.safari.us": "npx mocha test/**/simple.safari.spec.js"
+    "test.safari.us": "npx mocha test/simple.safari.spec.js --timeout 90000"
   },
   "keywords": [],
-  "author": "Nikolay Advolodkin - https://github.com/nadvolod",
   "license": "ISC",
   "devDependencies": {
     "assert": "^2.0.0",
-    "eslint": "^8.22.0",
-    "mocha": "^10.0.0",
+    "eslint": "^9.0.0",
+    "mocha": "^11.0.0",
     "selenium-webdriver": "^4.4.0"
   }
 }

@@ -1,0 +1,54 @@
+apiVersion: v1alpha
+kind: playwright
+showConsoleLog: false
+
+# Sauce Labs specific information
+sauce:
+    region: eu-central-1 # or us-west-1
+    concurrency: 10 # Controls how many suites are executed at the same time.
+    metadata:
+        tags:
+            - playwright
+            - Parallel
+        build: 'Playwright: Parallel test set - $DATE'
+    sauceignore: .sauceignore
+
+# Playwright specific information
+playwright:
+    version: package.json
+# Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
+rootDir: .
+
+suites:
+    - name: 'Swag Labs Login'
+      platformName: Windows 10
+      params:
+          browserName: chromium
+      testMatch: ['.*/login.*']
+    - name: 'Swag Labs Swag Items'
+      platformName: Windows 10
+      params:
+          browserName: chromium
+      testMatch: ['.*/swag.item.*']
+    - name: 'Swag Labs Checkout'
+      platformName: Windows 10
+      params:
+          browserName: chromium
+      testMatch: ['.*/checkout.*']
+    - name: 'Swag Labs Cart'
+      platformName: Windows 10
+      params:
+          browserName: chromium
+      testMatch: ['.*/cart.*']
+    - name: 'Swag Labs Menu'
+      platformName: Windows 10
+      params:
+          browserName: chromium
+      testMatch: ['.*/menu.*']
+
+artifacts:
+    download:
+        match:
+            - '*'
+        when: always
+        directory: ./artifacts

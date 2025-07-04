@@ -1,0 +1,35 @@
+name: Gitpod Tests
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/gitpod/**'
+  pull_request:
+    paths:
+      - '**/gitpod/**'
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+env:
+  SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+  SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+        working-directory: gitpod/test/specs
+      - name: Run tests
+        run: npm test
+        working-directory: gitpod/test/specs
