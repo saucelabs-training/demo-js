@@ -28,6 +28,8 @@ const config = {
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
+  /* Allow CI to run in parallel */
+  workers: process.env.CI ? 6 : undefined,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -40,12 +42,17 @@ const config = {
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     screenshot: 'on',
+    video: 'on',
   },
 
   /* Use Playwright reporter when not executing with saucectl */
   reporter: isRunningInSauceLabs
       ? [['html', { open: 'never', outputFolder: '__assets__/html-report/', attachmentsBaseURL: './'}]]
-      : [['@saucelabs/playwright-reporter'], ['list']],
+      : [['@saucelabs/playwright-reporter', {
+        mergeVideos: true,
+        upload: true,
+        outputFile: 'sauce-report.json',
+      }], ['list']],
 
   projects: [
     {
