@@ -43,6 +43,9 @@ module.exports = {
                         '--disable-infobars',
                         '--disable-features=SafeBrowsing,PasswordLeakToggleMove',
                     ],
+                    prefs: {
+                        'profile.password_manager_leak_detection': false,
+                    },
                 },
             },
         },
