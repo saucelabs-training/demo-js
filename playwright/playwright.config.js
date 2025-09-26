@@ -8,6 +8,7 @@ const { devices } = require('@playwright/test');
 // require('dotenv').config();
 
 const isRunningInSauceLabs = process.env.SAUCE_VM;
+const selectedProject = process.env.PLAYWRIGHT_PROJECT;
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -42,10 +43,13 @@ const config = {
     screenshot: 'on',
   },
 
-  /* Use Playwright reporter when not executing with saucectl */
-  reporter: isRunningInSauceLabs
+  /* Use Playwright reporter when not executing with saucectl or only Playwright */
+  reporter:
+    isRunningInSauceLabs
       ? [['html', { open: 'never', outputFolder: '__assets__/html-report/', attachmentsBaseURL: './'}]]
-      : [['@saucelabs/playwright-reporter'], ['list']],
+      : selectedProject === 'local'
+        ? [['html', { open: 'always' }]]
+        : [['@saucelabs/playwright-reporter'], ['list']],
 
   projects: [
     {
@@ -62,7 +66,13 @@ const config = {
       use: {
         ...devices['Desktop Chrome'],
       },
-    }
+    },
+    {
+      name: 'local',
+      use: {
+        ...devices['Desktop Chrome'],
+      },
+    },    
   ]
 };
 
