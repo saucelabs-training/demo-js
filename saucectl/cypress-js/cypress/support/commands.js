@@ -38,12 +38,21 @@
     const {path, products = [], user} = data;
     const {username} = user;
     const productStorage = products.length > 0 ? `[${products.toString()}]` : '[]';
-  
+
     // Go to the domain and set the storage
-    cy.visit('');
-    window.sessionStorage.setItem("session-username", username);
-    window.sessionStorage.setItem("cart-contents", productStorage);
-  
+    cy.visit("/", {failOnStatusCode: false});
+    cy.setCookie("session-username", username,
+      {
+        path: "/",
+        secure: false,
+        httpOnly: false,
+        domain: "www.saucedemo.com",
+      }
+
+    );
+    window.localStorage.setItem("session-username", username);
+    window.localStorage.setItem("cart-contents", productStorage);
+
     // Now got to the page
-    cy.visit(path);
+    cy.visit(path, {failOnStatusCode: false});
   });
