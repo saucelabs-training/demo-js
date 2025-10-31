@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "open": "npx cypress open",
-    "test.local": "npx cypress run",
-    "test.local.headfull": "npx cypress run --headed",
+    "open": "npx cypress open --config specPattern=[\"**/*.spec.js\"]",
+    "test.local": "npx cypress run --config specPattern=[\"**/*.spec.js\"]",
+    "test.local.headfull": "npx cypress run --headed --config specPattern=[\"**/*.spec.js\"]",
     "test.sauce.ex1.eu": "CURRENT_TIME=$(date +%s) saucectl run -c ./.sauce/config-ex1.yml ",
     "test.sauce.ex1.us": "CURRENT_TIME=$(date +%s) saucectl run -c ./.sauce/config-ex1.yml --region us-west-1",
     "test.sauce.ex2.us": "CURRENT_TIME=$(date +%s) saucectl run --region us-west-1 --ccy 25 -c ./.sauce/config-ex2.yml",
@@ -17,7 +17,7 @@
     "test.sauce.ex4.eu": "CURRENT_TIME=$(date +%s) saucectl run --ccy 5 -c ./.sauce/config-ex4.yml",
     "test.sauce.ex5.us": "CURRENT_TIME=$(date +%s) saucectl run --region us-west-1 -c ./.sauce/config-ex5.yml",
     "test.sauce.ex5.eu": "CURRENT_TIME=$(date +%s) saucectl run -c ./.sauce/config-ex5.yml"
- 
+
   },
   "keywords": [],
   "author": "",

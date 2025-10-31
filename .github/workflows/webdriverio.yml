@@ -29,11 +29,10 @@ jobs:
           'examples/deque',
           'examples/cucumberjs',
           'examples/typescript',
-          'examples/extended-debugging'
         ]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -59,7 +58,7 @@ jobs:
             variant: 'test.saucelabs.ios.us'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -103,7 +102,7 @@ jobs:
             variant: 'test.sauce.real.ios.us'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:

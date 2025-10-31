@@ -6,9 +6,8 @@ describe('Swag Item Details', () => {
   it('should validate that we can go back from the details to the inventory page', () => {
     cy.setTestContext({
       user: LOGIN_USERS.STANDARD,
-      path: PAGES.SWAG_ITEMS,
+      path: `${PAGES.SWAG_DETAILS}?id=${PRODUCTS.BACKPACK}`,
     });
-    cy.visit(`${PAGES.SWAG_DETAILS}?id=${PRODUCTS.BACKPACK}`);
 
     // Actual test starts here
     SwagDetailsPage.screen.should('be.visible');
@@ -19,9 +18,8 @@ describe('Swag Item Details', () => {
   it('should validate that a product can be added to a cart', () => {
     cy.setTestContext({
       user: LOGIN_USERS.STANDARD,
-      path: PAGES.SWAG_ITEMS,
+      path: `${PAGES.SWAG_DETAILS}?id=${PRODUCTS.BACKPACK}`,
     });
-    cy.visit(`${PAGES.SWAG_DETAILS}?id=${PRODUCTS.BACKPACK}`);
     SwagDetailsPage.screen.should('be.visible');
 
     // Actual test starts here
@@ -33,10 +31,9 @@ describe('Swag Item Details', () => {
   it('should validate that a product can be removed from the cart', () => {
     cy.setTestContext({
       user: LOGIN_USERS.STANDARD,
-      path: PAGES.SWAG_ITEMS,
+      path: `${PAGES.SWAG_DETAILS}?id=${PRODUCTS.BACKPACK}`,
       products: [PRODUCTS.BACKPACK],
     });
-    cy.visit(`${PAGES.SWAG_DETAILS}?id=${PRODUCTS.BACKPACK}`);
     SwagDetailsPage.screen.should('be.visible');
 
     // Actual test starts here
