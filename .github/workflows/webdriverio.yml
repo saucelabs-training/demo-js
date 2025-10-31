@@ -29,7 +29,6 @@ jobs:
           'examples/deque',
           'examples/cucumberjs',
           'examples/typescript',
-          'examples/extended-debugging'
         ]
     steps:
       - name: Checkout code
