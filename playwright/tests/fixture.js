@@ -4,7 +4,6 @@ const SAUCE_USERNAME = process.env.SAUCE_USERNAME;
 const SAUCE_ACCESS_KEY = process.env.SAUCE_ACCESS_KEY;
 const SAUCE_URL = 'https://ondemand.us-west-1.saucelabs.com/wd/hub/';
 const SAUCE_BUILD_NAME = process.env.SAUCE_BUILD_NAME || 'Local Playwright Grid' + Date.now();
-const START_TIME = Date.now();
 
 const test = base.extend({
     page: async ({page}, use, testInfo) => {
