@@ -54,7 +54,8 @@ async function remoteSetup(testName) {
     process.env.SAUCE_SESSION_ID = sessionId;
 
     const browserInstance = await chromium.connectOverCDP(cdpEndpoint);
-    const context = await browserInstance.newContext();
+    const browserContextOptions = { deviceScaleFactor: undefined, viewport: null };
+    const context = await browserInstance.newContext(browserContextOptions);
 
     return await context.newPage();
 }
