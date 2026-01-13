@@ -21,7 +21,7 @@ rootDir: ./
 suites:
   - name: "Testcafe - Parallel - Swag Labs Login - Chrome"
     browserName: chrome
-    platformName: "Windows 10"
+    platformName: "Windows 11"
     # Available resolutions on Windows:
     # - '800x600'
     # - '1024x768'
@@ -38,20 +38,23 @@ suites:
     # - '1920x1200'
     # - '2560x1600'
     screenResolution: "1600x1200"
+    browserArgs: ["--disable-features=MediaRouter", "--disable-web-security"]
     src:
       # test files glob
       - "**/login.*"
   - name: "Testcafe - Parallel - Swag Labs Checkout - Chrome"
     browserName: chrome
-    platformName: "Windows 10"
+    platformName: "Windows 11"
     screenResolution: "1600x1200"
+    browserArgs: ["--disable-features=MediaRouter", "--disable-web-security"]
     src:
       # test files glob
       - "**/checkout.*"
   - name: "Testcafe - Parallel - Swag Labs Rest - Chrome"
     browserName: chrome
-    platformName: "Windows 10"
+    platformName: "Windows 11"
     screenResolution: "1600x1200"
+    browserArgs: ["--disable-features=MediaRouter", "--disable-web-security"]
     src:
       # test files glob
       - "**/cart.spec.js"
