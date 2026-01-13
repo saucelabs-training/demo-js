@@ -38,7 +38,7 @@ suites:
     # - '1920x1200'
     # - '2560x1600'
     screenResolution: "1600x1200"
-    browserArgs: ["--disable-features=MediaRouter", "--disable-web-security"]
+    browserArgs: ["--guest", "--disable-web-security"]
     src:
       # test files glob
       - "tests/**/*.spec.js"
