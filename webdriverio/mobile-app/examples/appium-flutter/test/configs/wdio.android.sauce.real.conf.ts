@@ -28,7 +28,7 @@ config.capabilities = [
     'sauce:options': {
       // @ts-ignore
       // Flutter 3 apps can only be automated with Appium 2
-      appiumVersion: '2.0.0',
+      appiumVersion: 'latest',
       name: 'Appium 2 - Flutter - Android',
     },
   },
