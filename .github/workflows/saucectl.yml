@@ -40,7 +40,7 @@ jobs:
       - name: Install dependencies
         run: npm install
         working-directory: saucectl/${{ matrix.directory }}
-      - name: Run Appium Web tests
+      - name: Run SauceCTL ${{ matrix.directory }} tests
         run: npm run ${{ matrix.variant }}
         working-directory: saucectl/${{ matrix.directory }}
 
