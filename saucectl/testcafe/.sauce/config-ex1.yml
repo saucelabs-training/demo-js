@@ -39,6 +39,7 @@ suites:
     # - '2560x1600'
     screenResolution: "1600x1200"
     browserArgs: ["--guest", "--disable-web-security"]
+    shard: spec
     src:
       # test files glob
       - "tests/**/*.spec.js"
