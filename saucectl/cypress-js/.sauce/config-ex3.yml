@@ -30,12 +30,12 @@ suites:
     screenResolution: "1400x1050"
     shard: spec
     config:
-      testFiles: ["**/login.*", "**/checkout.*"]
+      specPattern: ["**/login.*", "**/checkout.*"]
   # MicrosoftEdge
   - name: "Swag Labs Shard Tests MicrosoftEdge"
     browser: "microsoftedge"
-    platformName: "Windows 10"
+    platformName: "Windows 11"
     screenResolution: "1400x1050"
     shard: spec
     config:
-      testFiles: ["**/login.*", "**/checkout.*"]
+      specPattern: ["**/login.*", "**/checkout.*"]
