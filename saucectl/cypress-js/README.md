@@ -9,8 +9,8 @@
 
 ## Introduction
 
-This repository will hold multiple examples on how to run Cypress tests locally and with the
-[Sauce Labs Testrunner Toolkit](https://docs.saucelabs.com/testrunner-toolkit/index.html).
+This repository will hold multiple examples on how to run Cypress tests locally and with 
+[saucectl](https://docs.saucelabs.com/web-apps/automated-testing/cypress/).
 
 It is based on the following user journey:
 
@@ -19,10 +19,10 @@ It is based on the following user journey:
 
 ## Prerequisites
 
-- Please check our [documentation](https://docs.saucelabs.com/testrunner-toolkit/installation) for installing SauceCTL
+- Please check our [documentation](https://docs.saucelabs.com/dev/cli/saucectl/) for installing SauceCTL
 - Make sure you've set up your credentials on your local machine and or CI-pipeline, see
-  [this](https://docs.saucelabs.com/testrunner-toolkit/installation#associating-your-sauce-labs-account)-doc
-- Check the [Cypress](https://docs.saucelabs.com/testrunner-toolkit/configuration/cypress/index.html)-docs for all options
+  [this](https://docs.saucelabs.com/dev/cli/saucectl/#associate-your-credentials)-doc
+- Check the [Cypress](https://docs.saucelabs.com/web-apps/automated-testing/cypress/)-docs for all options
 
 ### Install dependencies
 
@@ -32,7 +32,7 @@ You can install all dependencies by running the following command
 
 This will install all needed dependencies that are listed in the `package.json`-file
 
-> NOTE: Make sure you are in the folder `testrunner-toolkit/cypress` when you execute this command
+> NOTE: Make sure you are in the folder `saucectl/cypress` when you execute this command
 
 ### Install `saucectl`
 
@@ -47,10 +47,29 @@ npm install -g saucectl
 More information about Cypress and writing Cypress tests can be found
 [here](https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell)
 
-## Sauce Labs Testrunner Toolkit info
+### Microsoft Edge on Windows — `--no-sandbox` flag
 
-More information about the Sauce Labs Testrunner Toolkit can be found
-[here](https://docs.saucelabs.com/testrunner-toolkit/index.html)
+The [`cypress.config.js`](./cypress.config.js) includes a `before:browser:launch` hook that automatically adds the
+`--no-sandbox` flag when running tests on Microsoft Edge:
+
+```javascript
+on('before:browser:launch', (browser, launchOptions) => {
+    if (browser.family === 'chromium' && browser.name === 'edge') {
+        launchOptions.args.push('--no-sandbox')
+    }
+    return launchOptions
+})
+```
+
+> **⚠️ Note:** This flag is required when running Edge on Sauce Labs VMs (Windows), where the sandbox is not
+> available. If you are running these tests locally on Windows with Edge, be aware that this flag is applied
+> automatically. Disabling the sandbox is generally safe in controlled CI/cloud environments, but should be used
+> with caution on local machines due to potential security implications.
+
+## Sauce Labs saucectl info
+
+More information about the saucectl can be found
+[here](https://docs.saucelabs.com/dev/cli/saucectl/)
 
 ## Examples:
 
@@ -79,7 +98,8 @@ splits the tests by using "shard" property with the value "spec" so that they ca
 
 ### Example 3 - Cross Browser tests
 
-[`config-ex3.yml`](./.sauce/config-ex3.yml) run the login and the checkout tests on 3 different types of browsers where saucectl automatically splits the tests by using "shard" property with the value "spec" so that they can easily run in parallel.
+[`config-ex3.yml`](./.sauce/config-ex3.yml) run the login and the checkout tests on 3 different types of browsers where saucectl 
+automatically splits the tests by using "shard" property with the value "spec" so that they can easily run in parallel.
 
 ### Example 4 - Cross Versions tests
 
@@ -89,9 +109,6 @@ Note: The configured concurrency is 5 and the number of specs are 8. Using "shar
 
 ### Example 5 - Using Sauce Connect
 
-[`config-ex5.yml`](./.sauce/config-ex5.yml) Similar to config-ex2 but the web site is local. You can download and run local saucedemo.com web site from [here](https://github.com/saucelabs/sample-app-web. You need to add the tunnel name to the tunnel parameter in the config file
-
-### Example about using extra dependencies
-
-[This folder](../dependencies-example) contains a simple set up for Cypress with a test that uses a dependency. This can
-be executed locally or on Sauce Labs.
+[`config-ex5.yml`](./.sauce/config-ex5.yml) Similar to config-ex2 but the web site is local. You can download and run local saucedemo.com 
+website from [here](https://github.com/saucelabs/sample-app-web. You need to add the tunnel name to the tunnel 
+parameter in the config file
