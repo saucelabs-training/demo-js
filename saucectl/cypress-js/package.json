@@ -16,7 +16,9 @@
     "test.sauce.ex4.us": "CURRENT_TIME=$(date +%s) saucectl run --region us-west-1 --ccy 5 -c ./.sauce/config-ex4.yml",
     "test.sauce.ex4.eu": "CURRENT_TIME=$(date +%s) saucectl run --ccy 5 -c ./.sauce/config-ex4.yml",
     "test.sauce.ex5.us": "CURRENT_TIME=$(date +%s) saucectl run --region us-west-1 -c ./.sauce/config-ex5.yml",
-    "test.sauce.ex5.eu": "CURRENT_TIME=$(date +%s) saucectl run -c ./.sauce/config-ex5.yml"
+    "test.sauce.ex5.eu": "CURRENT_TIME=$(date +%s) saucectl run -c ./.sauce/config-ex5.yml",
+    "test.sauce.ex6.us": "CURRENT_TIME=$(date +%s) saucectl run --region us-west-1 -c ./.sauce/config-ex6.yml",
+    "test.sauce.ex6.eu": "CURRENT_TIME=$(date +%s) saucectl run -c ./.sauce/config-ex6.yml"
 
   },
   "keywords": [],

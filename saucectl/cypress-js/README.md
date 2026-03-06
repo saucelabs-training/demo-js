@@ -47,6 +47,21 @@ npm install -g saucectl
 More information about Cypress and writing Cypress tests can be found
 [here](https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell)
 
+### WebKit support — `experimentalWebKitSupport` flag
+
+If you want to run Cypress tests on **WebKit** (Safari's browser engine), you need to enable the experimental WebKit
+support in your Cypress configuration file:
+
+```javascript
+module.exports = defineConfig({
+    experimentalWebKitSupport: true,
+    // ...
+})
+```
+
+> **⚠️ Note:** This flag is already set in [`cypress.config.js`](./cypress.config.js). Without it, Cypress will not
+> be able to launch or run tests on WebKit. This is required for Example 6, which runs cross-platform tests with WebKit.
+
 ### Microsoft Edge on Windows — `--no-sandbox` flag
 
 The [`cypress.config.js`](./cypress.config.js) includes a `before:browser:launch` hook that automatically adds the
@@ -112,3 +127,7 @@ Note: The configured concurrency is 5 and the number of specs are 8. Using "shar
 [`config-ex5.yml`](./.sauce/config-ex5.yml) Similar to config-ex2 but the web site is local. You can download and run local saucedemo.com 
 website from [here](https://github.com/saucelabs/sample-app-web. You need to add the tunnel name to the tunnel 
 parameter in the config file
+
+### Example 6 - Cross Platform tests with Webkit
+
+[`config-ex3.yml`](./.sauce/config-ex3.yml) similar to config-ext3 but on different platforms and using Webkit.
