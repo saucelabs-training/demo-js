@@ -1,5 +1,12 @@
 import {ClientFunction, t} from 'testcafe';
 
+const setSessionStorage = ClientFunction((sessionUserName, productSessionStorage) => {
+    document.cookie = `session-username=${sessionUserName}; Secure; SameSite=Strict`;
+    localStorage.setItem('cart-contents', productSessionStorage);
+});
+
+const getReadyState = ClientFunction(() => document.readyState);
+
 /**
  * Set the tests context
  *
@@ -16,14 +23,17 @@ import {ClientFunction, t} from 'testcafe';
 export async function setTestContext(data = {}) {
     const {baseUrl, path, products = [], user} = data;
     const {username} = user;
-    const productStorage = products.length > 0 ? `[${products.toString()}]` : '[]';
+    const productStorage = JSON.stringify(products);
 
-    // Go to the domain and set the storage
+    // Go to the domain and wait for page to be ready before mutating storage
     await t.navigateTo(baseUrl);
-    const setSessionStorage = ClientFunction((sessionUserName, productSessionStorage) => {
-        document.cookie=`session-username=${sessionUserName}`;
-        localStorage.setItem('cart-contents', productSessionStorage);
-    });
+    await t.expect(getReadyState()).eql('complete');
+
     await setSessionStorage(username, productStorage);
+
+    // Give the browser/TestCafe runtime a moment to settle after storage mutation
+    await t.wait(500);
+
     await t.navigateTo(`${baseUrl}${path}`);
+    await t.expect(getReadyState()).eql('complete');
 }
