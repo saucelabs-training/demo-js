@@ -44,7 +44,7 @@ config.capabilities = [
       allowTouchIdEnroll: false,
       // @ts-ignore
       sauceLabsImageInjectionEnabled: false,
-      appiumVersion: 'stable',
+      appiumVersion: 'appium3-2026-04',
     },
   },
 ];
