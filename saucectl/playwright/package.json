@@ -22,6 +22,6 @@
   "devDependencies": {
     "@playwright/test": "1.59.1",
     "playwright": "1.59.1",
-    "saucectl": "^0.202.0"
+    "saucectl": "^0.205.0"
   }
 }
