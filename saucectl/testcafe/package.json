@@ -18,7 +18,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "saucectl": "^0.202.0",
+    "saucectl": "^0.205.0",
     "testcafe": "^3.7.2"
   }
 }
