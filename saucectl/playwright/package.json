@@ -20,8 +20,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@playwright/test": "1.59.1",
-    "playwright": "1.59.1",
+    "@playwright/test": "1.60.0",
+    "playwright": "1.60.0",
     "saucectl": "^0.205.0"
   }
 }
