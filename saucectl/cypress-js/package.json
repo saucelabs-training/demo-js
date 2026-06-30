@@ -27,6 +27,6 @@
   "devDependencies": {
     "cypress": "^15.0.0",
     "eslint": "^10.0.0",
-    "saucectl": "^0.209.0"
+    "saucectl": "^0.210.0"
   }
 }
