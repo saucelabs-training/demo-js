@@ -14,8 +14,6 @@ on:
   workflow_dispatch:
 
 env:
-  SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
-  SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
   GITHUB_TOKEN: ${{ github.token }}
 
 jobs:
@@ -34,12 +32,17 @@ jobs:
         with:
           node-version: '24'
       - name: Setup ffmpeg
-        uses: FedericoCarboni/setup-ffmpeg@main
+        uses: FedericoCarboni/setup-ffmpeg@v3
         with:
           ffmpeg-version: release
+        env:
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
       - name: Install dependencies
         working-directory: playwright
         run: npm install
       - name: Run ${{matrix.target}} tests
         working-directory: playwright
         run: npm run test.${{matrix.target}}
+        env:
+          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
