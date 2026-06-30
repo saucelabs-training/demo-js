@@ -9,7 +9,7 @@ sauce:
       - cypress
       - cross-platform
       - webkit
-    build: "config-ex3 $CURRENT_TIME"
+    build: "config-ex6 $CURRENT_TIME"
 cypress:
   version: package.json
   configFile: "cypress.config.js" # We determine related files based on the location of the config file.

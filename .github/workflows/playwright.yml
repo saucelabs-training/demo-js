@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: '24'
       - name: Setup ffmpeg
-        uses: FedericoCarboni/setup-ffmpeg@v3
+        uses: FedericoCarboni/setup-ffmpeg@main
         with:
           ffmpeg-version: release
       - name: Install dependencies
