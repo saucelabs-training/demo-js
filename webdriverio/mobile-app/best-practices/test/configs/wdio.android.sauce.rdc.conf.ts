@@ -57,4 +57,7 @@ config.capabilities = [
 // =============================================
 config.maxInstances = 10;
 
+// Increase the default element wait timeout
+config.waitforTimeout = 30000;
+
 exports.config = config;
