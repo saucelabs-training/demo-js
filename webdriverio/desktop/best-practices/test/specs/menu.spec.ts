@@ -28,7 +28,7 @@ describe('Menu', () => {
         it('should be able to open the about page', async () => {
             await MenuPage.openAboutPage();
 
-            await expect(await CartSummaryPage.waitForIsShown(false)).toBeTruthy();
+            await expect(await browser.getUrl()).toContain('saucelabs.com');
         });
     }
 
