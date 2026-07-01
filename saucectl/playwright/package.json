@@ -14,7 +14,9 @@
     "test.sauce.ex3.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex3.yml --region us-west-1",
     "test.sauce.ex4.init.eu": "npx saucectl init playwright --version \"1.52.0\" --region \"eu-central-1\" --platform \"Windows 10\" --browser \"chromium\" --test-match \"specs/cart.summary.spec.js,specs/menu.spec.js\" --artifacts-when \"always\" --no-prompt\n",
     "test.sauce.ex4.init.us": "npx saucectl init playwright --version \"1.52.0\" --region \"us-west-1\" --platform \"Windows 10\" --browser \"chromium\" --test-match \"specs/cart.summary.spec.js,specs/menu.spec.js\" --artifacts-when \"always\" --no-prompt\n",
-    "test.sauce.ex4": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config.yml"
+    "test.sauce.ex4": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config.yml",
+    "test.sauce.ex5.eu": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex5.yml",
+    "test.sauce.ex5.us": "DATE=\\\"$(date)\\\" npx saucectl run -c ./.sauce/config-ex5.yml --region us-west-1"
   },
   "keywords": [],
   "author": "",
