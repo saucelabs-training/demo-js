@@ -13,7 +13,7 @@ sauce:
 
 # Testcafe specific info
 testcafe:
-  version: 3.7.6
+  version: 3.7.2
 # Controls what files are available in the context of a test run (unless explicitly excluded by .sauceignore).
 rootDir: ./
 
