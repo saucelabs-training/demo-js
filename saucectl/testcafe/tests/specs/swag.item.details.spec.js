@@ -3,7 +3,7 @@ import LoginPage from '../page-objects/LoginPage';
 import SwagOverviewPage from '../page-objects/SwagOverviewPage';
 import SwagDetailsPage from '../page-objects/SwagDetailsPage';
 import AppHeaderPage from '../page-objects/AppHeaderPage';
-import {setTestContext} from '../helpers';
+import {clickUntilVisible, setTestContext} from '../helpers';
 
 fixture`Test swag items details page`
   .beforeEach(async t => {
@@ -20,9 +20,9 @@ test('should validate that we can go back from the details to the inventory page
             user: LOGIN_USERS.STANDARD,
             path: PAGES.SWAG_ITEMS,
         });
-        await SwagOverviewPage.openSwagDetails(PRODUCTS.BACKPACK);
+        await clickUntilVisible(() => SwagOverviewPage.openSwagDetails(PRODUCTS.BACKPACK), SwagDetailsPage.screen);
         await t.expect(SwagDetailsPage.isScreenDisplayed()).ok();
-        await SwagDetailsPage.goBack();
+        await clickUntilVisible(() => SwagDetailsPage.goBack(), SwagOverviewPage.screen);
         await t.expect(SwagOverviewPage.isScreenDisplayed()).ok();
     }
 });

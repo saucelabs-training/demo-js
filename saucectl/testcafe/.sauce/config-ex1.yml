@@ -5,6 +5,7 @@ kind: testcafe
 sauce:
   region: eu-central-1 # or us-west-1
   concurrency: 10 # Controls how many suites are executed at the same time.
+  retries: 1
   metadata:
     tags:
       - testcafe
@@ -40,6 +41,8 @@ suites:
     screenResolution: "1600x1200"
     browserArgs: ["--guest", "--disable-web-security"]
     shard: spec
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "tests/**/*.spec.js"

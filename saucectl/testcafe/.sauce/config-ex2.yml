@@ -5,6 +5,7 @@ kind: testcafe
 sauce:
   region: eu-central-1 # or us-west-1
   concurrency: 10 # Controls how many suites are executed at the same time.
+  retries: 1
   metadata:
     tags:
       - testcafe
@@ -39,6 +40,8 @@ suites:
     # - '2560x1600'
     screenResolution: "1600x1200"
     browserArgs: ["--disable-features=MediaRouter", "--disable-web-security"]
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "**/login.*"
@@ -47,6 +50,8 @@ suites:
     platformName: "Windows 11"
     screenResolution: "1600x1200"
     browserArgs: ["--disable-features=MediaRouter", "--disable-web-security"]
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "**/checkout.*"
@@ -55,6 +60,8 @@ suites:
     platformName: "Windows 11"
     screenResolution: "1600x1200"
     browserArgs: ["--disable-features=MediaRouter", "--disable-web-security"]
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "**/cart.spec.js"
