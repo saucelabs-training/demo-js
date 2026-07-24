@@ -11,7 +11,12 @@ const build = `Best Practices: iOS Safari Appium '${
 //
 // For configuring a Simulator please check
 // https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/
-config.capabilities = ['15.5', '16.2'].map((iOSVersion) => ({
+const APPIUM_VERSION_BY_IOS_VERSION = {
+  '18.6': '2.11.3',
+  '26.1': '2.19.0',
+};
+
+config.capabilities = Object.keys(APPIUM_VERSION_BY_IOS_VERSION).map((iOSVersion) => ({
   // All vendor specific, in this case Appium capabilities, should be
   // put in vendor prefixed options, see
   // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
@@ -30,7 +35,7 @@ config.capabilities = ['15.5', '16.2'].map((iOSVersion) => ({
   // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
   'sauce:options': {
     build: build,
-    ...(Math.floor(+iOSVersion) >= 16 && { appiumVersion: '2.0.0' }),
+    appiumVersion: APPIUM_VERSION_BY_IOS_VERSION[iOSVersion],
   },
 }));
 
