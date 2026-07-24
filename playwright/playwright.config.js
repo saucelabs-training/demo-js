@@ -30,7 +30,7 @@ const config = {
    * If set to true, each test will run on its own Sauce Labs session
    * When false, all tests in the same spec will be part of the same Sauce Labs session
    */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /**
