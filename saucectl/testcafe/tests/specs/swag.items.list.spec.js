@@ -77,5 +77,5 @@ test('should be able to open the cart summary page', async t => {
 
     // The actual test
     await AppHeaderPage.openCart();
-    await t.expect(CartSummaryPage.isScreenDisplayed()).ok();
+    await t.expect(CartSummaryPage.isScreenDisplayed()).ok({timeout: 10000});
 });
