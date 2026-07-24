@@ -3,7 +3,7 @@ import LoginPage from '../page-objects/LoginPage';
 import SwagOverviewPage from '../page-objects/SwagOverviewPage';
 import SwagDetailsPage from '../page-objects/SwagDetailsPage';
 import AppHeaderPage from '../page-objects/AppHeaderPage';
-import {setTestContext} from '../helpers';
+import {clickUntilVisible, setTestContext} from '../helpers';
 import CartSummaryPage from '../page-objects/CartSummaryPage';
 
 fixture`Test swag items overview page`
@@ -35,7 +35,7 @@ test('should validate that the details of a product can be opened', async t => {
         // The actual test
         const product = 'Sauce Labs Backpack';
 
-        await SwagOverviewPage.openSwagDetails(product);
+        await clickUntilVisible(() => SwagOverviewPage.openSwagDetails(product), SwagDetailsPage.screen);
         await t.expect(SwagDetailsPage.isScreenDisplayed()).ok();
         await t.expect(SwagDetailsPage.getSwagTitle()).eql(product);
     }
@@ -76,6 +76,6 @@ test('should be able to open the cart summary page', async t => {
     });
 
     // The actual test
-    await AppHeaderPage.openCart();
+    await clickUntilVisible(() => AppHeaderPage.openCart(), CartSummaryPage.screen);
     await t.expect(CartSummaryPage.isScreenDisplayed()).ok();
 });
