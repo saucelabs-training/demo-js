@@ -5,6 +5,7 @@ kind: testcafe
 sauce:
   region: eu-central-1 # or us-west-1
   concurrency: 10 # Controls how many suites are executed at the same time.
+  retries: 1
   metadata:
     tags:
       - testcafe
