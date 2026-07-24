@@ -10,6 +10,7 @@
     "postinstall": "npx playwright install",
     "test.reporter": "npx playwright test --project=\"Playwright Reporter\"",
     "test.grid": "SAUCE_BUILD_NAME=\"Playwright Grid: $(date +%s)\" npx playwright test --project=grid --reporter=list",
+    "test.native": "SAUCE_BUILD_NAME=\"Playwright Native: $(date +%s)\" npx playwright test --project=native --reporter=list",
     "test.saucectl": "saucectl run",
     "test.local": "PLAYWRIGHT_PROJECT=local npx playwright test --project=local"
   },

@@ -25,11 +25,19 @@ const config = {
      */
     timeout: 5000
   },
-  /* Run tests in files in parallel */
+  /**
+   * Run tests in files in parallel
+   * If set to true, each test will run on its own Sauce Labs session
+   * When false, all tests in the same spec will be part of the same Sauce Labs session
+   */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
-  /* Allow CI to run in parallel */
+  /**
+   *  Allow CI to run in parallel
+   *  When running on Sauce Labs, increase the number of workers for faster execution based on your
+   *  allocated concurrency
+   */
   workers: process.env.CI ? 6 : undefined,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
@@ -68,6 +76,13 @@ const config = {
       timeout: 120000,
       use: {
         ...devices['Desktop Chrome'],
+      },
+    },
+    {
+      name: 'native',
+      timeout: 120000,
+      use: {
+        ...devices['Desktop Safari'],
       },
     },
     {
