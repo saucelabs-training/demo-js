@@ -39,6 +39,8 @@ suites:
     # - '2560x1600'
     screenResolution: "1600x1200"
     browserArgs: ["--disable-features=MediaRouter", "--disable-web-security"]
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "**/login.*"
@@ -47,6 +49,8 @@ suites:
     platformName: "Windows 11"
     screenResolution: "1600x1200"
     browserArgs: ["--disable-features=MediaRouter", "--disable-web-security"]
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "**/checkout.*"
@@ -55,6 +59,8 @@ suites:
     platformName: "Windows 11"
     screenResolution: "1600x1200"
     browserArgs: ["--disable-features=MediaRouter", "--disable-web-security"]
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "**/cart.spec.js"

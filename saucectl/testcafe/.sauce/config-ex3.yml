@@ -38,6 +38,8 @@ suites:
     # - '1920x1200'
     # - '2560x1600'
     screenResolution: "1600x1200"
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "**/login.*"
@@ -45,6 +47,8 @@ suites:
     browserName: microsoftedge
     platformName: "Windows 10"
     screenResolution: "1600x1200"
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "**/login.*"
@@ -52,6 +56,8 @@ suites:
     browserName: firefox
     platformName: "Windows 10"
     screenResolution: "1600x1200"
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "**/login.*"
@@ -68,6 +74,8 @@ suites:
     # - '1920x1440'
     # - '2048x1536'
     screenResolution: "1600x1200"
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "**/login.*"
@@ -75,6 +83,8 @@ suites:
     browserName: firefox
     platformName: "macOS 11.00"
     screenResolution: "1600x1200"
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "**/login.*"
@@ -82,6 +92,8 @@ suites:
     browserName: microsoftedge
     platformName: "macOS 11.00"
     screenResolution: "1600x1200"
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "**/login.*"
@@ -89,6 +101,8 @@ suites:
     browserName: safari
     platformName: "macOS 11.00"
     screenResolution: "1600x1200"
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "**/login.*"

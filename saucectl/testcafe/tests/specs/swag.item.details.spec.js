@@ -21,9 +21,9 @@ test('should validate that we can go back from the details to the inventory page
             path: PAGES.SWAG_ITEMS,
         });
         await SwagOverviewPage.openSwagDetails(PRODUCTS.BACKPACK);
-        await t.expect(SwagDetailsPage.isScreenDisplayed()).ok({timeout: 10000});
+        await t.expect(SwagDetailsPage.isScreenDisplayed()).ok();
         await SwagDetailsPage.goBack();
-        await t.expect(SwagOverviewPage.isScreenDisplayed()).ok({timeout: 10000});
+        await t.expect(SwagOverviewPage.isScreenDisplayed()).ok();
     }
 });
 

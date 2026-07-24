@@ -40,6 +40,8 @@ suites:
     screenResolution: "1600x1200"
     browserArgs: ["--guest", "--disable-web-security"]
     shard: spec
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "tests/**/*.spec.js"

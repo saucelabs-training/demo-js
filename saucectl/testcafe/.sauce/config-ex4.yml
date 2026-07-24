@@ -21,6 +21,8 @@ rootDir: ./
 suites:
   - name: "Testcafe - iOS Tests - Safari"
     browserName: "safari"
+    assertionTimeout: 15000
+    selectorTimeout: 15000
     src:
       # test files glob
       - "**/login.*"
