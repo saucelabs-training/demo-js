@@ -30,8 +30,8 @@ config.capabilities = [
     // All Appium capabilities, see
     // http://appium.io/docs/en/writing-running-appium/caps/
     // should be prefixed with `appium:{capability-name}`
-    'appium:deviceName': 'Google Pixel 3 GoogleAPI Emulator',
-    'appium:platformVersion': '10.0',
+    'appium:deviceName': 'Google Pixel 8 Emulator',
+    'appium:platformVersion': '16.0',
     'appium:automationName': 'UiAutomator2',
     // For the W3C capabilities, please check
     // https://www.w3.org/TR/webdriver1/#capabilities
@@ -42,7 +42,7 @@ config.capabilities = [
     // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
     'sauce:options': {
       build: `Sauce Labs W3C Mobile Web build-${new Date().getTime()}`,
-      appiumVersion: '1.18.1',
+      appiumVersion: '2.11.0',
     },
   },
   /**
@@ -55,8 +55,8 @@ config.capabilities = [
     // All Appium capabilities, see
     // http://appium.io/docs/en/writing-running-appium/caps/
     // should be prefixed with `appium:{capability-name}`
-    'appium:deviceName': 'iPhone 11 Simulator',
-    'appium:platformVersion': '14.0',
+    'appium:deviceName': 'iPhone 17 Pro Simulator',
+    'appium:platformVersion': '26.1',
     'appium:automationName': 'XCUITest',
     // For the W3C capabilities, please check
     // https://www.w3.org/TR/webdriver1/#capabilities
@@ -67,7 +67,7 @@ config.capabilities = [
     // https://www.w3.org/TR/webdriver1/#dfn-extension-capability
     'sauce:options': {
       build: `Sauce Labs W3C Mobile Web build-${new Date().getTime()}`,
-      appiumVersion: '1.19.1',
+      appiumVersion: '2.19.0',
     },
   },
 ];

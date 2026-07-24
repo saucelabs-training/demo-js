@@ -1,7 +1,7 @@
 import config from './wdio.shared.sauce.conf';
 
 const buildName = `iOS Native App Best Practices build-${new Date().getTime()}`;
-const osVersions = ['17', '18'];
+const osVersions = ['18', '26'];
 const getRandomOsVersion = (versions: string[]): string =>
   versions[Math.floor(Math.random() * versions.length)];
 
@@ -44,7 +44,7 @@ config.capabilities = [
       allowTouchIdEnroll: false,
       // @ts-ignore
       sauceLabsImageInjectionEnabled: false,
-      appiumVersion: 'appium3-2026-04',
+      appiumVersion: 'appium3-2026-07',
     },
   },
 ];
