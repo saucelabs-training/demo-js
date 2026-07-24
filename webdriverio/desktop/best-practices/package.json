@@ -20,7 +20,7 @@
     "@wdio/spec-reporter": "^9.0.0",
     "chromedriver": "^151.0.0",
     "ts-node": "^10.9.1",
-    "typescript": "^6.0.0",
+    "typescript": "^7.0.0",
     "wdio-chromedriver-service": "^8.1.1"
   }
 }
