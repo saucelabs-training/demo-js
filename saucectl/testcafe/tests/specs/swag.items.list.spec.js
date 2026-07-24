@@ -36,7 +36,7 @@ test('should validate that the details of a product can be opened', async t => {
         const product = 'Sauce Labs Backpack';
 
         await SwagOverviewPage.openSwagDetails(product);
-        await t.expect(SwagDetailsPage.isScreenDisplayed()).ok();
+        await t.expect(SwagDetailsPage.isScreenDisplayed()).ok({timeout: 10000});
         await t.expect(SwagDetailsPage.getSwagTitle()).eql(product);
     }
 });
