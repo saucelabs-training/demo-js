@@ -16,3 +16,7 @@ This will install all needed dependencies that are listed in the `package.json`-
 npm run test.safari.us
 ```
 
+```js
+npm run test.edgeie.us
+```
+
