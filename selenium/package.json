@@ -13,6 +13,6 @@
     "assert": "^2.0.0",
     "eslint": "^10.0.0",
     "mocha": "11.8.0",
-    "selenium-webdriver": "^4.4.0"
+    "selenium-webdriver": "4.47.0"
   }
 }
