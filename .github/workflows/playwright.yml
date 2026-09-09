@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [ reporter, grid, saucectl ]
+        target: [ reporter, grid, saucectl, native ]
     steps:
       - name: Checkout
         uses: actions/checkout@v7
