@@ -1,5 +1,5 @@
 import AppScreen from './AppScreen';
-import {locatorStrategy} from '../helpers/utils';
+import {acceptIOSAlert, locatorStrategy} from '../helpers/utils';
 
 class QrCodeScreen extends AppScreen {
   constructor() {
@@ -16,6 +16,11 @@ class QrCodeScreen extends AppScreen {
   }
 
   async acceptCameraAccess() {
+    if (driver.isIOS) {
+      await acceptIOSAlert(['Allow', 'OK']);
+      return;
+    }
+
     // If for Android/iOS the permissions are allowed by default then this will timeout
     // because it can't find the button, but the `try/catch` will make sure it will not fail
     try {
