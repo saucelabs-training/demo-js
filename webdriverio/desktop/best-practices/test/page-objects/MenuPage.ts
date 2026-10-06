@@ -19,13 +19,26 @@ class MenuPage {
         return $('#reset_sidebar_link');
     }
 
+    get menuWrap() {
+        return $('.bm-menu-wrap');
+    }
+
     /**
      * Open the menu
      */
     async open() {
         await this.menu.click();
-        // A pause for the menu opening animation
-        await browser.pause(500);
+        // Wait for the menu opening animation to finish, a fixed pause is not enough on slower VMs
+        let previousX: number | undefined;
+        await browser.waitUntil(async () => {
+            if (await this.menuWrap.getAttribute('aria-hidden') !== 'false') {
+                return false;
+            }
+            const { x } = await this.menuWrap.getLocation();
+            const isStable = x === previousX;
+            previousX = x;
+            return isStable;
+        }, { interval: 200, timeoutMsg: 'The menu did not finish opening' });
     }
 
     /**
