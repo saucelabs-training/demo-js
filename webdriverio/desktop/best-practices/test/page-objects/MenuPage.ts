@@ -28,7 +28,7 @@ class MenuPage {
      */
     async open() {
         await this.menu.click();
-        // Wait for the menu opening animation to finish, a fixed pause is not enough on slower VMs
+        // Wait for the menu opening animation to finish
         let previousX: number | undefined;
         await browser.waitUntil(async () => {
             if (await this.menuWrap.getAttribute('aria-hidden') !== 'false') {
