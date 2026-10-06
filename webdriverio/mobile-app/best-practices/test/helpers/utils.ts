@@ -190,7 +190,17 @@ const openDeepLinkUrl = async (url: string): Promise<void | string> => {
   ) {
     await driver.url(`${prefix}${url}`);
   } else {
-    // Else we are a real device and we need to take some extra steps
+    // Else we are a real device. On iOS 16.4+ Appium can open the deep link directly in the app
+    try {
+      await driver.execute('mobile: deepLink', {
+        url: `${prefix}${url}`,
+        bundleId: 'com.saucelabs.mydemoapp.rn',
+      });
+      return;
+    } catch (e) {
+      // Older iOS versions, fall back to opening the deep link through Safari
+    }
+
     // Launch Safari to open the deep link
     await driver.execute('mobile: launchApp', {
       bundleId: 'com.apple.mobilesafari',
