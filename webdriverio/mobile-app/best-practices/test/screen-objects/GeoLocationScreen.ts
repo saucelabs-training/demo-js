@@ -1,5 +1,5 @@
 import AppScreen from './AppScreen';
-import { locatorStrategy } from '../helpers/utils';
+import { acceptIOSAlert, locatorStrategy } from '../helpers/utils';
 
 class GeoLocationScreen extends AppScreen {
   constructor() {
@@ -39,6 +39,11 @@ class GeoLocationScreen extends AppScreen {
   }
 
   async acceptPermission(isShown = true) {
+    if (driver.isIOS) {
+      await acceptIOSAlert(['Allow Once', 'Allow']);
+      return;
+    }
+
     try {
       await this.permissionModal.waitForDisplayed({
         timeout: 6000,

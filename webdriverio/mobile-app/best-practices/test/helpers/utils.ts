@@ -128,6 +128,41 @@ const hideNumericKeyboard = async (): Promise<void> => {
   // Wait for the keyboard animation to be done
   await driver.pause(750);
 };
+const acceptIOSAlert = async (
+  buttonLabels: string[],
+  timeout = 6000
+): Promise<boolean> => {
+  // System permission alerts are owned by SpringBoard. On real devices they are not part of the
+  // app's element tree, so an element lookup will never find them. The `mobile: alert` API checks
+  // both the app and SpringBoard, so it works on simulators and real devices
+  try {
+    await driver.waitUntil(
+      async () => {
+        try {
+          await driver.getAlertText();
+          return true;
+        } catch (e) {
+          return false;
+        }
+      },
+      { timeout }
+    );
+  } catch (e) {
+    // No alert was shown
+    return false;
+  }
+
+  const buttons = (await driver.execute('mobile: alert', {
+    action: 'getButtons',
+  })) as string[];
+  const buttonLabel = buttonLabels.find((label) => buttons.includes(label));
+  await driver.execute('mobile: alert', {
+    action: 'accept',
+    ...(buttonLabel ? { buttonLabel } : {}),
+  });
+
+  return true;
+};
 const openDeepLinkUrl = async (url: string): Promise<void | string> => {
   const prefix = 'mydemoapprn://';
 
@@ -199,6 +234,7 @@ const openDeepLinkUrl = async (url: string): Promise<void | string> => {
 };
 
 export {
+  acceptIOSAlert,
   getTextOfElement,
   hideKeyboard,
   hideNumericKeyboard,

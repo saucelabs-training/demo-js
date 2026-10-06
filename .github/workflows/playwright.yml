@@ -40,6 +40,11 @@ jobs:
       - name: Install dependencies
         working-directory: playwright
         run: npm install
+      - name: Install WebKit system dependencies
+        # The native project uses the Desktop Safari (WebKit) preset, so the runner needs WebKit's OS libraries
+        if: matrix.target == 'native'
+        working-directory: playwright
+        run: npx playwright install-deps webkit
       - name: Run ${{matrix.target}} tests
         working-directory: playwright
         run: npm run test.${{matrix.target}}

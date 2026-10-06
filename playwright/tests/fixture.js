@@ -150,6 +150,10 @@ async function createNativeSession(requestContext, testName, browserName) {
         response = await requestContext.get(response.headers()['location'], { maxRedirects: 0 });
     }
 
+    if (!response.ok()) {
+        throw new Error(`Failed to create a native session (HTTP ${response.status()}): ${await response.text()}`);
+    }
+
     const body = await response.json();
     const value = body.value || body;
     return { sessionId: value.sessionId, wsEndpoint: value.wsEndpoint };
