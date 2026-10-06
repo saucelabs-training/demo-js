@@ -19,14 +19,13 @@
     "test.sauce.ex5.eu": "CURRENT_TIME=$(date +%s) saucectl run -c ./.sauce/config-ex5.yml",
     "test.sauce.ex6.us": "CURRENT_TIME=$(date +%s) saucectl run --region us-west-1 -c ./.sauce/config-ex6.yml",
     "test.sauce.ex6.eu": "CURRENT_TIME=$(date +%s) saucectl run -c ./.sauce/config-ex6.yml"
-
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "cypress": "^15.0.0",
-    "eslint": "^10.0.0",
+    "eslint": "^10.12.0",
     "saucectl": "^0.214.0"
   }
 }
