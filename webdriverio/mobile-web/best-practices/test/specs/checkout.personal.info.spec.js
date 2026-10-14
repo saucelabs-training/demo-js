@@ -1,8 +1,8 @@
-import CartSummaryPage from '../page-objects/CartSummaryPage';
-import CheckoutPersonalInfoPage from '../page-objects/CheckoutPersonalInfoPage';
-import CheckoutSummaryPage from '../page-objects/CheckoutSummaryPage';
-import {LOGIN_USERS, PAGES, PERSONAL_INFO} from "../configs/e2eConstants";
-import {setTestContext} from '../helpers';
+import CartSummaryPage from '../page-objects/CartSummaryPage.js';
+import CheckoutPersonalInfoPage from '../page-objects/CheckoutPersonalInfoPage.js';
+import CheckoutSummaryPage from '../page-objects/CheckoutSummaryPage.js';
+import {LOGIN_USERS, PAGES, PERSONAL_INFO} from "../configs/e2eConstants.js";
+import {setTestContext} from '../helpers/index.js';
 
 describe('Checkout - Personal info', () => {
     beforeEach(async() => {

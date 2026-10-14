@@ -2,7 +2,8 @@ import { locatorStrategy } from '../helpers/utils';
 
 class ReviewComponent {
   private reviewStar(number: number) {
-    return $(locatorStrategy(`review star ${number}`));
+    // The catalog shows a rating for each product, use the first one
+    return $$(locatorStrategy(`review star ${number}`))[0];
   }
 
   private get reviewModalButton() {

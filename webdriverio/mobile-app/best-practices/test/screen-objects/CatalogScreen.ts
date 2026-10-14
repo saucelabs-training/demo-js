@@ -9,8 +9,8 @@ class CatalogScreen extends AppScreen {
 
   private async item({needle}: {needle: string}) {
     const itemSelector = 'store item';
-    const iosSelector = `-ios class chain:**/XCUIElementTypeOther[\`name == "${itemSelector}" AND label CONTAINS "${needle}"\`]`;
-    const androidSelector = `//android.widget.TextView[contains(@text,'${needle}')]//ancestor::*[@content-desc='${itemSelector}']`;
+    const iosSelector = `-ios class chain:**/XCUIElementTypeOther[\`name == "${itemSelector}" AND label CONTAINS "${needle}"\`][1]`;
+    const androidSelector = `(//android.widget.TextView[contains(@text,'${needle}')]//ancestor::*[@content-desc='${itemSelector}'])[1]`;
     const elem = await $(driver.isIOS ? iosSelector : androidSelector);
 
     return findElementBySwipe({

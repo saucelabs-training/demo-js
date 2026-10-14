@@ -1,9 +1,9 @@
-import AppHeaderPage from '../page-objects/AppHeaderPage';
-import SwagOverviewPage from '../page-objects/SwagOverviewPage';
-import SwagDetailsPage from '../page-objects/SwagDetailsPage';
-import CartSummaryPage from '../page-objects/CartSummaryPage';
-import {setTestContext} from '../helpers';
-import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants";
+import AppHeaderPage from '../page-objects/AppHeaderPage.js';
+import SwagOverviewPage from '../page-objects/SwagOverviewPage.js';
+import SwagDetailsPage from '../page-objects/SwagDetailsPage.js';
+import CartSummaryPage from '../page-objects/CartSummaryPage.js';
+import {setTestContext} from '../helpers/index.js';
+import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants.js";
 
 describe('Swag items list', () => {
     it('should validate that all products are present', async () => {

@@ -1,6 +1,6 @@
-import CheckoutCompletePage from '../page-objects/CheckoutCompletePage';
-import {setTestContext} from '../helpers';
-import {LOGIN_USERS, PAGES} from "../configs/e2eConstants";
+import CheckoutCompletePage from '../page-objects/CheckoutCompletePage.js';
+import {setTestContext} from '../helpers/index.js';
+import {LOGIN_USERS, PAGES} from "../configs/e2eConstants.js";
 
 describe('Checkout - Complete', () => {
     it('should be able to test loading of login page', async () => {

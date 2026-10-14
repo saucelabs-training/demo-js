@@ -1,6 +1,6 @@
-import BasePage from './BasePage';
+import BasePage from './BasePage.js';
 
-const SCREEN_SELECTOR = '.inventory_details';
+const SCREEN_SELECTOR = '.inventory_details_container';
 
 class SwagDetailsPage extends BasePage {
     constructor() {

@@ -1,4 +1,4 @@
-import {DEFAULT_TIMEOUT} from '../configs/e2eConstants';
+import {DEFAULT_TIMEOUT} from '../configs/e2eConstants.js';
 
 export default class BasePage {
   constructor(selector) {

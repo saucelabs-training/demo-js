@@ -1,6 +1,6 @@
-import {LOGIN_USERS} from '../configs/e2eConstants';
-import LoginPage from '../page-objects/LoginPage';
-import SwagOverviewPage from '../page-objects/SwagOverviewPage';
+import {LOGIN_USERS} from '../configs/e2eConstants.js';
+import LoginPage from '../page-objects/LoginPage.js';
+import SwagOverviewPage from '../page-objects/SwagOverviewPage.js';
 
 describe('LoginPage', () => {
   beforeEach(async () => {

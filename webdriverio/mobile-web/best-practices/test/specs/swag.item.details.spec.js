@@ -1,7 +1,7 @@
-import AppHeaderPage from '../page-objects/AppHeaderPage';
-import SwagDetailsPage from '../page-objects/SwagDetailsPage';
-import {setTestContext} from '../helpers';
-import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants";
+import AppHeaderPage from '../page-objects/AppHeaderPage.js';
+import SwagDetailsPage from '../page-objects/SwagDetailsPage.js';
+import {setTestContext} from '../helpers/index.js';
+import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants.js";
 
 describe('Swag Item Details', () => {
     it('should validate that we can go back from the details to the inventory page', async () => {

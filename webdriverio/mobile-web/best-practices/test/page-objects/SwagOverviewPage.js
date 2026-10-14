@@ -1,4 +1,4 @@
-import BasePage from './BasePage';
+import BasePage from './BasePage.js';
 
 const SCREEN_SELECTOR = '.inventory_list';
 

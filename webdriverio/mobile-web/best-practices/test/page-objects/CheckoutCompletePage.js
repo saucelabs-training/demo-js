@@ -1,4 +1,4 @@
-import BasePage from './BasePage';
+import BasePage from './BasePage.js';
 
 const SCREEN_SELECTOR = '#checkout_complete_container';
 

@@ -18,9 +18,4 @@ config.capabilities = [
   },
 ];
 
-// ========
-// Services
-// ========
-config.services = config.services.concat('chromedriver');
-
 exports.config = config;
