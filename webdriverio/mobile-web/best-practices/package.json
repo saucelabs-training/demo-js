@@ -13,8 +13,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^8.0.6",
-    "@babel/preset-env": "^8.0.6",
+    "@babel/core": "^8.0.7",
+    "@babel/preset-env": "^8.0.7",
     "@babel/register": "^8.0.6",
     "@wdio/cli": "^9.32.0",
     "@wdio/jasmine-framework": "^9.32.0",
