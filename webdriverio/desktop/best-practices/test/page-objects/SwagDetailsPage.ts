@@ -2,7 +2,7 @@ import BasePage from './BasePage';
 
 class SwagDetailsPage extends BasePage {
   constructor() {
-    super('.inventory_details');
+    super('.inventory_details_container');
   }
 
   private get title() {

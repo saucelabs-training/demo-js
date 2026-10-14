@@ -1,9 +1,9 @@
-import AppHeaderPage from '../page-objects/AppHeaderPage';
-import SwagOverviewPage from '../page-objects/SwagOverviewPage';
-import CartSummaryPage from '../page-objects/CartSummaryPage';
-import CheckoutPersonalInfoPage from '../page-objects/CheckoutPersonalInfoPage';
-import {setTestContext} from '../helpers';
-import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants";
+import AppHeaderPage from '../page-objects/AppHeaderPage.js';
+import SwagOverviewPage from '../page-objects/SwagOverviewPage.js';
+import CartSummaryPage from '../page-objects/CartSummaryPage.js';
+import CheckoutPersonalInfoPage from '../page-objects/CheckoutPersonalInfoPage.js';
+import {setTestContext} from '../helpers/index.js';
+import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants.js";
 
 describe('Cart Summary page', () => {
     it('should validate that we can continue shopping', async () => {

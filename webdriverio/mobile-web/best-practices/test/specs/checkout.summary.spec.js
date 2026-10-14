@@ -1,8 +1,8 @@
-import SwagOverviewPage from '../page-objects/SwagOverviewPage';
-import CheckoutCompletePage from '../page-objects/CheckoutCompletePage';
-import CheckoutSummaryPage from '../page-objects/CheckoutSummaryPage';
-import {setTestContext} from '../helpers';
-import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants";
+import SwagOverviewPage from '../page-objects/SwagOverviewPage.js';
+import CheckoutCompletePage from '../page-objects/CheckoutCompletePage.js';
+import CheckoutSummaryPage from '../page-objects/CheckoutSummaryPage.js';
+import {setTestContext} from '../helpers/index.js';
+import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants.js";
 
 describe('Checkout - Summary', () => {
     beforeEach(async() => {

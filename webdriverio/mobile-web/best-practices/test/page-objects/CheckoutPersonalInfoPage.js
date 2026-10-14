@@ -1,5 +1,5 @@
-import BasePage from './BasePage';
-import {DEFAULT_TIMEOUT} from '../configs/e2eConstants';
+import BasePage from './BasePage.js';
+import {DEFAULT_TIMEOUT} from '../configs/e2eConstants.js';
 
 const SCREEN_SELECTOR = '#checkout_info_container';
 

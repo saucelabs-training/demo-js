@@ -1,10 +1,10 @@
-import AppHeaderPage from '../page-objects/AppHeaderPage';
-import SwagOverviewPage from '../page-objects/SwagOverviewPage';
-import LoginPage from "../page-objects/LoginPage";
-import CartSummaryPage from "../page-objects/CartSummaryPage";
-import MenuPage from "../page-objects/MenuPage";
-import {setTestContext} from '../helpers';
-import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants";
+import AppHeaderPage from '../page-objects/AppHeaderPage.js';
+import SwagOverviewPage from '../page-objects/SwagOverviewPage.js';
+import LoginPage from "../page-objects/LoginPage.js";
+import CartSummaryPage from "../page-objects/CartSummaryPage.js";
+import MenuPage from "../page-objects/MenuPage.js";
+import {setTestContext} from '../helpers/index.js';
+import {LOGIN_USERS, PAGES, PRODUCTS} from "../configs/e2eConstants.js";
 
 describe('Menu', () => {
     beforeEach(async () => {
